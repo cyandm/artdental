@@ -10105,6 +10105,12 @@
   }
   searchFilter();
 
+  // assets/js/modules/contact-us.js
+  function contactForm() {
+    const form = document.querySelector("#ContactUsForm");
+  }
+  contactForm();
+
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
     constructor() {

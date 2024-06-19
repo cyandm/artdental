@@ -25,7 +25,7 @@
             </div>
             <!-- Customer  information form   -->
             <div>
-                <form class="flex gap-4 flex-col" action="/" method="post" name="Contact-Us">
+                <form class="flex gap-4 flex-col" action="/" method="post" name="Contact-Us" id="ContactUsForm">
                     <div><input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80 " type="text" placeholder="نام شما" required="required"></div>
                     <div><input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" type="text" placeholder="ایمیل شما" required="required"></div>
                     <div><textarea class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" name="message" id="message" cols="30" rows="10" placeholder="پیام خودتونو بنویسید"></textarea></div>
