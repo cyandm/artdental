@@ -2,7 +2,7 @@
 <!-- Not found  -->
 
 <?php get_header(); ?>
-<div class="py-17 max-xl:hidden"></div>
+<div class="py-12 max-xl:hidden"></div>
 
 <main class="container flex justify-center items-center flex-col">
     <!-- 404 image  -->

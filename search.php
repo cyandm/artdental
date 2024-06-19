@@ -37,8 +37,9 @@ $inputs = [
 <main class="container">
     <!-- search part -->
     <div class="bg-primary-100 max-lg:flex flex-col p-5 rounded-3xl  divide-y space-y-3 divide-primary-90">
-        <div class="flex justify-between items-center  max-lg:flex-col max-lg:gap-3">
-            <!-- filters  -->
+        <!-- filters  -->
+        <form action="/" class="flex justify-between items-center  max-lg:flex-col max-lg:gap-3" id="formSearch">
+
             <div class=" max-lg:order-2 flex gap-2 flex-wrap">
                 <div>
                     <?php _e('جستجو در:', 'cyn-dm') ?>
@@ -58,22 +59,21 @@ $inputs = [
 
             <!-- serch box  -->
             <div class="max-lg:order-0 flex justify-end">
-                <form action="/">
-                    <div class="flex gap-1 py-2 px-3 border border-primary-50 rounded-full">
-                        <button type="submit">
-                            <svg class="icon size-4">
-                                <use href="#icon-search-loupe" />
-                            </svg>
-                        </button>
+                <div class="flex gap-1 py-2 px-3 border border-primary-50 rounded-full">
+                    <button type="submit">
+                        <svg class="icon size-4">
+                            <use href="#icon-search-loupe" />
+                        </svg>
+                    </button>
 
-                        <div>
-                            <input type="search" value="<?php the_search_query() ?>" id="search" name="s" placeholder="جستجو">
-                        </div>
+                    <div>
+                        <input type="search" value="<?php the_search_query() ?>" id="search" name="s" placeholder="جستجو">
                     </div>
-                    <div class="divide-y divide-primary-70"></div>
-                </form>
+                </div>
+                <div class="divide-y divide-primary-70"></div>
             </div>
-        </div>
+        </form>
+
 
         <div class="flex justify-center items-center py-3 text-primary-30 text-caption">
 
@@ -108,10 +108,13 @@ $inputs = [
 
 
 
+</main>
+
 
 
 <!-- pagination  -->
-<div class="py-14"></div>
+<!-- faraz mizane  -->
 
-</main>
+
+
 <?php get_footer() ?>
