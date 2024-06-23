@@ -12,11 +12,8 @@
     <div class="flex gap-11 max-lg:flex-col	">
         <!-- image  -->
         <div class="max-lg:w-full w-3/6 flex items-center justify-center">
-            <!-- تصویر: acf 
-         با عرض پنجاه درصد   -->
-            <img src="<?php echo get_stylesheet_directory_uri()   . "/assets/img/404-image.png" ?>" alt="design-picture">
+            <?php echo get_the_post_thumbnail(get_the_ID(), 'full') ?>
         </div>
-
         <!-- Contact form -->
         <div class="max-lg:w-full flex gap-4 flex-col w-3/6">
             <!-- first form text  -->
@@ -35,16 +32,19 @@
                         <button class="max-lg:w-full max-lg:items-center max-lg:justify-center flex items-end justify-end flex-row-reverse gap-1 rounded-full transition-all duration-300 cursor-pointer
                          bg-gradient-to-t from-primary-50 to-primary-70 text-primary-100 shadow-md shadow-slate-400/50
                           hover:from-primary-20 hover:to-primary-20 py-2 px-2 text-body_s ">
-                            <?php _e('ارسال پیام', 'cyn-dm')  ?>
+                            <div class="me-2">
+                                <?php _e('ارسال پیام', 'cyn-dm')  ?>
+                            </div>
                             <svg class="icon  text-primary-100 w-6 h-6 transform">
                                 <use href="#icon-Send" />
                             </svg>
+
                         </button>
                     </div>
                 </form>
             </div>
 
-            
+
         </div>
 
     </div>

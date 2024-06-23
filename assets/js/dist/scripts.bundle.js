@@ -10435,6 +10435,29 @@
   }
   searchFilter();
 
+  // assets/js/modules/toastify.js
+  var import_toastify_js = __toESM(require_toastify());
+  var successColor = "#4caf50";
+  var errorColor = "#ef5350";
+  var successToast = (0, import_toastify_js.default)({
+    text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0646\u062C\u0627\u0645 \u0634\u062F",
+    style: {
+      background: successColor
+    }
+  });
+  var errorToast = (0, import_toastify_js.default)({
+    text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u062E\u0637\u0627 \u0645\u0648\u0627\u062C\u0647 \u0634\u062F",
+    style: {
+      background: errorColor
+    }
+  });
+  var successFormToast = (0, import_toastify_js.default)({
+    text: "\u0641\u0631\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0631\u0633\u0627\u0644 \u0634\u062F",
+    style: {
+      background: successColor
+    }
+  });
+
   // assets/js/modules/contact-us.js
   function contactForm() {
     const contactForm2 = document.querySelector("#ContactUsForm");
@@ -10464,42 +10487,6 @@
     });
   }
   contactForm();
-
-  // assets/js/modules/toastify.js
-  var import_toastify_js = __toESM(require_toastify());
-  var successColor = "#4caf50";
-  var errorColor = "#ef5350";
-  var htmlEl = document.querySelector("html");
-  var successText = "";
-  var errorText = "";
-  var successFormText = "";
-  if (htmlEl.lang === "en-US") {
-    successText = "mission accomplished";
-    errorText = "The operation encountered an error.";
-    successFormText = "Form submitted successfully";
-  } else {
-    successText = "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0646\u062C\u0627\u0645 \u0634\u062F";
-    errorText = "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u062E\u0637\u0627 \u0645\u0648\u0627\u062C\u0647 \u0634\u062F";
-    successFormText = "\u0641\u0631\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0631\u0633\u0627\u0644 \u0634\u062F";
-  }
-  var successToast = (0, import_toastify_js.default)({
-    text: successText,
-    style: {
-      background: successColor
-    }
-  });
-  var errorToast2 = (0, import_toastify_js.default)({
-    text: errorText,
-    style: {
-      background: errorColor
-    }
-  });
-  var successFormToast2 = (0, import_toastify_js.default)({
-    text: successFormText,
-    style: {
-      background: successColor
-    }
-  });
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {

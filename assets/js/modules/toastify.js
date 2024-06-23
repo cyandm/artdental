@@ -3,38 +3,22 @@ import Toastify from "toastify-js";
 const successColor = "#4caf50";
 const errorColor = "#ef5350";
 
-const htmlEl = document.querySelector("html");
-
-let successText = "";
-let errorText = "";
-let successFormText = "";
-
-if (htmlEl.lang === "en-US") {
-  successText = "mission accomplished";
-  errorText = "The operation encountered an error.";
-  successFormText = "Form submitted successfully";
-} else {
-  successText = "عملیات با موفقیت انجام شد";
-  errorText = "عملیات با خطا مواجه شد";
-  successFormText = "فرم با موفقیت ارسال شد";
-}
-
 export const successToast = Toastify({
-  text: successText,
+  text: "عملیات با موفقیت انجام شد",
   style: {
     background: successColor,
   },
 });
 
 export const errorToast = Toastify({
-  text: errorText,
+  text: "عملیات با خطا مواجه شد",
   style: {
     background: errorColor,
   },
 });
 
 export const successFormToast = Toastify({
-  text: successFormText,
+  text: "فرم با موفقیت ارسال شد",
   style: {
     background: successColor,
   },
