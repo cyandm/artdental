@@ -37,6 +37,7 @@ if (!class_exists('cyn_register')) {
 
 			$this->cyn_make_taxonomy('service-cat', '  دسته بندی خدمات ', 'دسته بندی های خدمات', ['service']);
 			$this->cyn_make_taxonomy('faq-cat', '  دسته بندی ', 'دسته بندی ها', ['faq']);
+			$this->cyn_make_taxonomy('special-services', ' خدمت ویژه', 'خدمات ویژه', ['service']);
 		}
 
 		public function cyn_term_register()
@@ -45,6 +46,7 @@ if (!class_exists('cyn_register')) {
 
 
 			// wp_insert_term( 'name', 'taxonomy', [ 'slug' => 'slug' ] );
+			wp_insert_term('نوشته های ویژه', 'special-services', ['slug' => 'special-service']);
 		}
 
 		public function cyn_page_register()
