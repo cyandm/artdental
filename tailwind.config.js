@@ -97,5 +97,5 @@ module.exports = {
       "cyn-noise": "url('../img/noise.png')",
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/forms")],
 };
