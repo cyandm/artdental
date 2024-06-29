@@ -1,4 +1,17 @@
 <!-- reserve popup wrapper مشاوره رایگان  -->
+<?php
+
+$services = get_posts([
+    'post_type' => 'service',
+    'posts_per_page' => -1,
+
+]);
+
+?>
+
+
+
+
 <div class="py-10 backdrop-blur"></div>
 
 <section class="z-50 backdrop-blur w-full h-full fixed inset-0 flex justify-center items-center overflow-hidden">
@@ -23,26 +36,49 @@
                     <div> <input type="text" required="required" placeholder="نام و نام خانوادگی" class="py-1 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="name"></div>
                     <!-- gender  -->
                     <div class="w-full">
-                        <!-- <input type="text" required="required" placeholder="جنسیت" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="gender"> -->
-                        <select name="gender" id="gender" required class="h-10 text-primary-50 rounded-3xl border border-primary-80 max-lg:w-full">
+                        <select name="gender" id="gender" required class="h-10 text-primary-50 rounded-3xl border border-primary-80 w-full">
                             <option value=""><?php _e('جنسیت', 'cyn-dm') ?></option>
                             <option value="woman"><?php _e('زن', 'cyn-dm') ?></option>
                             <option value="man"><?php _e('مرد', 'cyn-dm') ?></option>
-                            <option value="man"><?php _e('نمی‌خواهم بگویم', 'cyn-dm') ?></option>
                         </select>
                     </div>
                 </div>
                 <div class="flex gap-4 w-full max-lg:flex-col">
                     <!-- services  -->
-                    <div> <input type="text" required="required" placeholder="خدمات" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="services"></div>
+                    <div class="min-h-10 min-w-64">
+                        <select name="services" id="services" required class="min-h-10 min-w-64 text-primary-50 rounded-3xl border border-primary-80 w-full">
+                            <option value="">خدمات</option>
+                            <?php foreach ($services as $index => $service) : ?>
+                                <option value="<?php echo $service->post_title ?>">
+                                    <?php echo $service->post_title ?>
+                                </option>
+                            <?php endforeach; ?>
+
+
+
+
+
+                            
+                        </select>
+                    </div>
                     <!-- reservation date and time -->
-                    <div> <input type="text" required="required" placeholder="تاریخ و ساعت رزرو" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="reservation time"></div>
+                    <div class="relative flex">
+
+                        <input type="text" onfocus="(this.type='datetime-local')" onblur="(this.type='text')" required="required" placeholder="تاریخ و ساعت رزرو" class="h-9 max-lg:w-full py-1 pr-10 rounded-3xl border border-primary-80 w-full" name="reservation time">
+
+                        <!-- svg  -->
+                        <div class="icon absolute text-primary-50">
+                            <svg class="icon w-6 h-6">
+                                <use href="#icon-calendar-schedule-1" />
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <div class="flex gap-4 w-full max-lg:flex-col">
                     <!-- phone number   -->
                     <div> <input type="number" required="required" placeholder="تلفن همراه" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="phone number"></div>
                     <!-- email -->
-                    <div> <input type="mail" required="required" placeholder="ایمیل(اختیاری)" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80 max-lg:w-full" name="email"></div>
+                    <div class="w-full"> <input type="mail" required="required" placeholder="ایمیل(اختیاری)" class="py-0.5 pr-3 h-9 rounded-3xl border border-primary-80  w-full" name="email"></div>
                 </div>
                 <div>
                     <!-- Further Details  -->

@@ -2,11 +2,13 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
+  plugins: [require("flowbite/plugin")],
   content: [
     "./partials/**/*.php",
     "./templates/**/*.php",
     "./assets/js/**/*.js",
     "./**/*.php",
+    "./node_modules/flowbite/**/*.js",
   ],
   theme: {
     container: {
