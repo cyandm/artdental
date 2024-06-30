@@ -22,6 +22,16 @@ add_action('rest_api_init', function () {
 
         ]
     );
+    register_rest_route(
+        'cyn-api/v1',
+        '/reserve_pop_up',
+        [
+            'methods' => 'POST',
+            'callback' => 'cyn_handle_reserve_popUp_form',
+            'permission_callback' => '__return_true'
+
+        ]
+    );
 });
 
 function cyn_handle_search_posts(WP_REST_Request $request)
