@@ -1,12 +1,8 @@
 (() => {
-  var __create = Object.create;
   var __defProp = Object.defineProperty;
   var __defProps = Object.defineProperties;
-  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
   var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
-  var __getOwnPropNames = Object.getOwnPropertyNames;
   var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-  var __getProtoOf = Object.getPrototypeOf;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
   var __propIsEnum = Object.prototype.propertyIsEnumerable;
   var __pow = Math.pow;
@@ -23,332 +19,6 @@
     return a;
   };
   var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
-  var __commonJS = (cb, mod) => function __require() {
-    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
-  };
-  var __copyProps = (to, from, except, desc) => {
-    if (from && typeof from === "object" || typeof from === "function") {
-      for (let key of __getOwnPropNames(from))
-        if (!__hasOwnProp.call(to, key) && key !== except)
-          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
-    }
-    return to;
-  };
-  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
-    // If the importer is in node compatibility mode or this is not an ESM
-    // file that has been converted to a CommonJS file using a Babel-
-    // compatible transform (i.e. "__esModule" has not been set), then set
-    // "default" to the CommonJS "module.exports" for node compatibility.
-    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
-    mod
-  ));
-
-  // node_modules/toastify-js/src/toastify.js
-  var require_toastify = __commonJS({
-    "node_modules/toastify-js/src/toastify.js"(exports, module) {
-      (function(root, factory) {
-        if (typeof module === "object" && module.exports) {
-          module.exports = factory();
-        } else {
-          root.Toastify = factory();
-        }
-      })(exports, function(global) {
-        var Toastify2 = function(options) {
-          return new Toastify2.lib.init(options);
-        }, version = "1.12.0";
-        Toastify2.defaults = {
-          oldestFirst: true,
-          text: "Toastify is awesome!",
-          node: void 0,
-          duration: 3e3,
-          selector: void 0,
-          callback: function() {
-          },
-          destination: void 0,
-          newWindow: false,
-          close: false,
-          gravity: "toastify-top",
-          positionLeft: false,
-          position: "",
-          backgroundColor: "",
-          avatar: "",
-          className: "",
-          stopOnFocus: true,
-          onClick: function() {
-          },
-          offset: { x: 0, y: 0 },
-          escapeMarkup: true,
-          ariaLive: "polite",
-          style: { background: "" }
-        };
-        Toastify2.lib = Toastify2.prototype = {
-          toastify: version,
-          constructor: Toastify2,
-          // Initializing the object with required parameters
-          init: function(options) {
-            if (!options) {
-              options = {};
-            }
-            this.options = {};
-            this.toastElement = null;
-            this.options.text = options.text || Toastify2.defaults.text;
-            this.options.node = options.node || Toastify2.defaults.node;
-            this.options.duration = options.duration === 0 ? 0 : options.duration || Toastify2.defaults.duration;
-            this.options.selector = options.selector || Toastify2.defaults.selector;
-            this.options.callback = options.callback || Toastify2.defaults.callback;
-            this.options.destination = options.destination || Toastify2.defaults.destination;
-            this.options.newWindow = options.newWindow || Toastify2.defaults.newWindow;
-            this.options.close = options.close || Toastify2.defaults.close;
-            this.options.gravity = options.gravity === "bottom" ? "toastify-bottom" : Toastify2.defaults.gravity;
-            this.options.positionLeft = options.positionLeft || Toastify2.defaults.positionLeft;
-            this.options.position = options.position || Toastify2.defaults.position;
-            this.options.backgroundColor = options.backgroundColor || Toastify2.defaults.backgroundColor;
-            this.options.avatar = options.avatar || Toastify2.defaults.avatar;
-            this.options.className = options.className || Toastify2.defaults.className;
-            this.options.stopOnFocus = options.stopOnFocus === void 0 ? Toastify2.defaults.stopOnFocus : options.stopOnFocus;
-            this.options.onClick = options.onClick || Toastify2.defaults.onClick;
-            this.options.offset = options.offset || Toastify2.defaults.offset;
-            this.options.escapeMarkup = options.escapeMarkup !== void 0 ? options.escapeMarkup : Toastify2.defaults.escapeMarkup;
-            this.options.ariaLive = options.ariaLive || Toastify2.defaults.ariaLive;
-            this.options.style = options.style || Toastify2.defaults.style;
-            if (options.backgroundColor) {
-              this.options.style.background = options.backgroundColor;
-            }
-            return this;
-          },
-          // Building the DOM element
-          buildToast: function() {
-            if (!this.options) {
-              throw "Toastify is not initialized";
-            }
-            var divElement = document.createElement("div");
-            divElement.className = "toastify on " + this.options.className;
-            if (!!this.options.position) {
-              divElement.className += " toastify-" + this.options.position;
-            } else {
-              if (this.options.positionLeft === true) {
-                divElement.className += " toastify-left";
-                console.warn("Property `positionLeft` will be depreciated in further versions. Please use `position` instead.");
-              } else {
-                divElement.className += " toastify-right";
-              }
-            }
-            divElement.className += " " + this.options.gravity;
-            if (this.options.backgroundColor) {
-              console.warn('DEPRECATION NOTICE: "backgroundColor" is being deprecated. Please use the "style.background" property.');
-            }
-            for (var property in this.options.style) {
-              divElement.style[property] = this.options.style[property];
-            }
-            if (this.options.ariaLive) {
-              divElement.setAttribute("aria-live", this.options.ariaLive);
-            }
-            if (this.options.node && this.options.node.nodeType === Node.ELEMENT_NODE) {
-              divElement.appendChild(this.options.node);
-            } else {
-              if (this.options.escapeMarkup) {
-                divElement.innerText = this.options.text;
-              } else {
-                divElement.innerHTML = this.options.text;
-              }
-              if (this.options.avatar !== "") {
-                var avatarElement = document.createElement("img");
-                avatarElement.src = this.options.avatar;
-                avatarElement.className = "toastify-avatar";
-                if (this.options.position == "left" || this.options.positionLeft === true) {
-                  divElement.appendChild(avatarElement);
-                } else {
-                  divElement.insertAdjacentElement("afterbegin", avatarElement);
-                }
-              }
-            }
-            if (this.options.close === true) {
-              var closeElement = document.createElement("button");
-              closeElement.type = "button";
-              closeElement.setAttribute("aria-label", "Close");
-              closeElement.className = "toast-close";
-              closeElement.innerHTML = "&#10006;";
-              closeElement.addEventListener(
-                "click",
-                (function(event2) {
-                  event2.stopPropagation();
-                  this.removeElement(this.toastElement);
-                  window.clearTimeout(this.toastElement.timeOutValue);
-                }).bind(this)
-              );
-              var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-              if ((this.options.position == "left" || this.options.positionLeft === true) && width > 360) {
-                divElement.insertAdjacentElement("afterbegin", closeElement);
-              } else {
-                divElement.appendChild(closeElement);
-              }
-            }
-            if (this.options.stopOnFocus && this.options.duration > 0) {
-              var self = this;
-              divElement.addEventListener(
-                "mouseover",
-                function(event2) {
-                  window.clearTimeout(divElement.timeOutValue);
-                }
-              );
-              divElement.addEventListener(
-                "mouseleave",
-                function() {
-                  divElement.timeOutValue = window.setTimeout(
-                    function() {
-                      self.removeElement(divElement);
-                    },
-                    self.options.duration
-                  );
-                }
-              );
-            }
-            if (typeof this.options.destination !== "undefined") {
-              divElement.addEventListener(
-                "click",
-                (function(event2) {
-                  event2.stopPropagation();
-                  if (this.options.newWindow === true) {
-                    window.open(this.options.destination, "_blank");
-                  } else {
-                    window.location = this.options.destination;
-                  }
-                }).bind(this)
-              );
-            }
-            if (typeof this.options.onClick === "function" && typeof this.options.destination === "undefined") {
-              divElement.addEventListener(
-                "click",
-                (function(event2) {
-                  event2.stopPropagation();
-                  this.options.onClick();
-                }).bind(this)
-              );
-            }
-            if (typeof this.options.offset === "object") {
-              var x = getAxisOffsetAValue("x", this.options);
-              var y = getAxisOffsetAValue("y", this.options);
-              var xOffset = this.options.position == "left" ? x : "-" + x;
-              var yOffset = this.options.gravity == "toastify-top" ? y : "-" + y;
-              divElement.style.transform = "translate(" + xOffset + "," + yOffset + ")";
-            }
-            return divElement;
-          },
-          // Displaying the toast
-          showToast: function() {
-            this.toastElement = this.buildToast();
-            var rootElement;
-            if (typeof this.options.selector === "string") {
-              rootElement = document.getElementById(this.options.selector);
-            } else if (this.options.selector instanceof HTMLElement || typeof ShadowRoot !== "undefined" && this.options.selector instanceof ShadowRoot) {
-              rootElement = this.options.selector;
-            } else {
-              rootElement = document.body;
-            }
-            if (!rootElement) {
-              throw "Root element is not defined";
-            }
-            var elementToInsert = Toastify2.defaults.oldestFirst ? rootElement.firstChild : rootElement.lastChild;
-            rootElement.insertBefore(this.toastElement, elementToInsert);
-            Toastify2.reposition();
-            if (this.options.duration > 0) {
-              this.toastElement.timeOutValue = window.setTimeout(
-                (function() {
-                  this.removeElement(this.toastElement);
-                }).bind(this),
-                this.options.duration
-              );
-            }
-            return this;
-          },
-          hideToast: function() {
-            if (this.toastElement.timeOutValue) {
-              clearTimeout(this.toastElement.timeOutValue);
-            }
-            this.removeElement(this.toastElement);
-          },
-          // Removing the element from the DOM
-          removeElement: function(toastElement) {
-            toastElement.className = toastElement.className.replace(" on", "");
-            window.setTimeout(
-              (function() {
-                if (this.options.node && this.options.node.parentNode) {
-                  this.options.node.parentNode.removeChild(this.options.node);
-                }
-                if (toastElement.parentNode) {
-                  toastElement.parentNode.removeChild(toastElement);
-                }
-                this.options.callback.call(toastElement);
-                Toastify2.reposition();
-              }).bind(this),
-              400
-            );
-          }
-        };
-        Toastify2.reposition = function() {
-          var topLeftOffsetSize = {
-            top: 15,
-            bottom: 15
-          };
-          var topRightOffsetSize = {
-            top: 15,
-            bottom: 15
-          };
-          var offsetSize = {
-            top: 15,
-            bottom: 15
-          };
-          var allToasts = document.getElementsByClassName("toastify");
-          var classUsed;
-          for (var i = 0; i < allToasts.length; i++) {
-            if (containsClass(allToasts[i], "toastify-top") === true) {
-              classUsed = "toastify-top";
-            } else {
-              classUsed = "toastify-bottom";
-            }
-            var height = allToasts[i].offsetHeight;
-            classUsed = classUsed.substr(9, classUsed.length - 1);
-            var offset = 15;
-            var width = window.innerWidth > 0 ? window.innerWidth : screen.width;
-            if (width <= 360) {
-              allToasts[i].style[classUsed] = offsetSize[classUsed] + "px";
-              offsetSize[classUsed] += height + offset;
-            } else {
-              if (containsClass(allToasts[i], "toastify-left") === true) {
-                allToasts[i].style[classUsed] = topLeftOffsetSize[classUsed] + "px";
-                topLeftOffsetSize[classUsed] += height + offset;
-              } else {
-                allToasts[i].style[classUsed] = topRightOffsetSize[classUsed] + "px";
-                topRightOffsetSize[classUsed] += height + offset;
-              }
-            }
-          }
-          return this;
-        };
-        function getAxisOffsetAValue(axis, options) {
-          if (options.offset[axis]) {
-            if (isNaN(options.offset[axis])) {
-              return options.offset[axis];
-            } else {
-              return options.offset[axis] + "px";
-            }
-          }
-          return "0px";
-        }
-        function containsClass(elem, yourClass) {
-          if (!elem || typeof yourClass !== "string") {
-            return false;
-          } else if (elem.className && elem.className.trim().split(/\s+/gi).indexOf(yourClass) > -1) {
-            return true;
-          } else {
-            return false;
-          }
-        }
-        Toastify2.lib.init.prototype = Toastify2.lib;
-        return Toastify2;
-      });
-    }
-  });
 
   // assets/js/components/button.js
   var Button = class extends HTMLElement {
@@ -1002,6 +672,9 @@
     }
     return el.offsetWidth;
   }
+  function makeElementsArray(el) {
+    return (Array.isArray(el) ? el : [el]).filter((e) => !!e);
+  }
 
   // node_modules/swiper/shared/swiper-core.mjs
   var support;
@@ -1068,6 +741,7 @@
   var browser;
   function calcBrowser() {
     const window2 = getWindow();
+    const device = getDevice();
     let needPerspectiveFix = false;
     function isSafari() {
       const ua = window2.navigator.userAgent.toLowerCase();
@@ -1080,10 +754,14 @@
         needPerspectiveFix = major < 16 || major === 16 && minor < 2;
       }
     }
+    const isWebView = /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window2.navigator.userAgent);
+    const isSafariBrowser = isSafari();
+    const need3dFix = isSafariBrowser || isWebView && device.ios;
     return {
-      isSafari: needPerspectiveFix || isSafari(),
+      isSafari: needPerspectiveFix || isSafariBrowser,
       needPerspectiveFix,
-      isWebView: /(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(window2.navigator.userAgent)
+      need3dFix,
+      isWebView
     };
   }
   function getBrowser() {
@@ -1570,8 +1248,9 @@
         allSlidesSize += slideSizeValue + (spaceBetween || 0);
       });
       allSlidesSize -= spaceBetween;
-      if (allSlidesSize < swiperSize) {
-        const allSlidesOffset = (swiperSize - allSlidesSize) / 2;
+      const offsetSize = (params.slidesOffsetBefore || 0) + (params.slidesOffsetAfter || 0);
+      if (allSlidesSize + offsetSize < swiperSize) {
+        const allSlidesOffset = (swiperSize - allSlidesSize - offsetSize) / 2;
         snapGrid.forEach((snap3, snapIndex) => {
           snapGrid[snapIndex] = snap3 - allSlidesOffset;
         });
@@ -1607,6 +1286,7 @@
     if (params.watchSlidesProgress) {
       swiper.updateSlidesOffset();
     }
+    swiper.emit("slidesUpdated");
     if (!isVirtual && !params.cssMode && (params.effect === "slide" || params.effect === "fade")) {
       const backFaceHiddenClass = "".concat(params.containerModifierClass, "backface-hidden");
       const hasClassBackfaceClassAdded = swiper.el.classList.contains(backFaceHiddenClass);
@@ -1665,6 +1345,13 @@
       slides[i].swiperSlideOffset = (swiper.isHorizontal() ? slides[i].offsetLeft : slides[i].offsetTop) - minusOffset - swiper.cssOverflowAdjustment();
     }
   }
+  var toggleSlideClasses$1 = (slideEl, condition, className) => {
+    if (condition && !slideEl.classList.contains(className)) {
+      slideEl.classList.add(className);
+    } else if (!condition && slideEl.classList.contains(className)) {
+      slideEl.classList.remove(className);
+    }
+  };
   function updateSlidesProgress(translate2) {
     if (translate2 === void 0) {
       translate2 = this && this.translate || 0;
@@ -1680,9 +1367,6 @@
     if (typeof slides[0].swiperSlideOffset === "undefined") swiper.updateSlidesOffset();
     let offsetCenter = -translate2;
     if (rtl) offsetCenter = translate2;
-    slides.forEach((slideEl) => {
-      slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass);
-    });
     swiper.visibleSlidesIndexes = [];
     swiper.visibleSlides = [];
     let spaceBetween = params.spaceBetween;
@@ -1706,11 +1390,9 @@
       if (isVisible) {
         swiper.visibleSlides.push(slide2);
         swiper.visibleSlidesIndexes.push(i);
-        slides[i].classList.add(params.slideVisibleClass);
       }
-      if (isFullyVisible) {
-        slides[i].classList.add(params.slideFullyVisibleClass);
-      }
+      toggleSlideClasses$1(slide2, isVisible, params.slideVisibleClass);
+      toggleSlideClasses$1(slide2, isFullyVisible, params.slideFullyVisibleClass);
       slide2.progress = rtl ? -slideProgress : slideProgress;
       slide2.originalProgress = rtl ? -originalSlideProgress : originalSlideProgress;
     }
@@ -1776,6 +1458,13 @@
     }
     swiper.emit("progress", progress);
   }
+  var toggleSlideClasses = (slideEl, condition, className) => {
+    if (condition && !slideEl.classList.contains(className)) {
+      slideEl.classList.add(className);
+    } else if (!condition && slideEl.classList.contains(className)) {
+      slideEl.classList.remove(className);
+    }
+  };
   function updateSlidesClasses() {
     const swiper = this;
     const {
@@ -1789,9 +1478,6 @@
     const getFilteredSlide = (selector3) => {
       return elementChildren(slidesEl, ".".concat(params.slideClass).concat(selector3, ", swiper-slide").concat(selector3))[0];
     };
-    slides.forEach((slideEl) => {
-      slideEl.classList.remove(params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
-    });
     let activeSlide;
     let prevSlide;
     let nextSlide;
@@ -1814,31 +1500,22 @@
       }
     }
     if (activeSlide) {
-      activeSlide.classList.add(params.slideActiveClass);
-      if (gridEnabled) {
-        if (nextSlide) {
-          nextSlide.classList.add(params.slideNextClass);
-        }
-        if (prevSlide) {
-          prevSlide.classList.add(params.slidePrevClass);
-        }
-      } else {
+      if (!gridEnabled) {
         nextSlide = elementNextAll(activeSlide, ".".concat(params.slideClass, ", swiper-slide"))[0];
         if (params.loop && !nextSlide) {
           nextSlide = slides[0];
-        }
-        if (nextSlide) {
-          nextSlide.classList.add(params.slideNextClass);
         }
         prevSlide = elementPrevAll(activeSlide, ".".concat(params.slideClass, ", swiper-slide"))[0];
         if (params.loop && !prevSlide === 0) {
           prevSlide = slides[slides.length - 1];
         }
-        if (prevSlide) {
-          prevSlide.classList.add(params.slidePrevClass);
-        }
       }
     }
+    slides.forEach((slideEl) => {
+      toggleSlideClasses(slideEl, slideEl === activeSlide, params.slideActiveClass);
+      toggleSlideClasses(slideEl, slideEl === nextSlide, params.slideNextClass);
+      toggleSlideClasses(slideEl, slideEl === prevSlide, params.slidePrevClass);
+    });
     swiper.emitSlidesClasses();
   }
   var processLazyPreloader = (swiper, imageEl) => {
@@ -2201,6 +1878,7 @@
             swiper.wrapperEl.removeEventListener("transitionend", swiper.onTranslateToWrapperTransitionEnd);
             swiper.onTranslateToWrapperTransitionEnd = null;
             delete swiper.onTranslateToWrapperTransitionEnd;
+            swiper.animating = false;
             if (runCallbacks) {
               swiper.emit("transitionEnd");
             }
@@ -2303,9 +1981,6 @@
     if (index === void 0) {
       index = 0;
     }
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
@@ -2325,8 +2000,11 @@
       wrapperEl,
       enabled
     } = swiper;
-    if (swiper.animating && params.preventInteractionOnTransition || !enabled && !internal && !initial) {
+    if (!enabled && !internal && !initial || swiper.destroyed || swiper.animating && params.preventInteractionOnTransition) {
       return false;
+    }
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
     }
     const skip = Math.min(swiper.params.slidesPerGroupSkip, slideIndex);
     let snapIndex = skip + Math.floor((slideIndex - skip) / swiper.params.slidesPerGroup);
@@ -2448,9 +2126,6 @@
     if (index === void 0) {
       index = 0;
     }
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
@@ -2459,6 +2134,10 @@
       index = indexAsNumber;
     }
     const swiper = this;
+    if (swiper.destroyed) return;
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
+    }
     const gridEnabled = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
     let newIndex = index;
     if (swiper.params.loop) {
@@ -2489,6 +2168,9 @@
         if (centeredSlides) {
           needLoopFix = needLoopFix || targetSlideIndex < Math.ceil(slidesPerView / 2);
         }
+        if (internal && centeredSlides && swiper.params.slidesPerView !== "auto" && !gridEnabled) {
+          needLoopFix = false;
+        }
         if (needLoopFix) {
           const direction = centeredSlides ? targetSlideIndex < swiper.activeIndex ? "prev" : "next" : targetSlideIndex - swiper.activeIndex - 1 < swiper.params.slidesPerView ? "next" : "prev";
           swiper.loopFix({
@@ -2512,9 +2194,6 @@
     return swiper;
   }
   function slideNext(speed, runCallbacks, internal) {
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
@@ -2524,7 +2203,10 @@
       params,
       animating
     } = swiper;
-    if (!enabled) return swiper;
+    if (!enabled || swiper.destroyed) return swiper;
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
+    }
     let perGroup = params.slidesPerGroup;
     if (params.slidesPerView === "auto" && params.slidesPerGroup === 1 && params.slidesPerGroupAuto) {
       perGroup = Math.max(swiper.slidesPerViewDynamic("current", true), 1);
@@ -2550,9 +2232,6 @@
     return swiper.slideTo(swiper.activeIndex + increment, speed, runCallbacks, internal);
   }
   function slidePrev(speed, runCallbacks, internal) {
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
@@ -2565,7 +2244,10 @@
       enabled,
       animating
     } = swiper;
-    if (!enabled) return swiper;
+    if (!enabled || swiper.destroyed) return swiper;
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
+    }
     const isVirtual = swiper.virtual && params.virtual.enabled;
     if (params.loop) {
       if (animating && !isVirtual && params.loopPreventsSliding) return false;
@@ -2614,19 +2296,17 @@
     return swiper.slideTo(prevIndex, speed, runCallbacks, internal);
   }
   function slideReset(speed, runCallbacks, internal) {
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
     const swiper = this;
+    if (swiper.destroyed) return;
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
+    }
     return swiper.slideTo(swiper.activeIndex, speed, runCallbacks, internal);
   }
   function slideToClosest(speed, runCallbacks, internal, threshold) {
-    if (speed === void 0) {
-      speed = this.params.speed;
-    }
     if (runCallbacks === void 0) {
       runCallbacks = true;
     }
@@ -2634,6 +2314,10 @@
       threshold = 0.5;
     }
     const swiper = this;
+    if (swiper.destroyed) return;
+    if (typeof speed === "undefined") {
+      speed = swiper.params.speed;
+    }
     let index = swiper.activeIndex;
     const skip = Math.min(swiper.params.slidesPerGroupSkip, index);
     const snapIndex = skip + Math.floor((index - skip) / swiper.params.slidesPerGroup);
@@ -2657,6 +2341,7 @@
   }
   function slideToClickedSlide() {
     const swiper = this;
+    if (swiper.destroyed) return;
     const {
       params,
       slidesEl
@@ -2892,7 +2577,7 @@
           if (byMousewheel) {
             swiper.setTranslate(swiper.translate - diff);
           } else {
-            swiper.slideTo(activeIndex + slidesPrepended, 0, false, true);
+            swiper.slideTo(activeIndex + Math.ceil(slidesPrepended), 0, false, true);
             if (setTranslate2) {
               swiper.touchEventsData.startTranslate = swiper.touchEventsData.startTranslate - diff;
               swiper.touchEventsData.currentTranslate = swiper.touchEventsData.currentTranslate - diff;
@@ -3234,7 +2919,7 @@
         data.startMoving = true;
       }
     }
-    if (data.isScrolling) {
+    if (data.isScrolling || e.type === "touchmove" && data.preventTouchMoveFromPointerMove) {
       data.isTouched = false;
       return;
     }
@@ -3276,7 +2961,10 @@
       if (swiper.animating) {
         const evt = new window.CustomEvent("transitionend", {
           bubbles: true,
-          cancelable: true
+          cancelable: true,
+          detail: {
+            bySwiperTouchMove: true
+          }
         });
         swiper.wrapperEl.dispatchEvent(evt);
       }
@@ -3460,16 +3148,17 @@
       });
       return;
     }
+    const swipeToLast = currentPos >= -swiper.maxTranslate() && !swiper.params.loop;
     let stopIndex = 0;
     let groupSize = swiper.slidesSizesGrid[0];
     for (let i = 0; i < slidesGrid.length; i += i < params.slidesPerGroupSkip ? 1 : params.slidesPerGroup) {
       const increment2 = i < params.slidesPerGroupSkip - 1 ? 1 : params.slidesPerGroup;
       if (typeof slidesGrid[i + increment2] !== "undefined") {
-        if (currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment2]) {
+        if (swipeToLast || currentPos >= slidesGrid[i] && currentPos < slidesGrid[i + increment2]) {
           stopIndex = i;
           groupSize = slidesGrid[i + increment2] - slidesGrid[i];
         }
-      } else if (currentPos >= slidesGrid[i]) {
+      } else if (swipeToLast || currentPos >= slidesGrid[i]) {
         stopIndex = i;
         groupSize = slidesGrid[slidesGrid.length - 1] - slidesGrid[slidesGrid.length - 2];
       }
@@ -3635,6 +3324,7 @@
     const capture = !!params.nested;
     const domMethod = method === "on" ? "addEventListener" : "removeEventListener";
     const swiperMethod = method;
+    if (!el || typeof el === "string") return;
     document2[domMethod]("touchstart", swiper.onDocumentTouchStart, {
       passive: false,
       capture
@@ -3732,6 +3422,8 @@
     const breakpointParams = breakpointOnlyParams || swiper.originalParams;
     const wasMultiRow = isGridEnabled(swiper, params);
     const isMultiRow = isGridEnabled(swiper, breakpointParams);
+    const wasGrabCursor = swiper.params.grabCursor;
+    const isGrabCursor = breakpointParams.grabCursor;
     const wasEnabled = params.enabled;
     if (wasMultiRow && !isMultiRow) {
       el.classList.remove("".concat(params.containerModifierClass, "grid"), "".concat(params.containerModifierClass, "grid-column"));
@@ -3742,6 +3434,11 @@
         el.classList.add("".concat(params.containerModifierClass, "grid-column"));
       }
       swiper.emitContainerClasses();
+    }
+    if (wasGrabCursor && !isGrabCursor) {
+      swiper.unsetGrabCursor();
+    } else if (!wasGrabCursor && isGrabCursor) {
+      swiper.setGrabCursor();
     }
     ["navigation", "pagination", "scrollbar"].forEach((prop) => {
       if (typeof breakpointParams[prop] === "undefined") return;
@@ -3886,6 +3583,7 @@
       el,
       classNames
     } = swiper;
+    if (!el || typeof el === "string") return;
     el.classList.remove(...classNames);
     swiper.emitContainerClasses();
   }
@@ -3929,6 +3627,7 @@
     init: true,
     direction: "horizontal",
     oneWayMovement: false,
+    swiperElementNodeName: "SWIPER-CONTAINER",
     touchEventsTarget: "wrapper",
     initialSlide: 0,
     speed: 300,
@@ -4346,11 +4045,11 @@
       let spv = 1;
       if (typeof params.slidesPerView === "number") return params.slidesPerView;
       if (params.centeredSlides) {
-        let slideSize = slides[activeIndex] ? slides[activeIndex].swiperSlideSize : 0;
+        let slideSize = slides[activeIndex] ? Math.ceil(slides[activeIndex].swiperSlideSize) : 0;
         let breakLoop;
         for (let i = activeIndex + 1; i < slides.length; i += 1) {
           if (slides[i] && !breakLoop) {
-            slideSize += slides[i].swiperSlideSize;
+            slideSize += Math.ceil(slides[i].swiperSlideSize);
             spv += 1;
             if (slideSize > swiperSize) breakLoop = true;
           }
@@ -4481,7 +4180,7 @@
         return false;
       }
       el.swiper = swiper;
-      if (el.parentNode && el.parentNode.host && el.parentNode.host.nodeName === "SWIPER-CONTAINER") {
+      if (el.parentNode && el.parentNode.host && el.parentNode.host.nodeName === swiper.params.swiperElementNodeName.toUpperCase()) {
         swiper.isElement = true;
       }
       const getWrapperSelector = () => {
@@ -4587,8 +4286,12 @@
       }
       if (cleanStyles) {
         swiper.removeClasses();
-        el.removeAttribute("style");
-        wrapperEl.removeAttribute("style");
+        if (el && typeof el !== "string") {
+          el.removeAttribute("style");
+        }
+        if (wrapperEl) {
+          wrapperEl.removeAttribute("style");
+        }
         if (slides && slides.length) {
           slides.forEach((slideEl) => {
             slideEl.classList.remove(params.slideVisibleClass, params.slideFullyVisibleClass, params.slideActiveClass, params.slideNextClass, params.slidePrevClass);
@@ -4602,7 +4305,9 @@
         swiper.off(eventName);
       });
       if (deleteInstance !== false) {
-        swiper.el.swiper = null;
+        if (swiper.el && typeof swiper.el !== "string") {
+          swiper.el.swiper = null;
+        }
         deleteProps(swiper);
       }
       swiper.destroyed = true;
@@ -4697,13 +4402,17 @@
       }
       return slideEl;
     }
-    function update2(force) {
+    function update2(force, beforeInit) {
       const {
         slidesPerView,
         slidesPerGroup,
         centeredSlides,
-        loop: isLoop
+        loop: isLoop,
+        initialSlide
       } = swiper.params;
+      if (beforeInit && !isLoop && initialSlide > 0) {
+        return;
+      }
       const {
         addSlidesBefore,
         addSlidesAfter
@@ -4951,7 +4660,7 @@
       swiper.classNames.push("".concat(swiper.params.containerModifierClass, "virtual"));
       swiper.params.watchSlidesProgress = true;
       swiper.originalParams.watchSlidesProgress = true;
-      update2();
+      update2(false, true);
     });
     on("setTranslate", () => {
       if (!swiper.params.virtual.enabled) return;
@@ -5433,7 +5142,6 @@
       nextEl: null,
       prevEl: null
     };
-    const makeElementsArray = (el) => (Array.isArray(el) ? el : [el]).filter((e) => !!e);
     function getEl(el) {
       let res;
       if (el && typeof el === "string" && swiper.isElement) {
@@ -5442,8 +5150,10 @@
       }
       if (el) {
         if (typeof el === "string") res = [...document.querySelectorAll(el)];
-        if (swiper.params.uniqueNavElements && typeof el === "string" && res.length > 1 && swiper.el.querySelectorAll(el).length === 1) {
+        if (swiper.params.uniqueNavElements && typeof el === "string" && res && res.length > 1 && swiper.el.querySelectorAll(el).length === 1) {
           res = swiper.el.querySelector(el);
+        } else if (res && res.length === 1) {
+          res = res[0];
         }
       }
       if (el && !res) return el;
@@ -5562,7 +5272,14 @@
       nextEl = makeElementsArray(nextEl);
       prevEl = makeElementsArray(prevEl);
       const targetEl = e.target;
-      if (swiper.params.navigation.hideOnClick && !prevEl.includes(targetEl) && !nextEl.includes(targetEl)) {
+      let targetIsButton = prevEl.includes(targetEl) || nextEl.includes(targetEl);
+      if (swiper.isElement && !targetIsButton) {
+        const path = e.path || e.composedPath && e.composedPath();
+        if (path) {
+          targetIsButton = path.find((pathEl) => nextEl.includes(pathEl) || prevEl.includes(pathEl));
+        }
+      }
+      if (swiper.params.navigation.hideOnClick && !targetIsButton) {
         if (swiper.pagination && swiper.params.pagination && swiper.params.pagination.clickable && (swiper.pagination.el === targetEl || swiper.pagination.el.contains(targetEl))) return;
         let isHidden;
         if (nextEl.length) {
@@ -5651,7 +5368,6 @@
     };
     let bulletSize;
     let dynamicBulletIndex = 0;
-    const makeElementsArray = (el) => (Array.isArray(el) ? el : [el]).filter((e) => !!e);
     function isPaginationDisabled() {
       return !swiper.params.pagination.el || !swiper.pagination.el || Array.isArray(swiper.pagination.el) && swiper.pagination.el.length === 0;
     }
@@ -6214,7 +5930,7 @@
         dragEl
       } = scrollbar;
       if (!isTouched) return;
-      if (e.preventDefault) e.preventDefault();
+      if (e.preventDefault && e.cancelable) e.preventDefault();
       else e.returnValue = false;
       setDragPosition(e);
       wrapperEl.style.transitionDuration = "0ms";
@@ -6331,6 +6047,18 @@
       }
       disableDraggable();
     }
+    on("changeDirection", () => {
+      if (!swiper.scrollbar || !swiper.scrollbar.el) return;
+      const params = swiper.params.scrollbar;
+      let {
+        el
+      } = swiper.scrollbar;
+      el = makeElementsArray(el);
+      el.forEach((subEl) => {
+        subEl.classList.remove(params.horizontalClass, params.verticalClass);
+        subEl.classList.add(swiper.isHorizontal() ? params.horizontalClass : params.verticalClass);
+      });
+    });
     on("init", () => {
       if (swiper.params.scrollbar.enabled === false) {
         disable();
@@ -6340,7 +6068,7 @@
         setTranslate2();
       }
     });
-    on("update resize observerUpdate lock unlock", () => {
+    on("update resize observerUpdate lock unlock changeDirection", () => {
       updateSize2();
     });
     on("setTranslate", () => {
@@ -6520,6 +6248,7 @@
     extendParams({
       zoom: {
         enabled: false,
+        limitToOriginalSize: false,
         maxRatio: 3,
         minRatio: 1,
         toggle: true,
@@ -6591,6 +6320,15 @@
       const distance = Math.sqrt(__pow(x2 - x1, 2) + __pow(y2 - y1, 2));
       return distance;
     }
+    function getMaxRatio() {
+      const params = swiper.params.zoom;
+      const maxRatio = gesture.imageWrapEl.getAttribute("data-swiper-zoom") || params.maxRatio;
+      if (params.limitToOriginalSize && gesture.imageEl && gesture.imageEl.naturalWidth) {
+        const imageMaxRatio = gesture.imageEl.naturalWidth / gesture.imageEl.offsetWidth;
+        return Math.min(imageMaxRatio, maxRatio);
+      }
+      return maxRatio;
+    }
     function getScaleOrigin() {
       if (evCache.length < 2) return {
         x: null,
@@ -6645,7 +6383,7 @@
           gesture.imageEl = void 0;
           return;
         }
-        gesture.maxRatio = gesture.imageWrapEl.getAttribute("data-swiper-zoom") || params.maxRatio;
+        gesture.maxRatio = getMaxRatio();
       }
       if (gesture.imageEl) {
         const [originX, originY] = getScaleOrigin();
@@ -6707,6 +6445,17 @@
         gesture.slideEl = void 0;
       }
     }
+    let allowTouchMoveTimeout;
+    function allowTouchMove() {
+      swiper.touchEventsData.preventTouchMoveFromPointerMove = false;
+    }
+    function preventTouchMove() {
+      clearTimeout(allowTouchMoveTimeout);
+      swiper.touchEventsData.preventTouchMoveFromPointerMove = true;
+      allowTouchMoveTimeout = setTimeout(() => {
+        allowTouchMove();
+      });
+    }
     function onTouchStart2(e) {
       const device = swiper.device;
       if (!gesture.imageEl) return;
@@ -6718,13 +6467,19 @@
       image.touchesStart.y = event2.pageY;
     }
     function onTouchMove2(e) {
-      if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
+      if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
+        return;
+      }
       const zoom = swiper.zoom;
-      if (!gesture.imageEl) return;
-      if (!image.isTouched || !gesture.slideEl) return;
+      if (!gesture.imageEl) {
+        return;
+      }
+      if (!image.isTouched || !gesture.slideEl) {
+        return;
+      }
       if (!image.isMoved) {
-        image.width = gesture.imageEl.offsetWidth;
-        image.height = gesture.imageEl.offsetHeight;
+        image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
+        image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
         image.startX = getTranslate(gesture.imageWrapEl, "x") || 0;
         image.startY = getTranslate(gesture.imageWrapEl, "y") || 0;
         gesture.slideWidth = gesture.slideEl.offsetWidth;
@@ -6733,7 +6488,6 @@
       }
       const scaledWidth = image.width * zoom.scale;
       const scaledHeight = image.height * zoom.scale;
-      if (scaledWidth < gesture.slideWidth && scaledHeight < gesture.slideHeight) return;
       image.minX = Math.min(gesture.slideWidth / 2 - scaledWidth / 2, 0);
       image.maxX = -image.minX;
       image.minY = Math.min(gesture.slideHeight / 2 - scaledHeight / 2, 0);
@@ -6747,10 +6501,12 @@
       if (!image.isMoved && !isScaling) {
         if (swiper.isHorizontal() && (Math.floor(image.minX) === Math.floor(image.startX) && image.touchesCurrent.x < image.touchesStart.x || Math.floor(image.maxX) === Math.floor(image.startX) && image.touchesCurrent.x > image.touchesStart.x)) {
           image.isTouched = false;
+          allowTouchMove();
           return;
         }
         if (!swiper.isHorizontal() && (Math.floor(image.minY) === Math.floor(image.startY) && image.touchesCurrent.y < image.touchesStart.y || Math.floor(image.maxY) === Math.floor(image.startY) && image.touchesCurrent.y > image.touchesStart.y)) {
           image.isTouched = false;
+          allowTouchMove();
           return;
         }
       }
@@ -6758,6 +6514,7 @@
         e.preventDefault();
       }
       e.stopPropagation();
+      preventTouchMove();
       image.isMoved = true;
       const scaleRatio = (zoom.scale - currentScale) / (gesture.maxRatio - swiper.params.zoom.minRatio);
       const {
@@ -6902,8 +6659,9 @@
         touchX = void 0;
         touchY = void 0;
       }
-      zoom.scale = forceZoomRatio || gesture.imageWrapEl.getAttribute("data-swiper-zoom") || params.maxRatio;
-      currentScale = forceZoomRatio || gesture.imageWrapEl.getAttribute("data-swiper-zoom") || params.maxRatio;
+      const maxRatio = getMaxRatio();
+      zoom.scale = forceZoomRatio || maxRatio;
+      currentScale = forceZoomRatio || maxRatio;
       if (e && !(currentScale === 1 && forceZoomRatio)) {
         slideWidth = gesture.slideEl.offsetWidth;
         slideHeight = gesture.slideEl.offsetHeight;
@@ -6911,8 +6669,8 @@
         offsetY = elementOffset(gesture.slideEl).top + window2.scrollY;
         diffX = offsetX + slideWidth / 2 - touchX;
         diffY = offsetY + slideHeight / 2 - touchY;
-        imageWidth = gesture.imageEl.offsetWidth;
-        imageHeight = gesture.imageEl.offsetHeight;
+        imageWidth = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
+        imageHeight = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
         scaledWidth = imageWidth * zoom.scale;
         scaledHeight = imageHeight * zoom.scale;
         translateMinX = Math.min(slideWidth / 2 - scaledWidth / 2, 0);
@@ -7270,13 +7028,15 @@
       clicked: false
     };
     let liveRegion = null;
+    let preventFocusHandler;
+    let focusTargetSlideEl;
+    let visibilityChangedTimestamp = (/* @__PURE__ */ new Date()).getTime();
     function notify(message) {
       const notification = liveRegion;
       if (notification.length === 0) return;
       notification.innerHTML = "";
       notification.innerHTML = message;
     }
-    const makeElementsArray = (el) => (Array.isArray(el) ? el : [el]).filter((e) => !!e);
     function getRandomNumber(size) {
       if (size === void 0) {
         size = 16;
@@ -7351,24 +7111,28 @@
       if (swiper.pagination && swiper.pagination.el && (targetEl === swiper.pagination.el || swiper.pagination.el.contains(e.target))) {
         if (!e.target.matches(classesToSelector(swiper.params.pagination.bulletClass))) return;
       }
-      if (swiper.navigation && swiper.navigation.nextEl && targetEl === swiper.navigation.nextEl) {
-        if (!(swiper.isEnd && !swiper.params.loop)) {
-          swiper.slideNext();
+      if (swiper.navigation && swiper.navigation.prevEl && swiper.navigation.nextEl) {
+        const prevEls = makeElementsArray(swiper.navigation.prevEl);
+        const nextEls = makeElementsArray(swiper.navigation.nextEl);
+        if (nextEls.includes(targetEl)) {
+          if (!(swiper.isEnd && !swiper.params.loop)) {
+            swiper.slideNext();
+          }
+          if (swiper.isEnd) {
+            notify(params.lastSlideMessage);
+          } else {
+            notify(params.nextSlideMessage);
+          }
         }
-        if (swiper.isEnd) {
-          notify(params.lastSlideMessage);
-        } else {
-          notify(params.nextSlideMessage);
-        }
-      }
-      if (swiper.navigation && swiper.navigation.prevEl && targetEl === swiper.navigation.prevEl) {
-        if (!(swiper.isBeginning && !swiper.params.loop)) {
-          swiper.slidePrev();
-        }
-        if (swiper.isBeginning) {
-          notify(params.firstSlideMessage);
-        } else {
-          notify(params.prevSlideMessage);
+        if (prevEls.includes(targetEl)) {
+          if (!(swiper.isBeginning && !swiper.params.loop)) {
+            swiper.slidePrev();
+          }
+          if (swiper.isBeginning) {
+            notify(params.firstSlideMessage);
+          } else {
+            notify(params.prevSlideMessage);
+          }
         }
       }
       if (swiper.pagination && targetEl.matches(classesToSelector(swiper.params.pagination.bulletClass))) {
@@ -7433,10 +7197,14 @@
       addElLabel(el, message);
       addElControls(el, wrapperId);
     };
-    const handlePointerDown = () => {
+    const handlePointerDown = (e) => {
+      if (focusTargetSlideEl && focusTargetSlideEl !== e.target && !focusTargetSlideEl.contains(e.target)) {
+        preventFocusHandler = true;
+      }
       swiper.a11y.clicked = true;
     };
     const handlePointerUp = () => {
+      preventFocusHandler = false;
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           if (!swiper.destroyed) {
@@ -7445,10 +7213,15 @@
         });
       });
     };
+    const onVisibilityChange = (e) => {
+      visibilityChangedTimestamp = (/* @__PURE__ */ new Date()).getTime();
+    };
     const handleFocus = (e) => {
       if (swiper.a11y.clicked) return;
+      if ((/* @__PURE__ */ new Date()).getTime() - visibilityChangedTimestamp < 100) return;
       const slideEl = e.target.closest(".".concat(swiper.params.slideClass, ", swiper-slide"));
       if (!slideEl || !swiper.slides.includes(slideEl)) return;
+      focusTargetSlideEl = slideEl;
       const isActive = swiper.slides.indexOf(slideEl) === swiper.activeIndex;
       const isVisible = swiper.params.watchSlidesProgress && swiper.visibleSlides && swiper.visibleSlides.includes(slideEl);
       if (isActive || isVisible) return;
@@ -7458,7 +7231,15 @@
       } else {
         swiper.el.scrollTop = 0;
       }
-      swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+      requestAnimationFrame(() => {
+        if (preventFocusHandler) return;
+        if (swiper.params.loop) {
+          swiper.slideToLoop(parseInt(slideEl.getAttribute("data-swiper-slide-index")), 0);
+        } else {
+          swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+        }
+        preventFocusHandler = false;
+      });
     };
     const initSlides = () => {
       const params = swiper.params.a11y;
@@ -7506,11 +7287,14 @@
         prevEl.forEach((el) => initNavEl(el, wrapperId, params.prevSlideMessage));
       }
       if (hasClickablePagination()) {
-        const paginationEl = Array.isArray(swiper.pagination.el) ? swiper.pagination.el : [swiper.pagination.el];
+        const paginationEl = makeElementsArray(swiper.pagination.el);
         paginationEl.forEach((el) => {
           el.addEventListener("keydown", onEnterOrSpaceKey);
         });
       }
+      const document2 = getDocument();
+      document2.addEventListener("visibilitychange", onVisibilityChange);
+      swiper.el.addEventListener("focus", handleFocus, true);
       swiper.el.addEventListener("focus", handleFocus, true);
       swiper.el.addEventListener("pointerdown", handlePointerDown, true);
       swiper.el.addEventListener("pointerup", handlePointerUp, true);
@@ -7530,14 +7314,18 @@
         prevEl.forEach((el) => el.removeEventListener("keydown", onEnterOrSpaceKey));
       }
       if (hasClickablePagination()) {
-        const paginationEl = Array.isArray(swiper.pagination.el) ? swiper.pagination.el : [swiper.pagination.el];
+        const paginationEl = makeElementsArray(swiper.pagination.el);
         paginationEl.forEach((el) => {
           el.removeEventListener("keydown", onEnterOrSpaceKey);
         });
       }
-      swiper.el.removeEventListener("focus", handleFocus, true);
-      swiper.el.removeEventListener("pointerdown", handlePointerDown, true);
-      swiper.el.removeEventListener("pointerup", handlePointerUp, true);
+      const document2 = getDocument();
+      document2.removeEventListener("visibilitychange", onVisibilityChange);
+      if (swiper.el && typeof swiper.el !== "string") {
+        swiper.el.removeEventListener("focus", handleFocus, true);
+        swiper.el.removeEventListener("pointerdown", handlePointerDown, true);
+        swiper.el.removeEventListener("pointerup", handlePointerUp, true);
+      }
     }
     on("beforeInit", () => {
       liveRegion = createElement("span", swiper.params.a11y.notificationClass);
@@ -7613,7 +7401,7 @@
       } else {
         location = window2.location;
       }
-      const slide2 = swiper.slides[index];
+      const slide2 = swiper.virtual && swiper.params.virtual.enabled ? swiper.slidesEl.querySelector('[data-swiper-slide-index="'.concat(index, '"]')) : swiper.slides[index];
       let value = slugify(slide2.getAttribute("data-history"));
       if (swiper.params.history.root.length > 0) {
         let root = swiper.params.history.root;
@@ -7838,7 +7626,7 @@
       if (!swiper || swiper.destroyed || !swiper.wrapperEl) return;
       if (e.target !== swiper.wrapperEl) return;
       swiper.wrapperEl.removeEventListener("transitionend", onTransitionEnd);
-      if (pausedByPointerEnter) {
+      if (pausedByPointerEnter || e.detail && e.detail.bySwiperTouchMove) {
         return;
       }
       resume();
@@ -8007,8 +7795,10 @@
       }
     };
     const detachMouseEvents = () => {
-      swiper.el.removeEventListener("pointerenter", onPointerEnter);
-      swiper.el.removeEventListener("pointerleave", onPointerLeave);
+      if (swiper.el && typeof swiper.el !== "string") {
+        swiper.el.removeEventListener("pointerenter", onPointerEnter);
+        swiper.el.removeEventListener("pointerleave", onPointerLeave);
+      }
     };
     const attachDocumentEvents = () => {
       const document2 = getDocument();
@@ -9122,6 +8912,9 @@
         if (progress <= 1 && progress > -1) {
           wrapperRotate = slideIndex * 90 + progress * 90;
           if (rtl) wrapperRotate = -slideIndex * 90 - progress * 90;
+          if (swiper.browser && swiper.browser.need3dFix && Math.abs(wrapperRotate) / 90 % 2 === 1) {
+            wrapperRotate += 1e-3;
+          }
         }
         slideEl.style.transform = transform;
         if (params.slideShadows) {
@@ -9132,14 +8925,14 @@
       wrapperEl.style["-webkit-transform-origin"] = "50% 50% -".concat(swiperSize / 2, "px");
       if (params.shadow) {
         if (isHorizontal) {
-          cubeShadowEl.style.transform = "translate3d(0px, ".concat(swiperWidth / 2 + params.shadowOffset, "px, ").concat(-swiperWidth / 2, "px) rotateX(90deg) rotateZ(0deg) scale(").concat(params.shadowScale, ")");
+          cubeShadowEl.style.transform = "translate3d(0px, ".concat(swiperWidth / 2 + params.shadowOffset, "px, ").concat(-swiperWidth / 2, "px) rotateX(89.99deg) rotateZ(0deg) scale(").concat(params.shadowScale, ")");
         } else {
           const shadowAngle = Math.abs(wrapperRotate) - Math.floor(Math.abs(wrapperRotate) / 90) * 90;
           const multiplier = 1.5 - (Math.sin(shadowAngle * 2 * Math.PI / 360) / 2 + Math.cos(shadowAngle * 2 * Math.PI / 360) / 2);
           const scale1 = params.shadowScale;
           const scale2 = params.shadowScale / multiplier;
           const offset = params.shadowOffset;
-          cubeShadowEl.style.transform = "scale3d(".concat(scale1, ", 1, ").concat(scale2, ") translate3d(0px, ").concat(swiperHeight / 2 + offset, "px, ").concat(-swiperHeight / 2 / scale2, "px) rotateX(-90deg)");
+          cubeShadowEl.style.transform = "scale3d(".concat(scale1, ", 1, ").concat(scale2, ") translate3d(0px, ").concat(swiperHeight / 2 + offset, "px, ").concat(-swiperHeight / 2 / scale2, "px) rotateX(-89.99deg)");
         }
       }
       const zFactor = (browser2.isSafari || browser2.isWebView) && browser2.needPerspectiveFix ? -swiperSize / 2 : 0;
@@ -9256,6 +9049,14 @@
         } else if (rtl) {
           rotateY = -rotateY;
         }
+        if (swiper.browser && swiper.browser.need3dFix) {
+          if (Math.abs(rotateY) / 90 % 2 === 1) {
+            rotateY += 1e-3;
+          }
+          if (Math.abs(rotateX) / 90 % 2 === 1) {
+            rotateX += 1e-3;
+          }
+        }
         slideEl.style.zIndex = -Math.abs(Math.round(progress)) + slides.length;
         if (params.slideShadows) {
           createSlideShadows(slideEl, progress);
@@ -9350,6 +9151,14 @@
         if (Math.abs(rotateY) < 1e-3) rotateY = 0;
         if (Math.abs(rotateX) < 1e-3) rotateX = 0;
         if (Math.abs(scale) < 1e-3) scale = 0;
+        if (swiper.browser && swiper.browser.need3dFix) {
+          if (Math.abs(rotateY) / 90 % 2 === 1) {
+            rotateY += 1e-3;
+          }
+          if (Math.abs(rotateX) / 90 % 2 === 1) {
+            rotateX += 1e-3;
+          }
+        }
         const slideTransform = "translate3d(".concat(translateX, "px,").concat(translateY, "px,").concat(translateZ, "px)  rotateX(").concat(rotateX, "deg) rotateY(").concat(rotateY, "deg) scale(").concat(scale, ")");
         const targetEl = effectTarget(params, slideEl);
         targetEl.style.transform = slideTransform;
@@ -9469,7 +9278,11 @@
           t[index] = "calc(".concat(value, "px + (").concat(getTranslateValue(data.translate[index]), " * ").concat(Math.abs(progress * multiplier), "))");
         });
         r.forEach((value, index) => {
-          r[index] = data.rotate[index] * Math.abs(progress * multiplier);
+          let val = data.rotate[index] * Math.abs(progress * multiplier);
+          if (swiper.browser && swiper.browser.need3dFix && Math.abs(val) / 90 % 2 === 1) {
+            val += 1e-3;
+          }
+          r[index] = val;
         });
         slideEl.style.zIndex = -Math.abs(Math.round(slideProgress)) + slides.length;
         const translateString = t.join(", ");
@@ -9645,6 +9458,7 @@
     "init",
     "_direction",
     "oneWayMovement",
+    "swiperElementNodeName",
     "touchEventsTarget",
     "initialSlide",
     "_speed",
@@ -10327,7 +10141,8 @@
         handlers.forEach((innerHandler) => deActivateTab(innerHandler));
         activateTab(handler);
         panels.forEach((panel) => {
-          if (panel.getAttribute("controlled-by") === handler.id) {
+          const isRelatedPanel = panel.getAttribute("controlled-by") === handler.id;
+          if (isRelatedPanel) {
             activatePanel(panel);
           } else {
             deActivatePanel(panel);
@@ -10336,7 +10151,6 @@
       });
     });
   }
-  faqTabs();
   function faqCard() {
     const faqCards = document.querySelectorAll(".faq-card");
     if (!faqCards) return;
@@ -10352,11 +10166,11 @@
     }
     faqCards.forEach((faq) => {
       const faqToggle = faq.querySelector(".faq-toggle");
+      const expert = faq.querySelector(".faq-expert");
+      if (!expert) return;
       faqToggle == null ? void 0 : faqToggle.addEventListener("click", () => {
-        const expert = faq.querySelector(".faq-expert");
-        if (!expert) return;
-        const isActive = expert.classList.contains("grid-rows-[1fr]");
-        if (isActive) {
+        const faqIsActive = expert.classList.contains("grid-rows-[1fr]");
+        if (faqIsActive) {
           deActivateFaq(faq, expert);
         } else {
           activateFaq(faq, expert);
@@ -10364,6 +10178,7 @@
       });
     });
   }
+  faqTabs();
   faqCard();
 
   // assets/js/modules/select-box.js
@@ -10397,96 +10212,76 @@
   }
   selectBox();
 
-  // assets/js/modules/search.js
-  function searchFilter() {
-    const formSearch = document.querySelector("#formSearch");
-    if (!formSearch) return;
-    const inputRadio = formSearch.querySelectorAll('input[type="radio"]');
-    const inputSearch = formSearch.querySelector('input[type="search"]');
-    const getResultFromApi = (formData) => {
-      const postsCount = document.getElementById("postsCount");
-      const postsWrapper = document.getElementById("postsWrapper");
-      if (!inputRadio || !inputSearch) return;
-      jQuery(($) => {
-        $.ajax({
-          type: "POST",
-          url: restDetails.url + "cyn-api/v1/search",
-          data: formData,
-          cache: false,
-          processData: false,
-          contentType: false,
-          success: (res) => {
-            postsCount.innerHTML = res.found_posts;
-            postsWrapper.innerHTML = res.html;
-          }
-        });
-      });
-    };
-    inputRadio.forEach((element) => {
-      element.addEventListener("click", (event2) => {
-        const formData = new FormData(formSearch);
-        getResultFromApi(formData);
-      });
-    });
-    inputSearch.addEventListener("keyup", () => {
-      const formData = new FormData(formSearch);
-      getResultFromApi(formData);
-    });
-  }
-  searchFilter();
-
-  // assets/js/modules/toastify.js
-  var import_toastify_js = __toESM(require_toastify());
-  var successColor = "#4caf50";
-  var errorColor = "#ef5350";
-  var successToast = (0, import_toastify_js.default)({
-    text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0646\u062C\u0627\u0645 \u0634\u062F",
-    style: {
-      background: successColor
-    }
-  });
-  var errorToast = (0, import_toastify_js.default)({
-    text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u062E\u0637\u0627 \u0645\u0648\u0627\u062C\u0647 \u0634\u062F",
-    style: {
-      background: errorColor
-    }
-  });
-  var successFormToast = (0, import_toastify_js.default)({
-    text: "\u0641\u0631\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0631\u0633\u0627\u0644 \u0634\u062F",
-    style: {
-      background: successColor
-    }
+  // assets/js/modules/bread-crumb.js
+  var separator = document.querySelectorAll(".separator");
+  separator.forEach((el) => {
+    el.innerHTML = '<svg class="icon w-6 h-6 rotate-180"><use href="#icon-Right,-Arrow"/></svg>';
   });
 
-  // assets/js/modules/contact-us.js
-  function contactForm() {
-    const contactForm2 = document.querySelector("#ContactUsForm");
-    contactForm2.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const formData = new FormData(contactForm2);
-      jQuery(($) => {
-        $.ajax({
-          type: "POST",
-          url: restDetails.url + "cyn-api/v1/form",
-          data: formData,
-          cache: false,
-          processData: false,
-          contentType: false,
-          success: (res) => {
-            console.log(res);
-            successFormToast.showToast();
-            priceForm.reset();
-          },
-          error: (err) => {
-            console.log(err);
-            errorToast.showToast();
-          }
-        });
+  // assets/js/modules/comments.js
+  function commentReply() {
+    const replyButtons = document.querySelectorAll(".reply-comment");
+    const commentFormParent = document.querySelector("#commentform #comment_parent");
+    if (!commentFormParent || !replyButtons) return;
+    replyButtons.forEach((element) => {
+      element.addEventListener("click", () => {
+        commentFormParent.value = element.getAttribute("comment-id");
       });
-      console.log(e);
     });
   }
-  contactForm();
+  commentReply();
+
+  // assets/js/modules/taxonomy-terms.js
+  function taxTerm() {
+    const terms = document.querySelectorAll(".term");
+    if (!terms) return;
+    function activeTax(termToggle, termPanel) {
+      var _a, _b;
+      termPanel.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
+      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-180", "text-accent-50");
+      (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.add("text-accent-50");
+    }
+    function deActiveTax(termToggle, termPanel) {
+      var _a, _b;
+      termPanel.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
+      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-180", "text-accent-50");
+      (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.remove("text-accent-50");
+    }
+    terms.forEach((term) => {
+      const termToggle = term.querySelector(".term-title");
+      const termPanel = term.querySelector(".term-panel");
+      termToggle == null ? void 0 : termToggle.addEventListener("click", () => {
+        const termIsActive = termPanel.classList.contains("grid-rows-[1fr]");
+        if (termIsActive) {
+          deActiveTax(termToggle, termPanel);
+        } else {
+          activeTax(termToggle, termPanel);
+        }
+      });
+    });
+  }
+  taxTerm();
+
+  // assets/js/modules/table-of-content.js
+  document.addEventListener("DOMContentLoaded", function() {
+    const toc = document.getElementById("toc");
+    const prose = document.querySelector(".prose");
+    const headings = prose == null ? void 0 : prose.querySelectorAll("h2");
+    const icon = document.querySelector(".separator svg");
+    headings.forEach(function(heading, index) {
+      const id = "section-" + index;
+      heading.setAttribute("id", id);
+      const li = document.createElement("li");
+      li.classList.add("flex", "flex-row-reverse", "justify-between", "p-1");
+      const a = document.createElement("a");
+      const svg = icon.cloneNode(true);
+      a.textContent = heading.textContent;
+      a.setAttribute("href", "#" + id);
+      li.appendChild(svg);
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+  });
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
@@ -11099,7 +10894,7 @@
           max = -_bigNum;
           while (max < (max = a[wrapAt++].getBoundingClientRect().left) && wrapAt < l) {
           }
-          wrapAt--;
+          wrapAt < l && wrapAt--;
         }
         distances = cache[l] = [];
         originX = ratios ? Math.min(wrapAt, l) * ratioX - 0.5 : from % wrapAt;
@@ -11300,8 +11095,9 @@
   var _quickTween;
   var _registerPluginQueue = [];
   var _createPlugin = function _createPlugin2(config3) {
-    if (_windowExists() && config3) {
-      config3 = !config3.name && config3["default"] || config3;
+    if (!config3) return;
+    config3 = !config3.name && config3["default"] || config3;
+    if (_windowExists() || config3.headless) {
       var name = config3.name, isFunc = _isFunction(config3), Plugin = name && !isFunc && config3.init ? function() {
         this._props = [];
       } : config3, instanceDefaults = {
@@ -11335,7 +11131,7 @@
       _addGlobal(name, Plugin);
       config3.register && config3.register(gsap, Plugin, PropTween);
     } else {
-      config3 && _registerPluginQueue.push(config3);
+      _registerPluginQueue.push(config3);
     }
   };
   var _255 = 255;
@@ -11489,7 +11285,7 @@
   var _ticker = function() {
     var _getTime3 = Date.now, _lagThreshold = 500, _adjustedLag = 33, _startTime = _getTime3(), _lastUpdate = _startTime, _gap = 1e3 / 240, _nextTime = _gap, _listeners3 = [], _id, _req, _raf, _self, _delta, _i2, _tick = function _tick2(v) {
       var elapsed = _getTime3() - _lastUpdate, manual = v === true, overlap, dispatch, time, frame;
-      elapsed > _lagThreshold && (_startTime += elapsed - _adjustedLag);
+      (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
       _lastUpdate += elapsed;
       time = _lastUpdate - _startTime;
       overlap = time - _nextTime;
@@ -11524,9 +11320,9 @@
             _globals.gsap = gsap;
             (_win.gsapVersions || (_win.gsapVersions = [])).push(gsap.version);
             _install(_installScope || _win.GreenSockGlobals || !_win.gsap && _win || {});
-            _raf = _win.requestAnimationFrame;
             _registerPluginQueue.forEach(_createPlugin);
           }
+          _raf = typeof requestAnimationFrame !== "undefined" && requestAnimationFrame;
           _id && _self.sleep();
           _req = _raf || function(f) {
             return setTimeout(f, _nextTime - _self.time * 1e3 + 1 | 0);
@@ -11536,7 +11332,7 @@
         }
       },
       sleep: function sleep() {
-        (_raf ? _win.cancelAnimationFrame : clearTimeout)(_id);
+        (_raf ? cancelAnimationFrame : clearTimeout)(_id);
         _tickerActive = 0;
         _req = _emptyFunc;
       },
@@ -11792,16 +11588,16 @@
       return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % (this._dur + this._rDelay) || (value ? this._dur : 0), suppressEvents) : this._time;
     };
     _proto.totalProgress = function totalProgress(value, suppressEvents) {
-      return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.ratio;
+      return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() > 0 ? 1 : 0;
     };
     _proto.progress = function progress(value, suppressEvents) {
-      return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.ratio;
+      return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
     };
     _proto.iteration = function iteration(value, suppressEvents) {
       var cycleDuration = this.duration() + this._rDelay;
       return arguments.length ? this.totalTime(this._time + (value - 1) * cycleDuration, suppressEvents) : this._repeat ? _animationCycle(this._tTime, cycleDuration) + 1 : 1;
     };
-    _proto.timeScale = function timeScale(value) {
+    _proto.timeScale = function timeScale(value, suppressEvents) {
       if (!arguments.length) {
         return this._rts === -_tinyNum ? 0 : this._rts;
       }
@@ -11811,7 +11607,7 @@
       var tTime = this.parent && this._ts ? _parentToChildTotalTime(this.parent._time, this) : this._tTime;
       this._rts = +value || 0;
       this._ts = this._ps || value === -_tinyNum ? 0 : this._rts;
-      this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), true);
+      this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), suppressEvents !== false);
       _setEnd(this);
       return _recacheAncestors(this);
     };
@@ -11865,10 +11661,10 @@
     _proto.globalTime = function globalTime(rawTime) {
       var animation = this, time = arguments.length ? rawTime : animation.rawTime();
       while (animation) {
-        time = animation._start + time / (animation._ts || 1);
+        time = animation._start + time / (Math.abs(animation._ts) || 1);
         animation = animation._dp;
       }
-      return !this.parent && this._sat ? this._sat.vars.immediateRender ? -Infinity : this._sat.globalTime(rawTime) : time;
+      return !this.parent && this._sat ? this._sat.globalTime(rawTime) : time;
     };
     _proto.repeat = function repeat(value) {
       if (arguments.length) {
@@ -12569,7 +12365,7 @@
   var _overwritingTween;
   var _forceAllPropTweens;
   var _initTween = function _initTween2(tween, time, tTime) {
-    var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, onUpdateParams = vars.onUpdateParams, callbackScope = vars.callbackScope, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
+    var vars = tween.vars, ease = vars.ease, startAt = vars.startAt, immediateRender = vars.immediateRender, lazy = vars.lazy, onUpdate = vars.onUpdate, runBackwards = vars.runBackwards, yoyoEase = vars.yoyoEase, keyframes = vars.keyframes, autoRevert = vars.autoRevert, dur = tween._dur, prevStartAt = tween._startAt, targets = tween._targets, parent = tween.parent, fullTargets = parent && parent.data === "nested" ? parent.vars.targets : targets, autoOverwrite = tween._overwrite === "auto" && !_suppressOverwrites, tl = tween.timeline, cleanVars, i, p, pt, target, hasPriority, gsData, harness, plugin, ptLookup, index, harnessVars, overwritten;
     tl && (!keyframes || !ease) && (ease = "none");
     tween._ease = _parseEase(ease, _defaults.ease);
     tween._yEase = yoyoEase ? _invertEase(_parseEase(yoyoEase === true ? ease : yoyoEase, _defaults.ease)) : 0;
@@ -12597,9 +12393,9 @@
           lazy: !prevStartAt && _isNotFalse(lazy),
           startAt: null,
           delay: 0,
-          onUpdate,
-          onUpdateParams,
-          callbackScope,
+          onUpdate: onUpdate && function() {
+            return _callback(tween, "onUpdate");
+          },
           stagger: 0
         }, startAt)));
         tween._startAt._dp = 0;
@@ -12678,7 +12474,7 @@
     tween._initted = (!tween._op || tween._pt) && !overwritten;
     keyframes && time <= 0 && tl.render(_bigNum, true, true);
   };
-  var _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time) {
+  var _updatePropTweens = function _updatePropTweens2(tween, property, value, start, startIsRelative, ratio, time, skipRecursion) {
     var ptCache = (tween._pt && tween._ptCache || (tween._ptCache = {}))[property], pt, rootPT, lookup, i;
     if (!ptCache) {
       ptCache = tween._ptCache[property] = [];
@@ -12697,7 +12493,7 @@
           tween.vars[property] = "+=0";
           _initTween(tween, time);
           _forceAllPropTweens = 0;
-          return 1;
+          return skipRecursion ? _warn(property + " not eligible for reset") : 1;
         }
         ptCache.push(pt);
       }
@@ -12770,7 +12566,7 @@
       }
       _this3 = _Animation2.call(this, skipInherit ? vars : _inheritDefaults(vars)) || this;
       var _this3$vars = _this3.vars, duration = _this3$vars.duration, delay = _this3$vars.delay, immediateRender = _this3$vars.immediateRender, stagger = _this3$vars.stagger, overwrite = _this3$vars.overwrite, keyframes = _this3$vars.keyframes, defaults3 = _this3$vars.defaults, scrollTrigger = _this3$vars.scrollTrigger, yoyoEase = _this3$vars.yoyoEase, parent = vars.parent || _globalTimeline, parsedTargets = (_isArray(targets) || _isTypedArray(targets) ? _isNumber(targets[0]) : "length" in vars) ? [targets] : toArray(targets), tl, i, copy, l, p, curTarget, staggerFunc, staggerVarsToMerge;
-      _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://greensock.com", !_config.nullTargetWarn) || [];
+      _this3._targets = parsedTargets.length ? _harness(parsedTargets) : _warn("GSAP target " + targets + " not found. https://gsap.com", !_config.nullTargetWarn) || [];
       _this3._ptLookup = [];
       _this3._overwrite = overwrite;
       if (keyframes || stagger || _isFuncOrString(duration) || _isFuncOrString(delay)) {
@@ -12886,7 +12682,7 @@
             time = dur;
           } else {
             iteration = ~~(tTime / cycleDuration);
-            if (iteration && iteration === tTime / cycleDuration) {
+            if (iteration && iteration === _roundPrecise(tTime / cycleDuration)) {
               time = dur;
               iteration--;
             }
@@ -12898,13 +12694,13 @@
             time = dur - time;
           }
           prevIteration = _animationCycle(this._tTime, cycleDuration);
-          if (time === prevTime && !force && this._initted) {
+          if (time === prevTime && !force && this._initted && iteration === prevIteration) {
             this._tTime = tTime;
             return this;
           }
           if (iteration !== prevIteration) {
             timeline2 && this._yEase && _propagateYoyoEase(timeline2, isYoyo);
-            if (this.vars.repeatRefresh && !isYoyo && !this._lock) {
+            if (this.vars.repeatRefresh && !isYoyo && !this._lock && this._time !== cycleDuration && this._initted) {
               this._lock = force = 1;
               this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
             }
@@ -12915,7 +12711,7 @@
             this._tTime = 0;
             return this;
           }
-          if (prevTime !== this._time) {
+          if (prevTime !== this._time && !(force && this.vars.repeatRefresh && iteration !== prevIteration)) {
             return this;
           }
           if (dur !== this._dur) {
@@ -12943,7 +12739,7 @@
           pt.r(ratio, pt.d);
           pt = pt._next;
         }
-        timeline2 && timeline2.render(totalTime < 0 ? totalTime : !time && isYoyo ? -_tinyNum : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
+        timeline2 && timeline2.render(totalTime < 0 ? totalTime : timeline2._dur * timeline2._ease(time / this._dur), suppressEvents, force) || this._startAt && (this._zTime = totalTime);
         if (this._onUpdate && !suppressEvents) {
           isNegative && _rewindStartAt(this, totalTime, suppressEvents, force);
           _callback(this, "onUpdate");
@@ -12970,14 +12766,14 @@
       this.timeline && this.timeline.invalidate(soft);
       return _Animation2.prototype.invalidate.call(this, soft);
     };
-    _proto3.resetTo = function resetTo(property, value, start, startIsRelative) {
+    _proto3.resetTo = function resetTo(property, value, start, startIsRelative, skipRecursion) {
       _tickerActive || _ticker.wake();
       this._ts || this.play();
       var time = Math.min(this._dur, (this._dp._time - this._start) * this._ts), ratio;
       this._initted || _initTween(this, time);
       ratio = this._ease(time / this._dur);
-      if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time)) {
-        return this.resetTo(property, value, start, startIsRelative);
+      if (_updatePropTweens(this, property, value, start, startIsRelative, ratio, time, skipRecursion)) {
+        return this.resetTo(property, value, start, startIsRelative, 1);
       }
       _alignPlayhead(this, 0);
       this.parent || _addLinkedListItem(this._dp, this, "_first", "_last", this._dp._sort ? "_start" : 0);
@@ -13246,7 +13042,9 @@
       });
       _dispatch("matchMediaRevert");
       matches.forEach(function(c) {
-        return c.onMatch(c);
+        return c.onMatch(c, function(func) {
+          return c.add(null, func);
+        });
       });
       _lastMediaTime = time;
       _dispatch("matchMedia");
@@ -13281,7 +13079,9 @@
         return result;
       };
       self.last = f;
-      return name === _isFunction ? f(self) : name ? self[name] = f : f;
+      return name === _isFunction ? f(self, function(func2) {
+        return self.add(null, func2);
+      }) : name ? self[name] = f : f;
     };
     _proto5.ignore = function ignore(func) {
       var prev = _context;
@@ -13302,32 +13102,44 @@
     _proto5.kill = function kill(revert, matchMedia2) {
       var _this4 = this;
       if (revert) {
-        var tweens = this.getTweens();
-        this.data.forEach(function(t) {
-          if (t.data === "isFlip") {
-            t.revert();
-            t.getChildren(true, true, false).forEach(function(tween) {
-              return tweens.splice(tweens.indexOf(tween), 1);
-            });
+        (function() {
+          var tweens = _this4.getTweens(), i2 = _this4.data.length, t;
+          while (i2--) {
+            t = _this4.data[i2];
+            if (t.data === "isFlip") {
+              t.revert();
+              t.getChildren(true, true, false).forEach(function(tween) {
+                return tweens.splice(tweens.indexOf(tween), 1);
+              });
+            }
           }
-        });
-        tweens.map(function(t) {
-          return {
-            g: t.globalTime(0),
-            t
-          };
-        }).sort(function(a, b) {
-          return b.g - a.g || -Infinity;
-        }).forEach(function(o) {
-          return o.t.revert(revert);
-        });
-        this.data.forEach(function(e) {
-          return !(e instanceof Tween) && e.revert && e.revert(revert);
-        });
-        this._r.forEach(function(f) {
-          return f(revert, _this4);
-        });
-        this.isReverted = true;
+          tweens.map(function(t2) {
+            return {
+              g: t2._dur || t2._delay || t2._sat && !t2._sat.vars.immediateRender ? t2.globalTime(0) : -Infinity,
+              t: t2
+            };
+          }).sort(function(a, b) {
+            return b.g - a.g || -Infinity;
+          }).forEach(function(o) {
+            return o.t.revert(revert);
+          });
+          i2 = _this4.data.length;
+          while (i2--) {
+            t = _this4.data[i2];
+            if (t instanceof Timeline) {
+              if (t.data !== "nested") {
+                t.scrollTrigger && t.scrollTrigger.revert();
+                t.kill();
+              }
+            } else {
+              !(t instanceof Tween) && t.revert && t.revert(revert);
+            }
+          }
+          _this4._r.forEach(function(f) {
+            return f(revert, _this4);
+          });
+          _this4.isReverted = true;
+        })();
       } else {
         this.data.forEach(function(e) {
           return e.kill && e.kill();
@@ -13350,6 +13162,7 @@
     function MatchMedia2(scope) {
       this.contexts = [];
       this.scope = scope;
+      _context && _context.data.push(this);
     }
     var _proto6 = MatchMedia2.prototype;
     _proto6.add = function add(conditions, func, scope) {
@@ -13373,7 +13186,9 @@
           }
         }
       }
-      active && func(context3);
+      active && func(context3, function(f) {
+        return context3.add(null, f);
+      });
       return this;
     };
     _proto6.revert = function revert(config3) {
@@ -13653,7 +13468,7 @@
       }
     }
   }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-  Tween.version = Timeline.version = gsap.version = "3.12.2";
+  Tween.version = Timeline.version = gsap.version = "3.12.5";
   _coreReady = 1;
   _windowExists() && _wake();
   var Power0 = _easeMap.Power0;
@@ -13745,14 +13560,15 @@
   var _transformOriginProp = _transformProp + "Origin";
   var _saveStyle = function _saveStyle2(property, isNotCSS) {
     var _this = this;
-    var target = this.target, style = target.style;
+    var target = this.target, style = target.style, cache = target._gsap;
     if (property in _transformProps && style) {
       this.tfm = this.tfm || {};
       if (property !== "transform") {
         property = _propertyAliases[property] || property;
         ~property.indexOf(",") ? property.split(",").forEach(function(a) {
           return _this.tfm[a] = _get(target, a);
-        }) : this.tfm[property] = target._gsap.x ? target._gsap[property] : _get(target, property);
+        }) : this.tfm[property] = cache.x ? cache[property] : _get(target, property);
+        property === _transformOriginProp && (this.tfm.zOrigin = cache.zOrigin);
       } else {
         return _propertyAliases.transform.split(",").forEach(function(p) {
           return _saveStyle2.call(_this, p, isNotCSS);
@@ -13761,7 +13577,7 @@
       if (this.props.indexOf(_transformProp) >= 0) {
         return;
       }
-      if (target._gsap.svg) {
+      if (cache.svg) {
         this.svgo = target.getAttribute("data-svg-origin");
         this.props.push(_transformOriginProp, isNotCSS, "");
       }
@@ -13792,6 +13608,11 @@
       i = _reverting2();
       if ((!i || !i.isStart) && !style[_transformProp]) {
         _removeIndependentTransforms(style);
+        if (cache.zOrigin && style[_transformOriginProp]) {
+          style[_transformOriginProp] += " " + cache.zOrigin + "px";
+          cache.zOrigin = 0;
+          cache.renderTransform();
+        }
         cache.uncache = 1;
       }
     }
@@ -13812,7 +13633,7 @@
   var _supports3D;
   var _createElement = function _createElement2(type, ns) {
     var e = _doc2.createElementNS ? _doc2.createElementNS((ns || "http://www.w3.org/1999/xhtml").replace(/^https/, "http"), type) : _doc2.createElement(type);
-    return e.style ? e : _doc2.createElement(type);
+    return e && e.style ? e : _doc2.createElement(type);
   };
   var _getComputedProperty = function _getComputedProperty2(target, property, skipPrefixFallback) {
     var cs = getComputedStyle(target);
@@ -13900,15 +13721,16 @@
   };
   var _removeProperty = function _removeProperty2(target, property) {
     if (property) {
-      var style = target.style;
+      var style = target.style, first2Chars;
       if (property in _transformProps && property !== _transformOriginProp) {
         property = _transformProp;
       }
       if (style.removeProperty) {
-        if (property.substr(0, 2) === "ms" || property.substr(0, 6) === "webkit") {
+        first2Chars = property.substr(0, 2);
+        if (first2Chars === "ms" || property.substr(0, 6) === "webkit") {
           property = "-" + property;
         }
-        style.removeProperty(property.replace(_capsExp, "-$1").toLowerCase());
+        style.removeProperty(first2Chars === "--" ? property : property.replace(_capsExp, "-$1").toLowerCase());
       } else {
         style.removeAttribute(property);
       }
@@ -13954,12 +13776,19 @@
     if (cache && toPercent && cache.width && horizontal && cache.time === _ticker.time && !cache.uncache) {
       return _round(curValue / cache.width * amount);
     } else {
-      (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
-      parent === target && (style.position = "static");
-      parent.appendChild(_tempDiv);
-      px = _tempDiv[measureProperty];
-      parent.removeChild(_tempDiv);
-      style.position = "absolute";
+      if (toPercent && (property === "height" || property === "width")) {
+        var v = target.style[property];
+        target.style[property] = amount + unit;
+        px = target[measureProperty];
+        v ? target.style[property] = v : _removeProperty(target, property);
+      } else {
+        (toPercent || curUnit === "%") && !_nonStandardLayouts[_getComputedProperty(parent, "display")] && (style.position = _getComputedProperty(target, "position"));
+        parent === target && (style.position = "static");
+        parent.appendChild(_tempDiv);
+        px = _tempDiv[measureProperty];
+        parent.removeChild(_tempDiv);
+        style.position = "absolute";
+      }
       if (horizontal && toPercent) {
         cache = _getCache(parent);
         cache.time = _ticker.time;
@@ -14004,9 +13833,10 @@
     start += "";
     end += "";
     if (end === "auto") {
+      startValue = target.style[prop];
       target.style[prop] = end;
       end = _getComputedProperty(target, prop) || end;
-      target.style[prop] = start;
+      startValue ? target.style[prop] = startValue : _removeProperty(target, prop);
     }
     a = [start, end];
     _colorStringFilter(a);
@@ -14169,7 +13999,7 @@
     		}
     	}
     	cache.classPT = plugin._pt = new PropTween(plugin._pt, target, "className", 0, 0, _renderClassName, data, 0, -11);
-    	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://greensock.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
+    	if (style.cssText !== cssText) { //only apply if things change. Otherwise, in cases like a background-image that's pulled dynamically, it could cause a refresh. See https://gsap.com/forums/topic/20368-possible-gsap-bug-switching-classnames-in-chrome/.
     		style.cssText = cssText; //we recorded cssText before we swapped classes and ran _getAllStyles() because in cases when a className tween is overwritten, we remove all the related tweening properties from that class change (otherwise class-specific stuff can't override properties we've directly set on the target's style object due to specificity).
     	}
     	_parseTransform(target, true); //to clear the caching of transforms
@@ -14380,7 +14210,7 @@
     cache.skewX = skewX + deg;
     cache.skewY = skewY + deg;
     cache.transformPerspective = perspective + px;
-    if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || 0) {
+    if (cache.zOrigin = parseFloat(origin.split(" ")[2]) || !uncache && cache.zOrigin || 0) {
       style[_transformOriginProp] = _firstTwoOnly(origin);
     }
     cache.xOffset = cache.yOffset = 0;
@@ -14623,7 +14453,7 @@
           if (startAt && p in startAt) {
             startValue = typeof startAt[p] === "function" ? startAt[p].call(tween, index, target, targets) : startAt[p];
             _isString(startValue) && ~startValue.indexOf("random(") && (startValue = _replaceRandom(startValue));
-            getUnit(startValue + "") || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
+            getUnit(startValue + "") || startValue === "auto" || (startValue += _config.units[p] || getUnit(_get(target, p)) || "");
             (startValue + "").charAt(1) === "=" && (startValue = _get(target, p));
           } else {
             startValue = _get(target, p);
@@ -14821,9 +14651,9 @@
   var _isViewport = function _isViewport2(el) {
     return !!~_root.indexOf(el);
   };
-  var _addListener = function _addListener2(element, type, func, nonPassive, capture) {
+  var _addListener = function _addListener2(element, type, func, passive, capture) {
     return element.addEventListener(type, func, {
-      passive: !nonPassive,
+      passive: passive !== false,
       capture: !!capture
     });
   };
@@ -14937,7 +14767,7 @@
   };
   var _initCore3 = function _initCore4(core) {
     gsap2 = core || _getGSAP();
-    if (gsap2 && typeof document !== "undefined" && document.body) {
+    if (!_coreInitted2 && gsap2 && typeof document !== "undefined" && document.body) {
       _win3 = window;
       _doc3 = document;
       _docEl = _doc3.documentElement;
@@ -14978,7 +14808,7 @@
       type = type || "wheel,touch,pointer";
       debounce = debounce !== false;
       lineHeight || (lineHeight = parseFloat(_win3.getComputedStyle(_body).lineHeight) || 22);
-      var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self = this, prevDeltaX = 0, prevDeltaY = 0, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
+      var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self = this, prevDeltaX = 0, prevDeltaY = 0, passive = vars.passive || !preventDefault, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
         return onClickTime = _getTime();
       }, _ignoreCheck = function _ignoreCheck2(e, isPointerOrTouch) {
         return (self.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
@@ -15067,7 +14897,7 @@
         self.startY = self.y = e.clientY;
         self._vx.reset();
         self._vy.reset();
-        _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, preventDefault, true);
+        _addListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, passive, true);
         self.deltaX = self.deltaY = 0;
         onPress && onPress(self);
       }, _onRelease = self.onRelease = function(e) {
@@ -15075,8 +14905,8 @@
           return;
         }
         _removeListener(isNormalizer ? target : ownerDoc, _eventTypes[1], _onDrag, true);
-        var isTrackingDrag = !isNaN(self.y - self.startY), wasDragging = self.isDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3), eventData = _getEvent(e);
-        if (!wasDragging && isTrackingDrag) {
+        var isTrackingDrag = !isNaN(self.y - self.startY), wasDragging = self.isDragging, isDragNotClick = wasDragging && (Math.abs(self.x - self.startX) > 3 || Math.abs(self.y - self.startY) > 3), eventData = _getEvent(e);
+        if (!isDragNotClick && isTrackingDrag) {
           self._vx.reset();
           self._vy.reset();
           if (preventDefault && allowClicks) {
@@ -15094,9 +14924,9 @@
           }
         }
         self.isDragging = self.isGesturing = self.isPressed = false;
-        onStop && !isNormalizer && onStopDelayedCall.restart(true);
+        onStop && wasDragging && !isNormalizer && onStopDelayedCall.restart(true);
         onDragEnd && wasDragging && onDragEnd(self);
-        onRelease && onRelease(self, wasDragging);
+        onRelease && onRelease(self, isDragNotClick);
       }, _onGestureStart = function _onGestureStart2(e) {
         return e.touches && e.touches.length > 1 && (self.isGesturing = true) && onGestureStart(e, self.isDragging);
       }, _onGestureEnd = function _onGestureEnd2() {
@@ -15127,6 +14957,7 @@
         self.x = x;
         self.y = y;
         moved = true;
+        onStop && onStopDelayedCall.restart(true);
         (dx || dy) && onTouchOrPointerDelta(dx, dy);
       }, _onHover = function _onHover2(e) {
         self.event = e;
@@ -15148,13 +14979,13 @@
       self.enable = function(e) {
         if (!self.isEnabled) {
           _addListener(isViewport ? ownerDoc : target, "scroll", _onScroll);
-          type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll2, preventDefault, capture);
-          type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, preventDefault, capture);
+          type.indexOf("scroll") >= 0 && _addListener(isViewport ? ownerDoc : target, "scroll", onScroll2, passive, capture);
+          type.indexOf("wheel") >= 0 && _addListener(target, "wheel", _onWheel, passive, capture);
           if (type.indexOf("touch") >= 0 && _isTouch || type.indexOf("pointer") >= 0) {
-            _addListener(target, _eventTypes[0], _onPress, preventDefault, capture);
+            _addListener(target, _eventTypes[0], _onPress, passive, capture);
             _addListener(ownerDoc, _eventTypes[2], _onRelease);
             _addListener(ownerDoc, _eventTypes[3], _onRelease);
-            allowClicks && _addListener(target, "click", clickCapture, false, true);
+            allowClicks && _addListener(target, "click", clickCapture, true, true);
             onClick2 && _addListener(target, "click", _onClick);
             onGestureStart && _addListener(ownerDoc, "gesturestart", _onGestureStart);
             onGestureEnd && _addListener(ownerDoc, "gestureend", _onGestureEnd);
@@ -15217,7 +15048,7 @@
     }]);
     return Observer3;
   }();
-  Observer2.version = "3.12.2";
+  Observer2.version = "3.12.5";
   Observer2.create = function(vars) {
     return new Observer2(vars);
   };
@@ -15264,6 +15095,8 @@
   var _scrollRestoration;
   var _div100vh;
   var _100vh;
+  var _isReverted;
+  var _clampingMax;
   var _limitCallbacks;
   var _startup2 = 1;
   var _getTime2 = Date.now;
@@ -15353,7 +15186,9 @@
   };
   var _callback3 = function _callback4(self, func) {
     if (self.enabled) {
-      var result = func(self);
+      var result = self._ctx ? self._ctx.add(function() {
+        return func(self);
+      }) : func(self);
       result && result.totalTime && (self.callbackAnimation = result);
     }
   };
@@ -15596,6 +15431,7 @@
         }
       }
     }
+    _isReverted = true;
     media && _revertRecorded(media);
     media || _dispatch3("revert");
   };
@@ -15619,11 +15455,16 @@
   };
   var _refresh100vh = function _refresh100vh2() {
     _body2.appendChild(_div100vh);
-    _100vh = _div100vh.offsetHeight || _win4.innerHeight;
+    _100vh = !_normalizer2 && _div100vh.offsetHeight || _win4.innerHeight;
     _body2.removeChild(_div100vh);
   };
+  var _hideAllMarkers = function _hideAllMarkers2(hide) {
+    return _toArray(".gsap-marker-start, .gsap-marker-end, .gsap-marker-scroller-start, .gsap-marker-scroller-end").forEach(function(el) {
+      return el.style.display = hide ? "none" : "block";
+    });
+  };
   var _refreshAll = function _refreshAll2(force, skipRevert) {
-    if (_lastScrollTime && !force) {
+    if (_lastScrollTime && !force && !_isReverted) {
       _addListener3(ScrollTrigger2, "scrollEnd", _softRefresh);
       return;
     }
@@ -15644,7 +15485,8 @@
     _triggers.slice(0).forEach(function(t) {
       return t.refresh();
     });
-    _triggers.forEach(function(t, i) {
+    _isReverted = false;
+    _triggers.forEach(function(t) {
       if (t._subPinOffset && t.pin) {
         var prop = t.vars.horizontal ? "offsetWidth" : "offsetHeight", original = t.pin[prop];
         t.revert(true, 1);
@@ -15652,10 +15494,14 @@
         t.refresh();
       }
     });
+    _clampingMax = 1;
+    _hideAllMarkers(true);
     _triggers.forEach(function(t) {
-      var max = _maxScroll(t.scroller, t._dir);
-      (t.vars.end === "max" || t._endClamp && t.end > max) && t.setPositions(t.start, Math.max(t.start + 1, max), true);
+      var max = _maxScroll(t.scroller, t._dir), endClamp = t.vars.end === "max" || t._endClamp && t.end > max, startClamp = t._startClamp && t.start >= max;
+      (endClamp || startClamp) && t.setPositions(startClamp ? max - 1 : t.start, endClamp ? Math.max(startClamp ? max : t.start + 1, max) : t.end, true);
     });
+    _hideAllMarkers(false);
+    _clampingMax = 0;
     refreshInits.forEach(function(result) {
       return result && result.render && result.render(-1);
     });
@@ -15682,7 +15528,7 @@
   var _direction = 1;
   var _primary;
   var _updateAll = function _updateAll2(force) {
-    if (!_refreshingAll || force === 2) {
+    if (force === 2 || !_refreshingAll && !_isReverted) {
       ScrollTrigger2.isUpdating = true;
       _primary && _primary.update(0);
       var l = _triggers.length, time = _getTime2(), recordVelocity = time - _time1 >= 50, scroll = l && _triggers[0].scroll();
@@ -15893,13 +15739,14 @@
       change1 = change1 || scrollTo - initialValue;
       tween && tween.kill();
       vars[prop] = scrollTo;
+      vars.inherit = false;
       vars.modifiers = modifiers;
       modifiers[prop] = function() {
         return checkForInterruption(initialValue + change1 * tween.ratio + change2 * tween.ratio * tween.ratio);
       };
       vars.onUpdate = function() {
         _scrollers.cache++;
-        _updateAll();
+        getTween2.tween && _updateAll();
       };
       vars.onComplete = function() {
         getTween2.tween = 0;
@@ -15962,6 +15809,7 @@
           scrubTween ? scrubTween.duration(value) : scrubTween = gsap3.to(animation, {
             ease: "expo",
             totalProgress: "+=0",
+            inherit: false,
             duration: scrubSmooth,
             paused: true,
             onComplete: function onComplete() {
@@ -16002,7 +15850,10 @@
         snapDelayedCall = gsap3.delayedCall(snap3.delay || scrubSmooth / 2 || 0.1, function() {
           var scroll = scrollFunc(), refreshedRecently = _getTime2() - lastRefresh < 500, tween = tweenTo.tween;
           if ((refreshedRecently || Math.abs(self.getVelocity()) < 10) && !tween && !_pointerIsDown && lastSnap !== scroll) {
-            var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue = _clamp4(0, 1, snapFunc(naturalEnd, self)), endScroll = Math.round(start + endValue * change), _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
+            var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue, endScroll, _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
+            endValue = snapFunc(naturalEnd, self);
+            _isNumber3(endValue) || (endValue = naturalEnd);
+            endScroll = Math.round(start + endValue * change);
             if (scroll <= end && scroll >= start && endScroll !== scroll) {
               if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
                 return;
@@ -16021,6 +15872,9 @@
                 onComplete: function onComplete() {
                   self.update();
                   lastSnap = scrollFunc();
+                  if (animation) {
+                    scrubTween ? scrubTween.resetTo("totalProgress", endValue, animation._tTime / animation._tDur) : animation.progress(endValue);
+                  }
                   snap1 = snap22 = animation && !isToggle ? animation.totalProgress() : self.progress;
                   onSnapComplete && onSnapComplete(self);
                   _onComplete && _onComplete(self);
@@ -16217,7 +16071,7 @@
           pinnedContainer && (cs2[direction.p] = "-=" + scrollFunc());
           gsap3.set([markerStart, markerEnd], cs2);
         }
-        if (pin) {
+        if (pin && !(_clampingMax && self.end >= _maxScroll(scroller, direction))) {
           cs2 = _getComputedStyle(pin);
           isVertical = direction === _vertical;
           scroll = scrollFunc();
@@ -16240,7 +16094,10 @@
             spacerState = [pinSpacing + direction.os2, change + otherPinOffset + _px];
             spacerState.t = spacer;
             i = pinSpacing === _padding ? _getSize(pin, direction) + change + otherPinOffset : 0;
-            i && spacerState.push(direction.d, i + _px);
+            if (i) {
+              spacerState.push(direction.d, i + _px);
+              spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
+            }
             _setState(spacerState);
             if (pinnedContainer) {
               _triggers.forEach(function(t) {
@@ -16250,6 +16107,9 @@
               });
             }
             useFixedPosition && scrollFunc(prevScroll);
+          } else {
+            i = _getSize(pin, direction);
+            i && spacer.style.flexBasis !== "auto" && (spacer.style.flexBasis = i + _px);
           }
           if (useFixedPosition) {
             override = {
@@ -16312,7 +16172,7 @@
         }
         _refreshing = 0;
         animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress || 0, true).render(animation.time(), true, true);
-        if (isFirstRefresh || prevProgress !== self.progress || containerAnimation) {
+        if (isFirstRefresh || prevProgress !== self.progress || containerAnimation || invalidateOnRefresh) {
           animation && !isToggle && animation.totalProgress(containerAnimation && start < -1e-3 && !prevProgress ? gsap3.utils.normalize(start, end, 0) : prevProgress, true);
           self.progress = isFirstRefresh || (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
         }
@@ -16366,7 +16226,13 @@
             snap1 = animation && !isToggle ? animation.totalProgress() : clipped;
           }
         }
-        anticipatePin && !clipped && pin && !_refreshing && !_startup2 && _lastScrollTime && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin && (clipped = 1e-4);
+        if (anticipatePin && pin && !_refreshing && !_startup2 && _lastScrollTime) {
+          if (!clipped && start < scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
+            clipped = 1e-4;
+          } else if (clipped === 1 && end > scroll + (scroll - scroll2) / (_getTime2() - _time2) * anticipatePin) {
+            clipped = 0.9999;
+          }
+        }
         if (clipped !== prevProgress2 && self.enabled) {
           isActive = self.isActive = !!clipped && clipped < 1;
           wasActive = !!prevProgress2 && prevProgress2 < 1;
@@ -16627,6 +16493,7 @@
           Observer2.register(gsap3);
           ScrollTrigger3.isTouch = Observer2.isTouch;
           _fixIOSBug = Observer2.isTouch && /(iPad|iPhone|iPod|Mac)/g.test(navigator.userAgent);
+          _ignoreMobileResize = Observer2.isTouch === 1;
           _addListener3(_win4, "wheel", _onScroll3);
           _root2 = [_win4, _doc4, _docEl2, _body2];
           if (gsap3.matchMedia) {
@@ -16746,7 +16613,7 @@
     };
     return ScrollTrigger3;
   }();
-  ScrollTrigger2.version = "3.12.2";
+  ScrollTrigger2.version = "3.12.5";
   ScrollTrigger2.saveStyles = function(targets) {
     return targets ? _toArray(targets).forEach(function(target) {
       if (target && target.style) {
@@ -17017,6 +16884,7 @@
     tween = gsap3.to(self, {
       ease: "power4",
       paused: true,
+      inherit: false,
       scrollX: normalizeScrollX ? "+=0.1" : "+=0",
       scrollY: "+=0.1",
       modifiers: {
@@ -17045,7 +16913,9 @@
       return _normalizer2.enable();
     }
     if (vars === false) {
-      return _normalizer2 && _normalizer2.kill();
+      _normalizer2 && _normalizer2.kill();
+      _normalizer2 = vars;
+      return;
     }
     var normalizer = vars instanceof Observer2 ? vars : _getScrollNormalizer(vars);
     _normalizer2 && _normalizer2.target === normalizer.target && _normalizer2.kill();
@@ -17096,56 +16966,47 @@
 })();
 /*! Bundled license information:
 
-toastify-js/src/toastify.js:
-  (*!
-   * Toastify js 1.12.0
-   * https://github.com/apvarun/toastify-js
-   * @license MIT licensed
-   *
-   * Copyright (C) 2018 Varun A P
-   *)
-
 gsap/gsap-core.js:
   (*!
-   * GSAP 3.12.2
-   * https://greensock.com
+   * GSAP 3.12.5
+   * https://gsap.com
    *
-   * @license Copyright 2008-2023, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2024, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CSSPlugin.js:
   (*!
-   * CSSPlugin 3.12.2
-   * https://greensock.com
+   * CSSPlugin 3.12.5
+   * https://gsap.com
    *
-   * Copyright 2008-2023, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * Copyright 2008-2024, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/Observer.js:
   (*!
-   * Observer 3.12.2
-   * https://greensock.com
+   * Observer 3.12.5
+   * https://gsap.com
    *
-   * @license Copyright 2008-2023, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2024, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/ScrollTrigger.js:
   (*!
-   * ScrollTrigger 3.12.2
-   * https://greensock.com
+   * ScrollTrigger 3.12.5
+   * https://gsap.com
    *
-   * @license Copyright 2008-2023, GreenSock. All rights reserved.
-   * Subject to the terms at https://greensock.com/standard-license or for
-   * Club GreenSock members, the agreement issued with that membership.
+   * @license Copyright 2008-2024, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license or for
+   * Club GSAP members, the agreement issued with that membership.
    * @author: Jack Doyle, jack@greensock.com
   *)
 */

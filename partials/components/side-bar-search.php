@@ -2,7 +2,7 @@
   <div class="bg-primary-100 p-5 rounded-3xl">
 
       <!-- Title  -->
-      <div class="text-h6 pb-4">
+      <div class="text-h6 pb-4 font-medium">
           <?php _e('جستجو', 'cyn-dm') ?>
       </div>
 
@@ -18,12 +18,10 @@
               </button>
 
               <div>
-                  <input class="focus-visible:outline-0" type="search" value="<?php the_search_query() ?>" id="search" name="s" placeholder="جستجو در مقالات">
+                  <input class="focus-visible:outline-0" type="search" value="<?php the_search_query() ?>" id="search"
+                      name="s" placeholder="جستجو در مقالات">
               </div>
           </div>
       </form>
 
-
   </div>
-
-  <div class="py-3"></div>

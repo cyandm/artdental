@@ -1,5 +1,7 @@
 <?php
+
 add_action('acf/include_fields', 'cyn_register_acf');
+
 
 function cyn_register_acf()
 {
@@ -9,6 +11,8 @@ function cyn_register_acf()
 	cyn_acf_register_home_page();
 	cyn_acf_register_price();
 	cyn_acf_register_doctor();
+	cyn_acf_register_about_us();
+	cyn_acf_register_service();
 }
 
 
@@ -87,6 +91,7 @@ function cyn_acf_register_home_page()
 	cyn_register_acf_group('تنظیمات صفحه اصلی', $fields, $location);
 }
 
+
 function cyn_acf_register_price()
 {
 
@@ -109,9 +114,9 @@ function cyn_acf_register_price()
 	cyn_register_acf_group('تنظیمات ', $fields, $location);
 }
 
+
 function cyn_acf_register_doctor()
 {
-
 	$social_media = [];
 
 	for ($i = 1; $i <= 10; $i++) {
@@ -121,11 +126,20 @@ function cyn_acf_register_doctor()
 		], 50));
 	}
 
+	$slideshow_imgs = [];
+
+	for ($i = 1; $i <= 6; $i++) {
+
+		array_push($slideshow_imgs, cyn_acf_add_image("image_$i", __("عکس $i", "cyn-dm")));
+	}
+
 	$fields = [
 		cyn_acf_add_tab('عمومی'),
 		cyn_acf_add_text('expert', 'تخصص'),
 		cyn_acf_add_tab('شبکه های اجتماعی'),
 		cyn_acf_add_group('social_group', 'شبکه های اجتماعی', $social_media),
+		cyn_acf_add_tab('اسلایدشو'),
+		cyn_acf_add_group('slideshow_group', 'اسلایدشو', $slideshow_imgs),
 	];
 
 	$location = [
@@ -138,5 +152,68 @@ function cyn_acf_register_doctor()
 		]
 	];
 
-	cyn_register_acf_group('تنظیمات ', $fields, $location);
+	cyn_register_acf_group('تنظیمات', $fields, $location);
+}
+
+
+function cyn_acf_register_about_us()
+{
+
+	$fields = [
+
+		cyn_acf_add_tab('هیرو'),
+		cyn_acf_add_image('banner', 'بنر', 100),
+		cyn_acf_add_text('hero_title', 'متن اصلی', 0, 33),
+		cyn_acf_add_text('hero_subtitle', 'متن فرعی', 0, 33),
+
+		cyn_acf_add_tab('توضیحات درباره ما'),
+		cyn_acf_add_image('description_img', 'عکس توضیحات'),
+		cyn_acf_add_text('description_title', 'سربرگ توضیحات', 0, 33),
+		cyn_acf_add_text('description_txt', 'متن توضیحات'),
+
+		cyn_acf_add_tab('پرسنل'),
+		cyn_acf_add_image('crow_img', 'عکس پرسنل'),
+		cyn_acf_add_text('crow_title', 'سربرگ پرسنل', 0, 33),
+		cyn_acf_add_text('crow_txt', 'متن پرسنل'),
+
+		cyn_acf_add_tab('تاریخچه'),
+		cyn_acf_add_image('history_img', 'عکس تاریخچه'),
+		cyn_acf_add_text('history_title', 'سربرگ تاریخچه', 0, 33),
+		cyn_acf_add_text('history_txt', 'متن تاریخچه'),
+
+	];
+
+
+	$location = [
+		[
+			[
+				'param' => 'page_template',
+				'operator' => '==',
+				'value' => 'templates/about-us.php'
+			]
+		]
+	];
+
+	cyn_register_acf_group('تنظیمات', $fields, $location);
+}
+
+function cyn_acf_register_service()
+{
+
+	$fields = [
+		cyn_acf_add_post_object('faq-group', 'سوالات متداول', 'faq', '', 1)
+	];
+
+
+	$location = [
+		[
+			[
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'service'
+			]
+		]
+	];
+
+	cyn_register_acf_group('تنظیمات', $fields, $location);
 }
