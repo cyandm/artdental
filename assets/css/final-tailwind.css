@@ -941,6 +941,10 @@ select {
   pointer-events: none;
 }
 
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 .visible {
   visibility: visible;
 }
@@ -1257,10 +1261,6 @@ select {
   max-height: 150px;
 }
 
-.min-h-10 {
-  min-height: 40px;
-}
-
 .min-h-\[360px\] {
   min-height: 360px;
 }
@@ -1270,6 +1270,10 @@ select {
 }
 
 .w-1\/2 {
+  width: 50%;
+}
+
+.w-2\/4 {
   width: 50%;
 }
 
@@ -1303,10 +1307,6 @@ select {
   width: -webkit-min-content;
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-2\/4 {
-  width: 50%;
 }
 
 .min-w-\[200px\] {
@@ -1989,11 +1989,6 @@ select {
   padding-bottom: 4px;
 }
 
-.py-10 {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
 .py-11 {
   padding-top: 44px;
   padding-bottom: 44px;
@@ -2047,11 +2042,6 @@ select {
 .py-\[52px\] {
   padding-top: 52px;
   padding-bottom: 52px;
-}
-
-.px-1 {
-  padding-left: 4px;
-  padding-right: 4px;
 }
 
 .pb-4 {
@@ -2586,10 +2576,6 @@ select {
           filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
-.focus\:hidden:focus {
-  display: none;
-}
-
 .focus\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -2635,10 +2621,6 @@ select {
 
 .group:hover .group-hover\:opacity-100 {
   opacity: 1;
-}
-
-.group:focus .group-focus\:hidden {
-  display: none;
 }
 
 .peer:focus ~ .peer-focus\:hidden {
