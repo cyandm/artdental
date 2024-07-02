@@ -21,12 +21,12 @@
                 <p class="text-h3 "> <?php _e('تماس با ما', 'cyn-dm') ?></p>
                 <p class="text-body_s"> <?php _e('پیام خودتونو برای ما ارسال کنید', 'cyn-dm') ?></p>
             </div>
-            <!-- Customer information form   -->
+            <!-- Customer  information form   -->
             <div>
                 <form class="flex gap-4 flex-col" action="/" method="post" id="ContactUsForm">
-                    <input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80 " type="text" placeholder="نام شما" required="required" name="name">
-                    <input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" type="mail" placeholder="ایمیل شما" required="required" name="email">
-                    <textarea class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" name="message" id="message" cols="30" rows="10" placeholder="پیام خودتونو بنویسید"></textarea>
+                    <div><input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80 " type="text" placeholder="نام شما" required="required" name="name"></div>
+                    <div><input class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" type="mail" placeholder="ایمیل شما" required="required" name="email"></div>
+                    <div><textarea class="max-lg:w-full w-4/5 p-2 rounded-3xl border border-primary-80" name="message" id="message" cols="30" rows="10" placeholder="پیام خودتونو بنویسید"></textarea></div>
                     <!-- Submit field -->
                     <div class=" flex items-end justify-end max-lg:items-center max-lg:justify-center w-4/5 max-lg:w-full">
                         <button class="max-lg:w-full max-lg:items-center max-lg:justify-center flex items-end justify-end flex-row-reverse gap-1 rounded-full transition-all duration-300 cursor-pointer
@@ -43,7 +43,11 @@
                     </div>
                 </form>
             </div>
+
+
         </div>
+
     </div>
+
 </main>
 <?php get_footer() ?>

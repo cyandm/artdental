@@ -25,14 +25,11 @@ $inputs = [
 
 <!-- header  -->
 <?php get_header() ?>
-<!-- Bread Crumb -->
-<section class=" bg-noise bg-primary-80 py-7 space-y-2 max-lg:space-y-13">
-    <div class="container">
-        <P>Salam man bread crumb hastam bia mano bekhooon</P>
-    </div>
-</section>
-<div class="py-3"></div>
 
+<!-- Bread Crumb -->
+<?php cyn_get_component('breadcrumb') ?>
+
+<div class="py-3"></div>
 
 <main class="container">
     <!-- search part -->
@@ -46,10 +43,10 @@ $inputs = [
                 </div>
                 <div class="flex gap-6 flex-wrap">
                     <?php foreach ($inputs as $index => $input) : ?>
-                        <div class="flex items-center gap-1 ">
-                            <input type="radio" name="search-filter" id="<?php echo $input['value'] ?>">
-                            <label for="<?php echo $input['value'] ?>"><?php echo $input['label'] ?></label>
-                        </div>
+                    <div class="flex items-center gap-1 ">
+                        <input type="radio" name="search-filter" id="<?php echo $input['value'] ?>">
+                        <label for="<?php echo $input['value'] ?>"><?php echo $input['label'] ?></label>
+                    </div>
                     <?php endforeach; ?>
                 </div>
 
@@ -67,7 +64,8 @@ $inputs = [
                     </button>
 
                     <div>
-                        <input type="search" value="<?php the_search_query() ?>" id="search" name="s" placeholder="جستجو">
+                        <input type="search" value="<?php the_search_query() ?>" id="search" name="s"
+                            placeholder="جستجو">
                     </div>
                 </div>
                 <div class="divide-y divide-primary-70"></div>
@@ -95,7 +93,7 @@ $inputs = [
         <?php if ($wp_query->have_posts()) : ?>
 
 
-            <?php
+        <?php
             while ($wp_query->have_posts()) :
                 $wp_query->the_post();
                 cyn_get_card('search-result');
@@ -104,16 +102,13 @@ $inputs = [
 
             cyn_get_component('search-not-found') ?></div>
     <!--search not found-->
-<?php endif; ?>
-
-
+    <?php endif; ?>
 
 </main>
 
-
-
-<!-- pagination  -->
+<!-- Pagination -->
 <?php cyn_get_component('pagination') ?>
+
 
 
 <?php get_footer() ?>
