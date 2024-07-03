@@ -65,6 +65,7 @@ function cyn_handle_search_posts(WP_REST_Request $request)
 }
 
 
+
 function cyn_handle_contact_form(WP_REST_Request $request)
 {
 
@@ -111,7 +112,7 @@ function cyn_render_by_query($query, $post_type, array $args = [])
 }
 
 // copy by fateme 
-function cyn_handle_reserve_form(WP_REST_Request $request)
+function cyn_handle_reserve_popUp_form(WP_REST_Request $request)
 {
 
     $body_params = $request->get_body_params();
