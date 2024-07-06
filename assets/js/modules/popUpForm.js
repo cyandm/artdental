@@ -43,8 +43,6 @@ function reservePopUp() {
   const reservePopUp = document.querySelector("#reservePopUp");
   const reservePopUpCloser = document.querySelector("#reservePopUpCloser");
 
-
-
   if (!reservePopUpOpenerGroup || !reservePopUp || !reservePopUpCloser) return;
 
   function activatePopUp(element) {
