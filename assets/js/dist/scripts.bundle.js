@@ -408,9 +408,9 @@
       }
     }
     connectedCallback() {
-      var _a2;
+      var _a;
       this.title = this.getAttribute("title");
-      this.href = (_a2 = this.getAttribute("href")) != null ? _a2 : "#";
+      this.href = (_a = this.getAttribute("href")) != null ? _a : "#";
       this.id = this.getAttribute("id");
       this.type = this.getAttribute("type");
       this.icon = this.getAttribute("icon");
@@ -510,8 +510,8 @@
       this.classes = this.classes + " " + classes2;
     }
     connectedCallback() {
-      var _a2, _b;
-      this.title = (_a2 = this.getAttribute("title")) != null ? _a2 : this.title;
+      var _a, _b;
+      this.title = (_a = this.getAttribute("title")) != null ? _a : this.title;
       this.description = (_b = this.getAttribute("description")) != null ? _b : this.description;
       this.render();
     }
@@ -10485,14 +10485,14 @@
     const faqCards = document.querySelectorAll(".faq-card");
     if (!faqCards) return;
     function activateFaq(faq, expert) {
-      var _a2;
+      var _a;
       expert.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
-      (_a2 = faq.querySelector("svg")) == null ? void 0 : _a2.classList.add("rotate-45", "text-accent-50");
+      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-45", "text-accent-50");
     }
     function deActivateFaq(faq, expert) {
-      var _a2;
+      var _a;
       expert.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
-      (_a2 = faq.querySelector("svg")) == null ? void 0 : _a2.classList.remove("rotate-45", "text-accent-50");
+      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-45", "text-accent-50");
     }
     faqCards.forEach((faq) => {
       const faqToggle = faq.querySelector(".faq-toggle");
@@ -10566,15 +10566,15 @@
     const terms = document.querySelectorAll(".term");
     if (!terms) return;
     function activeTax(termToggle, termPanel) {
-      var _a2, _b;
+      var _a, _b;
       termPanel.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
-      (_a2 = termToggle.querySelector("svg")) == null ? void 0 : _a2.classList.add("rotate-180", "text-accent-50");
+      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-180", "text-accent-50");
       (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.add("text-accent-50");
     }
     function deActiveTax(termToggle, termPanel) {
-      var _a2, _b;
+      var _a, _b;
       termPanel.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
-      (_a2 = termToggle.querySelector("svg")) == null ? void 0 : _a2.classList.remove("rotate-180", "text-accent-50");
+      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-180", "text-accent-50");
       (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.remove("text-accent-50");
     }
     terms.forEach((term) => {
@@ -10736,13 +10736,13 @@
     });
   }
   PopUpForm();
-  function reservePopUp() {
-    const reservePopUpOpenerGroup = document.querySelectorAll(
+  function reservePopUp2() {
+    const reservePopUpOpenerGroup2 = document.querySelectorAll(
       ".reservePopUpOpener"
     );
-    const reservePopUp2 = document.querySelector("#reservePopUp");
-    const reservePopUpCloser = document.querySelector("#reservePopUpCloser");
-    if (!reservePopUpOpenerGroup || !reservePopUp2 || !reservePopUpCloser) return;
+    const reservePopUp3 = document.querySelector("#reservePopUp");
+    const reservePopUpCloser2 = document.querySelector("#reservePopUpCloser");
+    if (!reservePopUpOpenerGroup2 || !reservePopUp3 || !reservePopUpCloser2) return;
     function activatePopUp(element) {
       element.classList.replace("opacity-0", "opacity-100");
       element.classList.replace("pointer-events-none", "pointer-events-auto");
@@ -10751,29 +10751,22 @@
       element.classList.replace("opacity-100", "opacity-0");
       element.classList.replace("pointer-events-auto", "pointer-events-none");
     }
-    reservePopUpOpenerGroup.forEach((openerEl) => {
-      openerEl.addEventListener("click", () => activatePopUp(reservePopUp2));
+    reservePopUpOpenerGroup2.forEach((openerEl) => {
+      openerEl.addEventListener("click", () => activatePopUp(reservePopUp3));
     });
-    reservePopUpCloser.addEventListener(
+    reservePopUpCloser2.addEventListener(
       "click",
-      () => deActivatePopUp(reservePopUp2)
+      () => deActivatePopUp(reservePopUp3)
     );
-    reservePopUp2.addEventListener("click", (e) => {
-      if (e.target !== reservePopUp2) return;
-      deActivatePopUp(reservePopUp2);
+    reservePopUp3.addEventListener("click", (e) => {
+      if (e.target !== reservePopUp3) return;
+      deActivatePopUp(reservePopUp3);
     });
   }
-  reservePopUp();
+  reservePopUp2();
 
   // assets/js/modules/popUpVideo.js
-  var _a;
-  (_a = document.getElementById("icon-test")) == null ? void 0 : _a.addEventListener("click", (event2) => {
-    event2.preventDefault();
-    var videoCover = document.querySelector(".video-cover");
-    var video = document.getElementById("video-teaser");
-    videoCover.classList.add("hidden");
-    video.play();
-  });
+  reservePopUp();
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
