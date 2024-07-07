@@ -1,18 +1,9 @@
-// import { createVideoPopup } from './functions';
+document.getElementById("icon-test")?.addEventListener("click", (event) => {
+  event.preventDefault();
+  var videoCover = document.querySelector(".video-cover");
+  var video = document.getElementById("video-teaser");
 
-// // ************************ video popup
-// const videoPopup = document.querySelector('#video-popup');
-// if (videoPopup) {
-//   videoPopup.addEventListener('click', () => {
-//     const sourceUrl = videoPopup
-//       .querySelector('.video-popup video source')
-//       .getAttribute('src');
+  videoCover.classList.add("hidden");
 
-//     createVideoPopup(sourceUrl);
-//   });
-// }
-function videoPopup() {
-  const playVideoPopup = document.querySelector("#reservePopUpCloser");
-  const videoPopupCloser = document.querySelector("#reservePopUpCloser");
-  
-}
+  video.play();
+});

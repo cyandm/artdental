@@ -408,9 +408,9 @@
       }
     }
     connectedCallback() {
-      var _a;
+      var _a2;
       this.title = this.getAttribute("title");
-      this.href = (_a = this.getAttribute("href")) != null ? _a : "#";
+      this.href = (_a2 = this.getAttribute("href")) != null ? _a2 : "#";
       this.id = this.getAttribute("id");
       this.type = this.getAttribute("type");
       this.icon = this.getAttribute("icon");
@@ -510,8 +510,8 @@
       this.classes = this.classes + " " + classes2;
     }
     connectedCallback() {
-      var _a, _b;
-      this.title = (_a = this.getAttribute("title")) != null ? _a : this.title;
+      var _a2, _b;
+      this.title = (_a2 = this.getAttribute("title")) != null ? _a2 : this.title;
       this.description = (_b = this.getAttribute("description")) != null ? _b : this.description;
       this.render();
     }
@@ -10485,14 +10485,14 @@
     const faqCards = document.querySelectorAll(".faq-card");
     if (!faqCards) return;
     function activateFaq(faq, expert) {
-      var _a;
+      var _a2;
       expert.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
-      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-45", "text-accent-50");
+      (_a2 = faq.querySelector("svg")) == null ? void 0 : _a2.classList.add("rotate-45", "text-accent-50");
     }
     function deActivateFaq(faq, expert) {
-      var _a;
+      var _a2;
       expert.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
-      (_a = faq.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-45", "text-accent-50");
+      (_a2 = faq.querySelector("svg")) == null ? void 0 : _a2.classList.remove("rotate-45", "text-accent-50");
     }
     faqCards.forEach((faq) => {
       const faqToggle = faq.querySelector(".faq-toggle");
@@ -10566,15 +10566,15 @@
     const terms = document.querySelectorAll(".term");
     if (!terms) return;
     function activeTax(termToggle, termPanel) {
-      var _a, _b;
+      var _a2, _b;
       termPanel.classList.replace("grid-rows-[0fr]", "grid-rows-[1fr]");
-      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.add("rotate-180", "text-accent-50");
+      (_a2 = termToggle.querySelector("svg")) == null ? void 0 : _a2.classList.add("rotate-180", "text-accent-50");
       (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.add("text-accent-50");
     }
     function deActiveTax(termToggle, termPanel) {
-      var _a, _b;
+      var _a2, _b;
       termPanel.classList.replace("grid-rows-[1fr]", "grid-rows-[0fr]");
-      (_a = termToggle.querySelector("svg")) == null ? void 0 : _a.classList.remove("rotate-180", "text-accent-50");
+      (_a2 = termToggle.querySelector("svg")) == null ? void 0 : _a2.classList.remove("rotate-180", "text-accent-50");
       (_b = termToggle.querySelector(".title")) == null ? void 0 : _b.classList.remove("text-accent-50");
     }
     terms.forEach((term) => {
@@ -10764,6 +10764,16 @@
     });
   }
   reservePopUp();
+
+  // assets/js/modules/popUpVideo.js
+  var _a;
+  (_a = document.getElementById("icon-test")) == null ? void 0 : _a.addEventListener("click", (event2) => {
+    event2.preventDefault();
+    var videoCover = document.querySelector(".video-cover");
+    var video = document.getElementById("video-teaser");
+    videoCover.classList.add("hidden");
+    video.play();
+  });
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {

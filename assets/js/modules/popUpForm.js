@@ -38,8 +38,7 @@ PopUpForm();
 
 function reservePopUp() {
   const reservePopUpOpenerGroup = document.querySelectorAll(
-    ".reservePopUpOpener"
-  );
+".reservePopUpOpener");
   const reservePopUp = document.querySelector("#reservePopUp");
   const reservePopUpCloser = document.querySelector("#reservePopUpCloser");
 
