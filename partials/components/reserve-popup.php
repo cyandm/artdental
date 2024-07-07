@@ -11,7 +11,7 @@ $services = get_posts([
 
 <section class="z-50 backdrop-blur w-full h-full fixed inset-0 flex justify-center items-center overflow-hidden opacity-0 pointer-events-none transition-all duration-300" id="reservePopUp">
     <!-- form  -->
-    <div class="bg-primary-100 flex flex-col  rounded-3xl">
+    <div class="bg-primary-100 flex flex-col rounded-3xl">
         <!--close form button -->
         <div class="mt-5 flex">
             <div class="px-5">
