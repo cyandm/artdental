@@ -10736,13 +10736,13 @@
     });
   }
   PopUpForm();
-  function reservePopUp2() {
-    const reservePopUpOpenerGroup2 = document.querySelectorAll(
+  function reservePopUp() {
+    const reservePopUpOpenerGroup = document.querySelectorAll(
       ".reservePopUpOpener"
     );
-    const reservePopUp3 = document.querySelector("#reservePopUp");
-    const reservePopUpCloser2 = document.querySelector("#reservePopUpCloser");
-    if (!reservePopUpOpenerGroup2 || !reservePopUp3 || !reservePopUpCloser2) return;
+    const reservePopUp2 = document.querySelector("#reservePopUp");
+    const reservePopUpCloser = document.querySelector("#reservePopUpCloser");
+    if (!reservePopUpOpenerGroup || !reservePopUp2 || !reservePopUpCloser) return;
     function activatePopUp(element) {
       element.classList.replace("opacity-0", "opacity-100");
       element.classList.replace("pointer-events-none", "pointer-events-auto");
@@ -10751,21 +10751,18 @@
       element.classList.replace("opacity-100", "opacity-0");
       element.classList.replace("pointer-events-auto", "pointer-events-none");
     }
-    reservePopUpOpenerGroup2.forEach((openerEl) => {
-      openerEl.addEventListener("click", () => activatePopUp(reservePopUp3));
+    reservePopUpOpenerGroup.forEach((openerEl) => {
+      openerEl.addEventListener("click", () => activatePopUp(reservePopUp2));
     });
-    reservePopUpCloser2.addEventListener(
+    reservePopUpCloser.addEventListener(
       "click",
-      () => deActivatePopUp(reservePopUp3)
+      () => deActivatePopUp(reservePopUp2)
     );
-    reservePopUp3.addEventListener("click", (e) => {
-      if (e.target !== reservePopUp3) return;
-      deActivatePopUp(reservePopUp3);
+    reservePopUp2.addEventListener("click", (e) => {
+      if (e.target !== reservePopUp2) return;
+      deActivatePopUp(reservePopUp2);
     });
   }
-  reservePopUp2();
-
-  // assets/js/modules/popUpVideo.js
   reservePopUp();
 
   // assets/js/pages/home.js
