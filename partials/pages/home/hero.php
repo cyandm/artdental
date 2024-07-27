@@ -69,8 +69,8 @@
 			</div>
 		</div>
 
-		<div class="fade-in-down reservePopUpOpener" anim-delay="0.8">
-			<cyn-cta />
+		<div class="fade-in-down cursor-pointer" anim-delay="0.8">
+			<cyn-cta class="reservePopUpOpener" />
 		</div>
 
 

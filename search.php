@@ -43,6 +43,7 @@ $inputs = [
                 </div>
                 <div class="flex gap-6 flex-wrap">
                     <?php foreach ($inputs as $index => $input) : ?>
+
                         <div class="flex items-center gap-1 ">
                             <input type="radio" name="search-filter" id="<?php echo $input['value'] ?>">
                             <label for="<?php echo $input['value'] ?>"><?php echo $input['label'] ?></label>
@@ -89,19 +90,31 @@ $inputs = [
 
     <!-- posts  -->
     <div class="divide-y divide-primary-70 py-4" id='postsWrapper'>
-        <?php if ($wp_query->have_posts()) : ?>
 
+        <?php if (!empty($_GET['s'])) : ?>
+
+            <?php if (have_posts()) : ?>
+
+                <div id="searchPostsWrapper" class="space-y-4">
+                    <?php while (have_posts()) :
+                        the_post()
+                    ?>
+                        <div class="">
+                            <?php cyn_get_card('search') ?>
+                        </div>
+                    <?php endwhile; ?>
+                </div>
+                <!--search not found-->
 
             <?php
-            while ($wp_query->have_posts()) :
-                $wp_query->the_post();
-                cyn_get_card('search-result');
-            endwhile;
-        else :
+            else :
+                cyn_get_component('search-not-found');
+            endif;
+            ?>
 
-            cyn_get_component('search-not-found') ?></div>
-    <!--search not found-->
-<?php endif; ?>
+        <?php endif; ?>
+
+
 
 </main>
 
