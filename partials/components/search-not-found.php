@@ -2,9 +2,6 @@
 <div>
     <div>
         <!-- search not found text  -->
-        <div class="text-h1 max-lg:text-h4">
-            <?php _e('مقالات', 'cyn-dm') ?>
-        </div>
         <div class="text-body max-lg:text-body_s">
             <?php _e('متاسفانه نتیجه‌ای برای جستجوی شما یافت نشد', 'cyn-dm') ?>
         </div>

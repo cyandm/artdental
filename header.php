@@ -81,7 +81,7 @@
             </div>
 
             <div class="flex items-center gap-2">
-                <a href="/?s=">
+                <a href="/?search-type=all&s=">
                     <svg class="icon size-6">
                         <use href="#icon-search-loupe" />
                     </svg>
