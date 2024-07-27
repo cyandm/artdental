@@ -375,7 +375,7 @@
           break;
         case "secondary":
           this.addClass(
-            "bg-background-card_1/20 border border-primary-100 color-primary-100 hover:bg-primary-100 hover:color-primary-20 hover:border-primary-20"
+            "bg-background-card_1/20 border border-primary-100 color-primary-100 hover:bg-primary-50 hover:color-primary-20 hover:border-primary-20"
           );
           break;
         case "secondary-dark":
@@ -10774,6 +10774,19 @@
     });
   }
   reservePopUp();
+
+  // assets/js/modules/gallery.js
+  function gallery() {
+    const galleryPostTypes = document.querySelector("#galleryPostTypes");
+    if (!galleryPostTypes) return;
+    const inputs = galleryPostTypes.querySelectorAll("input");
+    inputs.forEach((input) => {
+      input.addEventListener("click", () => {
+        window.location.href = input.dataset.link;
+      });
+    });
+  }
+  gallery();
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {

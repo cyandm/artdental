@@ -3088,6 +3088,10 @@ video {
   text-decoration-line: underline;
 }
 
+.line-through {
+  text-decoration-line: line-through;
+}
+
 .opacity-0 {
   opacity: 0;
 }
@@ -3355,6 +3359,11 @@ video {
 .hover\:bg-primary-20:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(60 63 73 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-primary-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(106 111 129 / var(--tw-bg-opacity));
 }
 
 .hover\:from-primary-20:hover {
