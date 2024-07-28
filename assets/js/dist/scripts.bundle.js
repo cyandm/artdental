@@ -10631,18 +10631,21 @@
   var successToast = (0, import_toastify_js.default)({
     text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0646\u062C\u0627\u0645 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: successColor
     }
   });
   var errorToast = (0, import_toastify_js.default)({
     text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u062E\u0637\u0627 \u0645\u0648\u0627\u062C\u0647 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: errorColor
     }
   });
   var successFormToast = (0, import_toastify_js.default)({
     text: "\u0641\u0631\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0631\u0633\u0627\u0644 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: successColor
     }
   });
@@ -10709,7 +10712,9 @@
           success: (res) => {
             console.log(res);
             successFormToast.showToast();
-            priceForm.reset();
+            PopUpForm2.reset();
+            document.querySelector("#reservePopUp").classList.replace("opacity-100", "opacity-0");
+            document.querySelector("#reservePopUp").classList.replace("pointer-events-auto", "pointer-events-none");
           },
           error: (err) => {
             console.log(err);
