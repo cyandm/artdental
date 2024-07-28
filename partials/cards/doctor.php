@@ -25,8 +25,7 @@ if ($postId === 0) {
         </div>
 
         <div class="flex justify-between items-center pt-5">
-            <cyn-button type="secondary-dark"
-                href="<?php echo get_post_type_archive_link('doctor') . '#doctor-' . $postId ?>" size="sm">
+            <cyn-button type="secondary-dark" href="<?php echo get_post_type_archive_link('doctor') . '#doctor-' . $postId ?>" size="sm">
                 <?php _e('درباره پزشک', 'cyn-dm') ?>
             </cyn-button>
 
@@ -39,9 +38,9 @@ if ($postId === 0) {
                         continue;
                 ?>
 
-                <a href="<?php echo $social_url ?>">
-                    <?php echo wp_get_attachment_image($social_img) ?>
-                </a>
+                    <a href="<?php echo $social_url ?>">
+                        <?php echo wp_get_attachment_image($social_img) ?>
+                    </a>
 
                 <?php endfor; ?>
             </div>

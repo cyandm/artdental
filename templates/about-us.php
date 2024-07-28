@@ -17,12 +17,12 @@
 ?>
 <div class="py-[52px]"></div>
 <!-- Services -->
-<?php cyn_get_page_template('home/services'); ?>
-
+<?php cyn_get_page_template('home/services') ?>
 <div class="py-[48px] max-lg:py-[32px]"></div>
 <!-- History -->
-<?php cyn_get_page_template('about-us/history') ?>
-<div class="py-[45px]"></div>
+<!-- <?php //cyn_get_page_template('about-us/history') 
+        ?> -->
+<!-- <div class="py-[45px]"></div> -->
 <!-- CTA -->
 <div class="container fade-in-down" anim-delay="0.8">
     <cyn-cta />
