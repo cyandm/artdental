@@ -10,6 +10,7 @@
 
     <!-- search not found image  -->
     <div class="flex justify-center items-center">
-        <img src="<?php echo get_stylesheet_directory_uri()  . "/assets/img/search-not-found.png" ?>" alt="bg-404-picture">
+        <img src="<?php echo get_stylesheet_directory_uri()  . "/assets/img/search-not-found.png" ?>"
+            alt="bg-404-picture">
     </div>
 </div>
