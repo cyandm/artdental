@@ -10763,6 +10763,17 @@
   }
   gallery();
 
+  // assets/js/modules/offer.js
+  function headerCta() {
+    const ctaCloser = document.querySelector("#headerCtaCloser");
+    const headerCta2 = document.querySelector("#headerCta");
+    if (!ctaCloser || !headerCta2) return;
+    ctaCloser.addEventListener("click", () => {
+      headerCta2.classList.add("hidden");
+    });
+  }
+  headerCta();
+
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
     constructor() {

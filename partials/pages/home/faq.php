@@ -25,7 +25,7 @@ $faq_cats = get_terms([
 				</div>
 			<?php endforeach; ?>
 			<div class="fade-in-down" anim-delay="<?php echo count($faq_cats) * 0.3 ?>">
-				<cyn-button type="primary" class="justify-center" href="#">
+				<cyn-button type="primary" class="justify-center" href="https://artdental.center/%d8%aa%d9%85%d8%a7%d8%b3-%d8%a8%d8%a7-%d9%85%d8%a7/">
 					<?php _e('تماس با ما', 'cyn-dm') ?>
 				</cyn-button>
 			</div>

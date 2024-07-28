@@ -16,8 +16,11 @@ $table = [
 		'value' => get_field('country', $postId),
 	],
 	[
-		'label' => __('قیمت هر واحد', 'cyn-dm'),
-		'value' => get_field('price_per_unit_off', $postId) ?  number_format(intval(get_field('price_per_unit_off', $postId))) . ' ' . __('تومان', 'cyn-dm') . ' ' . '<span class="line-through">' . number_format(intval(get_field('price_per_unit', $postId))) . ' ' . __('تومان', 'cyn-dm') . '</span>' : number_format(intval(get_field('price_per_unit', $postId))) . ' ' . __('تومان', 'cyn-dm'),
+		'label' => __('قیمت جراحی هر واحد', 'cyn-dm'),
+		'value' => get_field('price_per_unit_off', $postId) ?
+			get_field('price_per_unit_off', $postId) . ' ' . __('میلیون تومان', 'cyn-dm') . ' ' . '<span class="line-through opacity-60 text-body_s ">'
+			. get_field('price_per_unit', $postId) . ' ' . __('میلیون تومان', 'cyn-dm') . '</span>'
+			: get_field('price_per_unit', $postId) . ' ' . __('میلیون تومان', 'cyn-dm'),
 	],
 ]
 ?>
