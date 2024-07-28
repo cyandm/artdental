@@ -5,7 +5,7 @@ $services = get_field('services') ?? [];
 if (!is_array($services) || count($services) < 1) {
 	$services = get_posts([
 		'post_type' => 'service',
-		'posts_per_page' => 3,
+		'posts_per_page' => -1,
 		'fields' => 'ids',
 	]);
 }

@@ -22,9 +22,9 @@
             <?php if (!empty(get_option('cyn_cta_header_text'))) : ?>
                 <div id="headerCta" class="bg-accent-90 text-md p-2 ">
                     <div class="container flex justify-between items-center">
-                        <div class="justify-center items-center font-bold">
+                        <a href="/#price_section" class="justify-center items-center font-bold">
                             <?php echo get_option('cyn_cta_header_text') ?>
-                        </div>
+                        </a>
 
                         <span id="headerCtaCloser" class="cursor-pointer">
                             <svg class="icon rotate-45 size-8">
