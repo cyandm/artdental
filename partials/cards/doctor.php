@@ -9,15 +9,6 @@ if ($postId === 0) {
 ?>
 
 <div class="bg-background-card_1 rounded-xl p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
-    <div class="">
-        <div class="text-h5">
-            <?php echo get_the_title($postId) ?>
-        </div>
-
-        <div class="text-body-s">
-            <?php echo get_field('expert', $postId) ?>
-        </div>
-    </div>
 
     <div class="divide-y divide-primary-80 space-y-10 pt-3">
         <div class="flex justify-center items-center">
@@ -25,11 +16,13 @@ if ($postId === 0) {
         </div>
 
         <div class="flex justify-between items-center pt-5">
-            <cyn-button type="secondary-dark" href="<?php echo get_post_type_archive_link('doctor') . '#doctor-' . $postId ?>" size="sm">
-                <?php _e('درباره پزشک', 'cyn-dm') ?>
-            </cyn-button>
+            <!-- <cyn-button type="secondary-dark" href="<?php //echo get_post_type_archive_link('doctor') . '#doctor-' . $postId 
+                                                            ?>" size="sm">
+                <?php //_e('درباره پزشک', 'cyn-dm') 
+                ?>
+            </cyn-button> -->
 
-            <div class="flex gap-2">
+            <div class="flex gap-2 ">
                 <?php for ($i = 0; $i < 10; $i++) :
                     $social_url = get_field("social_group_social_" . $i . "_social_link", $postId);
                     $social_img = get_field("social_group_social_" . $i . "_social_image", $postId);
@@ -43,8 +36,19 @@ if ($postId === 0) {
                     </a>
 
                 <?php endfor; ?>
+                <div class="">
+                    <div class="text-h5">
+                        <?php echo get_the_title($postId) ?>
+                    </div>
+
+                    <div class="text-body-s">
+                        <?php echo get_field('expert', $postId) ?>
+                    </div>
+                </div>
+
             </div>
         </div>
+
     </div>
 
 </div>
