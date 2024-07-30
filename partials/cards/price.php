@@ -25,12 +25,12 @@ $table = [
 ]
 ?>
 
-<div class="h-full w-full p-6 max-lg:p-2 rounded-2xl bg-cover flex items-end <?php echo $class ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
+<div class="h-full w-full p-6 max-lg:p-2 rounded-2xl bg-cover flex text-primary-0 items-end <?php echo $class ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
 
 	<div class="text-primary-100 text-body max-lg:text-body_s divide-y divide-primary-100/20 bg-background-card_1/20 backdrop-blur-lg py-2 px-3 rounded-xl w-full">
 
 		<?php foreach ($table as $index => $item) : ?>
-			<div class="flex justify-between py-3 max-lg:py-2">
+			<div class="flex justify-between py-3 max-lg:py-2 text-primary-0">
 				<span>
 					<?php echo $item['label'] ?>
 				</span>
