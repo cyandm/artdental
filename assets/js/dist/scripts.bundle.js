@@ -10779,6 +10779,19 @@
   }
   headerCta();
 
+  // assets/js/modules/preloader.js
+  function preloader() {
+    const preloader2 = document.querySelector("#preloader");
+    if (!preloader2) return;
+    window.addEventListener("load", () => {
+      preloader2.classList.replace("opacity-100", "opacity-0");
+      setTimeout(() => {
+        preloader2.remove();
+      }, 700);
+    });
+  }
+  preloader();
+
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
     constructor() {

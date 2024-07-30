@@ -13,3 +13,4 @@ import "./toastify";
 import "./popUpForm";
 import "./gallery";
 import "./offer";
+import "./preloader";

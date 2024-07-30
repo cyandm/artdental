@@ -15,6 +15,7 @@
     ?>
 
     <?php wp_body_open() ?>
+    <?php cyn_get_component('preloader') ?>
 
     <?php if ($render_template) : ?>
         <!-- site offer -->

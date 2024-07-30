@@ -32,7 +32,7 @@ if (!is_array($doctors) || count($doctors) < 1) {
 		<?php endforeach; ?>
 	</div>
 
-	<div class="lg:hidden">
+	<div class="lg:hidden ">
 		<swiper-container slides-per-view="auto" space-between="12" pagination='true'>
 			<?php foreach ($doctors as $index => $postId) : ?>
 				<swiper-slide class="max-w-[340px] fade-in-down" anim-delay="<?php echo $index * 0.3 ?>">
