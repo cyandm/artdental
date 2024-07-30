@@ -58,7 +58,7 @@ $postId = $args['post-id'] ?? get_the_ID();
 
                 </div>
 
-                <div class="p-6">
+                <div>
                     <?php cyn_get_component('faq-group', ['type' => 'acf', 'acf_field' => 'faq-group', 'post-id' => $postId]) ?>
                 </div>
             </div>
