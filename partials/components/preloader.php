@@ -1,4 +1,4 @@
-<div id="preloader" class="fixed bg-white inset-0 z-50 flex justify-center items-center transition-opacity duration-500 opacity-100 pointer-events-none">
+<div id="preloader" class="fixed bg-primary-100 inset-0 z-50 flex justify-center items-center transition-opacity duration-500 opacity-100 pointer-events-none">
     <div class="preloader-loader"></div>
 </div>
 
