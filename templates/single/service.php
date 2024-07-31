@@ -24,22 +24,22 @@ $postId = $args['post-id'] ?? get_the_ID();
     <!-- Paragraph -->
     <section class="col-span-3 max-lg:col-span-4 max-xl:mx-5">
 
-        <!--Blog Title  -->
-        <div class="text-h1">
+        <!--service Title  -->
+        <div class="text-h1 max-lg:text-h3">
             <?php the_title() ?>
         </div>
 
         <div class="pt-4"></div>
 
-        <!-- Blog Thumbnail -->
+        <!-- service Thumbnail -->
         <div class="">
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
 
         <div class="pb-4"></div>
 
-        <!-- Blog Content -->
-        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6">
+        <!-- service Content -->
+        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6">
             <?php the_content() ?>
         </div>
 

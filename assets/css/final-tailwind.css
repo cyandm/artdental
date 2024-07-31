@@ -472,7 +472,7 @@ video {
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -480,13 +480,13 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Thin.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Thin.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Thin.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Thin.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Thin.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Thin.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -494,14 +494,14 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2')
-				format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-ExtraLight.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraLight.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2")
+        format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-ExtraLight.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-ExtraLight.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -509,13 +509,13 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Light.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Light.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Light.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Light.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Light.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Light.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -523,13 +523,13 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Regular.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Regular.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Regular.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Regular.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Regular.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Regular.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -537,13 +537,13 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Medium.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Medium.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Medium.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Medium.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Medium.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Medium.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -551,14 +551,14 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-SemiBold.woff2')
-				format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-SemiBold.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-SemiBold.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-SemiBold.woff2")
+        format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-SemiBold.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-SemiBold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -566,13 +566,13 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Bold.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Bold.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Bold.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Bold.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Bold.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Bold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -580,14 +580,14 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2')
-				format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-ExtraBold.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraBold.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2")
+        format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-ExtraBold.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-ExtraBold.woff") format("woff");
 }
 
 @font-face {
-  font-family: 'Peyda-1';
+  font-family: "Peyda-1";
 
   font-style: normal;
 
@@ -595,15 +595,15 @@ video {
 
   font-display: swap;
 
-  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Black.woff2') format('woff2'),
-			url('../fonts/peyda/TTF/PeydaFaNum-Black.ttf') format('TrueType'),
-			url('../fonts/peyda/woff/PeydaWebFaNum-Black.woff') format('woff');
+  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Black.woff2") format("woff2"),
+      url("../fonts/peyda/TTF/PeydaFaNum-Black.ttf") format("TrueType"),
+      url("../fonts/peyda/woff/PeydaWebFaNum-Black.woff") format("woff");
 }
 
 * {
   font-family: "Peyda-1" , sans;
-  -webkit-font-feature-settings: 'ss01' 1;
-          font-feature-settings: 'ss01' 1;
+  -webkit-font-feature-settings: "ss01" 1;
+          font-feature-settings: "ss01" 1;
   -webkit-font-variant-ligatures: discretionary-ligatures;
           font-variant-ligatures: discretionary-ligatures;
 }
@@ -2925,6 +2925,21 @@ video {
   padding-bottom: 52px;
 }
 
+.py-14 {
+  padding-top: 72px;
+  padding-bottom: 72px;
+}
+
+.py-17 {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.py-16 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
 .pb-4 {
   padding-bottom: 16px;
 }
@@ -2980,6 +2995,10 @@ video {
 
 .pt-\[93px\] {
   padding-top: 93px;
+}
+
+.pb-17 {
+  padding-bottom: 120px;
 }
 
 .text-left {
@@ -3312,6 +3331,12 @@ video {
   }
 }
 
+.rank-math-breadcrumb p > * {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
 .before\:inline-block::before {
   content: var(--tw-content);
   display: inline-block;
@@ -3607,6 +3632,10 @@ video {
 .prose-p\:text-primary-50 :is(:where(p):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   --tw-text-opacity: 1;
   color: rgb(106 111 129 / var(--tw-text-opacity));
+}
+
+.prose-table\:overflow-x-auto :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  overflow-x: auto;
 }
 
 .prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
@@ -4141,6 +4170,10 @@ video {
 
 .\[\&_\.prev\]\:p-1 .prev {
   padding: 4px;
+}
+
+.\[\&_\.rank-math-breadcrumb\]\:overflow-auto .rank-math-breadcrumb {
+  overflow: auto;
 }
 
 .\[\&_p\]\:flex p {

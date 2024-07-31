@@ -7,13 +7,7 @@
         <!-- app bar art dental  -->
         <section class="text-caption w-full fixed bottom-4 z-50 md:hidden">
 
-            <div class="w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-2 shadow-2xl">
-
-                <!--  whitespace-nowrap ring-offset-background transition-colors
-                focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2
-                disabled:pointer-events-none disabled:opacity-50 bg-black text-white hover:bg-black/90 h-10 px-4 py-2 -->
-
-
+            <div class="w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
 
                 <!-- service button  -->
                 <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
@@ -99,7 +93,7 @@
             </div>
         </div>
 
-        <div class="py-9 bg-noise text-primary-100">
+        <div class="py-9 bg-noise text-primary-100 pb-17">
             <div class="container flex justify-between items-center  max-md:items-start max-lg:flex-col">
                 <div class="flex gap-11 max-md:flex-col ">
                     <div class="max-w-[320px] max-lg:max-w-[250px] space-y-3">
