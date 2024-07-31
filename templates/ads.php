@@ -8,7 +8,8 @@
 <div class="py-6"></div>
 <div id="price_section" class=" scroll-mt-8 ">
     <?php cyn_get_page_template('home/price'); ?>
-</div><div class="py-6"></div>
+</div>
+<div class="py-6"></div>
 <?php cyn_get_page_template('home/faq'); ?>
 <div class="py-6"></div>
 
