@@ -94,7 +94,7 @@
                     </svg>
                 </a>
 
-                <cyn-button class="reservePopUpOpener" type="primary" size="md" href="#">
+                <cyn-button class="reservePopUpOpener " type="primary" size="md" href="#">
                     <?php _e('رزرو نوبت آنلاین', 'cyn-dm') ?>
                 </cyn-button>
             </div>

@@ -32,7 +32,7 @@ $postId = $args['post-id'] ?? get_the_ID();
         <div class="pt-4"></div>
 
         <!-- service Thumbnail -->
-        <div class="">
+        <div>
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
 

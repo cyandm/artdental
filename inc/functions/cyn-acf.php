@@ -46,6 +46,7 @@ function cyn_acf_register_home_page()
 		], 50));
 	}
 
+
 	$features = [
 		cyn_acf_add_tab('ویژگی های کلینیک'),
 		cyn_acf_add_group('features_group', '', $featuresGroup),
@@ -241,13 +242,43 @@ function cyn_acf_register_video()
 // ADS ACF 
 function cyn_acf_register_ads()
 {
+
 	$fields = [
 
 		cyn_acf_add_tab('هیرو'),
 		cyn_acf_add_image('banner', 'بنر', 100),
 		cyn_acf_add_text('hero_title', 'متن اصلی', 0, 33),
 		cyn_acf_add_text('hero_subtitle', 'متن فرعی', 0, 33),
+
+
+
+		cyn_acf_add_tab('توضیحات'),
+		cyn_acf_add_image('description_img', 'عکس توضیحات'),
+		cyn_acf_add_text('description_title', 'سربرگ توضیحات', 0, 33),
+		cyn_acf_add_wysiwyg('description_txt', 'متن توضیحات'),
+
+
+		cyn_acf_add_tab('1توضیحات بیشتر'),
+		cyn_acf_add_text('description_title1', 'سربرگ توضیحات', 0, 33),
+		cyn_acf_add_wysiwyg('description_txt1', 'متن توضیحات'),
+
+
+		cyn_acf_add_tab('توضیحات بیشتر2'),
+		cyn_acf_add_text('description_title2', 'سربرگ توضیحات', 0, 33),
+		cyn_acf_add_wysiwyg('description_txt2', 'متن توضیحات'),
+
+
+		cyn_acf_add_tab('معرفی'),
+
+
 	];
+
+
+	for ($i = 1; $i <= 6; $i++) {
+		array_push($fields, cyn_acf_add_image("IntroductionGroup_image_$i", "تصویر $i  ", 30));
+		array_push($fields, cyn_acf_add_text("IntroductionGroup_title_$i", "موضوع $i ", 0, 30));
+		array_push($fields, cyn_acf_add_wysiwyg("IntroductionGroup_text_$i", "متن $i ", 0, 30));
+	}
 
 
 	$location = [
