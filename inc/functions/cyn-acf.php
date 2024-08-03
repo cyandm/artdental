@@ -271,6 +271,8 @@ function cyn_acf_register_ads()
 		cyn_acf_add_tab('معرفی'),
 
 
+
+
 	];
 
 
@@ -280,6 +282,11 @@ function cyn_acf_register_ads()
 		array_push($fields, cyn_acf_add_wysiwyg("IntroductionGroup_text_$i", "متن $i ", 0, 30));
 	}
 
+
+	array_push($fields,	cyn_acf_add_tab('نظرات مشتریان ما '),);
+	for ($i = 1; $i <= 10; $i++) {
+		array_push($fields, cyn_acf_add_file("Customers_Comments_video_$i", "فایل ویدئو$i", 50));
+	}
 
 	$location = [
 		[

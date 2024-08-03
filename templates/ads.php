@@ -19,7 +19,10 @@
 <!-- Introduction part1  -->
 <div class="py-8"></div>
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 1, 'end-point' => 3]); ?></div>
-<!-- Our Customers Comments --><!-- Introduction part2  -->
+<!-- Our Customers Comments -->
+<div class="py-8"></div>
+<div><?php cyn_get_page_template('ADS/Customers_Comments') ?></div>
+<!-- Introduction part2  -->
 <div class="py-8"></div>
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 6]); ?></div>
 <!-- faq  -->

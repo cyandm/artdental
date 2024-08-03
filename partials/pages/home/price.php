@@ -34,9 +34,9 @@ if (!is_array($prices) || count($prices) < 1) {
 
     <div class="flex gap-3 max-lg:flex-col">
         <?php foreach ($prices as $index => $price) : ?>
-        <div class="flex-1 fade-in-down" anim-delay="<?php echo $index * 0.7 ?>">
-            <?php cyn_get_card('price', ['post-id' => $price, 'class' => 'min-h-[400px] max-lg:min-h-[240px]']) ?>
-        </div>
+            <div class="flex-1 fade-in-down" anim-delay="<?php echo $index * 0.7 ?>">
+                <?php cyn_get_card('price', ['post-id' => $price, 'class' => 'min-h-[400px] max-lg:min-h-[240px]']) ?>
+            </div>
         <?php endforeach; ?>
     </div>
 
@@ -47,8 +47,7 @@ if (!is_array($prices) || count($prices) < 1) {
             </cyn-button>
         </div>
 
-        <cyn-button type="secondary-dark" size="md" class="justify-center"
-            href="<?php echo get_post_type_archive_link('price') ?>">
+        <cyn-button type="secondary-dark" size="md" class="justify-center" href="<?php echo get_post_type_archive_link('price') ?>">
             <?php _e('مشاهده همه', 'cyn-dm') ?>
         </cyn-button>
     </div>
