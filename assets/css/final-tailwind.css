@@ -2051,6 +2051,11 @@ video {
   margin-bottom: 32px;
 }
 
+.my-5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .me-2 {
   -webkit-margin-end: 8px;
           margin-inline-end: 8px;

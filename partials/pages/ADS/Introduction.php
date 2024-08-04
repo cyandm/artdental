@@ -26,12 +26,12 @@ $end_point = $args['end-point'] ?? 6;
         <!-- IntroductionGroup info  -->
         <div class="w-1/2 max-lg:w-full flex flex-col gap-4">
             <!-- IntroductionGroup subject  -->
-            <div class="text-h2 max-lg:text-body">
+            <div class="text-h2 max-lg:text-body text-primary-20">
                 <?php echo $Title ?>
             </div>
 
             <!-- IntroductionGroup text  -->
-            <div class="text-body_s">
+            <div class="text-body_s prose text-primary-40">
                 <?php echo $Text ?>
             </div>
         </div>

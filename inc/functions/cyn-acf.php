@@ -253,7 +253,9 @@ function cyn_acf_register_ads()
 
 
 		cyn_acf_add_tab('توضیحات'),
-		cyn_acf_add_image('description_img', 'عکس توضیحات'),
+		cyn_acf_add_file('description_video', 'فایل ویدئو', 50),
+		cyn_acf_add_image('description_cover', 'تصویر کاور ویدئو', 50),
+
 		cyn_acf_add_text('description_title', 'سربرگ توضیحات', 0, 33),
 		cyn_acf_add_wysiwyg('description_txt', 'متن توضیحات'),
 
