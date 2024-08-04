@@ -2197,6 +2197,12 @@ video {
   min-height: 400px;
 }
 
+.min-h-fit {
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
 .w-1 {
   width: 4px;
 }
@@ -2249,12 +2255,22 @@ video {
   width: min-content;
 }
 
+.w-5 {
+  width: 20px;
+}
+
 .min-w-\[200px\] {
   min-width: 200px;
 }
 
 .min-w-full {
   min-width: 100%;
+}
+
+.min-w-fit {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
 }
 
 .max-w-\[320px\] {
@@ -2836,6 +2852,10 @@ video {
 
 .p-8 {
   padding: 32px;
+}
+
+.p-0 {
+  padding: 0;
 }
 
 .px-10 {
