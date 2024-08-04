@@ -270,6 +270,17 @@ function cyn_acf_register_ads()
 		cyn_acf_add_wysiwyg('description_txt2', 'متن توضیحات'),
 
 
+
+
+		cyn_acf_add_tab('خدمات'),
+		cyn_acf_add_post_object('services', 'انتخاب خدمات', 'service', '', 5),
+
+
+		cyn_acf_add_tab('قیمت ها'),
+		cyn_acf_add_text('price_title', 'متن اصلی', 0, 33),
+		cyn_acf_add_post_object('prices', 'انتخاب قیمت ها', 'price', '', 3),
+
+
 		cyn_acf_add_tab('معرفی'),
 
 

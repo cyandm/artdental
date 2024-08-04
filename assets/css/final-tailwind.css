@@ -2051,11 +2051,6 @@ video {
   margin-bottom: 32px;
 }
 
-.my-5 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
 .me-2 {
   -webkit-margin-end: 8px;
           margin-inline-end: 8px;
@@ -2214,20 +2209,12 @@ video {
   width: 33.333333%;
 }
 
-.w-1\/4 {
-  width: 25%;
-}
-
 .w-10 {
   width: 40px;
 }
 
 .w-2\/4 {
   width: 50%;
-}
-
-.w-3\/4 {
-  width: 75%;
 }
 
 .w-3\/6 {
