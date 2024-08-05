@@ -24,17 +24,16 @@ $end_point = $args['end-point'] ?? 6;
         <!-- IntroductionGroup info  -->
         <div class="max-lg:w-full m-4 w-1/2">
             <!-- IntroductionGroup subject  -->
-
-            <?php echo ' <p class="text-h2 max-lg:text-body text-primary-20 flex flex-col w-full">' . $Title . ' </p>' ?>
-
+            <p class="text-h2 max-lg:text-body text-primary-20 flex flex-col w-full">
+                <?php echo $Title ?>
+            </p>
 
 
 
             <!-- IntroductionGroup text  -->
-            <?php echo
-            '<div class="min-w-full text-body_s prose text-primary-40 w-full flex flex-col">' . $Text . '</div>';
-            ?>
-
+            <div class="min-w-full text-body_s prose text-primary-40 w-full flex flex-col">
+                <?php echo $Text   ?>
+            </div>
 
         </div>
     </div>
