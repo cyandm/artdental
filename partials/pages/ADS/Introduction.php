@@ -14,11 +14,11 @@ $end_point = $args['end-point'] ?? 6;
     $Text = get_field("IntroductionGroup_text_$i");
 
     ?>
-    <div class="container flex gap-5 max-lg:flex-col items-center odd:lg:flex-row-reverse">
+    <div class="container flex gap-5 max-lg:flex-col items-center odd:lg:flex-row-reverse ">
 
         <!--IntroductionGroup image  -->
         <div class="max-lg:w-full w-1/2 ">
-            <?php echo wp_get_attachment_image($Image, 'full', false, ['class' => 'min-w-fit min-h-fit'])
+            <?php echo wp_get_attachment_image($Image, 'full', false, ['class' => 'w-full h-full'])
             ?>
         </div>
         <!-- IntroductionGroup info  -->
@@ -27,12 +27,9 @@ $end_point = $args['end-point'] ?? 6;
             <p class="text-h2 max-lg:text-body text-primary-20 flex flex-col w-full">
                 <?php echo $Title ?>
             </p>
-
-
-
             <!-- IntroductionGroup text  -->
-            <div class="min-w-full text-body_s prose text-primary-40 w-full flex flex-col">
-                <?php echo $Text   ?>
+            <div class="min-w-full text-body_s prose text-primary-40 w-full">
+                <?php echo $Text ?>
             </div>
 
         </div>

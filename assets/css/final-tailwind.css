@@ -2201,12 +2201,6 @@ video {
   min-height: 400px;
 }
 
-.min-h-fit {
-  min-height: -webkit-fit-content;
-  min-height: -moz-fit-content;
-  min-height: fit-content;
-}
-
 .w-1 {
   width: 4px;
 }
@@ -2261,12 +2255,6 @@ video {
 
 .min-w-\[200px\] {
   min-width: 200px;
-}
-
-.min-w-fit {
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
 }
 
 .min-w-full {

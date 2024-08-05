@@ -7,7 +7,7 @@ $video = get_field("description_video"); ?>
 
 <div class="container flex items-center gap-10 max-lg:gap-4 max-lg:flex-col">
     <!-- Description Texts -->
-    <div class="max-lg:col-span-2 w-1/2 text-primary-20">
+    <div class="max-lg:w-full w-1/2 text-primary-20">
 
         <!-- Title -->
         <div class="text-h1 max-lg:text-h4">
@@ -29,10 +29,10 @@ $video = get_field("description_video"); ?>
         </div>
     </div>
     <!-- Description Image -->
-    <div class="aspect-video w-1/2 rounded-3xl h-full">
+    <div class="aspect-video w-1/2 rounded-3xl h-full max-lg:w-full">
         <!-- <?php //echo wp_get_attachment_image($description_image, "full", false, ["class" => "rounded-3xl max-lg:h-[400px]"]) 
                 ?> -->
-        <video class="w-full h-full fade-in-down rounded-3xl" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($cover_image) ?>">
+        <video class="fade-in-down rounded-3xl" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($cover_image, 'full') ?>">
 
         </video>
     </div>
