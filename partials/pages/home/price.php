@@ -24,7 +24,7 @@ if (!is_array($prices) || count($prices) < 1) {
                 <div class="reservePopUpOpener">
                     <cyn-button type="primary" size="md" href="#">
                         <?php _e('مشاوره رایگان', 'cyn-dm') ?>
-
+                        
                     </cyn-button>
                 </div>
 

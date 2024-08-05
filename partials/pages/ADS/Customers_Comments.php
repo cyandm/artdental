@@ -5,7 +5,7 @@
         <div class="text-h1 max-md:text-h5"> <?php _e('نظرات مشتریان ما', 'cyn-dm') ?> </div>
         <!-- swiper  -->
         <div>
-            <swiper-container slides-per-view="3" space-between="12" pagination='true' class="w-full p-6 max-lg:p-2 flex max-lg:flex-col items-end">
+            <swiper-container slides-per-view="3" space-between="12" pagination='true' class="w-full p-6 max-lg:p-2 items-end">
 
                 <?php for ($i = 1; $i <= 10; $i++) :
                     $video = get_field("Customers_Comments_video_$i");
