@@ -2021,6 +2021,10 @@ video {
   grid-row: span 2 / span 2;
 }
 
+.m-4 {
+  margin: 16px;
+}
+
 .mx-3 {
   margin-left: 12px;
   margin-right: 12px;
@@ -2255,22 +2259,18 @@ video {
   width: min-content;
 }
 
-.w-5 {
-  width: 20px;
-}
-
 .min-w-\[200px\] {
   min-width: 200px;
-}
-
-.min-w-full {
-  min-width: 100%;
 }
 
 .min-w-fit {
   min-width: -webkit-fit-content;
   min-width: -moz-fit-content;
   min-width: fit-content;
+}
+
+.min-w-full {
+  min-width: 100%;
 }
 
 .max-w-\[320px\] {
@@ -2852,10 +2852,6 @@ video {
 
 .p-8 {
   padding: 32px;
-}
-
-.p-0 {
-  padding: 0;
 }
 
 .px-10 {

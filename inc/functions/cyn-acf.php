@@ -301,6 +301,8 @@ function cyn_acf_register_ads()
 		array_push($fields, cyn_acf_add_file("Customers_Comments_video_$i", "فایل ویدئو$i", 50));
 		array_push($fields, cyn_acf_add_image("Customers_Comments_cover_$i", "کاور ویدئو$i", 50));
 	}
+	array_push($fields,	cyn_acf_add_tab('سوالات متداول'),);
+	array_push($fields, cyn_acf_add_post_object('faqs', 'سوالات متداول', 'faq', '', 1));
 
 	$location = [
 		[

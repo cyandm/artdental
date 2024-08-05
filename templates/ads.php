@@ -30,7 +30,7 @@
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 6]); ?></div>
 <!-- faq  -->
 <div class="py-8"></div>
-<?php cyn_get_page_template('home/faq'); ?>
+<div><?php cyn_get_page_template('ADS/faqADS') ?></div>
 <!-- <?php //cyn_get_page_template('home/faq', ["posts" => ]); 
         ?> -->
 <!-- footer  -->
