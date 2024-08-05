@@ -66,42 +66,41 @@ $cats = get_categories([
                         )
                     ]); ?>
 
-                <div class="term | grid gap-1 pt-3">
-                    <!-- Taxonomy Title -->
-                    <div class="term-title | flex justify-between items-center cursor-pointer">
+                    <div class="term | grid gap-1 pt-3">
+                        <!-- Taxonomy Title -->
+                        <div class="term-title | flex justify-between items-center cursor-pointer">
 
-                        <span class="title">
-                            <?php echo $service_term->name ?>
-                        </span>
+                            <span class="title">
+                                <?php echo $service_term->name ?>
+                            </span>
 
-                        <span>
-                            <svg class="icon size-4 transition-all duration-300">
-                                <use href="#icon-chevron-down" />
-                            </svg>
-                        </span>
+                            <span>
+                                <svg class="icon size-4 transition-all duration-300">
+                                    <use href="#icon-chevron-down" />
+                                </svg>
+                            </span>
 
-                    </div>
+                        </div>
 
-                    <!-- Taxonomy Terms -->
-                    <div class="term-panel grid grid-rows-[0fr] transition-all duration-300 "
-                        id="terms-<?php echo $service_term->slug; ?>">
+                        <!-- Taxonomy Terms -->
+                        <div class="term-panel grid grid-rows-[0fr] transition-all duration-300 " id="terms-<?php echo $service_term->slug; ?>">
 
-                        <div class="overflow-hidden rounded-xl">
+                            <div class="overflow-hidden rounded-xl">
 
-                            <?php foreach ($posts as $post) : ?>
+                                <?php foreach ($posts as $post) : ?>
 
-                            <div class="term-child | bg-primary-80 p-2">
-                                <a href="<?php echo get_permalink($post->ID) ?>">
-                                    <?php echo $post->post_title ?>
-                                </a>
+                                    <div class="term-child | bg-primary-80 p-2">
+                                        <a href="<?php echo get_permalink($post->ID) ?>">
+                                            <?php echo $post->post_title ?>
+                                        </a>
+                                    </div>
+
+                                <?php endforeach; ?>
                             </div>
-
-                            <?php endforeach; ?>
                         </div>
                     </div>
-                </div>
 
-                <?php wp_reset_postdata() ?>
+                    <?php wp_reset_postdata() ?>
 
                 <?php endforeach; ?>
 
