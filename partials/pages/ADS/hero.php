@@ -18,7 +18,7 @@
 
         <div class="py-8"></div>
         <div class="grid grid-cols-12">
-            <cyn-button class="border rounded-3xl justify-center text-body_s items-center col-span-2 max-lg:col-span-6" type="primary" href="#">
+            <cyn-button class="border reservePopUpOpener rounded-3xl justify-center text-body_s items-center col-span-2 max-lg:col-span-6" type="primary" href="#">
                 <?php _e('دریافت مشاوره', 'cyn-dm') ?>
             </cyn-button>
         </div>
