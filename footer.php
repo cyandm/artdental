@@ -5,10 +5,9 @@
 
     <footer>
         <!-- app bar art dental  -->
-        <section class="text-caption w-full fixed bottom-4 z-50 md:hidden">
+        <section class="text-caption w-full fixed bottom-4 z-40 md:hidden">
 
             <div class="w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
-
                 <!-- service button  -->
                 <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
                     <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
@@ -22,7 +21,6 @@
                         خدمات
                     </p>
                 </a>
-
                 <!-- reserve button  -->
                 <a href="#" class="reservePopUpOpener cursor-pointer flex flex-col gap-1 items-center justify-center">
 
@@ -36,7 +34,6 @@
                         رزرو نوبت
                     </p>
                 </a>
-
                 <!-- call button  -->
                 <a href="tel:<?php echo get_option('cyn_phone_number_1') ?>" class="cursor-pointer flex flex-col gap-1 items-center justify-center">
 
@@ -49,8 +46,6 @@
                         تماس
                     </p>
                 </a>
-
-
             </div>
 
 

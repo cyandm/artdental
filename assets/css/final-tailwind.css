@@ -1971,6 +1971,14 @@ video {
   z-index: 50;
 }
 
+.z-0 {
+  z-index: 0;
+}
+
+.z-40 {
+  z-index: 40;
+}
+
 .order-1 {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;

@@ -32,7 +32,7 @@
 
 				<?php if ($menu_item->child_items) : ?>
 					<div class="bg-primary-90 grid grid-rows-[0fr] transition-all | accordion">
-						<div class="overflow-hidden">
+						<div class="overflow-hidden flex flex-col">
 							<?php foreach ($menu_item->child_items as $child) : ?>
 								<a href="<?php echo $child->url ?>" class="py-3 px-2 inline-block">
 									<?php echo $child->post_title ?>
