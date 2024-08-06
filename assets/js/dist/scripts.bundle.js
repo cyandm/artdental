@@ -10659,6 +10659,7 @@
   // assets/js/modules/contact-us.js
   function contactForm() {
     const contactForm2 = document.querySelector("#ContactUsForm");
+    document.contact;
     if (!contactForm2) return;
     contactForm2.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -10674,7 +10675,7 @@
           success: (res) => {
             console.log(res);
             successFormToast.showToast();
-            priceForm.reset();
+            contactForm2.reset();
           },
           error: (err) => {
             console.log(err);
