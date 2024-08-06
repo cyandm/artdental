@@ -1,9 +1,7 @@
 <?php defined('ABSPATH') || exit; ?>
 
 <?php
-
 $postId = $args['post-id'] ?? get_the_ID();
-
 ?>
 
 <?php get_header() ?>
