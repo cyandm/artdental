@@ -168,8 +168,9 @@
             </div>
 
         </div>
-        <div class="flex justify-center items-center text-body bg-noise  text-primary-100">
-            <p class="p-5">طراحی و توسعه توسط تیم سایان</p>
+        <div class="flex justify-center items-center bg-noise p-5 text-primary-80">
+            <p class="text-body_s "><span class="text-caption"><?php _e('Designed by', 'cyn-dm') ?></span> <?php _e('CyanDM ', 'cyn-dm') ?> </p>
+
         </div>
     </footer>
 <?php endif; ?>
