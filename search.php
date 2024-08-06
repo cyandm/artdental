@@ -55,31 +55,30 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
 
             <div class="max-lg:order-0 ">
                 <div class="flex gap-1 py-1 px-3 border border-primary-50 rounded-full">
-
                     <div>
                         <svg class="icon size-8">
                             <use href="#icon-search-loupe" />
                         </svg>
                     </div>
                     <input type="text" id="email-address-icon" name="s" value="<?php the_search_query() ?>" class="text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="جست و جو">
-
                 </div>
             </div>
         </form>
 
-
         <div class="flex justify-center items-center py-3 text-primary-30 text-caption">
+            <?php if (!empty($_GET['s'])) : ?>
+                <span id='postsCount'>
 
-            <span id='postsCount'>
-                <?php echo $wp_query->found_posts ?>
-            </span>
-
-            <span>
-                <?php _e('نتیجه', 'cyn-dm') ?>
-            </span>
+                    <?php echo $wp_query->found_posts ?>
+                </span>
+                <span>
+                    <?php _e('نتیجه', 'cyn-dm') ?>
+                </span>
+            <?php endif; ?>
         </div>
-
     </div>
+
+
 
     <div class="p-6 ">
 
@@ -89,11 +88,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
             <?php if (have_posts()) : ?>
 
                 <div id="searchPostsWrapper " class="space-y-4 divide-y divide-primary-70 py-4">
-
-
-                    <?php while (have_posts()) :
-                        the_post()
-                    ?>
+                    <?php while (have_posts()) : the_post() ?>
                         <div>
                             <?php cyn_get_card('search') ?>
                         </div>
