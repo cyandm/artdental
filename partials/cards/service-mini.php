@@ -1,5 +1,7 @@
 <?php
 $postId = $args['post-id'] ?? get_the_ID();
+$classImg = $args['class-img'] ?? "";
+$classText = $args['class-text'] ?? "";
 
 if ($postId === 0) {
     throw new ErrorException('post id is invalid', 0, E_WARNING);
@@ -12,10 +14,10 @@ $terms = get_the_terms($postId, 'service-cat');
     <a href=" <?php echo get_permalink($postId) ?>">
         <div class="flex gap-1 ">
             <div>
-                <?php echo get_the_post_thumbnail($postId, 'full', ['class' => 'rounded-xl w-16 h-16 object-cover']) ?>
+                <?php echo get_the_post_thumbnail($postId, 'full', ['class' => 'rounded-xl w-16 h-16 object-cover ' . $classImg]) ?>
             </div>
 
-            <div class="text-body flex items-center justify-center">
+            <div class="text-body flex items-center justify-center text-primary-20 <?php echo $classText ?>">
                 <?php echo get_the_title($postId) ?>
             </div>
         </div>
