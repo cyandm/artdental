@@ -10613,7 +10613,13 @@
       const id = "section-" + index;
       heading.setAttribute("id", id);
       const li = document.createElement("li");
-      li.classList.add("flex", "flex-row-reverse", "justify-between", "p-1");
+      li.classList.add(
+        "flex",
+        "flex-row-reverse",
+        "justify-between",
+        "py-1",
+        "pt-4"
+      );
       const a = document.createElement("a");
       const svg = icon.cloneNode(true);
       a.textContent = heading.textContent;

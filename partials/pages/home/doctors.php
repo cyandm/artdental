@@ -20,6 +20,8 @@ if (!is_array($doctors) || count($doctors) < 1) {
 
 		<cyn-button type="secondary-dark" size="md" class="max-lg:hidden" href="<?php echo get_post_type_archive_link('doctor') ?>">
 			<?php _e('مشاهده همه', 'cyn-dm') ?>
+
+			.
 		</cyn-button>
 	</div>
 

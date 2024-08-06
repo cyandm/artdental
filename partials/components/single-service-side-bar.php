@@ -25,11 +25,13 @@ $cats = get_categories([
                 <?php _e('جدول محتوایی', 'cyn-dm') ?>
             </div>
 
-            <div id="toc-container">
+            <div id="toc-container flex
+             flex-col
+             ">
 
                 <h2></h2>
 
-                <ul id="toc" class="grid gap-3 divide-y-[1px] divide-primary-90 space-y-3"></ul>
+                <ul id="toc" class="flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
 
             </div>
 

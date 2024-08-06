@@ -2072,6 +2072,10 @@ video {
   margin-top: 20px;
 }
 
+.mt-4 {
+  margin-top: 16px;
+}
+
 .line-clamp-1 {
   overflow: hidden;
   display: -webkit-box;
@@ -2285,6 +2289,12 @@ video {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0%;
           flex: 1 1 0%;
+}
+
+.flex-auto {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
 }
 
 .-translate-y-1\/2 {
