@@ -166,10 +166,13 @@
 							  <?php echo get_option('cyn_custom_logo'); ?>" alt="art_dental_logo">
                 </div>
             </div>
+
+        </div>
+        <div class="flex justify-center items-center text-body bg-noise  text-primary-100">
+            <p class="p-5">طراحی و توسعه توسط تیم سایان</p>
         </div>
     </footer>
 <?php endif; ?>
-
 <div class="wp-scripts">
     <?php wp_footer() ?>
 </div>

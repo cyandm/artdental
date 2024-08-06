@@ -30,7 +30,7 @@
 
 
 <!-- FAQ -->
-<?php if (!empty(get_field('faq-group', $postId))) : ?>
+<?php if (!empty(get_field('faq-group', $postId = 'false'))) : ?>
     <div class="pt-[93px]"></div>
     <div>
         <!-- Title -->
@@ -38,7 +38,7 @@
             <?php _e('سوالات متداول ', 'cyn-dm') . ' ' . the_title() ?>
         </div>
         <div class="text-h2">
-</div>
+        </div>
         <div>
             <?php cyn_get_component('faq-group', ['type' => 'acf', 'acf_field' => 'faq-group', 'post-id' => $postId]) ?>
         </div>
