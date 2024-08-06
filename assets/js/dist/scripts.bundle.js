@@ -503,7 +503,7 @@
       super();
       this.title = "\u0645\u0634\u0627\u0648\u0631\u0647 \u0631\u0627\u06CC\u06AF\u0627\u0646";
       this.description = "\u062C\u0647\u062A \u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A \u0645\u0634\u0627\u0648\u0631\u0647 \u0631\u0627\u06CC\u06AF\u0627\u0646 \u062F\u0631 \u0645\u0631\u06A9\u0632 \u0627\u06CC\u0646\u062C\u0627 \u06A9\u0644\u06CC\u06A9 \u06A9\u0646";
-      this.button = '\n                <cyn-button type="accent"\n							href="#"\n							size="md">\n					\u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A\n				</cyn-button>\n        ';
+      this.button = '\n                <cyn-button type="accent"\n							href="#"\n							class="reservePopUpOpener"\n							size="md">\n					\u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A\n				</cyn-button>\n        ';
       this.classes = "";
     }
     addClass(classes2) {
