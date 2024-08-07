@@ -63,14 +63,12 @@
             <div anim-delay="0.3" class="rounded-2xl flex-1 fade-in-down">
                 <?php echo wp_get_attachment_image(get_field('hero_tiny_banner_1'), 'medium', false, ['class' => 'w-full']) ?>
             </div>
-
             <div anim-delay="0.1" class="rounded-2xl flex-1 fade-in-down">
                 <?php echo wp_get_attachment_image(get_field('hero_tiny_banner_2'), 'medium', false, ['class' => 'w-full']) ?>
             </div>
         </div>
-
         <div class="fade-in-down cursor-pointer" anim-delay="0.8">
-            <cyn-cta class="reservePopUpOpener" />
+            <cyn-cta class="reservePopUpOpener"/>
         </div>
 
 
