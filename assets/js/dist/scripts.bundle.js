@@ -10800,11 +10800,11 @@
   preloader();
 
   // assets/js/modules/scroll-top.js
-  window.onscroll = function() {
-    var e = document.getElementById("scrolltop");
+  Window.onscroll = function() {
+    var e = document.querySelectorAll("scrolltop");
     if (!e) {
       e = document.createElement("a");
-      e.id = "scrolltop";
+      e.class = "scrolltop";
       e.href = "#";
       document.body.appendChild(e);
     }
