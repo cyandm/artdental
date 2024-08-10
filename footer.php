@@ -4,11 +4,21 @@
 
 
     <footer>
+        <!-- pc scroll to top  -->
+        <section class="container w-full fixed bottom-4 z-40">
+            <!-- svg  arrow up -->
+            <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
+                <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop-pc">
+                    <svg class="icon size-6">
+                        <use href="#icon-Right,-Arrow" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+
         <!-- app bar art dental  -->
         <section class="text-caption w-full flex flex-col fixed bottom-4 z-40 md:hidden gap-3">
-
-
-
             <!-- scroll to top  -->
             <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
                 <!-- svg  arrow up -->
