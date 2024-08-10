@@ -10814,6 +10814,8 @@
       document.documentElement.scrollTop = 0;
     };
   };
+
+  // assets/js/modules/scroll-top-pc.js
   window.onscroll = function() {
     var e = document.getElementById("scrolltop-pc");
     if (!e) {

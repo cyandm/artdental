@@ -1,8 +1,8 @@
 window.onscroll = function () {
-  var e = document.getElementById("scrolltop");
+  var e = document.getElementById("scrolltop-pc");
   if (!e) {
     e = document.createElement("a");
-    e.id = "scrolltop";
+    e.id = "scrolltop-pc";
     e.href = "#";
     document.body.appendChild(e);
   }
