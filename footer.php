@@ -5,13 +5,22 @@
 
     <footer>
         <!-- app bar art dental  -->
-        <section class="text-caption flex flex-col fixed bottom-4 z-40 md:hidden">
-            <div class="bg-accent-100 rounded-full w-12 h-12">
-                <!-- svg  -->
-                <svg class="icon size-6 p-10 flex justify-center items-center container">
-                    <use href="#icon-medical-cross-cursor-click-square" />
-                </svg>
+        <section class="text-caption w-full flex flex-col fixed bottom-4 z-40 md:hidden gap-3">
+
+
+
+            <!-- scroll to top  -->
+            <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
+                <!-- svg  arrow up -->
+                <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop">
+                    <svg class="icon size-6">
+                        <use href="#icon-Right,-Arrow" />
+                    </svg>
+                </div>
             </div>
+
+
+            <!-- app bar  -->
             <div class=" w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
                 <!-- service button  -->
                 <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
@@ -52,28 +61,22 @@
                     </p>
                 </a>
             </div>
-
-
         </section>
 
         <div class="py-9 bg-primary-90 bg-noise">
             <div class="container">
-
                 <nav class="flex justify-between items-start max-lg:flex-col max-lg:gap-3 max-lg:divide-y max-lg:divide-primary-80">
                     <?php
                     $menu = cyn_get_menu_items_by_slug('footer');
                     foreach ($menu as $menu_item) : ?>
-
                         <div class="text-primary-50 flex flex-1 flex-wrap gap-1 items-center relative group  max-lg:justify-between max-lg:w-full max-lg:pt-4 ">
                             <a href="<?php echo $menu_item->url ?>">
                                 <?php echo $menu_item->post_title; ?>
                             </a>
-
                             <?php if ($menu_item->child_items) : ?>
                                 <svg class="icon size-4 transition-transform group-hover:rotate-180">
                                     <use href="#icon-chevron-down"></use>
                                 </svg>
-
                                 <div class="w-full transition-all duration-300 grid grid-rows-[0fr] group-hover:grid-rows-[1fr]">
                                     <div class="overflow-hidden">
                                         <?php foreach ($menu_item->child_items as $index => $child) : ?>
@@ -110,7 +113,6 @@
                             <span class="text-h6 max-md:text-body">
                                 <?php _e('مشاهده آدرس روی نقشه', 'cyn-dm') ?>
                             </span>
-
                             <div class="flex gap-2">
                                 <?php for ($i = 1; $i <= 10; $i++) : ?>
                                     <a href="<?php echo get_option("cyn_address_url_$i") ?>">
@@ -137,7 +139,6 @@
                             <span class="text-h6 max-md:text-body">
                                 <?php _e('شبکه های اجتماعی', 'cyn-dm') ?>
                             </span>
-
                             <div class="flex gap-2">
                                 <?php for ($i = 1; $i <= 10; $i++) : ?>
                                     <a href="<?php echo get_option("cyn_social_media_url_$i") ?>">

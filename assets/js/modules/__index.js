@@ -14,3 +14,4 @@ import "./popUpForm";
 import "./gallery";
 import "./offer";
 import "./preloader";
+import "./scroll-top";
