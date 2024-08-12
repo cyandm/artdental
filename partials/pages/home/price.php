@@ -1,7 +1,7 @@
 <?php
 
 $prices = get_field('prices') ?? [];
-$title = $args['title'] ?? __('قیمت ایمپلنت', 'cyn-dm');
+$title = $args['title'] ?? __('قیمت خدمات', 'cyn-dm');
 $has_button = $args['has_button'] ?? true;
 
 if (!is_array($prices) || count($prices) < 1) {
@@ -24,7 +24,7 @@ if (!is_array($prices) || count($prices) < 1) {
                 <div class="reservePopUpOpener">
                     <cyn-button type="primary" size="md" href="#">
                         <?php _e('مشاوره رایگان', 'cyn-dm') ?>
-                        
+
                     </cyn-button>
                 </div>
 
