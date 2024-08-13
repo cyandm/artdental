@@ -2205,16 +2205,6 @@ video {
   height: 100vh;
 }
 
-.h-fit {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.h-3\/4 {
-  height: 75%;
-}
-
 .max-h-\[150px\] {
   max-height: 150px;
 }
@@ -2225,10 +2215,6 @@ video {
 
 .min-h-\[400px\] {
   min-height: 400px;
-}
-
-.min-h-17 {
-  min-height: 120px;
 }
 
 .w-1 {

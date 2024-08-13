@@ -45,11 +45,17 @@
 </div> -->
 
 
- <div class="overflow-hidden rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+ <div class="overflow-hidden rounded-3xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative">
 
-     <div>
+     <div class="">
          <video class="w-full h-full" src="<?php echo get_field('video_file', $postId)['url'] ?>" controls poster="<?php echo get_the_post_thumbnail_url($postId, 'medium', ['class' => 'w-full h-full object-cover']) ?>"></video>
-
+         <div class="p-6 text-h6 backdrop-blur-3xl  ">
+             <span class="line-clamp-1">
+                 <?php echo get_the_title($postId)
+                    ?>
+             </span>
+         </div>
      </div>
+
 
  </div>
