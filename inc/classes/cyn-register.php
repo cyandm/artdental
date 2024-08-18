@@ -32,7 +32,7 @@ if (!class_exists('cyn_register')) {
 			$this->cyn_make_post_type('doctor', 'پزشک', 'پزشکان', 'dashicons-groups', ['title', 'thumbnail', 'editor']);
 			$this->cyn_make_post_type('faq', 'سوال', 'سوالات متداول', 'dashicons-lightbulb', ['title', 'editor']);
 			$this->cyn_make_post_type('form', 'فرم', 'فرم ها', 'dashicons-format-status', ['title', 'thumbnail', 'editor']);
-		}
+		}                                     
 
 		public function cyn_taxonomy_register()
 		{

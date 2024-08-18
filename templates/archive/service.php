@@ -26,7 +26,7 @@ global $wp_query;
             <?php echo single_term_title() ?>
         </div>
 
-        <div class="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-3">
+        <div class="grid grid-cols-3 max-xl:grid-cols-2 max-sm:grid-cols-1 gap-3  max-md:hidden">
 
             <?php
             if ($wp_query->have_posts()) :
@@ -39,7 +39,17 @@ global $wp_query;
             ?>
 
         </div>
+        <div class="md:hidden flex gap-3 flex-col">
+            <?php
+            if ($wp_query->have_posts()) :
+                foreach ($wp_query->get_posts() as $post) {
+                    cyn_get_card('service-mini', ['post-id' => $post->ID, 'class' => 'md:hidden']);
+                }
 
+            endif;
+            ?>
+
+        </div>
         <!-- Pagination -->
         <?php cyn_get_component('pagination') ?>
 

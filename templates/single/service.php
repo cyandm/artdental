@@ -1,9 +1,7 @@
 <?php defined('ABSPATH') || exit; ?>
 
 <?php
-
 $postId = $args['post-id'] ?? get_the_ID();
-
 ?>
 
 <?php get_header() ?>
@@ -24,22 +22,23 @@ $postId = $args['post-id'] ?? get_the_ID();
     <!-- Paragraph -->
     <section class="col-span-3 max-lg:col-span-4 max-xl:mx-5">
 
-        <!--Blog Title  -->
-        <div class="text-h1">
+        <!--service Title  -->
+        <div class="text-h1 max-lg:text-h3">
             <?php the_title() ?>
         </div>
 
         <div class="pt-4"></div>
 
-        <!-- Blog Thumbnail -->
-        <div class="">
+        <!-- service Thumbnail -->
+        <div>
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
 
         <div class="pb-4"></div>
 
-        <!-- Blog Content -->
-        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6">
+        <!-- service Content -->
+        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50
+         prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
             <?php the_content() ?>
         </div>
 
@@ -58,7 +57,7 @@ $postId = $args['post-id'] ?? get_the_ID();
 
                 </div>
 
-                <div class="p-6">
+                <div>
                     <?php cyn_get_component('faq-group', ['type' => 'acf', 'acf_field' => 'faq-group', 'post-id' => $postId]) ?>
                 </div>
             </div>
@@ -84,6 +83,6 @@ $postId = $args['post-id'] ?? get_the_ID();
 
 </main>
 
-
+<div class="py-4"></div>
 
 <?php get_footer() ?>

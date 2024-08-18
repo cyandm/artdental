@@ -503,7 +503,7 @@
       super();
       this.title = "\u0645\u0634\u0627\u0648\u0631\u0647 \u0631\u0627\u06CC\u06AF\u0627\u0646";
       this.description = "\u062C\u0647\u062A \u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A \u0645\u0634\u0627\u0648\u0631\u0647 \u0631\u0627\u06CC\u06AF\u0627\u0646 \u062F\u0631 \u0645\u0631\u06A9\u0632 \u0627\u06CC\u0646\u062C\u0627 \u06A9\u0644\u06CC\u06A9 \u06A9\u0646";
-      this.button = '\n                <cyn-button type="accent"\n							href="#"\n							size="md">\n					\u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A\n				</cyn-button>\n        ';
+      this.button = '\n                <cyn-button type="accent"\n							href="#"\n							class="reservePopUpOpener"\n							size="md">\n					\u0631\u0632\u0631\u0648 \u0646\u0648\u0628\u062A\n				</cyn-button>\n        ';
       this.classes = "";
     }
     addClass(classes2) {
@@ -10613,7 +10613,13 @@
       const id = "section-" + index;
       heading.setAttribute("id", id);
       const li = document.createElement("li");
-      li.classList.add("flex", "flex-row-reverse", "justify-between", "p-1");
+      li.classList.add(
+        "flex",
+        "flex-row-reverse",
+        "justify-between",
+        "py-1",
+        "pt-4"
+      );
       const a = document.createElement("a");
       const svg = icon.cloneNode(true);
       a.textContent = heading.textContent;
@@ -10631,18 +10637,21 @@
   var successToast = (0, import_toastify_js.default)({
     text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0646\u062C\u0627\u0645 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: successColor
     }
   });
   var errorToast = (0, import_toastify_js.default)({
     text: "\u0639\u0645\u0644\u06CC\u0627\u062A \u0628\u0627 \u062E\u0637\u0627 \u0645\u0648\u0627\u062C\u0647 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: errorColor
     }
   });
   var successFormToast = (0, import_toastify_js.default)({
     text: "\u0641\u0631\u0645 \u0628\u0627 \u0645\u0648\u0641\u0642\u06CC\u062A \u0627\u0631\u0633\u0627\u0644 \u0634\u062F",
     style: {
+      // zIndex: 100,
       background: successColor
     }
   });
@@ -10650,6 +10659,7 @@
   // assets/js/modules/contact-us.js
   function contactForm() {
     const contactForm2 = document.querySelector("#ContactUsForm");
+    document.contact;
     if (!contactForm2) return;
     contactForm2.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -10665,7 +10675,7 @@
           success: (res) => {
             console.log(res);
             successFormToast.showToast();
-            priceForm.reset();
+            contactForm2.reset();
           },
           error: (err) => {
             console.log(err);
@@ -10679,42 +10689,17 @@
   contactForm();
 
   // assets/js/modules/search.js
-  function searchFilter() {
-    const formSearch = document.querySelector("#formSearch");
-    if (!formSearch) return;
-    const inputRadio = formSearch.querySelectorAll('input[type="radio"]');
-    const inputSearch = formSearch.querySelector('input[type="search"]');
-    const getResultFromApi = (formData) => {
-      const postsCount = document.getElementById("postsCount");
-      const postsWrapper = document.getElementById("postsWrapper");
-      if (!inputRadio || !inputSearch) return;
-      jQuery(($) => {
-        $.ajax({
-          type: "POST",
-          url: restDetails.url + "cyn-api/v1/search",
-          data: formData,
-          cache: false,
-          processData: false,
-          contentType: false,
-          success: (res) => {
-            postsCount.innerHTML = res.found_posts;
-            postsWrapper.innerHTML = res.html;
-          }
-        });
+  function searchPage() {
+    var _a;
+    const searchForm = document.querySelector("form#search-form");
+    if (!searchForm) return;
+    (_a = searchForm.querySelectorAll("input")) == null ? void 0 : _a.forEach((el) => {
+      el.addEventListener("change", () => {
+        searchForm.submit();
       });
-    };
-    inputRadio.forEach((element) => {
-      element.addEventListener("click", (event2) => {
-        const formData = new FormData(formSearch);
-        getResultFromApi(formData);
-      });
-    });
-    inputSearch.addEventListener("keyup", () => {
-      const formData = new FormData(formSearch);
-      getResultFromApi(formData);
     });
   }
-  searchFilter();
+  searchPage();
 
   // assets/js/modules/popUpForm.js
   function PopUpForm() {
@@ -10734,7 +10719,9 @@
           success: (res) => {
             console.log(res);
             successFormToast.showToast();
-            priceForm.reset();
+            PopUpForm2.reset();
+            document.querySelector("#reservePopUp").classList.replace("opacity-100", "opacity-0");
+            document.querySelector("#reservePopUp").classList.replace("pointer-events-auto", "pointer-events-none");
           },
           error: (err) => {
             console.log(err);
@@ -10787,6 +10774,62 @@
     });
   }
   gallery();
+
+  // assets/js/modules/offer.js
+  function headerCta() {
+    const ctaCloser = document.querySelector("#headerCtaCloser");
+    const headerCta2 = document.querySelector("#headerCta");
+    if (!ctaCloser || !headerCta2) return;
+    ctaCloser.addEventListener("click", () => {
+      headerCta2.classList.add("hidden");
+    });
+  }
+  headerCta();
+
+  // assets/js/modules/preloader.js
+  function preloader() {
+    const preloader2 = document.querySelector("#preloader");
+    if (!preloader2) return;
+    window.addEventListener("load", () => {
+      preloader2.classList.replace("opacity-100", "opacity-0");
+      setTimeout(() => {
+        preloader2.remove();
+      }, 700);
+    });
+  }
+  preloader();
+
+  // assets/js/modules/scroll-top.js
+  Window.onscroll = function() {
+    var e = document.querySelectorAll("scrolltop");
+    if (!e) {
+      e = document.createElement("a");
+      e.class = "scrolltop";
+      e.href = "#";
+      document.body.appendChild(e);
+    }
+    e.style.display = document.documentElement.scrollTop > 300 ? "block" : "block";
+    e.onclick = (ev) => {
+      ev.preventDefault();
+      document.documentElement.scrollTop = 0;
+    };
+  };
+
+  // assets/js/modules/scroll-top-pc.js
+  window.onscroll = function() {
+    var e = document.getElementById("scrolltop-pc");
+    if (!e) {
+      e = document.createElement("a");
+      e.id = "scrolltop-pc";
+      e.href = "#";
+      document.body.appendChild(e);
+    }
+    e.style.display = document.documentElement.scrollTop > 300 ? "block" : "block";
+    e.onclick = (ev) => {
+      ev.preventDefault();
+      document.documentElement.scrollTop = 0;
+    };
+  };
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {

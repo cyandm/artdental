@@ -7,6 +7,7 @@ const errorColor = "#ef5350";
 export const successToast = Toastify({
   text: "عملیات با موفقیت انجام شد",
   style: {
+    // zIndex: 100,
     background: successColor,
   },
 });
@@ -14,6 +15,7 @@ export const successToast = Toastify({
 export const errorToast = Toastify({
   text: "عملیات با خطا مواجه شد",
   style: {
+    // zIndex: 100,
     background: errorColor,
   },
 });
@@ -21,6 +23,7 @@ export const errorToast = Toastify({
 export const successFormToast = Toastify({
   text: "فرم با موفقیت ارسال شد",
   style: {
+    // zIndex: 100,
     background: successColor,
   },
 });

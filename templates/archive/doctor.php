@@ -3,7 +3,7 @@
 <?php
 $doctor_posts = get_posts([
     'post_type'     => 'doctor',
-    "post_per_page" => -1,
+    "posts_per_page" => -1,
     'order'         => 'DESC',
 
 ]);
@@ -22,15 +22,21 @@ $doctor_posts = get_posts([
         <?php _e('متخصص های مجموعه', 'cyn-dm') ?>
     </div>
 
-    <?php foreach ($doctor_posts as $index => $doctor_post) : ?>
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-3">
 
-    <?php cyn_get_card('archive-doctor', [
-            'index' => $index, 'post-id' => $doctor_post->ID
-        ]) ?>
+        <?php foreach ($doctor_posts as $index => $doctor_post) : ?>
 
-    <?php endforeach; ?>
+            <?php cyn_get_card('doctor', [
+                'index' => $index, 'post-id' => $doctor_post->ID
+            ]) ?>
+
+        <?php endforeach; ?>
+    </div>
+
 
 </main>
+
+<div class="py-6"></div>
 
 
 

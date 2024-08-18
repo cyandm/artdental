@@ -11,7 +11,7 @@ $cats = get_categories([
 
 <div class="h-full">
 
-    <div class="grid sticky top-3">
+    <div class="grid sticky top-[8%]">
         <!-- Search -->
         <?php cyn_get_component('service-side-bar-search') ?>
 
@@ -25,11 +25,13 @@ $cats = get_categories([
                 <?php _e('جدول محتوایی', 'cyn-dm') ?>
             </div>
 
-            <div id="toc-container">
+            <div id="toc-container flex
+             flex-col
+             ">
 
                 <h2></h2>
 
-                <ul id="toc" class="grid gap-3 divide-y-[1px] divide-primary-90 space-y-3"></ul>
+                <ul id="toc" class="flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
 
             </div>
 
@@ -66,42 +68,41 @@ $cats = get_categories([
                         )
                     ]); ?>
 
-                <div class="term | grid gap-1 pt-3">
-                    <!-- Taxonomy Title -->
-                    <div class="term-title | flex justify-between items-center cursor-pointer">
+                    <div class="term | grid gap-1 pt-3">
+                        <!-- Taxonomy Title -->
+                        <div class="term-title | flex justify-between items-center cursor-pointer">
 
-                        <span class="title">
-                            <?php echo $service_term->name ?>
-                        </span>
+                            <span class="title">
+                                <?php echo $service_term->name ?>
+                            </span>
 
-                        <span>
-                            <svg class="icon size-4 transition-all duration-300">
-                                <use href="#icon-chevron-down" />
-                            </svg>
-                        </span>
+                            <span>
+                                <svg class="icon size-4 transition-all duration-300">
+                                    <use href="#icon-chevron-down" />
+                                </svg>
+                            </span>
 
-                    </div>
+                        </div>
 
-                    <!-- Taxonomy Terms -->
-                    <div class="term-panel grid grid-rows-[0fr] transition-all duration-300 "
-                        id="terms-<?php echo $service_term->slug; ?>">
+                        <!-- Taxonomy Terms -->
+                        <div class="term-panel grid grid-rows-[0fr] transition-all duration-300 " id="terms-<?php echo $service_term->slug; ?>">
 
-                        <div class="overflow-hidden rounded-xl">
+                            <div class="overflow-hidden rounded-xl">
 
-                            <?php foreach ($posts as $post) : ?>
+                                <?php foreach ($posts as $post) : ?>
 
-                            <div class="term-child | bg-primary-80 p-2">
-                                <a href="<?php echo get_permalink($post->ID) ?>">
-                                    <?php echo $post->post_title ?>
-                                </a>
+                                    <div class="term-child | bg-primary-80 p-2">
+                                        <a href="<?php echo get_permalink($post->ID) ?>">
+                                            <?php echo $post->post_title ?>
+                                        </a>
+                                    </div>
+
+                                <?php endforeach; ?>
                             </div>
-
-                            <?php endforeach; ?>
                         </div>
                     </div>
-                </div>
 
-                <?php wp_reset_postdata() ?>
+                    <?php wp_reset_postdata() ?>
 
                 <?php endforeach; ?>
 
