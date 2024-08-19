@@ -41,33 +41,7 @@ $postId = $args['post-id'] ?? get_the_ID();
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
         <div class="pb-4"></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <!-- table of content mobile  -->
         <div class="bg-primary-100 p-5 rounded-3xl md:hidden">
             <!-- Title  -->
             <div class="text-h6 pb-4 font-medium">
@@ -78,34 +52,10 @@ $postId = $args['post-id'] ?? get_the_ID();
                 <ul id="mobile-toc" class="flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
             </div>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="pb-4"></div>
 
         <!-- service Content -->
-        <div class="prose prose-table:max-md:px-0 prose-table:overflow-hidden prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
+        <div class="prose prose-table:max-md:px-0 prose-table:flex prose-table:text-caption prose-table:justify-center prose-table:items-center prose-table:divide-x prose-table:divide-primary-0 prose-table:overflow-hidden prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
             <?php the_content() ?>
         </div>
 

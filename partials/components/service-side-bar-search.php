@@ -18,8 +18,7 @@
               </button>
 
               <div>
-                  <input class="focus-visible:outline-0" type="search" value="<?php the_search_query() ?>" id="search"
-                      name="s" placeholder="جستجو در خدمات">
+                  <input class="focus-visible:outline-0" type="search" value="<?php the_search_query() ?>" id="search" name="s" placeholder="جستجو در خدمات">
               </div>
           </div>
       </form>

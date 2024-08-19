@@ -26,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function () {
     // a.classList.add("")
 
     a.textContent = heading.textContent;
+    a.svg = heading.svg;
+
     a.setAttribute("href", "#" + id);
     li.appendChild(svg);
     li.appendChild(a);
