@@ -15,6 +15,7 @@ function cyn_register_acf()
 	cyn_acf_register_service();
 	cyn_acf_register_video();
 	cyn_acf_register_ads();
+	// cyn_acf_register_faq();
 }
 
 
@@ -77,8 +78,12 @@ function cyn_acf_register_home_page()
 		cyn_acf_add_tab('بلاگ ها'),
 		cyn_acf_add_post_object('posts', 'انتخاب بلاگ ها', 'post', '', 1),
 	];
-
-	$fields = array_merge($hero, $features, $services, $videos, $price, $doctors, $blogs);
+	$faq = [
+		cyn_acf_add_tab('سوالات متداول '),
+		cyn_acf_add_tax('faq-cat', 'انتخاب دسته بندی سوالات', 'faq-cat'),
+ 
+	];
+	$fields = array_merge($hero, $features, $services, $videos, $price, $doctors, $blogs ,$faq);
 
 	$location = [
 		[
@@ -158,7 +163,28 @@ function cyn_acf_register_doctor()
 
 	cyn_register_acf_group('تنظیمات', $fields, $location);
 }
+function cyn_acf_register_faq()
+{
 
+	$fields = [
+
+		cyn_acf_add_boolean('show_in_front' , 'عدم نمایش در صفحه اصلی')
+
+	];
+
+
+	$location = [
+		[
+			[
+		'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'faq'
+			]
+		]
+	];
+
+	cyn_register_acf_group('تنظیم نمایش در صفحه اصلی', $fields, $location);
+}
 
 function cyn_acf_register_about_us()
 {

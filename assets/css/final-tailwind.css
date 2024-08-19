@@ -1943,12 +1943,12 @@ video {
   top: 33.333333%;
 }
 
-.top-12 {
-  top: 56px;
-}
-
 .top-3 {
   top: 12px;
+}
+
+.top-\[8\%\] {
+  top: 8%;
 }
 
 .top-full {
@@ -2996,20 +2996,12 @@ video {
   padding-bottom: 28px;
 }
 
-.pl-3 {
-  padding-left: 12px;
-}
-
 .pr-10 {
   padding-right: 40px;
 }
 
 .pr-3 {
   padding-right: 12px;
-}
-
-.pr-4 {
-  padding-right: 16px;
 }
 
 .ps-10 {
@@ -3641,6 +3633,10 @@ video {
   color: rgb(132 137 154 / var(--tw-text-opacity));
 }
 
+.prose-table\:w-full :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  width: 100%;
+}
+
 .prose-table\:overflow-x-auto :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   overflow-x: auto;
 }
@@ -4221,4 +4217,8 @@ video {
 
 .\[\&_p\]\:gap-2 p {
   gap: 8px;
+}
+
+.\[\&_table\]\:table table {
+  display: table;
 }

@@ -27,6 +27,36 @@ function cyn_register_acf_group( $label, $fields = [], $location = [] ) {
 		]
 	);
 }
+function cyn_acf_add_tax($name, $label, $tax)
+{
+	return [
+		'key' => cyn_acf_unique_id(),
+		'label' => $label,
+		'name' => $name,
+		'aria-label' => '',
+		'type' => 'taxonomy',
+		'instructions' => '',
+		'required' => 0,
+		'conditional_logic' => 0,
+		'wrapper' => array(
+			'width' => '',
+			'class' => '',
+			'id' => '',
+		),
+		'taxonomy' => $tax,
+		'add_term' => 1,
+		'save_terms' => 1,
+		'load_terms' => 1,
+		'return_format' => 'id',
+		'field_type' => 'multi_select',
+		'bidirectional' => 0,
+		'multiple' => 1,
+		'allow_null' => 1,
+		'bidirectional_target' => array(
+		),
+	];
+
+}
 
 function cyn_acf_add_post_object( $name, $label, $post_type, $width = '', $multiple = 0 ) {
 	return [ 
@@ -209,7 +239,7 @@ function cyn_acf_add_google_map( $name, $label, $width = '' ) {
 	];
 }
 
-function cyn_acf_add_boolean( $name, $label, $width = '' ) {
+function cyn_acf_add_boolean( $name, $label) {
 	return [ 
 		'key' => 'filed_' . cyn_acf_unique_id(),
 		'label' => $label,
@@ -220,7 +250,7 @@ function cyn_acf_add_boolean( $name, $label, $width = '' ) {
 		'required' => 0,
 		'conditional_logic' => 0,
 		'wrapper' => [ 
-			'width' => $width,
+			'width' => '',
 			'class' => '',
 			'id' => '',
 		],

@@ -11,7 +11,7 @@ $cats = get_categories([
 
 <div class="h-full">
 
-    <div class="grid sticky top-3">
+    <div class="grid sticky top-[8%]">
         <!-- Search -->
         <?php cyn_get_component('service-side-bar-search') ?>
 

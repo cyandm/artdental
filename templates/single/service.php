@@ -37,7 +37,7 @@ $postId = $args['post-id'] ?? get_the_ID();
         <div class="pb-4"></div>
 
         <!-- service Content -->
-        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6">
+        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
             <?php the_content() ?>
         </div>
 
