@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const toc = document.getElementById("toc");
   const prose = document.querySelector(".prose");
   const headings = prose?.querySelectorAll("h2");
-
+  const mobileToc = document.getElementById("mobile-toc");
   const icon = document.querySelector(".separator svg");
 
-  if (!toc || !prose || !headings || !icon) return;
+  if (!toc || !mobileToc || !prose || !headings || !icon) return;
 
   headings.forEach(function (heading, index) {
     // Create a unique ID for each heading
@@ -30,5 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
     li.appendChild(svg);
     li.appendChild(a);
     toc.appendChild(li);
+    mobileToc.appendChild(li);
   });
 });

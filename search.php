@@ -16,7 +16,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
 <div class="container">
     <div id="searchPostType" class="bg-primary-100 max-lg:flex flex-col p-5 rounded-3xl  divide-y space-y-3 divide-primary-90">
 
-        <form id="search-form" class="flex justify-between items-center  max-lg:flex-col max-lg:gap-3">
+        <form id="search-form" class="flex justify-between items-center max-lg:flex-col max-lg:gap-3">
 
             <div class='max-md:px-2'>
                 <div class="flex justify-start items-center gap-2">
@@ -60,7 +60,7 @@ $search_type = empty($_GET['search-type']) ? 'all' : $_GET['search-type'];
                             <use href="#icon-search-loupe" />
                         </svg>
                     </div>
-                    <input type="text" id="email-address-icon" name="s" value="<?php the_search_query() ?>" class="text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="جست و جو">
+                    <input type="text" id="email-address-icon" name="s" value="<?php the_search_query() ?>" class="text-right -outline-offset-8 outline-none focus:outline-none focus-visible:outline-none focus:border-none focus:ring-0 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="جست و جو">
                 </div>
             </div>
         </form>

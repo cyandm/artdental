@@ -117,3 +117,20 @@
 .rank-math-breadcrumb p > * {
   @apply min-w-fit;
 }
+
+@layer components {
+  input[class^="form-"] {
+    @apply text-white;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    @apply bg-current;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: #fff;
+}

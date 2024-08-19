@@ -3637,8 +3637,17 @@ video {
   width: 100%;
 }
 
+.prose-table\:overflow-hidden :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  overflow: hidden;
+}
+
 .prose-table\:overflow-x-auto :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
   overflow-x: auto;
+}
+
+.prose-table\:px-0 :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .prose-img\:w-full :is(:where(img):not(:where([class~="not-prose"],[class~="not-prose"] *))) {

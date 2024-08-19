@@ -10607,8 +10607,9 @@
     const toc = document.getElementById("toc");
     const prose = document.querySelector(".prose");
     const headings = prose == null ? void 0 : prose.querySelectorAll("h2");
+    const mobileToc = document.getElementById("mobile-toc");
     const icon = document.querySelector(".separator svg");
-    if (!toc || !prose || !headings || !icon) return;
+    if (!toc || !mobileToc || !prose || !headings || !icon) return;
     headings.forEach(function(heading, index) {
       const id = "section-" + index;
       heading.setAttribute("id", id);
@@ -10627,6 +10628,7 @@
       li.appendChild(svg);
       li.appendChild(a);
       toc.appendChild(li);
+      mobileToc.appendChild(li);
     });
   });
 

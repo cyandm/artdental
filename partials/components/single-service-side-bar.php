@@ -18,16 +18,14 @@ $cats = get_categories([
         <div class="py-3"></div>
 
         <!-- Table of Contents -->
-        <div class="bg-primary-100 p-5 rounded-3xl">
+        <div class="bg-primary-100 p-5 rounded-3xl max-md:hidden">
 
             <!-- Title  -->
             <div class="text-h6 pb-4 font-medium">
                 <?php _e('جدول محتوایی', 'cyn-dm') ?>
             </div>
 
-            <div id="toc-container flex
-             flex-col
-             ">
+            <div id="toc-container flex flex-col">
 
                 <h2></h2>
 

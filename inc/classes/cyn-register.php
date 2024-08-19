@@ -30,9 +30,9 @@ if (!class_exists('cyn_register')) {
 			$this->cyn_make_post_type('price', 'قیمت', 'قیمت ها', 'dashicons-money-alt');
 			$this->cyn_make_post_type('testimonial', 'نظر', 'نظرات بیماران', 'dashicons-format-chat', ['title', 'thumbnail', 'editor']);
 			$this->cyn_make_post_type('doctor', 'پزشک', 'پزشکان', 'dashicons-groups', ['title', 'thumbnail', 'editor']);
-			$this->cyn_make_post_type('faq', 'سوال', 'سوالات متداول', 'dashicons-lightbulb', ['title', 'editor']);
+			$this->cyn_make_post_type('faq', 'سوال', 'سوالات متداول', 'dashicons-lightbulb', ['title', 'editor'], true);
 			$this->cyn_make_post_type('form', 'فرم', 'فرم ها', 'dashicons-format-status', ['title', 'thumbnail', 'editor']);
-		}                                     
+		}
 
 		public function cyn_taxonomy_register()
 		{
@@ -79,7 +79,7 @@ if (!class_exists('cyn_register')) {
 		 * @param string[] $supports 
 		 * @return void
 		 */
-		private function cyn_make_post_type($slug, $singular_name, $plural_name, $icon, $supports = ['title', 'thumbnail'])
+		private function cyn_make_post_type($slug, $singular_name, $plural_name, $icon, $supports = ['title', 'thumbnail'], $exclude_from_search = false)
 		{
 			$labels = [
 				'name' => $singular_name,
@@ -105,7 +105,7 @@ if (!class_exists('cyn_register')) {
 				'show_in_menu' => true,
 				'query_var' => true,
 				'rewrite' => ['slug' => $slug],
-				'exclude_from_search' => false,
+				'exclude_from_search' => $exclude_from_search,
 				'has_archive' => true,
 				'hierarchical' => false,
 				'menu_position' => null,

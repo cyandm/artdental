@@ -79,12 +79,11 @@ $services = get_posts([
             <div class="flex items-end justify-end gap-3 max-lg:flex-col max-lg:items-center max-lg:justify-center max-lg:w-full">
                 <!-- call button  -->
                 <div class="flex items-end justify-end max-lg:items-center max-lg:justify-center max-lg:w-full ">
-                    <button class=" border max-lg:w-full max-lg:items-center max-lg:justify-center flex items-center justify-center flex-row-reverse gap-1 rounded-full transition-all py-2 px-4 duration-300 cursor-pointer text-body_s">
+                    <a href=" tel:09353900271" class=" border max-lg:w-full max-lg:items-center max-lg:justify-center flex items-center justify-center flex-row-reverse gap-1 rounded-full transition-all py-2 px-4 duration-300 cursor-pointer text-body_s">
+
                         <div>
-                            <a href=" tel:021-22443568">
-                                <?php _e('تماس', 'cyn-dm') ?></a>
-                        </div>
-                    </button>
+                            <?php _e('تماس', 'cyn-dm') ?></div>
+                    </a>
                 </div>
                 <!-- Submit button  -->
                 <div class="flex items-end justify-end max-lg:items-center max-lg:justify-center max-lg:w-full">

@@ -15,6 +15,6 @@ class cyn_search
         $post_type = $_GET['search-type'] === 'all' ? null : $_GET['search-type'];
 
         $query->set('posts_per_page', -1);
-        $query->set('post_type', $post_type && !(['taxonomy' => 'faq-cat']));
+        $query->set('post_type', $post_type);
     }
 }

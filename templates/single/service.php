@@ -1,6 +1,13 @@
 <?php defined('ABSPATH') || exit; ?>
 
 <?php
+
+$cats = get_categories([
+    'taxonomy' => 'product_cat',
+    'orderby' => 'id',
+    'hide_empty' => true,
+]);
+
 $postId = $args['post-id'] ?? get_the_ID();
 ?>
 
@@ -33,11 +40,72 @@ $postId = $args['post-id'] ?? get_the_ID();
         <div>
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
+        <div class="pb-4"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="bg-primary-100 p-5 rounded-3xl md:hidden">
+            <!-- Title  -->
+            <div class="text-h6 pb-4 font-medium">
+                <?php _e('جدول محتوایی', 'cyn-dm') ?>
+            </div>
+            <div id="mobile-toc-container flex flex-col">
+                <h2></h2>
+                <ul id="mobile-toc" class="flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="pb-4"></div>
 
         <!-- service Content -->
-        <div class="prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
+        <div class="prose prose-table:max-md:px-0 prose-table:overflow-hidden prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-table:overflow-x-auto prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6 prose-table:w-full [&_table]:table">
             <?php the_content() ?>
         </div>
 

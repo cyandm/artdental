@@ -2,13 +2,17 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  plugins: [require("@tailwindcss/typography")],
-  content: [
+  plugins: [
+    require("@tailwindcss/typography") ,
+    require("@tailwindcss/forms")
+  ],
+   content: [
     "./partials/**/*.php",
     "./templates/**/*.php",
     "./assets/js/**/*.js",
     "./**/*.php",
   ],
+
   theme: {
     container: {
       center: true,
