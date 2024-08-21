@@ -4,34 +4,25 @@
 
 
     <footer>
-        <!-- pc scroll to top  -->
-        <section class="container w-full fixed bottom-4 z-40">
-            <!-- svg  arrow up -->
-            <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
-                <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop-pc">
-                    <svg class="icon size-6">
-                        <use href="#icon-Right,-Arrow" />
-                    </svg>
-                </div>
-            </div>
-        </section>
+
 
 
         <!-- app bar art dental  -->
-        <section class="text-caption w-full flex flex-col fixed bottom-4 z-40 md:hidden gap-3">
-            <!-- scroll to top  -->
-            <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
+        <div class="text-caption w-full flex flex-col fixed bottom-4 z-40 gap-3">
+            <!-- pc scroll to top  -->
+            <div class="container">
                 <!-- svg  arrow up -->
-                <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop">
-                    <svg class="icon size-6">
-                        <use href="#icon-Right,-Arrow" />
-                    </svg>
+                <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
+                    <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrollTop-pc">
+                        <svg class="icon size-6">
+                            <use href="#icon-Right,-Arrow" />
+                        </svg>
+                    </div>
                 </div>
             </div>
 
-
             <!-- app bar  -->
-            <div class=" w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
+            <div class=" md:hidden w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
                 <!-- service button  -->
                 <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
                     <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
@@ -71,7 +62,20 @@
                     </p>
                 </a>
             </div>
-        </section>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
 
         <div class="py-9 bg-primary-90 bg-noise">
             <div class="container">

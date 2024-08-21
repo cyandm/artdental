@@ -29,6 +29,7 @@ $postId = $args['post-id'] ?? get_the_ID();
     <!-- Paragraph -->
     <section class="col-span-3 max-lg:col-span-4 max-xl:mx-5">
 
+
         <!--service Title  -->
         <div class="text-h1 max-lg:text-h3">
             <?php the_title() ?>
@@ -41,7 +42,7 @@ $postId = $args['post-id'] ?? get_the_ID();
             <?php echo wp_get_attachment_image(get_post_thumbnail_id(), 'full', false, ['class' => 'blog-thumbnail rounded-3xl my-0 aspect-video w-full object-cover']) ?>
         </div>
         <div class="pb-4"></div>
-        <!-- table of content mobile  -->
+        <!-- Table of content mobile  -->
         <div class="bg-primary-100 p-5 rounded-3xl md:hidden">
             <!-- Title  -->
             <div class="text-h6 pb-4 font-medium">
@@ -49,7 +50,7 @@ $postId = $args['post-id'] ?? get_the_ID();
             </div>
             <div id="mobile-toc-container flex flex-col">
                 <h2></h2>
-                <ul id="mobile-toc" class="flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
+                <ul class="toc flex flex-col flex-auto gap-3 divide-y divide-primary-90"></ul>
             </div>
         </div>
         <div class="pb-4"></div>
@@ -67,7 +68,7 @@ $postId = $args['post-id'] ?? get_the_ID();
             <div>
                 <!-- Title -->
                 <div class="text-h2">
-                    <?php _e('سوالات متداول ', 'cyn-dm') . ' ' . the_title() ?>
+                    <?php _e('سوالات متداول', 'cyn-dm') . ' ' . the_title() ?>
                 </div>
 
                 <div class="text-h2">

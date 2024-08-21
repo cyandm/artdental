@@ -35,6 +35,7 @@ global $wp_query;
                     cyn_get_card('service', ['post-id' => $post->ID, 'class' => 'min-h-[400px] first:col-span-2']);
                 }
 
+                
             endif;
             ?>
 

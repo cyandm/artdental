@@ -15,6 +15,7 @@ function cyn_register_acf()
 	cyn_acf_register_service();
 	cyn_acf_register_video();
 	cyn_acf_register_ads();
+	// cyn_acf_register_price_group();
 	// cyn_acf_register_faq();
 }
 
@@ -81,9 +82,9 @@ function cyn_acf_register_home_page()
 	$faq = [
 		cyn_acf_add_tab('سوالات متداول '),
 		cyn_acf_add_tax('faq-cat', 'انتخاب دسته بندی سوالات', 'faq-cat'),
- 
+
 	];
-	$fields = array_merge($hero, $features, $services, $videos, $price, $doctors, $blogs ,$faq);
+	$fields = array_merge($hero, $features, $services, $videos, $price, $doctors, $blogs, $faq);
 
 	$location = [
 		[
@@ -168,7 +169,7 @@ function cyn_acf_register_faq()
 
 	$fields = [
 
-		cyn_acf_add_boolean('show_in_front' , 'عدم نمایش در صفحه اصلی')
+		cyn_acf_add_boolean('show_in_front', 'عدم نمایش در صفحه اصلی')
 
 	];
 
@@ -176,7 +177,7 @@ function cyn_acf_register_faq()
 	$location = [
 		[
 			[
-		'param' => 'post_type',
+				'param' => 'post_type',
 				'operator' => '==',
 				'value' => 'faq'
 			]
@@ -342,3 +343,29 @@ function cyn_acf_register_ads()
 
 	cyn_register_acf_group('تنظیمات', $fields, $location);
 }
+
+
+// archive prices 
+// function cyn_acf_register_price_group()
+// {
+// 	$fields = [
+
+
+// 		cyn_acf_add_tab('قیمت ها'),
+// 		cyn_acf_add_text('price_title_', 'متن اصلی', 0, 33),
+// 		cyn_acf_add_tab('انتخاب قیمت ها'),
+
+// 		cyn_acf_add_post_object('prices', 'انتخاب قیمت ها', 'price', '', 3),
+
+// 	];
+// 	$location = [
+// 		[
+// 			[
+// 				'param' => 'post_type',
+// 				'operator' => '==',
+// 				'value' => 'price'
+// 			]
+// 		]
+// 	];
+// 	cyn_register_acf_group('تنظیمات', $fields, $location);
+// }

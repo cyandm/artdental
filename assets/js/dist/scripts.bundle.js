@@ -10604,32 +10604,33 @@
 
   // assets/js/modules/table-of-content.js
   document.addEventListener("DOMContentLoaded", function() {
-    const toc = document.getElementById("toc");
+    const tocGroup = document.querySelectorAll(".toc");
     const prose = document.querySelector(".prose");
     const headings = prose == null ? void 0 : prose.querySelectorAll("h2");
-    const mobileToc = document.getElementById("mobile-toc");
     const icon = document.querySelector(".separator svg");
-    if (!toc || !mobileToc || !prose || !headings || !icon) return;
+    if (!tocGroup || !prose || !headings || !icon) return;
+    if (headings.length < 1) {
+      tocGroup.forEach((toc) => {
+        toc.innerText = "\u0645\u062A\u0627\u0633\u0641\u0627\u0646\u0647 \u0647\u06CC\u0686 \u0639\u0646\u0648\u0627\u0646\u06CC \u06CC\u0627\u0641\u062A \u0646\u0634\u062F!";
+      });
+      return;
+    }
     headings.forEach(function(heading, index) {
       const id = "section-" + index;
       heading.setAttribute("id", id);
       const li = document.createElement("li");
-      li.classList.add(
-        "flex",
-        "flex-row-reverse",
-        "justify-between",
-        "py-1",
-        "pt-4"
-      );
+      li.classList.add("flex", "flex-row-reverse", "justify-between", "p-1");
       const a = document.createElement("a");
       const svg = icon.cloneNode(true);
+      svg.classList.add("min-w-4");
       a.textContent = heading.textContent;
-      a.svg = heading.svg;
       a.setAttribute("href", "#" + id);
       li.appendChild(svg);
       li.appendChild(a);
-      toc.appendChild(li);
-      mobileToc.appendChild(li);
+      tocGroup.forEach((toc) => {
+        const liClone = li.cloneNode(true);
+        toc.appendChild(liClone);
+      });
     });
   });
 
@@ -10803,27 +10804,11 @@
   preloader();
 
   // assets/js/modules/scroll-top.js
-  Window.onscroll = function() {
-    var e = document.querySelectorAll("scrolltop");
-    if (!e) {
-      e = document.createElement("a");
-      e.class = "scrolltop";
-      e.href = "#";
-      document.body.appendChild(e);
-    }
-    e.style.display = document.documentElement.scrollTop > 300 ? "block" : "block";
-    e.onclick = (ev) => {
-      ev.preventDefault();
-      document.documentElement.scrollTop = 0;
-    };
-  };
-
-  // assets/js/modules/scroll-top-pc.js
   window.onscroll = function() {
-    var e = document.getElementById("scrolltop-pc");
+    var e = document.getElementById("scrollTop-pc");
     if (!e) {
       e = document.createElement("a");
-      e.id = "scrolltop-pc";
+      e.id = "scrollTop-pc";
       e.href = "#";
       document.body.appendChild(e);
     }

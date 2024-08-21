@@ -1,11 +1,19 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const toc = document.getElementById("toc");
+  const tocGroup = document.querySelectorAll(".toc");
   const prose = document.querySelector(".prose");
   const headings = prose?.querySelectorAll("h2");
-  const mobileToc = document.getElementById("mobile-toc");
+
   const icon = document.querySelector(".separator svg");
 
-  if (!toc || !mobileToc || !prose || !headings || !icon) return;
+  if (!tocGroup || !prose || !headings || !icon) return;
+
+  if (headings.length < 1) {
+    tocGroup.forEach((toc) => {
+      toc.innerText = "متاسفانه هیچ عنوانی یافت نشد!";
+    });
+
+    return;
+  }
 
   headings.forEach(function (heading, index) {
     // Create a unique ID for each heading
@@ -14,24 +22,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Create a list item for the TOC
     const li = document.createElement("li");
-    li.classList.add(
-      "flex",
-      "flex-row-reverse",
-      "justify-between",
-      "py-1",
-      "pt-4"
-    );
+    li.classList.add("flex", "flex-row-reverse", "justify-between", "p-1");
     const a = document.createElement("a");
     const svg = icon.cloneNode(true);
-    // a.classList.add("")
+    svg.classList.add("min-w-4");
 
     a.textContent = heading.textContent;
-    a.svg = heading.svg;
-
     a.setAttribute("href", "#" + id);
     li.appendChild(svg);
     li.appendChild(a);
-    toc.appendChild(li);
-    mobileToc.appendChild(li);
+
+    tocGroup.forEach((toc) => {
+      const liClone = li.cloneNode(true);
+      toc.appendChild(liClone);
+    });
   });
 });
