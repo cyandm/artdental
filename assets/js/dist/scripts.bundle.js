@@ -10804,39 +10804,20 @@
   preloader();
 
   // assets/js/modules/scroll-top.js
-  var scrollTopBtn = document.getElementById("scrollTopBtn");
-  var progressCircle = document.getElementById("progress");
-  var radius = progressCircle.r.baseVal.value;
-  var circumference = 2 * Math.PI * radius;
-  progressCircle.style.strokeDasharray = "".concat(circumference);
-  progressCircle.style.strokeDashoffset = "".concat(circumference);
-  function setProgress(percent) {
-    const offset = circumference - percent / 100 * circumference;
-    progressCircle.style.strokeDashoffset = offset;
-  }
-  function updateProgress2() {
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const scrollTop = window.scrollY;
-    const scrollPercent = scrollTop / scrollHeight * 100;
-    setProgress(scrollPercent);
-  }
-  function toggleScrollTopButton() {
-    if (window.scrollY > 300) {
-      scrollTopBtn.classList.add("show");
-    } else {
-      scrollTopBtn.classList.remove("show");
+  window.onscroll = function() {
+    var e = document.getElementById("scrollTop-pc");
+    if (!e) {
+      e = document.createElement("a");
+      e.id = "scrollTop-pc";
+      e.href = "#";
+      document.body.appendChild(e);
     }
-  }
-  scrollTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-  window.addEventListener("scroll", () => {
-    toggleScrollTopButton();
-    updateProgress2();
-  });
+    e.style.display = document.documentElement.scrollTop > 300 ? "block" : "block";
+    e.onclick = (ev) => {
+      ev.preventDefault();
+      document.documentElement.scrollTop = 0;
+    };
+  };
 
   // assets/js/pages/home.js
   var containerComponent = class extends HTMLElement {
@@ -11483,13 +11464,13 @@
     };
   };
   var snap = function snap2(snapTo, value) {
-    var isArray = _isArray(snapTo), radius2, is2D;
+    var isArray = _isArray(snapTo), radius, is2D;
     if (!isArray && _isObject(snapTo)) {
-      radius2 = isArray = snapTo.radius || _bigNum;
+      radius = isArray = snapTo.radius || _bigNum;
       if (snapTo.values) {
         snapTo = toArray(snapTo.values);
         if (is2D = !_isNumber(snapTo[0])) {
-          radius2 *= radius2;
+          radius *= radius;
         }
       } else {
         snapTo = _roundModifier(snapTo.increment);
@@ -11497,7 +11478,7 @@
     }
     return _conditionalReturn(value, !isArray ? _roundModifier(snapTo) : _isFunction(snapTo) ? function(raw) {
       is2D = snapTo(raw);
-      return Math.abs(is2D - raw) <= radius2 ? is2D : raw;
+      return Math.abs(is2D - raw) <= radius ? is2D : raw;
     } : function(raw) {
       var x = parseFloat(is2D ? raw.x : raw), y = parseFloat(is2D ? raw.y : 0), min = _bigNum, closest = 0, i = snapTo.length, dx, dy;
       while (i--) {
@@ -11513,7 +11494,7 @@
           closest = i;
         }
       }
-      closest = !radius2 || min <= radius2 ? snapTo[closest] : raw;
+      closest = !radius || min <= radius ? snapTo[closest] : raw;
       return is2D || closest === raw || _isNumber(raw) ? closest : closest + getUnit(raw);
     });
   };
