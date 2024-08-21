@@ -10,15 +10,21 @@
         <!-- app bar art dental  -->
         <div class="text-caption w-full flex flex-col fixed bottom-4 z-40 gap-3">
             <!-- pc scroll to top  -->
-            <div class="container">
-                <!-- svg  arrow up -->
-                <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
-                    <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrollTop-pc">
-                        <svg class="icon size-6">
-                            <use href="#icon-Right,-Arrow" />
-                        </svg>
-                    </div>
-                </div>
+            <div class="content">
+                <!-- Your long content goes here -->
+                <p>Scroll down to see the button...</p>
+                <div style="height: 2000px;"></div>
+            </div>
+
+            <!-- Scroll to Top Button with Circular Progress -->
+            <div id="scrollTopBtn">
+                <svg class="progress-circle" width="50" height="50">
+                    <circle cx="25" cy="25" r="20"></circle>
+
+                    <circle cx="25" cy="25" r="20" id="progress"></circle>
+
+                </svg>
+
             </div>
 
             <!-- app bar  -->
@@ -62,20 +68,7 @@
                     </p>
                 </a>
             </div>
-
-
-
         </div>
-
-
-
-
-
-
-
-
-
-
 
         <div class="py-9 bg-primary-90 bg-noise">
             <div class="container">

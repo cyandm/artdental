@@ -44,7 +44,7 @@ if (!is_array($doctors) || count($doctors) < 1) {
 		</swiper-container>
 	</div>
 
-	<cyn-button type="secondary-dark" size="md" class="justify-center mt-3 lg:hidden" href="<?php get_post_type_archive_link('doctor') ?>">
+	<cyn-button type="secondary-dark" size="md" class="justify-center mt-3 lg:hidden" href="<?php echo get_post_type_archive_link('doctor') ?>">
 		<?php _e('مشاهده همه', 'cyn-dm') ?>
 	</cyn-button>
 </div>
