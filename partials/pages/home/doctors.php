@@ -15,7 +15,7 @@ if (!is_array($doctors) || count($doctors) < 1) {
 <div class="container space-y-4">
 	<div class="flex justify-between items-center">
 		<span class="text-h1 max-lg:text-h5">
-			<?php _e('متخصص های مجموعه', 'cyn-dm') ?>
+			<?php _e('متخصص‌های مجموعه', 'cyn-dm') ?>
 		</span>
 
 		<cyn-button type="secondary-dark" size="md" class="max-lg:hidden" href="<?php echo get_post_type_archive_link('doctor') ?>">

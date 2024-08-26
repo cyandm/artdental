@@ -10,6 +10,8 @@ require_once(__DIR__ . '/inc/classes/cyn-customize.php');
 require_once(__DIR__ . '/inc/classes/cyn-register.php');
 require_once(__DIR__ . '/inc/classes/cyn-search.php');
 require_once(__DIR__ . '/inc/classes/cyn-custom-code.php');
+require_once(__DIR__ . '/inc/classes/cyn-actions.php');
+
 
 
 //functions
@@ -29,3 +31,4 @@ new cyn_register();
 new cyn_customize();
 new cyn_search();
 new cyn_custom_code();
+new cyn_actions();

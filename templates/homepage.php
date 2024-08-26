@@ -7,9 +7,9 @@
 <?php cyn_get_page_template('home/features'); ?>
 <div class="py-6"></div>
 <?php cyn_get_page_template('home/services'); ?>
-<div class="py-6"></div>
-<?php cyn_get_page_template('home/videos');
-?>
+<!-- <div class="py-6"></div>
+<?php //cyn_get_page_template('home/videos');
+?> -->
 <div class="py-6"></div>
 <div id="price_section" class=" scroll-mt-8 ">
     <?php cyn_get_page_template('home/price'); ?>
@@ -24,11 +24,7 @@
 <div class="py-6"></div>
 <?php cyn_get_page_template('home/faq'); ?>
 <div class="py-6"></div>
-
 <?php get_footer() ?>
-
-
-
 <!-- FAQ -->
 <?php if (!empty(get_field('faq-group', $postId = 'false'))) : ?>
     <div class="pt-[93px]"></div>

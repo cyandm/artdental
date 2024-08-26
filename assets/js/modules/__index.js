@@ -15,3 +15,4 @@ import "./gallery";
 import "./offer";
 import "./preloader";
 import "./scroll-top";
+import "./scroll-top-pc";
