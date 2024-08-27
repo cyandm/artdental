@@ -4336,6 +4336,16 @@ select {
     font-weight: 400;
   }
 
+  .max-md\:hover\:bg-primary-90:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(244 244 246 / var(--tw-bg-opacity));
+  }
+
+  .max-md\:hover\:bg-primary-100:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  }
+
   .prose-table\:max-md\:px-0 :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
     padding-left: 0;
     padding-right: 0;
