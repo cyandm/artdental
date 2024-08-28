@@ -25,16 +25,15 @@
 <div class="py-8"></div>
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 1, 'end-point' => 3]); ?></div>
 <!-- Our Customers Comments -->
-<div class="py-8"></div>
-<div><?php cyn_get_page_template('ADS/Customers_Comments') ?></div>
+<div class="py-8"></div><?php if (!empty(get_field('Customer_comments_section_off'))) : ?>
+    <div><?php cyn_get_page_template('ADS/Customers_Comments') ?></div>
+<?php endif; ?>
 <!-- Introduction part2  -->
 <div class="py-8"></div>
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 6]); ?></div>
 <!-- faq  -->
 <div class="py-8"></div>
-<?php if (!empty(get_field('faq_section_off'))) : ?>
-    <div> <?php cyn_get_page_template('ADS/faqADS') ?></div>
-<?php endif; ?>
+<div> <?php cyn_get_page_template('ADS/faqADS') ?></div>
 
 <!-- <?php //cyn_get_page_template('home/faq', ["posts" => ]); 
         ?> -->

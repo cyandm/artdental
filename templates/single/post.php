@@ -72,12 +72,12 @@ $postId = $args['post-id'] ?? get_the_ID();
         <div class="py-3"></div>
 
         <!-- Comments -->
-        <?php cyn_get_component('single-comment')?>
+        <?php cyn_get_component('single-comment') ?>
 
     </section>
 
     <!-- Comments For Mobile -->
-    <?php cyn_get_component('mobile-res-comment')?>
+    <?php cyn_get_component('mobile-res-comment') ?>
 
 </main>
 

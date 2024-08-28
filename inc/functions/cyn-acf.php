@@ -331,10 +331,10 @@ function cyn_acf_register_ads()
 	for ($i = 1; $i <= 10; $i++) {
 		array_push($fields, cyn_acf_add_file("Customers_Comments_video_$i", "فایل ویدئو$i", 50));
 		array_push($fields, cyn_acf_add_image("Customers_Comments_cover_$i", "کاور ویدئو$i", 50));
+		array_push($fields, cyn_acf_add_boolean('Customer_comments_section_off', 'نمایش سوالات متداول', 20));
 	}
 	array_push($fields,	cyn_acf_add_tab('سوالات متداول'),);
 	array_push($fields, cyn_acf_add_post_object('faq-group', 'سوالات متداول', 'faq', '', 1));
-	array_push($fields, cyn_acf_add_boolean('faq_section_off', 'نمایش سوالات متداول', 20));
 
 
 	$location = [
