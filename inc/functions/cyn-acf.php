@@ -109,6 +109,7 @@ function cyn_acf_register_price()
 		cyn_acf_add_text('country', 'کشور سازنده'),
 		cyn_acf_add_text('price_per_unit', 'قیمت هر واحد'),
 		cyn_acf_add_text('price_per_unit_off', 'قیمت هر واحد با تخفیف'),
+
 	];
 
 	$location = [
@@ -306,6 +307,8 @@ function cyn_acf_register_ads()
 		cyn_acf_add_tab('قیمت ها'),
 		cyn_acf_add_text('price_title', 'متن اصلی', 0, 33),
 		cyn_acf_add_post_object('prices', 'انتخاب قیمت ها', 'price', '', 3),
+		cyn_acf_add_boolean('price_section_off', 'نمایش قیمت ها', 20),
+
 
 
 		cyn_acf_add_tab('معرفی'),
@@ -330,6 +333,8 @@ function cyn_acf_register_ads()
 	}
 	array_push($fields,	cyn_acf_add_tab('سوالات متداول'),);
 	array_push($fields, cyn_acf_add_post_object('faq-group', 'سوالات متداول', 'faq', '', 1));
+	array_push($fields, cyn_acf_add_boolean('faq_section_off', 'نمایش سوالات متداول', 20));
+
 
 	$location = [
 		[

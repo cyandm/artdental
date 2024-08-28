@@ -16,9 +16,11 @@
 <?php cyn_get_page_template('home/services', ['swiper' => false]); ?>
 <!-- price  -->
 <div class="py-8"></div>
-<div id="price_section" class="scroll-mt-8 ">
-    <?php cyn_get_page_template('home/price', ['title' => get_field('price_title'), 'has_button' => false]); ?>
-</div>
+<?php if (!empty(get_field('price_section_off'))) : ?>
+    <div id="price_section" class="scroll-mt-8 ">
+        <?php cyn_get_page_template('home/price', ['title' => get_field('price_title'), 'has_button' => false]); ?>
+    </div>
+<?php endif; ?>
 <!-- Introduction part1  -->
 <div class="py-8"></div>
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 1, 'end-point' => 3]); ?></div>
@@ -30,7 +32,10 @@
 <div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 6]); ?></div>
 <!-- faq  -->
 <div class="py-8"></div>
-<div><?php cyn_get_page_template('ADS/faqADS') ?></div>
+<?php if (!empty(get_field('faq_section_off'))) : ?>
+    <div> <?php cyn_get_page_template('ADS/faqADS') ?></div>
+<?php endif; ?>
+
 <!-- <?php //cyn_get_page_template('home/faq', ["posts" => ]); 
         ?> -->
 <!-- footer  -->
