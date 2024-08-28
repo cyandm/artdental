@@ -1,4 +1,4 @@
-<?php /* Template name: price template */ ?>
+<?php /* Template name: Price template */ ?>
 
 <?php get_header(); ?>
 
