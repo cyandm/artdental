@@ -12,7 +12,7 @@
 
 	<div class="divide-y-2 divide-primary-90 ">
 		<?php
-		$menu = cyn_get_menu_items_by_slug('header');
+		$menu = cyn_get_menu_items_by_slug('mobile_header');
 		foreach ($menu as $menu_item) : ?>
 
 			<div class="<?php echo $menu_item->child_items ? 'has-child' : '' ?>">

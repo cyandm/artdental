@@ -2209,6 +2209,10 @@ select {
   top: 33.333333%;
 }
 
+.top-12 {
+  top: 56px;
+}
+
 .top-3 {
   top: 12px;
 }
@@ -2239,6 +2243,10 @@ select {
 
 .z-50 {
   z-index: 50;
+}
+
+.z-30 {
+  z-index: 30;
 }
 
 .order-1 {
@@ -2577,6 +2585,10 @@ select {
 
 .max-w-full {
   max-width: 100%;
+}
+
+.max-w-sm {
+  max-width: 24rem;
 }
 
 .flex-1 {
@@ -3266,12 +3278,20 @@ select {
   padding-bottom: 28px;
 }
 
+.pl-3 {
+  padding-left: 12px;
+}
+
 .pr-10 {
   padding-right: 40px;
 }
 
 .pr-3 {
   padding-right: 12px;
+}
+
+.pr-4 {
+  padding-right: 16px;
 }
 
 .ps-10 {
@@ -4228,6 +4248,26 @@ select {
 }
 
 @media not all and (min-width: 768px) {
+  .max-md\:bottom-8 {
+    bottom: 32px;
+  }
+
+  .max-md\:bottom-12 {
+    bottom: 56px;
+  }
+
+  .max-md\:bottom-1 {
+    bottom: 4px;
+  }
+
+  .max-md\:bottom-17 {
+    bottom: 120px;
+  }
+
+  .max-md\:bottom-16 {
+    bottom: 100px;
+  }
+
   .max-md\:col-span-6 {
     grid-column: span 6 / span 6;
   }
@@ -4336,16 +4376,6 @@ select {
     font-weight: 400;
   }
 
-  .max-md\:hover\:bg-primary-90:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(244 244 246 / var(--tw-bg-opacity));
-  }
-
-  .max-md\:hover\:bg-primary-100:hover {
-    --tw-bg-opacity: 1;
-    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  }
-
   .prose-table\:max-md\:px-0 :is(:where(table):not(:where([class~="not-prose"],[class~="not-prose"] *))) {
     padding-left: 0;
     padding-right: 0;
@@ -4366,6 +4396,16 @@ select {
 
   .max-sm\:text-h5 {
     font-size: 24px;
+  }
+
+  .max-sm\:hover\:border-primary-100:hover {
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  }
+
+  .max-sm\:hover\:bg-primary-100:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 }
 

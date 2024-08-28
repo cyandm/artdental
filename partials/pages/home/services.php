@@ -21,7 +21,7 @@ if (!is_array($services) || count($services) < 1) {
 			<?php if (false !== $swiper_show) : ?>
 
 				<div class="flex gap-2">
-					<div id="servicesPrev" class="-rotate-90 max-md:hover:bg-primary-100">
+					<div id="servicesPrev" class="-rotate-90" >
 						<cyn-icon-button type="primary" icon="#icon-chevron-down">
 						</cyn-icon-button>
 					</div>

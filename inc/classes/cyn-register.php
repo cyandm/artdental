@@ -17,6 +17,7 @@ if (!class_exists('cyn_register')) {
 		{
 			register_nav_menus([
 				'header' => "Header",
+				'mobile_header' => "Mobile Header",
 				'footer' => "Footer",
 			]);
 		}

@@ -1,86 +1,63 @@
 <?php $render_template = $args['render_template'] ?? true ?>
+
 <?php if ($render_template) : ?>
-
-
-    <footer>
-        <!-- app bar art dental  -->
-        <section class="text-caption w-full flex flex-col fixed gap-3 bottom-4 z-40 ">
-
-            <!-- pc scroll to top  -->
-            <section class="container w-full fixed bottom-4 z-40">
-                <!-- svg  arrow up -->
-                <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
-                    <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop-pc">
-                        <svg class="icon size-6">
-                            <use href="#icon-Right,-Arrow" />
-                        </svg>
-                    </div>
+    <footer class="w-full">
+        <!-- pc scroll to top  -->
+        <section class=" w-full fixed bottom-4 max-md:bottom-17 z-40">
+            <!-- svg  arrow up -->
+            <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
+                <div class="rounded-full transition-all duration-300 cursor-pointer scrollTop" id="scrolltop-pc">
+                    <svg class="icon size-6">
+                        <use href="#icon-Right,-Arrow" />
+                    </svg>
                 </div>
-
-            </section>
-
-
-            <!-- app bar art dental  -->
-            <section class="text-caption w-full flex flex-col fixed bottom-4 z-40 md:hidden gap-3">
-                <!-- scroll to top  -->
-                <!-- <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90 bottom-4 z-40 md:hidden"> -->
-                <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
-                    <!-- svg  arrow up -->
-                    <div class="rounded-full transition-all duration-300 cursor-pointer" id="scrolltop">
-                        <svg class="icon size-6">
-                            <use href="#icon-Right,-Arrow" />
-                        </svg>
-                    </div>
-                </div>
-                <!-- svg  arrow up -->
-                <!-- <div class="rounded-full transition-all duration-300 cursor-pointer scrollTop">
-                        <svg class="icon size-6">
-                            <use href="#icon-Right,-Arrow"/>
-                        </svg>
-                    </div> -->
-                </div>
-                <!-- app bar  -->
-                <div class=" w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center
-                 bg-primary-100 px-14 py-3 shadow-2xl">
-                    <!-- service button  -->
-                    <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
-                        <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
-                            <svg class=" icon size-6 ">
-                                <use href=" #icon-teeth" />
-                            </svg>
-                        </div>
-                        <p class="text-accent-40">
-                            خدمات
-                        </p>
-                    </a>
-                    <!-- reserve button  -->
-                    <a href="#" class="reservePopUpOpener cursor-pointer flex flex-col gap-1 items-center justify-center">
-                        <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
-                            <svg class="icon size-6 ">
-                                <use href="#icon-medical-cross-cursor-click-square" />
-                            </svg>
-                        </div>
-                        <p class="text-accent-40">
-                            رزرو نوبت
-                        </p>
-                    </a>
-                    <!-- call button  -->
-                    <a href="tel:<?php echo get_option('cyn_phone_number_1') ?>" class="cursor-pointer flex flex-col gap-1 items-center justify-center">
-                        <div class="bg-accent-40 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-ping after:bg-accent-40 after:content-[''] after:inset-0 rounded-full size-10 flex justify-center items-center text-primary-100">
-                            <svg class="icon size-6 ">
-                                <use href="#icon-Phone,-Call-11" />
-                            </svg>
-                        </div>
-                        <p class="text-accent-40">
-                            تماس
-                        </p>
-                    </a>
-                </div>
-            </section>
+            </div>
         </section>
+        <!-- app bar art dental  -->
+        <section class="text-caption w-full flex flex-col fixed bottom-4 z-30 md:hidden gap-3">
 
+            <!-- app bar  -->
+            <div class=" w-[calc(100%_-_1rem)] mx-auto rounded-3xl flex justify-between gap-8 items-center bg-primary-100 px-14 py-3 shadow-2xl">
+                <!-- service button  -->
+                <a href="<?php echo get_post_type_archive_link('service') ?>" class=" cursor-pointer flex flex-col gap-1 items-center justify-center ">
+                    <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
 
+                        <svg class=" icon size-6 ">
+                            <use href=" #icon-teeth" />
+                        </svg>
 
+                    </div>
+                    <p class="text-accent-40">
+                        خدمات
+                    </p>
+                </a>
+                <!-- reserve button  -->
+                <a href="#" class="reservePopUpOpener cursor-pointer flex flex-col gap-1 items-center justify-center">
+
+                    <div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
+                        <svg class="icon size-6 ">
+                            <use href="#icon-medical-cross-cursor-click-square" />
+                        </svg>
+                    </div>
+
+                    <p class="text-accent-40">
+                        رزرو نوبت
+                    </p>
+                </a>
+                <!-- call button  -->
+                <a href="tel:<?php echo get_option('cyn_phone_number_1') ?>" class="cursor-pointer flex flex-col gap-1 items-center justify-center">
+
+                    <div class="bg-accent-40 relative after:absolute after:rounded-full isolate after:-z-10 after:animate-ping after:bg-accent-40 after:content-[''] after:inset-0 rounded-full size-10 flex justify-center items-center text-primary-100">
+                        <svg class="icon size-6 ">
+                            <use href="#icon-Phone,-Call-11" />
+                        </svg>
+                    </div>
+                    <p class="text-accent-40">
+                        تماس
+                    </p>
+                </a>
+            </div>
+        </section>
         <div class="py-9 bg-primary-90 bg-noise">
             <div class="container">
                 <nav class="flex justify-between items-start max-lg:flex-col max-lg:gap-3 max-lg:divide-y max-lg:divide-primary-80">
@@ -108,10 +85,12 @@
                                 </div>
                             <?php endif; ?>
                         </div>
+
                     <?php endforeach; ?>
                 </nav>
             </div>
         </div>
+
         <div class="py-9 bg-noise text-primary-100 pb-17">
             <div class="container flex justify-between items-center  max-md:items-start max-lg:flex-col">
                 <div class="flex gap-11 max-md:flex-col ">
@@ -124,6 +103,7 @@
                                 <?php echo get_option('cyn_address') ?>
                             </p>
                         </div>
+
                         <div class="space-y-3">
                             <span class="text-h6 max-md:text-body">
                                 <?php _e('مشاهده آدرس روی نقشه', 'cyn-dm') ?>
@@ -140,7 +120,7 @@
                     <div class="space-y-3">
                         <div class="space-y-3">
                             <span class="text-h6 max-md:text-body">
-                                <?php _e('شماره تماس‌ها', 'cyn-dm') ?>
+                                <?php _e('شماره تماس ها', 'cyn-dm') ?>
                             </span>
                             <div class="space-y-3">
                                 <?php for ($i = 1; $i <= 10; $i++) : ?>
@@ -152,7 +132,7 @@
                         </div>
                         <div class="space-y-3">
                             <span class="text-h6 max-md:text-body">
-                                <?php _e('شبکه‌های اجتماعی', 'cyn-dm') ?>
+                                <?php _e('شبکه های اجتماعی', 'cyn-dm') ?>
                             </span>
                             <div class="flex gap-2">
                                 <?php for ($i = 1; $i <= 10; $i++) : ?>
@@ -190,12 +170,12 @@
                 <?php _e('CyanDM ', 'cyn-dm') ?>
             </p>
         </div>
-
     </footer>
 <?php endif; ?>
 <div class="wp-scripts">
     <?php wp_footer() ?>
 </div>
+
 </body>
 
 </html>

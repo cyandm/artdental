@@ -370,7 +370,7 @@
         default:
         case "primary":
           this.addClass(
-            "bg-gradient-to-t from-primary-50 to-primary-70 text-primary-100 shadow-md shadow-slate-400/50 hover:from-primary-20 hover:to-primary-20"
+            "bg-gradient-to-t from-primary-50 to-primary-70 text-primary-100 shadow-md shadow-slate-400/50 hover:from-primary-20 hover:to-primary-20 "
           );
           break;
         case "secondary":
@@ -454,7 +454,7 @@
         default:
         case "primary":
           this.addClass(
-            "bg-primary-100 color-primary-20 border border-primary-100 hover:border-primary-20 hover:bg-primary-100/0"
+            "bg-primary-100 color-primary-20 border border-primary-100 hover:border-primary-20 hover:bg-primary-100/0 max-sm:hover:bg-primary-100 max-sm:hover:border-primary-100"
           );
           break;
         case "secondary":
@@ -10804,11 +10804,11 @@
   preloader();
 
   // assets/js/modules/scroll-top.js
-  window.onscroll = function() {
-    var e = document.getElementById("scrolltop");
+  Window.onscroll = function() {
+    var e = document.querySelectorAll("scrollTop");
     if (!e) {
       e = document.createElement("a");
-      e.id = "scrolltop";
+      e.class = "scrollTop";
       e.href = "#";
       document.body.appendChild(e);
     }
