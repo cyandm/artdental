@@ -68,6 +68,7 @@ function cyn_acf_register_home_page()
 	$price = [
 		cyn_acf_add_tab('قیمت ها'),
 		cyn_acf_add_post_object('prices', 'انتخاب قیمت ها', 'price', '', 1),
+		cyn_acf_add_url('archive_price', ' مشاهده همه', 'link'),
 	];
 
 	$doctors = [

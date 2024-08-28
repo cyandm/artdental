@@ -28,7 +28,7 @@ if (!is_array($prices) || count($prices) < 1) {
                     </cyn-button>
                 </div>
 
-                <cyn-button type="secondary-dark" size="md" href="http://art-dental.local/%d9%82%db%8c%d9%85%d8%aa/">
+                <cyn-button type="secondary-dark" size="md" href="<?php echo get_field('archive_price') ?>">
                     <?php _e('مشاهده همه', 'cyn-dm') ?>
                 </cyn-button>
             </div>
