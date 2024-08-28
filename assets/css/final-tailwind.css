@@ -2237,16 +2237,16 @@ select {
   z-index: 10;
 }
 
+.z-30 {
+  z-index: 30;
+}
+
 .z-40 {
   z-index: 40;
 }
 
 .z-50 {
   z-index: 50;
-}
-
-.z-30 {
-  z-index: 30;
 }
 
 .order-1 {
@@ -2346,8 +2346,16 @@ select {
   margin-top: 12px;
 }
 
+.mt-4 {
+  margin-top: 16px;
+}
+
 .mt-5 {
   margin-top: 20px;
+}
+
+.mt-10 {
+  margin-top: 40px;
 }
 
 .line-clamp-1 {
@@ -2585,10 +2593,6 @@ select {
 
 .max-w-full {
   max-width: 100%;
-}
-
-.max-w-sm {
-  max-width: 24rem;
 }
 
 .flex-1 {
@@ -4248,24 +4252,8 @@ select {
 }
 
 @media not all and (min-width: 768px) {
-  .max-md\:bottom-8 {
-    bottom: 32px;
-  }
-
-  .max-md\:bottom-12 {
-    bottom: 56px;
-  }
-
-  .max-md\:bottom-1 {
-    bottom: 4px;
-  }
-
   .max-md\:bottom-17 {
     bottom: 120px;
-  }
-
-  .max-md\:bottom-16 {
-    bottom: 100px;
   }
 
   .max-md\:col-span-6 {

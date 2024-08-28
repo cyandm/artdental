@@ -25,18 +25,3 @@
 <?php cyn_get_page_template('home/faq'); ?>
 <div class="py-6"></div>
 <?php get_footer() ?>
-<!-- FAQ -->
-<?php if (!empty(get_field('faq-group', $postId = 'false'))) : ?>
-    <div class="pt-[93px]"></div>
-    <div>
-        <!-- Title -->
-        <div class="text-h2">
-            <?php _e('سوالات متداول ', 'cyn-dm') . ' ' . the_title() ?>
-        </div>
-        <div class="text-h2">
-        </div>
-        <div>
-            <?php cyn_get_component('faq-group', ['type' => 'acf', 'acf_field' => 'faq-group', 'post-id' => $postId]) ?>
-        </div>
-    </div>
-<?php endif; ?>

@@ -41,7 +41,7 @@ if (!class_exists('cyn_register')) {
 			$this->cyn_make_taxonomy('service-cat', '  دسته بندی خدمات ', 'دسته بندی های خدمات', ['service']);
 			$this->cyn_make_taxonomy('faq-cat', '  دسته بندی ', 'دسته بندی ها', ['faq']);
 			$this->cyn_make_taxonomy('special-services', ' خدمت ویژه', 'خدمات ویژه', ['service']);
-			$this->cyn_make_taxonomy('price', 'قیمت', 'قیمت', ['price']);
+			$this->cyn_make_taxonomy('price-category', 'دسته بندی قیمت ها', 'دسته بندی های قیمت', ['price']);
 		}
 
 		public function cyn_term_register()

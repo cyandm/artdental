@@ -25,7 +25,7 @@ $table = [
 ]
 ?>
 
-<div class="h-full max-w-sm p-6 max-lg:p-2 rounded-2xl bg-cover flex text-primary-0 items-end <?php echo $class ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
+<div class="h-full w-full max-w-1/3 p-6 max-lg:p-2 rounded-2xl bg-cover flex text-primary-0 items-end <?php echo $class ?>" style="background-image: url('<?php echo get_the_post_thumbnail_url($postId) ?>');">
 
 	<div class="text-primary-100 text-body max-lg:text-body_s divide-y divide-primary-100/20 bg-background-card_1/20 backdrop-blur-3xl py-2 backdrop-opacity-100 backdrop-brightness-125 px-3 rounded-xl w-full">
 
