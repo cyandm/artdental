@@ -3,7 +3,7 @@
 <?php if ($render_template) : ?>
     <footer class="w-full">
         <!-- pc scroll to top  -->
-        <section class=" w-full fixed bottom-4 max-md:bottom-17 z-40">
+        <section class="container w-full fixed bottom-4 max-md:bottom-17 z-40 ">
             <!-- svg  arrow up -->
             <div class="bg-primary-100 rounded-full w-12 h-12 mx-3 flex justify-center items-center -rotate-90">
                 <div class="rounded-full transition-all duration-300 cursor-pointer scrollTop" id="scrolltop-pc">
