@@ -2,6 +2,7 @@
 
 $start_point = $args['start-point'] ?? 1;
 $end_point = $args['end-point'] ?? 6;
+$is_odd = $args['odd'] ?? true;
 
 ?>
 
@@ -14,7 +15,7 @@ $end_point = $args['end-point'] ?? 6;
     $Text = get_field("IntroductionGroup_text_$i");
 
     ?>
-    <div class="container flex gap-5 max-lg:flex-col items-center odd:lg:flex-row-reverse ">
+    <div class="container flex gap-5 max-lg:flex-col items-center <?php echo $is_odd ? 'odd:lg:flex-row-reverse' : 'even:lg:flex-row-reverse' ?> ">
 
         <!--IntroductionGroup image  -->
         <div class="max-lg:w-full w-1/2 ">
