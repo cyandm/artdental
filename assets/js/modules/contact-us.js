@@ -20,19 +20,15 @@ function contactForm() {
         contentType: false,
 
         success: (res) => {
-          console.log(res);
           successFormToast.showToast();
           contactForm.reset();
         },
 
         error: (err) => {
-          console.log(err);
           errorToast.showToast();
         },
       });
     });
-
-    console.log(e);
   });
 }
 contactForm();
