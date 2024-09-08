@@ -25,9 +25,9 @@ $is_odd = $args['odd'] ?? true;
         <!-- IntroductionGroup info  -->
         <div class="max-lg:w-full m-4 w-1/2">
             <!-- IntroductionGroup subject  -->
-            <p class="text-h2 max-lg:text-body text-primary-20 flex flex-col w-full">
+            <h2 class="text-h2 max-lg:text-body text-primary-20 flex flex-col w-full">
                 <?php echo $Title ?>
-            </p>
+            </h2>
             <!-- IntroductionGroup text  -->
             <div class="min-w-full text-body_s prose text-primary-40 w-full">
                 <?php echo $Text ?>

@@ -10,9 +10,9 @@ $video = get_field("description_video"); ?>
     <div class="max-lg:w-full w-1/2 text-primary-20">
 
         <!-- Title -->
-        <div class="text-h1 max-lg:text-h4">
+        <h2 class="text-h1 max-lg:text-h4">
             <?php echo get_field('description_title') ?>
-        </div>
+        </h2>
 
         <div class="py-2"></div>
 

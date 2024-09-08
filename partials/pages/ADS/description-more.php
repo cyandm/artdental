@@ -2,9 +2,9 @@
     <!-- first description  -->
     <div class="w-1/2 max-lg:w-full">
         <!-- Title -->
-        <div class="text-h2 max-lg:text-h4 text-primary-20">
+        <h2 class="text-h2 max-lg:text-h4 text-primary-20">
             <?php echo get_field('description_title1') ?>
-        </div>
+        </h2>
 
         <div class="py-2"></div>
 
@@ -19,9 +19,9 @@
     <!-- second description  -->
     <div class="w-1/2 max-lg:w-full">
         <!-- Title -->
-        <div class="text-h2 max-lg:text-h4 text-primary-20">
+        <h2 class="text-h2 max-lg:text-h4 text-primary-20">
             <?php echo get_field('description_title2') ?>
-        </div>
+        </h2>
 
         <div class="py-2"></div>
 
