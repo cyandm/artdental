@@ -2,14 +2,14 @@
 
 <?php get_header() ?>
 <style>
-.banner_ctn {
-    background-image: url("<?php echo get_template_directory_uri() . "/assets/img/banner.png" ?>");
-    padding: 25px;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 80vh;
-    background-position: center center;
-}
+    .banner_ctn {
+        background-image: url("<?php echo get_template_directory_uri() . "/assets/img/banner.png" ?>");
+        padding: 25px;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: 80vh;
+        background-position: center center;
+    }
 </style>
 <main class="main">
     <div class="banner_ctn">
