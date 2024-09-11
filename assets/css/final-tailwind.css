@@ -687,7 +687,7 @@ select {
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -695,13 +695,13 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Thin.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Thin.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Thin.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Thin.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Thin.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Thin.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -709,14 +709,14 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2")
-        format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-ExtraLight.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-ExtraLight.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraLight.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-ExtraLight.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraLight.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -724,13 +724,13 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Light.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Light.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Light.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Light.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Light.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Light.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -738,13 +738,13 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Regular.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Regular.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Regular.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Regular.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Regular.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Regular.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -752,13 +752,13 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Medium.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Medium.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Medium.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Medium.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Medium.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Medium.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -766,14 +766,14 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-SemiBold.woff2")
-        format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-SemiBold.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-SemiBold.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-SemiBold.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-SemiBold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-SemiBold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -781,13 +781,13 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Bold.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Bold.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Bold.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Bold.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Bold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Bold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -795,14 +795,14 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2")
-        format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-ExtraBold.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-ExtraBold.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-ExtraBold.woff2')
+				format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-ExtraBold.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-ExtraBold.woff') format('woff');
 }
 
 @font-face {
-  font-family: "Peyda-1";
+  font-family: 'Peyda-1';
 
   font-style: normal;
 
@@ -810,17 +810,35 @@ select {
 
   font-display: swap;
 
-  src: url("../fonts/peyda/woff2/PeydaWebFaNum-Black.woff2") format("woff2"),
-      url("../fonts/peyda/TTF/PeydaFaNum-Black.ttf") format("TrueType"),
-      url("../fonts/peyda/woff/PeydaWebFaNum-Black.woff") format("woff");
+  src: url('../fonts/peyda/woff2/PeydaWebFaNum-Black.woff2') format('woff2'),
+			url('../fonts/peyda/TTF/PeydaFaNum-Black.ttf') format('TrueType'),
+			url('../fonts/peyda/woff/PeydaWebFaNum-Black.woff') format('woff');
 }
 
 * {
   font-family: "Peyda-1" , sans;
-  -webkit-font-feature-settings: "ss01" 1;
-          font-feature-settings: "ss01" 1;
+  -webkit-font-feature-settings: 'ss01' 1;
+          font-feature-settings: 'ss01' 1;
   -webkit-font-variant-ligatures: discretionary-ligatures;
           font-variant-ligatures: discretionary-ligatures;
+}
+
+.bg-noise {
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 130 139 / var(--tw-bg-opacity));
+  background-image: url(../img/noise.png);
+  background-blend-mode: soft-light;
+}
+
+.rank-math-breadcrumb p > * {
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+}
+
+.plyr {
+  overflow: hidden;
+  border-radius: 0.75rem;
 }
 
 *, ::before, ::after {
@@ -2323,6 +2341,11 @@ select {
   margin-bottom: 16px;
 }
 
+.my-5 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 .my-6 {
   margin-top: 24px;
   margin-bottom: 24px;
@@ -2331,11 +2354,6 @@ select {
 .my-8 {
   margin-top: 32px;
   margin-bottom: 32px;
-}
-
-.my-5 {
-  margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .me-2 {
@@ -2492,18 +2510,6 @@ select {
   max-height: 150px;
 }
 
-.max-h-\[800\] {
-  max-height: 800;
-}
-
-.max-h-full {
-  max-height: 100%;
-}
-
-.max-h-\[800px\] {
-  max-height: 800px;
-}
-
 .min-h-\[360px\] {
   min-height: 360px;
 }
@@ -2588,6 +2594,10 @@ select {
   min-width: 100%;
 }
 
+.max-w-6xl {
+  max-width: 72rem;
+}
+
 .max-w-\[320px\] {
   max-width: 320px;
 }
@@ -2610,18 +2620,6 @@ select {
 
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-lg {
-  max-width: 32rem;
-}
-
-.max-w-5xl {
-  max-width: 64rem;
-}
-
-.max-w-6xl {
-  max-width: 72rem;
 }
 
 .flex-1 {
@@ -3546,13 +3544,6 @@ select {
   outline-offset: -8px;
 }
 
-.ring-0 {
-  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
-  -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-          box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
-}
-
 .blur {
   --tw-blur: blur(8px);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -3669,20 +3660,7 @@ select {
 
 /*Peyda Fonts*/
 
-@layer {
-  .bg-noise {
-    --tw-bg-opacity: 1;
-    background-color: rgb(124 130 139 / var(--tw-bg-opacity));
-    background-image: url(../img/noise.png);
-    background-blend-mode: soft-light;
-  }
-}
-
-.rank-math-breadcrumb p > * {
-  min-width: -webkit-fit-content;
-  min-width: -moz-fit-content;
-  min-width: fit-content;
-}
+/*plyr poster*/
 
 .before\:inline-block::before {
   content: var(--tw-content);
@@ -3767,11 +3745,6 @@ select {
 .after\:bg-accent-0\/35::after {
   content: var(--tw-content);
   background-color: rgb(1 2 4 / 0.35);
-}
-
-.after\:bg-accent-0\/65::after {
-  content: var(--tw-content);
-  background-color: rgb(1 2 4 / 0.65);
 }
 
 .after\:bg-accent-40::after {
