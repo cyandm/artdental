@@ -43,9 +43,10 @@ if ( ! class_exists( 'cyn_theme_init' ) ) {
 		}
 
 		public function cyn_enqueue_files() {
-			$js_path = $this->build ? '/assets/js/dist/scripts.min.js' : '/assets/js/dist/scripts.bundle.js';
+			$js_path = $this->build ? '/assets/js/dist/scripts.bundle.min.js' : '/assets/js/dist/scripts.bundle.js';
+			$css_path = $this->build ? '/assets/css/final-tailwind.min.css' : '/assets/css/final-tailwind.css';
 
-			wp_enqueue_style( 'cyn-tailwind', get_stylesheet_directory_uri() . '/assets/css/final-tailwind.css', [], $this->ver, 'all' );
+			wp_enqueue_style( 'cyn-tailwind', get_stylesheet_directory_uri() . $css_path, [], $this->ver, 'all' );
 			wp_enqueue_style( 'cyn-toastify', get_stylesheet_directory_uri() . '/assets/css/toastify.css', [], $this->ver, 'all' );
 			wp_enqueue_style( 'cyn-plyr', get_stylesheet_directory_uri() . '/assets/css/plyr.css', [], $this->ver, 'all' );
 			wp_enqueue_style( 'cyn-style', get_stylesheet_uri() );
