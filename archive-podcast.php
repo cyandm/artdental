@@ -1,16 +1,3 @@
-<?php
-
-$podcasts = get_field( 'podcast' ) ?? [];
-
-if ( ! is_array( $podcasts ) || count( $podcasts ) < 1 ) {
-	$podcasts = get_posts( [ 
-		'post_type' => 'podcast',
-		'posts_per_page' => -1,
-		'fields' => 'ids',
-	] );
-}
-?>
-
 <!-- Archive podcast Page -->
 <?php get_header() ?>
 

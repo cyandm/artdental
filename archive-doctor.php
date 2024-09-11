@@ -1,13 +1,3 @@
-<?php
-$doctor_posts = get_posts( [ 
-	'post_type' => 'doctor',
-	"posts_per_page" => -1,
-	'order' => 'DESC',
-
-] );
-
-?>
-
 <!-- Archive Doctor Page -->
 <?php get_header() ?>
 
@@ -22,13 +12,16 @@ $doctor_posts = get_posts( [
 
 	<div class="grid gap-4 grid-cols-1 md:grid-cols-3">
 
-		<?php foreach ( $doctor_posts as $index => $doctor_post ) : ?>
-
-			<?php cyn_get_card( 'doctor', [ 
-				'index' => $index, 'post-id' => $doctor_post->ID
-			] ) ?>
-
-		<?php endforeach; ?>
+		<?php
+		if ( have_posts() ) :
+			$i = 0;
+			while ( have_posts() ) :
+				$i++;
+				the_post();
+				cyn_get_card( 'doctor', [ 'index' => $i, 'post-id' => get_the_ID(),] );
+			endwhile;
+		endif;
+		?>
 	</div>
 
 

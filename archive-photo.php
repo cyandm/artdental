@@ -1,15 +1,3 @@
-<?php
-$photos = get_field( 'photo' ) ?? [];
-
-if ( ! is_array( $photos ) || count( $photos ) < 1 ) {
-	$photos = get_posts( [ 
-		'post_type' => 'photo',
-		'posts_per_page' => -1,
-		'fields' => 'ids',
-	] );
-}
-?>
-
 <!-- Archive Photo Page -->
 <?php get_header() ?>
 

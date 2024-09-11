@@ -1,16 +1,3 @@
-<?php
-
-$photos = get_field( 'video' ) ?? [];
-
-if ( ! is_array( $photos ) || count( $photos ) < 1 ) {
-	$photos = get_posts( [ 
-		'post_type' => 'video',
-		'posts_per_page' => -1,
-		'fields' => 'ids',
-	] );
-}
-?>
-
 <!-- Archive Video Page -->
 <?php get_header() ?>
 
