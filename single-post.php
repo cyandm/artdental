@@ -58,7 +58,7 @@ asd
 
 		<!-- Blog Content -->
 		<div
-			 class="bg-accent-100 rounded-3xl p-5 prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-p:text-primary-50 prose-p:text-body_s prose-h4:text-h4 prose-h6:text-h6">
+			 class="bg-accent-100 rounded-3xl p-5 prose prose-img:w-full prose-img:rounded-3xl prose-img:object-cover min-w-full prose-p:text-primary-50 prose-p:text-body_s">
 			<?php the_content() ?>
 		</div>
 
