@@ -67,7 +67,7 @@ $postId = $args['post-id'] ?? get_the_ID();
 			<div>
 				<!-- Title -->
 				<div class="text-h2">
-					<?php _e( 'سوالات متداول', 'cyn-dm' ) . ' ' . the_title() ?>
+					<?php echo __( 'سوالات متداول', 'cyn-dm' ) . '  ' . get_the_title() ?>
 				</div>
 
 				<div class="text-h2">
