@@ -46,7 +46,9 @@ $faq_select = get_field('faq-cat');
 				<div
 					class="select-box-panel | bg-background-card_1 px-4 rounded-xl divide-y divide-primary-90  shadow-md absolute top-12 w-full z-50 opacity-0 -translate-y-4 pointer-events-none transition-all duration-300">
 
-					<?php foreach ($faq_cats as $index => $category) : ?>
+					<?php foreach ($faq_select as $index => $category) : 
+					$category =  get_term_by('id', $category, 'faq-cat');
+					?>
 						<div id="<?php echo "faq-cat-" . $category->term_id ?>"
 							class="faq-handler | py-3 select-box-option">
 							<?php echo $category->name ?>
@@ -69,13 +71,6 @@ $faq_select = get_field('faq-cat');
 			</div>
 		</div>
 		<!-- end  -->
-
-
-
-
-
-
-
 
 
 
