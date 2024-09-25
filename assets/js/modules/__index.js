@@ -15,4 +15,6 @@ import "./gallery";
 import "./offer";
 import "./preloader";
 import "./scroll-top";
-import "./scroll-top-pc";
+import "./plyr";
+import "./popup";
+import "./video";

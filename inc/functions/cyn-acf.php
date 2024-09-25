@@ -5,7 +5,7 @@ add_action('acf/include_fields', 'cyn_register_acf');
 
 function cyn_register_acf()
 {
-	if (!function_exists('acf_add_local_field_group')) {
+	if (! function_exists('acf_add_local_field_group')) {
 		return;
 	}
 	cyn_acf_register_home_page();
@@ -195,9 +195,8 @@ function cyn_acf_register_about_us()
 	$fields = [
 
 		cyn_acf_add_tab('هیرو'),
-		cyn_acf_add_image('banner', 'بنر', 100),
-		cyn_acf_add_text('hero_title', 'متن اصلی', 0, 33),
-		cyn_acf_add_text('hero_subtitle', 'متن فرعی', 0, 33),
+		cyn_acf_add_file('video_file', 'فایل ویدئو', 50),
+		cyn_acf_add_image('video_cover', 'کاور ویدئو', 50),
 
 		cyn_acf_add_tab('توضیحات درباره ما'),
 		cyn_acf_add_image('description_img', 'عکس توضیحات'),
@@ -250,10 +249,13 @@ function cyn_acf_register_service()
 
 	cyn_register_acf_group('تنظیمات', $fields, $location);
 }
+
+
 function cyn_acf_register_video()
 {
 	$fields = [
-		cyn_acf_add_file('video_file', 'فایل ویدئو', '50'),
+		cyn_acf_add_file('video_file', 'فایل ویدئو', 50),
+		cyn_acf_add_image('video_file_cover', 'تصویر کاور ویدئو', 50),
 	];
 	$location = [
 		[
@@ -327,13 +329,13 @@ function cyn_acf_register_ads()
 	}
 
 
-	array_push($fields,	cyn_acf_add_tab('نظرات مشتریان ما '),);
+	array_push($fields, cyn_acf_add_tab('نظرات مشتریان ما '),);
 	array_push($fields, cyn_acf_add_boolean('Customer_comments_section_off', 'نمایش نظرات مشتریان', 20));
 	for ($i = 1; $i <= 10; $i++) {
 		array_push($fields, cyn_acf_add_file("Customers_Comments_video_$i", "فایل ویدئو$i", 50));
 		array_push($fields, cyn_acf_add_image("Customers_Comments_cover_$i", "کاور ویدئو$i", 50));
 	}
-	array_push($fields,	cyn_acf_add_tab('سوالات متداول'),);
+	array_push($fields, cyn_acf_add_tab('سوالات متداول'),);
 	array_push($fields, cyn_acf_add_post_object('faq-group', 'سوالات متداول', 'faq', '', 1));
 
 
