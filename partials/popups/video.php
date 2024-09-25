@@ -10,9 +10,9 @@ if (! $video)
 ?>
 
 <div class="relative">
-	<div class="absolute -top-8 -right-8 bg-stone-800 rounded-full p-3 cursor-pointer"
+	<div class="absolute -top-11 -right-8 bg-stone-800 rounded-full p-3 cursor-pointer"
 		id="closePopUp">
-		<svg class="icon">
+		<svg class="icon size-6">
 			<use href="#icon-xmark" />
 		</svg>
 	</div>
@@ -27,16 +27,11 @@ if (! $video)
 			type="<?php echo $video['mime_type'] ?>" />
 
 	</video>
+	<!-- <div class="absolute -bottom-16 flex justify-center items-center">
 
-
-
-	<div class="absolute -bottom-16 right-0">
-
-		<div class="grid">
-			<span class="text-lg"><?php echo get_the_title($id) ?></span>
+		<div class=" flex justify-center items-center">
+			<span class="text-lg"><?php //echo get_the_title($id) 
+									?></span>
 		</div>
-	</div>
-
-
-
-</div>
+	</div> -->
+</div> 
