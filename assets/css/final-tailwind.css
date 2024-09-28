@@ -2207,6 +2207,10 @@ select {
   right: -32px;
 }
 
+.-top-11 {
+  top: -44px;
+}
+
 .bottom-0 {
   bottom: 0;
 }
@@ -2253,14 +2257,6 @@ select {
 
 .top-full {
   top: 100%;
-}
-
-.-top-11 {
-  top: -44px;
-}
-
-.right-1\/2 {
-  right: 50%;
 }
 
 .isolate {
