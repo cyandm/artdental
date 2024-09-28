@@ -17,7 +17,7 @@
                 ?>
                     <swiper-slide anim-delay="<?php echo $i * 0.3 ?>">
 
-                        <video class="w-full fade-in-down rounded-3xl aspect-square" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($poster_id) ?>">
+                        <video class="w-full fade-in-down rounded-3xl aspect-square plyr-video" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($poster_id) ?>">
 
                         </video>
 
