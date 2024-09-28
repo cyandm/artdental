@@ -3,7 +3,6 @@ global $post;
 $authorId = $post->post_author;
 
 ?>
-asd
 <?php get_header() ?>
 
 <!-- Bread Crumb -->
