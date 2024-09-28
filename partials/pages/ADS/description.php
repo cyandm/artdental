@@ -29,10 +29,10 @@ $video = get_field("description_video"); ?>
         </div>
     </div>
     <!-- Description Image -->
-    <div class="aspect-video w-1/2 rounded-3xl h-full max-lg:w-full">
+    <div class="aspect-video w-1/2 rounded-3xl h-full max-lg:w-full max-w-fit">
         <!-- <?php //echo wp_get_attachment_image($description_image, "full", false, ["class" => "rounded-3xl max-lg:h-[400px]"]) 
                 ?> -->
-        <video class="fade-in-down rounded-3xl" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($cover_image, 'full') ?>">
+        <video class="fade-in-down rounded-3xl plyr-video" controls src="<?php echo $video['url'] ?>" poster="<?php echo wp_get_attachment_image_url($cover_image, 'full') ?>">
 
         </video>
     </div>

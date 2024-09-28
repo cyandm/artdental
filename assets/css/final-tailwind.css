@@ -2610,6 +2610,10 @@ select {
   min-width: 100%;
 }
 
+.max-w-5xl {
+  max-width: 64rem;
+}
+
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -2640,6 +2644,12 @@ select {
 
 .max-w-xl {
   max-width: 36rem;
+}
+
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .flex-1 {

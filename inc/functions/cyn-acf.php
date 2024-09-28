@@ -255,7 +255,6 @@ function cyn_acf_register_video()
 {
 	$fields = [
 		cyn_acf_add_file('video_file', 'فایل ویدئو', 50),
-		cyn_acf_add_image('video_file_cover', 'تصویر کاور ویدئو', 50),
 	];
 	$location = [
 		[

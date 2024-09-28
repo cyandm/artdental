@@ -9,7 +9,7 @@ if (! $video)
 	return;
 ?>
 
-<div class="relative">
+<div class="relative max-w-5xl ">
 	<div class="absolute -top-11 -right-8 bg-stone-800 rounded-full p-3 cursor-pointer"
 		id="closePopUp">
 		<svg class="icon size-6">
@@ -34,4 +34,4 @@ if (! $video)
 									?></span>
 		</div>
 	</div> -->
-</div> 
+</div>
