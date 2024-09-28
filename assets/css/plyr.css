@@ -48,9 +48,8 @@
 .plyr iframe,
 .plyr video {
   display: block;
-  height: 800%;
-  width: 80%;
-  padding: 32px;
+  height: 100%;
+  width: 100%;
 }
 .plyr button {
   font: inherit;
