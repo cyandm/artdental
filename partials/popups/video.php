@@ -27,7 +27,7 @@ if (! $video)
 			type="<?php echo $video['mime_type'] ?>" />
 
 	</video>
-	<div class="absolute -bottom-6 flex justify-center items-center ">
+	<div class="absolute -bottom-12 flex justify-center items-center bg-gradient-to-tl from-primary-70 to-primary-30 p-3 rounded-full text-primary-100">
 
 		<div class=" flex justify-center items-center">
 			<span class="text-lg"><?php echo get_the_title($id) ?></span>
