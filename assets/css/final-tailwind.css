@@ -2634,6 +2634,12 @@ select {
   max-width: 390px;
 }
 
+.max-w-fit {
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+}
+
 .max-w-full {
   max-width: 100%;
 }
@@ -2644,12 +2650,6 @@ select {
 
 .max-w-xl {
   max-width: 36rem;
-}
-
-.max-w-fit {
-  max-width: -webkit-fit-content;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
 }
 
 .flex-1 {
@@ -3169,6 +3169,10 @@ select {
 
 .bg-no-repeat {
   background-repeat: no-repeat;
+}
+
+.bg-repeat-round {
+  background-repeat: round;
 }
 
 .fill-background-main {
