@@ -2259,6 +2259,18 @@ select {
   top: 100%;
 }
 
+.-bottom-3 {
+  bottom: -12px;
+}
+
+.bottom-3 {
+  bottom: 12px;
+}
+
+.-bottom-6 {
+  bottom: -24px;
+}
+
 .isolate {
   isolation: isolate;
 }
