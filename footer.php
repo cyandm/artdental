@@ -35,8 +35,7 @@
 					</p>
 				</a>
 				<!-- reserve button  -->
-				<a href="#"
-					class="reservePopUpOpener cursor-pointer flex flex-col gap-1 items-center justify-center">
+				<a href="#" class="reservePopUpOpener cursor-pointer flex flex-col gap-1 items-center justify-center">
 
 					<div class="bg-accent-40 rounded-full size-10 flex justify-center items-center text-primary-100">
 						<svg class="icon size-6 ">
