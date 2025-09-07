@@ -1,6 +1,6 @@
 {
 	"name": "artdental",
-	"version": "1.2.1",
+	"version": "1.2.2",
 	"description": "",
 	"author": "cyan-dm",
 	"scripts": {
@@ -14,20 +14,20 @@
 	"license": "ISC",
 	"devDependencies": {
 		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/forms": "^0.5.9",
-		"@tailwindcss/typography": "^0.5.15",
-		"tailwindcss": "^3.4.16",
+		"@tailwindcss/forms": "^0.5.10",
+		"@tailwindcss/typography": "^0.5.16",
+		"tailwindcss": "^3.4.17",
 		"zip-build": "^1.8.0"
 	},
 	"dependencies": {
 		"autoprefixer": "^10.4.19",
-		"esbuild": "^0.21.5",
-		"gsap": "^3.12.5",
+		"esbuild": "^0.25.9",
+		"gsap": "^3.13.0",
 		"plyr": "^3.7.8",
 		"postcss": "^8.4.40",
 		"postcss-cli": "^11.0.0",
 		"sass": "^1.77.8",
-		"swiper": "^11.1.15",
+		"swiper": "^11.2.10",
 		"toastify-js": "^1.12.0"
 	},
 	"browserslist": [

@@ -365,13 +365,13 @@
   // node_modules/plyr/dist/plyr.min.js
   var require_plyr_min = __commonJS({
     "node_modules/plyr/dist/plyr.min.js"(exports, module) {
-      "object" == typeof navigator && function(e, t) {
+      "object" == typeof navigator && (function(e, t) {
         "object" == typeof exports && "undefined" != typeof module ? module.exports = t() : "function" == typeof define && define.amd ? define("Plyr", t) : (e = "undefined" != typeof globalThis ? globalThis : e || self).Plyr = t();
-      }(exports, function() {
+      })(exports, (function() {
         "use strict";
         function e(e2, t2, i2) {
-          return (t2 = function(e3) {
-            var t3 = function(e4, t4) {
+          return (t2 = (function(e3) {
+            var t3 = (function(e4, t4) {
               if ("object" != typeof e4 || null === e4) return e4;
               var i3 = e4[Symbol.toPrimitive];
               if (void 0 !== i3) {
@@ -380,9 +380,9 @@
                 throw new TypeError("@@toPrimitive must return a primitive value.");
               }
               return ("string" === t4 ? String : Number)(e4);
-            }(e3, "string");
+            })(e3, "string");
             return "symbol" == typeof t3 ? t3 : String(t3);
-          }(t2)) in e2 ? Object.defineProperty(e2, t2, { value: i2, enumerable: true, configurable: true, writable: true }) : e2[t2] = i2, e2;
+          })(t2)) in e2 ? Object.defineProperty(e2, t2, { value: i2, enumerable: true, configurable: true, writable: true }) : e2[t2] = i2, e2;
         }
         function t(e2, t2) {
           for (var i2 = 0; i2 < t2.length; i2++) {
@@ -397,20 +397,20 @@
           var i2 = Object.keys(e2);
           if (Object.getOwnPropertySymbols) {
             var s2 = Object.getOwnPropertySymbols(e2);
-            t2 && (s2 = s2.filter(function(t3) {
+            t2 && (s2 = s2.filter((function(t3) {
               return Object.getOwnPropertyDescriptor(e2, t3).enumerable;
-            })), i2.push.apply(i2, s2);
+            }))), i2.push.apply(i2, s2);
           }
           return i2;
         }
         function n(e2) {
           for (var t2 = 1; t2 < arguments.length; t2++) {
             var n2 = null != arguments[t2] ? arguments[t2] : {};
-            t2 % 2 ? s(Object(n2), true).forEach(function(t3) {
+            t2 % 2 ? s(Object(n2), true).forEach((function(t3) {
               i(e2, t3, n2[t3]);
-            }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(n2)) : s(Object(n2)).forEach(function(t3) {
+            })) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e2, Object.getOwnPropertyDescriptors(n2)) : s(Object(n2)).forEach((function(t3) {
               Object.defineProperty(e2, t3, Object.getOwnPropertyDescriptor(n2, t3));
-            });
+            }));
           }
           return e2;
         }
@@ -444,69 +444,69 @@
         } };
         function p(e2, t2) {
           if (1 > t2) {
-            var i2 = function(e3) {
+            var i2 = (function(e3) {
               var t3 = "".concat(e3).match(/(?:\.(\d+))?(?:[eE]([+-]?\d+))?$/);
               return t3 ? Math.max(0, (t3[1] ? t3[1].length : 0) - (t3[2] ? +t3[2] : 0)) : 0;
-            }(t2);
+            })(t2);
             return parseFloat(e2.toFixed(i2));
           }
           return Math.round(e2 / t2) * t2;
         }
-        var g = function() {
+        var g = (function() {
           function e2(t2, i2) {
             (function(e3, t3) {
               if (!(e3 instanceof t3)) throw new TypeError("Cannot call a class as a function");
             })(this, e2), m.element(t2) ? this.element = t2 : m.string(t2) && (this.element = document.querySelector(t2)), m.element(this.element) && m.empty(this.element.rangeTouch) && (this.config = n({}, a, {}, i2), this.init());
           }
-          return function(e3, i2, s2) {
+          return (function(e3, i2, s2) {
             i2 && t(e3.prototype, i2), s2 && t(e3, s2);
-          }(e2, [{ key: "init", value: function() {
+          })(e2, [{ key: "init", value: function() {
             e2.enabled && (this.config.addCSS && (this.element.style.userSelect = "none", this.element.style.webKitUserSelect = "none", this.element.style.touchAction = "manipulation"), this.listeners(true), this.element.rangeTouch = this);
           } }, { key: "destroy", value: function() {
             e2.enabled && (this.config.addCSS && (this.element.style.userSelect = "", this.element.style.webKitUserSelect = "", this.element.style.touchAction = ""), this.listeners(false), this.element.rangeTouch = null);
           } }, { key: "listeners", value: function(e3) {
             var t2 = this, i2 = e3 ? "addEventListener" : "removeEventListener";
-            ["touchstart", "touchmove", "touchend"].forEach(function(e4) {
-              t2.element[i2](e4, function(e5) {
+            ["touchstart", "touchmove", "touchend"].forEach((function(e4) {
+              t2.element[i2](e4, (function(e5) {
                 return t2.set(e5);
-              }, false);
-            });
+              }), false);
+            }));
           } }, { key: "get", value: function(t2) {
             if (!e2.enabled || !m.event(t2)) return null;
             var i2, s2 = t2.target, n2 = t2.changedTouches[0], a2 = parseFloat(s2.getAttribute("min")) || 0, l2 = parseFloat(s2.getAttribute("max")) || 100, r2 = parseFloat(s2.getAttribute("step")) || 1, o2 = s2.getBoundingClientRect(), c2 = 100 / o2.width * (this.config.thumbWidth / 2) / 100;
             return 0 > (i2 = 100 / o2.width * (n2.clientX - o2.left)) ? i2 = 0 : 100 < i2 && (i2 = 100), 50 > i2 ? i2 -= (100 - 2 * i2) * c2 : 50 < i2 && (i2 += 2 * (i2 - 50) * c2), a2 + p(i2 / 100 * (l2 - a2), r2);
           } }, { key: "set", value: function(t2) {
-            e2.enabled && m.event(t2) && !t2.target.disabled && (t2.preventDefault(), t2.target.value = this.get(t2), function(e3, t3) {
+            e2.enabled && m.event(t2) && !t2.target.disabled && (t2.preventDefault(), t2.target.value = this.get(t2), (function(e3, t3) {
               if (e3 && t3) {
                 var i2 = new Event(t3, { bubbles: true });
                 e3.dispatchEvent(i2);
               }
-            }(t2.target, "touchend" === t2.type ? "change" : "input"));
+            })(t2.target, "touchend" === t2.type ? "change" : "input"));
           } }], [{ key: "setup", value: function(t2) {
             var i2 = 1 < arguments.length && void 0 !== arguments[1] ? arguments[1] : {}, s2 = null;
             if (m.empty(t2) || m.string(t2) ? s2 = Array.from(document.querySelectorAll(m.string(t2) ? t2 : 'input[type="range"]')) : m.element(t2) ? s2 = [t2] : m.nodeList(t2) ? s2 = Array.from(t2) : m.array(t2) && (s2 = t2.filter(m.element)), m.empty(s2)) return null;
             var l2 = n({}, a, {}, i2);
             if (m.string(t2) && l2.watch) {
-              var r2 = new MutationObserver(function(i3) {
-                Array.from(i3).forEach(function(i4) {
-                  Array.from(i4.addedNodes).forEach(function(i5) {
-                    m.element(i5) && function(e3, t3) {
+              var r2 = new MutationObserver((function(i3) {
+                Array.from(i3).forEach((function(i4) {
+                  Array.from(i4.addedNodes).forEach((function(i5) {
+                    m.element(i5) && (function(e3, t3) {
                       return (function() {
                         return Array.from(document.querySelectorAll(t3)).includes(this);
                       }).call(e3, t3);
-                    }(i5, t2) && new e2(i5, l2);
-                  });
-                });
-              });
+                    })(i5, t2) && new e2(i5, l2);
+                  }));
+                }));
+              }));
               r2.observe(document.body, { childList: true, subtree: true });
             }
-            return s2.map(function(t3) {
+            return s2.map((function(t3) {
               return new e2(t3, i2);
-            });
+            }));
           } }, { key: "enabled", get: function() {
             return "ontouchstart" in document.documentElement;
           } }]), e2;
-        }();
+        })();
         const f = (e2) => null != e2 ? e2.constructor : null, y = (e2, t2) => Boolean(e2 && t2 && e2 instanceof t2), b = (e2) => null == e2, v = (e2) => f(e2) === Object, w = (e2) => f(e2) === String, T = (e2) => "function" == typeof e2, k = (e2) => Array.isArray(e2), C = (e2) => y(e2, NodeList), A = (e2) => b(e2) || (w(e2) || k(e2) || C(e2)) && !e2.length || v(e2) && !Object.keys(e2).length;
         var S = { nullOrUndefined: b, object: v, number: (e2) => f(e2) === Number && !Number.isNaN(e2), string: w, boolean: (e2) => f(e2) === Boolean, function: T, array: k, weakMap: (e2) => y(e2, WeakMap), nodeList: C, element: (e2) => null !== e2 && "object" == typeof e2 && 1 === e2.nodeType && "object" == typeof e2.style && "object" == typeof e2.ownerDocument, textNode: (e2) => f(e2) === Text, event: (e2) => y(e2, Event), keyboardEvent: (e2) => y(e2, KeyboardEvent), cue: (e2) => y(e2, window.TextTrackCue) || y(e2, window.VTTCue), track: (e2) => y(e2, TextTrack) || !b(e2) && w(e2.kind), promise: (e2) => y(e2, Promise) && T(e2.then), url: (e2) => {
           if (y(e2, window.URL)) return true;
@@ -520,37 +520,37 @@
           }
         }, empty: A };
         const E = (() => {
-          const e2 = document.createElement("span"), t2 = { WebkitTransition: "webkitTransitionEnd", MozTransition: "transitionend", OTransition: "oTransitionEnd otransitionend", transition: "transitionend" }, i2 = Object.keys(t2).find((t3) => void 0 !== e2.style[t3]);
+          const e2 = document.createElement("span"), t2 = { WebkitTransition: "webkitTransitionEnd", MozTransition: "transitionend", OTransition: "oTransitionEnd otransitionend", transition: "transitionend" }, i2 = Object.keys(t2).find(((t3) => void 0 !== e2.style[t3]));
           return !!S.string(i2) && t2[i2];
         })();
         function P(e2, t2) {
-          setTimeout(() => {
+          setTimeout((() => {
             try {
               e2.hidden = true, e2.offsetHeight, e2.hidden = false;
             } catch (e3) {
             }
-          }, t2);
+          }), t2);
         }
         var M = { isIE: Boolean(window.document.documentMode), isEdge: /Edge/g.test(navigator.userAgent), isWebKit: "WebkitAppearance" in document.documentElement.style && !/Edge/g.test(navigator.userAgent), isIPhone: /iPhone|iPod/gi.test(navigator.userAgent) && navigator.maxTouchPoints > 1, isIPadOS: "MacIntel" === navigator.platform && navigator.maxTouchPoints > 1, isIos: /iPad|iPhone|iPod/gi.test(navigator.userAgent) && navigator.maxTouchPoints > 1 };
         function N(e2, t2) {
-          return t2.split(".").reduce((e3, t3) => e3 && e3[t3], e2);
+          return t2.split(".").reduce(((e3, t3) => e3 && e3[t3]), e2);
         }
         function x(e2 = {}, ...t2) {
           if (!t2.length) return e2;
           const i2 = t2.shift();
-          return S.object(i2) ? (Object.keys(i2).forEach((t3) => {
+          return S.object(i2) ? (Object.keys(i2).forEach(((t3) => {
             S.object(i2[t3]) ? (Object.keys(e2).includes(t3) || Object.assign(e2, { [t3]: {} }), x(e2[t3], i2[t3])) : Object.assign(e2, { [t3]: i2[t3] });
-          }), x(e2, ...t2)) : e2;
+          })), x(e2, ...t2)) : e2;
         }
         function L(e2, t2) {
           const i2 = e2.length ? e2 : [e2];
-          Array.from(i2).reverse().forEach((e3, i3) => {
+          Array.from(i2).reverse().forEach(((e3, i3) => {
             const s2 = i3 > 0 ? t2.cloneNode(true) : t2, n2 = e3.parentNode, a2 = e3.nextSibling;
             s2.appendChild(e3), a2 ? n2.insertBefore(s2, a2) : n2.appendChild(s2);
-          });
+          }));
         }
         function I(e2, t2) {
-          S.element(e2) && !S.empty(t2) && Object.entries(t2).filter(([, e3]) => !S.nullOrUndefined(e3)).forEach(([t3, i2]) => e2.setAttribute(t3, i2));
+          S.element(e2) && !S.empty(t2) && Object.entries(t2).filter((([, e3]) => !S.nullOrUndefined(e3))).forEach((([t3, i2]) => e2.setAttribute(t3, i2)));
         }
         function $(e2, t2, i2) {
           const s2 = document.createElement(e2);
@@ -573,7 +573,7 @@
         function D(e2, t2) {
           if (!S.string(e2) || S.empty(e2)) return {};
           const i2 = {}, s2 = x({}, t2);
-          return e2.split(",").forEach((e3) => {
+          return e2.split(",").forEach(((e3) => {
             const t3 = e3.trim(), n2 = t3.replace(".", ""), a2 = t3.replace(/[[\]]/g, "").split("="), [l2] = a2, r2 = a2.length > 1 ? a2[1].replace(/["']/g, "") : "";
             switch (t3.charAt(0)) {
               case ".":
@@ -585,7 +585,7 @@
               case "[":
                 i2[l2] = r2;
             }
-          }), x(s2, i2);
+          })), x(s2, i2);
         }
         function H(e2, t2) {
           if (!S.element(e2)) return;
@@ -593,7 +593,7 @@
           S.boolean(i2) || (i2 = !e2.hidden), e2.hidden = i2;
         }
         function R(e2, t2, i2) {
-          if (S.nodeList(e2)) return Array.from(e2).map((e3) => R(e3, t2, i2));
+          if (S.nodeList(e2)) return Array.from(e2).map(((e3) => R(e3, t2, i2)));
           if (S.element(e2)) {
             let s2 = "toggle";
             return void 0 !== i2 && (s2 = i2 ? "add" : "remove"), e2.classList[s2](t2), e2.classList.contains(t2);
@@ -648,9 +648,9 @@
           if (!e2 || !("addEventListener" in e2) || S.empty(t2) || !S.function(i2)) return;
           const l2 = t2.split(" ");
           let r2 = a2;
-          Y && (r2 = { passive: n2, capture: a2 }), l2.forEach((t3) => {
+          Y && (r2 = { passive: n2, capture: a2 }), l2.forEach(((t3) => {
             this && this.eventListeners && s2 && this.eventListeners.push({ element: e2, type: t3, callback: i2, options: r2 }), e2[s2 ? "addEventListener" : "removeEventListener"](t3, i2, r2);
-          });
+          }));
         }
         function X(e2, t2 = "", i2, s2 = true, n2 = false) {
           Q.call(this, e2, t2, i2, true, s2, n2);
@@ -670,29 +670,29 @@
           e2.dispatchEvent(n2);
         }
         function ee() {
-          this && this.eventListeners && (this.eventListeners.forEach((e2) => {
+          this && this.eventListeners && (this.eventListeners.forEach(((e2) => {
             const { element: t2, type: i2, callback: s2, options: n2 } = e2;
             t2.removeEventListener(i2, s2, n2);
-          }), this.eventListeners = []);
+          })), this.eventListeners = []);
         }
         function te() {
-          return new Promise((e2) => this.ready ? setTimeout(e2, 0) : X.call(this, this.elements.container, "ready", e2)).then(() => {
-          });
+          return new Promise(((e2) => this.ready ? setTimeout(e2, 0) : X.call(this, this.elements.container, "ready", e2))).then((() => {
+          }));
         }
         function ie(e2) {
-          S.promise(e2) && e2.then(null, () => {
-          });
+          S.promise(e2) && e2.then(null, (() => {
+          }));
         }
         function se(e2) {
-          return S.array(e2) ? e2.filter((t2, i2) => e2.indexOf(t2) === i2) : e2;
+          return S.array(e2) ? e2.filter(((t2, i2) => e2.indexOf(t2) === i2)) : e2;
         }
         function ne(e2, t2) {
-          return S.array(e2) && e2.length ? e2.reduce((e3, i2) => Math.abs(i2 - t2) < Math.abs(e3 - t2) ? i2 : e3) : null;
+          return S.array(e2) && e2.length ? e2.reduce(((e3, i2) => Math.abs(i2 - t2) < Math.abs(e3 - t2) ? i2 : e3)) : null;
         }
         function ae(e2) {
           return !(!window || !window.CSS) && window.CSS.supports(e2);
         }
-        const le = [[1, 1], [4, 3], [3, 4], [5, 4], [4, 5], [3, 2], [2, 3], [16, 10], [10, 16], [16, 9], [9, 16], [21, 9], [9, 21], [32, 9], [9, 32]].reduce((e2, [t2, i2]) => __spreadProps(__spreadValues({}, e2), { [t2 / i2]: [t2, i2] }), {});
+        const le = [[1, 1], [4, 3], [3, 4], [5, 4], [4, 5], [3, 2], [2, 3], [16, 10], [10, 16], [16, 9], [9, 16], [21, 9], [9, 21], [32, 9], [9, 32]].reduce(((e2, [t2, i2]) => __spreadProps(__spreadValues({}, e2), { [t2 / i2]: [t2, i2] })), {});
         function re(e2) {
           if (!(S.array(e2) || S.string(e2) && e2.includes(":"))) return false;
           return (S.array(e2) ? e2 : e2.split(":")).map(Number).every(S.number);
@@ -728,28 +728,28 @@
         }
         const de = { getSources() {
           if (!this.isHTML5) return [];
-          return Array.from(this.media.querySelectorAll("source")).filter((e2) => {
+          return Array.from(this.media.querySelectorAll("source")).filter(((e2) => {
             const t2 = e2.getAttribute("type");
             return !!S.empty(t2) || K.mime.call(this, t2);
-          });
+          }));
         }, getQualityOptions() {
-          return this.config.quality.forced ? this.config.quality.options : de.getSources.call(this).map((e2) => Number(e2.getAttribute("size"))).filter(Boolean);
+          return this.config.quality.forced ? this.config.quality.options : de.getSources.call(this).map(((e2) => Number(e2.getAttribute("size")))).filter(Boolean);
         }, setup() {
           if (!this.isHTML5) return;
           const e2 = this;
           e2.options.speed = e2.config.speed.options, S.empty(this.config.ratio) || ue.call(e2), Object.defineProperty(e2.media, "quality", { get() {
-            const t2 = de.getSources.call(e2).find((t3) => t3.getAttribute("src") === e2.source);
+            const t2 = de.getSources.call(e2).find(((t3) => t3.getAttribute("src") === e2.source));
             return t2 && Number(t2.getAttribute("size"));
           }, set(t2) {
             if (e2.quality !== t2) {
               if (e2.config.quality.forced && S.function(e2.config.quality.onChange)) e2.config.quality.onChange(t2);
               else {
-                const i2 = de.getSources.call(e2).find((e3) => Number(e3.getAttribute("size")) === t2);
+                const i2 = de.getSources.call(e2).find(((e3) => Number(e3.getAttribute("size")) === t2));
                 if (!i2) return;
                 const { currentTime: s2, paused: n2, preload: a2, readyState: l2, playbackRate: r2 } = e2.media;
-                e2.media.src = i2.getAttribute("src"), ("none" !== a2 || l2) && (e2.once("loadedmetadata", () => {
+                e2.media.src = i2.getAttribute("src"), ("none" !== a2 || l2) && (e2.once("loadedmetadata", (() => {
                   e2.speed = r2, e2.currentTime = s2, n2 || ie(e2.play());
-                }), e2.media.load());
+                })), e2.media.load());
               }
               Z.call(e2, e2.media, "qualitychange", false, { quality: t2 });
             }
@@ -758,15 +758,15 @@
           this.isHTML5 && (O(de.getSources.call(this)), this.media.setAttribute("src", this.config.blankVideo), this.media.load(), this.debug.log("Cancelled network requests"));
         } };
         function me(e2, ...t2) {
-          return S.empty(e2) ? e2 : e2.toString().replace(/{(\d+)}/g, (e3, i2) => t2[i2].toString());
+          return S.empty(e2) ? e2 : e2.toString().replace(/{(\d+)}/g, ((e3, i2) => t2[i2].toString()));
         }
-        const pe = (e2 = "", t2 = "", i2 = "") => e2.replace(new RegExp(t2.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1"), "g"), i2.toString()), ge = (e2 = "") => e2.toString().replace(/\w\S*/g, (e3) => e3.charAt(0).toUpperCase() + e3.slice(1).toLowerCase());
+        const pe = (e2 = "", t2 = "", i2 = "") => e2.replace(new RegExp(t2.toString().replace(/([.*+?^=!:${}()|[\]/\\])/g, "\\$1"), "g"), i2.toString()), ge = (e2 = "") => e2.toString().replace(/\w\S*/g, ((e3) => e3.charAt(0).toUpperCase() + e3.slice(1).toLowerCase()));
         function fe(e2 = "") {
           let t2 = e2.toString();
-          return t2 = function(e3 = "") {
+          return t2 = (function(e3 = "") {
             let t3 = e3.toString();
             return t3 = pe(t3, "-", " "), t3 = pe(t3, "_", " "), t3 = ge(t3), pe(t3, " ", "");
-          }(t2), t2.charAt(0).toLowerCase() + t2.slice(1);
+          })(t2), t2.charAt(0).toLowerCase() + t2.slice(1);
         }
         function ye(e2) {
           const t2 = document.createElement("div");
@@ -777,19 +777,19 @@
           let i2 = N(t2.i18n, e2);
           if (S.empty(i2)) return Object.keys(be).includes(e2) ? be[e2] : "";
           const s2 = { "{seektime}": t2.seekTime, "{title}": t2.title };
-          return Object.entries(s2).forEach(([e3, t3]) => {
+          return Object.entries(s2).forEach((([e3, t3]) => {
             i2 = pe(i2, e3, t3);
-          }), i2;
+          })), i2;
         } };
         class we {
           constructor(t2) {
-            e(this, "get", (e2) => {
+            e(this, "get", ((e2) => {
               if (!we.supported || !this.enabled) return null;
               const t3 = window.localStorage.getItem(this.key);
               if (S.empty(t3)) return null;
               const i2 = JSON.parse(t3);
               return S.string(e2) && e2.length ? i2[e2] : i2;
-            }), e(this, "set", (e2) => {
+            })), e(this, "set", ((e2) => {
               if (!we.supported || !this.enabled) return;
               if (!S.object(e2)) return;
               let t3 = this.get();
@@ -798,7 +798,7 @@
                 window.localStorage.setItem(this.key, JSON.stringify(t3));
               } catch (e3) {
               }
-            }), this.enabled = t2.config.storage.enabled, this.key = t2.config.storage.key;
+            })), this.enabled = t2.config.storage.enabled, this.key = t2.config.storage.key;
           }
           static get supported() {
             try {
@@ -811,24 +811,24 @@
           }
         }
         function Te(e2, t2 = "text") {
-          return new Promise((i2, s2) => {
+          return new Promise(((i2, s2) => {
             try {
               const s3 = new XMLHttpRequest();
               if (!("withCredentials" in s3)) return;
-              s3.addEventListener("load", () => {
+              s3.addEventListener("load", (() => {
                 if ("text" === t2) try {
                   i2(JSON.parse(s3.responseText));
                 } catch (e3) {
                   i2(s3.responseText);
                 }
                 else i2(s3.response);
-              }), s3.addEventListener("error", () => {
+              })), s3.addEventListener("error", (() => {
                 throw new Error(s3.status);
-              }), s3.open("GET", e2, true), s3.responseType = t2, s3.send();
+              })), s3.open("GET", e2, true), s3.responseType = t2, s3.send();
             } catch (e3) {
               s2(e3);
             }
-          });
+          }));
         }
         function ke(e2, t2) {
           if (!S.string(e2)) return;
@@ -846,7 +846,7 @@
                 l2(r2, t3.content);
               }
             }
-            Te(e2).then((e3) => {
+            Te(e2).then(((e3) => {
               if (!S.empty(e3)) {
                 if (a3) try {
                   window.localStorage.setItem("".concat(i2, "-").concat(t2), JSON.stringify({ content: e3 }));
@@ -854,8 +854,8 @@
                 }
                 l2(r2, e3);
               }
-            }).catch(() => {
-            });
+            })).catch((() => {
+            }));
           }
         }
         const Ce = (e2) => Math.trunc(e2 / 60 / 60 % 60, 10), Ae = (e2) => Math.trunc(e2 / 60 % 60, 10), Se = (e2) => Math.trunc(e2 % 60, 10);
@@ -891,9 +891,9 @@
           const i2 = x({}, t2);
           let s2 = fe(e2);
           const n2 = { element: "button", toggle: false, label: null, icon: null, labelPressed: null, iconPressed: null };
-          switch (["element", "icon", "label"].forEach((e3) => {
+          switch (["element", "icon", "label"].forEach(((e3) => {
             Object.keys(i2).includes(e3) && (n2[e3] = i2[e3], delete i2[e3]);
-          }), "button" !== n2.element || Object.keys(i2).includes("type") || (i2.type = "button"), Object.keys(i2).includes("class") ? i2.class.split(" ").some((e3) => e3 === this.config.classNames.control) || x(i2, { class: "".concat(i2.class, " ").concat(this.config.classNames.control) }) : i2.class = this.config.classNames.control, e2) {
+          })), "button" !== n2.element || Object.keys(i2).includes("type") || (i2.type = "button"), Object.keys(i2).includes("class") ? i2.class.split(" ").some(((e3) => e3 === this.config.classNames.control)) || x(i2, { class: "".concat(i2.class, " ").concat(this.config.classNames.control) }) : i2.class = this.config.classNames.control, e2) {
             case "play":
               n2.toggle = true, n2.label = "play", n2.labelPressed = "pause", n2.icon = "play", n2.iconPressed = "pause";
               break;
@@ -929,7 +929,7 @@
           const i2 = D(this.config.selectors.display[e2], t2), s2 = $("div", x(i2, { class: "".concat(i2.class ? i2.class : "", " ").concat(this.config.classNames.display.time, " ").trim(), "aria-label": ve.get(e2, this.config), role: "timer" }), "00:00");
           return this.elements.display[e2] = s2, s2;
         }, bindMenuItemShortcuts(e2, t2) {
-          X.call(this, e2, "keydown keyup", (i2) => {
+          X.call(this, e2, "keydown keyup", ((i2) => {
             if (![" ", "ArrowUp", "ArrowDown", "ArrowRight"].includes(i2.key)) return;
             if (i2.preventDefault(), i2.stopPropagation(), "keydown" === i2.type) return;
             const s2 = V(e2, '[role="menuitemradio"]');
@@ -938,14 +938,14 @@
               let t3;
               " " !== i2.key && ("ArrowDown" === i2.key || s2 && "ArrowRight" === i2.key ? (t3 = e2.nextElementSibling, S.element(t3) || (t3 = e2.parentNode.firstElementChild)) : (t3 = e2.previousElementSibling, S.element(t3) || (t3 = e2.parentNode.lastElementChild)), W.call(this, t3, true));
             }
-          }, false), X.call(this, e2, "keyup", (e3) => {
+          }), false), X.call(this, e2, "keyup", ((e3) => {
             "Return" === e3.key && Pe.focusFirstMenuItem.call(this, null, true);
-          });
+          }));
         }, createMenuItem({ value: e2, list: t2, type: i2, title: s2, badge: n2 = null, checked: a2 = false }) {
           const l2 = D(this.config.selectors.inputs[i2]), r2 = $("button", x(l2, { type: "button", role: "menuitemradio", class: "".concat(this.config.classNames.control, " ").concat(l2.class ? l2.class : "").trim(), "aria-checked": a2, value: e2 })), o2 = $("span");
           o2.innerHTML = s2, S.element(n2) && o2.appendChild(n2), r2.appendChild(o2), Object.defineProperty(r2, "checked", { enumerable: true, get: () => "true" === r2.getAttribute("aria-checked"), set(e3) {
-            e3 && Array.from(r2.parentNode.children).filter((e4) => V(e4, '[role="menuitemradio"]')).forEach((e4) => e4.setAttribute("aria-checked", "false")), r2.setAttribute("aria-checked", e3 ? "true" : "false");
-          } }), this.listeners.bind(r2, "click keyup", (t3) => {
+            e3 && Array.from(r2.parentNode.children).filter(((e4) => V(e4, '[role="menuitemradio"]'))).forEach(((e4) => e4.setAttribute("aria-checked", "false"))), r2.setAttribute("aria-checked", e3 ? "true" : "false");
+          } }), this.listeners.bind(r2, "click keyup", ((t3) => {
             if (!S.keyboardEvent(t3) || " " === t3.key) {
               switch (t3.preventDefault(), t3.stopPropagation(), r2.checked = true, i2) {
                 case "language":
@@ -959,7 +959,7 @@
               }
               Pe.showMenuPanel.call(this, "home", S.keyboardEvent(t3));
             }
-          }, i2, false), Pe.bindMenuItemShortcuts.call(this, r2, i2), t2.appendChild(r2);
+          }), i2, false), Pe.bindMenuItemShortcuts.call(this, r2, i2), t2.appendChild(r2);
         }, formatTime(e2 = 0, t2 = false) {
           if (!S.number(e2)) return e2;
           return Ee(e2, Ce(this.duration) > 0, t2);
@@ -1019,7 +1019,7 @@
           l2 < 0 ? l2 = 0 : l2 > 100 && (l2 = 100);
           const o2 = this.duration / 100 * l2;
           s2.innerText = Pe.formatTime(o2);
-          const c2 = null === (t2 = this.config.markers) || void 0 === t2 || null === (i2 = t2.points) || void 0 === i2 ? void 0 : i2.find(({ time: e3 }) => e3 === Math.round(o2));
+          const c2 = null === (t2 = this.config.markers) || void 0 === t2 || null === (i2 = t2.points) || void 0 === i2 ? void 0 : i2.find((({ time: e3 }) => e3 === Math.round(o2)));
           c2 && s2.insertAdjacentHTML("afterbegin", "".concat(c2.label, "<br>")), s2.style.left = "".concat(l2, "%"), S.event(e2) && ["mouseenter", "mouseleave"].includes(e2.type) && a2("mouseenter" === e2.type);
         }, timeUpdate(e2) {
           const t2 = !S.element(this.elements.display.duration) && this.config.invertTime;
@@ -1062,40 +1062,40 @@
         }, setQualityMenu(e2) {
           if (!S.element(this.elements.settings.panels.quality)) return;
           const t2 = "quality", i2 = this.elements.settings.panels.quality.querySelector('[role="menu"]');
-          S.array(e2) && (this.options.quality = se(e2).filter((e3) => this.config.quality.options.includes(e3)));
+          S.array(e2) && (this.options.quality = se(e2).filter(((e3) => this.config.quality.options.includes(e3))));
           const s2 = !S.empty(this.options.quality) && this.options.quality.length > 1;
           if (Pe.toggleMenuButton.call(this, t2, s2), j(i2), Pe.checkMenu.call(this), !s2) return;
           const n2 = (e3) => {
             const t3 = ve.get("qualityBadge.".concat(e3), this.config);
             return t3.length ? Pe.createBadge.call(this, t3) : null;
           };
-          this.options.quality.sort((e3, t3) => {
+          this.options.quality.sort(((e3, t3) => {
             const i3 = this.config.quality.options;
             return i3.indexOf(e3) > i3.indexOf(t3) ? 1 : -1;
-          }).forEach((e3) => {
+          })).forEach(((e3) => {
             Pe.createMenuItem.call(this, { value: e3, list: i2, type: t2, title: Pe.getLabel.call(this, "quality", e3), badge: n2(e3) });
-          }), Pe.updateSetting.call(this, t2, i2);
+          })), Pe.updateSetting.call(this, t2, i2);
         }, setCaptionsMenu() {
           if (!S.element(this.elements.settings.panels.captions)) return;
           const e2 = "captions", t2 = this.elements.settings.panels.captions.querySelector('[role="menu"]'), i2 = xe.getTracks.call(this), s2 = Boolean(i2.length);
           if (Pe.toggleMenuButton.call(this, e2, s2), j(t2), Pe.checkMenu.call(this), !s2) return;
-          const n2 = i2.map((e3, i3) => ({ value: i3, checked: this.captions.toggled && this.currentTrack === i3, title: xe.getLabel.call(this, e3), badge: e3.language && Pe.createBadge.call(this, e3.language.toUpperCase()), list: t2, type: "language" }));
+          const n2 = i2.map(((e3, i3) => ({ value: i3, checked: this.captions.toggled && this.currentTrack === i3, title: xe.getLabel.call(this, e3), badge: e3.language && Pe.createBadge.call(this, e3.language.toUpperCase()), list: t2, type: "language" })));
           n2.unshift({ value: -1, checked: !this.captions.toggled, title: ve.get("disabled", this.config), list: t2, type: "language" }), n2.forEach(Pe.createMenuItem.bind(this)), Pe.updateSetting.call(this, e2, t2);
         }, setSpeedMenu() {
           if (!S.element(this.elements.settings.panels.speed)) return;
           const e2 = "speed", t2 = this.elements.settings.panels.speed.querySelector('[role="menu"]');
-          this.options.speed = this.options.speed.filter((e3) => e3 >= this.minimumSpeed && e3 <= this.maximumSpeed);
+          this.options.speed = this.options.speed.filter(((e3) => e3 >= this.minimumSpeed && e3 <= this.maximumSpeed));
           const i2 = !S.empty(this.options.speed) && this.options.speed.length > 1;
-          Pe.toggleMenuButton.call(this, e2, i2), j(t2), Pe.checkMenu.call(this), i2 && (this.options.speed.forEach((i3) => {
+          Pe.toggleMenuButton.call(this, e2, i2), j(t2), Pe.checkMenu.call(this), i2 && (this.options.speed.forEach(((i3) => {
             Pe.createMenuItem.call(this, { value: i3, list: t2, type: e2, title: Pe.getLabel.call(this, "speed", i3) });
-          }), Pe.updateSetting.call(this, e2, t2));
+          })), Pe.updateSetting.call(this, e2, t2));
         }, checkMenu() {
-          const { buttons: e2 } = this.elements.settings, t2 = !S.empty(e2) && Object.values(e2).some((e3) => !e3.hidden);
+          const { buttons: e2 } = this.elements.settings, t2 = !S.empty(e2) && Object.values(e2).some(((e3) => !e3.hidden));
           H(this.elements.settings.menu, !t2);
         }, focusFirstMenuItem(e2, t2 = false) {
           if (this.elements.settings.popup.hidden) return;
           let i2 = e2;
-          S.element(i2) || (i2 = Object.values(this.elements.settings.panels).find((e3) => !e3.hidden));
+          S.element(i2) || (i2 = Object.values(this.elements.settings.panels).find(((e3) => !e3.hidden)));
           const s2 = i2.querySelector('[role^="menuitem"]');
           W.call(this, s2, t2);
         }, toggleMenu(e2) {
@@ -1118,7 +1118,7 @@
         }, showMenuPanel(e2 = "", t2 = false) {
           const i2 = this.elements.container.querySelector("#plyr-settings-".concat(this.id, "-").concat(e2));
           if (!S.element(i2)) return;
-          const s2 = i2.parentNode, n2 = Array.from(s2.children).find((e3) => !e3.hidden);
+          const s2 = i2.parentNode, n2 = Array.from(s2.children).find(((e3) => !e3.hidden));
           if (K.transitions && !K.reducedMotion) {
             s2.style.width = "".concat(n2.scrollWidth, "px"), s2.style.height = "".concat(n2.scrollHeight, "px");
             const e3 = Pe.getMenuSize.call(this, i2), t3 = (e4) => {
@@ -1136,7 +1136,7 @@
           const c2 = $("div", D(this.config.selectors.controls.wrapper));
           this.elements.controls = c2;
           const u2 = { class: "plyr__controls__item" };
-          return se(S.array(this.config.controls) ? this.config.controls : []).forEach((l3) => {
+          return se(S.array(this.config.controls) ? this.config.controls : []).forEach(((l3) => {
             if ("restart" === l3 && c2.appendChild(i2.call(this, "restart", u2)), "rewind" === l3 && c2.appendChild(i2.call(this, "rewind", u2)), "play" === l3 && c2.appendChild(i2.call(this, "play", u2)), "fast-forward" === l3 && c2.appendChild(i2.call(this, "fast-forward", u2)), "progress" === l3) {
               const t3 = $("div", { class: "".concat(u2.class, " plyr__progress__container") }), i3 = $("div", D(this.config.selectors.progress));
               if (i3.appendChild(n2.call(this, "seek", { id: "plyr-seek-".concat(e2.id) })), i3.appendChild(s2.call(this, "buffer")), this.config.tooltips.seek) {
@@ -1156,20 +1156,20 @@
               const s3 = $("div", x({}, u2, { class: "".concat(u2.class, " plyr__menu").trim(), hidden: "" }));
               s3.appendChild(i2.call(this, "settings", { "aria-haspopup": true, "aria-controls": "plyr-settings-".concat(e2.id), "aria-expanded": false }));
               const n3 = $("div", { class: "plyr__menu__container", id: "plyr-settings-".concat(e2.id), hidden: "" }), a3 = $("div"), l4 = $("div", { id: "plyr-settings-".concat(e2.id, "-home") }), r3 = $("div", { role: "menu" });
-              l4.appendChild(r3), a3.appendChild(l4), this.elements.settings.panels.home = l4, this.config.settings.forEach((i3) => {
+              l4.appendChild(r3), a3.appendChild(l4), this.elements.settings.panels.home = l4, this.config.settings.forEach(((i3) => {
                 const s4 = $("button", x(D(this.config.selectors.buttons.settings), { type: "button", class: "".concat(this.config.classNames.control, " ").concat(this.config.classNames.control, "--forward"), role: "menuitem", "aria-haspopup": true, hidden: "" }));
-                t2.call(this, s4, i3), X.call(this, s4, "click", () => {
+                t2.call(this, s4, i3), X.call(this, s4, "click", (() => {
                   o2.call(this, i3, false);
-                });
+                }));
                 const n4 = $("span", null, ve.get(i3, this.config)), l5 = $("span", { class: this.config.classNames.menu.value });
                 l5.innerHTML = e2[i3], n4.appendChild(l5), s4.appendChild(n4), r3.appendChild(s4);
                 const c3 = $("div", { id: "plyr-settings-".concat(e2.id, "-").concat(i3), hidden: "" }), u3 = $("button", { type: "button", class: "".concat(this.config.classNames.control, " ").concat(this.config.classNames.control, "--back") });
-                u3.appendChild($("span", { "aria-hidden": true }, ve.get(i3, this.config))), u3.appendChild($("span", { class: this.config.classNames.hidden }, ve.get("menuBack", this.config))), X.call(this, c3, "keydown", (e3) => {
+                u3.appendChild($("span", { "aria-hidden": true }, ve.get(i3, this.config))), u3.appendChild($("span", { class: this.config.classNames.hidden }, ve.get("menuBack", this.config))), X.call(this, c3, "keydown", ((e3) => {
                   "ArrowLeft" === e3.key && (e3.preventDefault(), e3.stopPropagation(), o2.call(this, "home", true));
-                }, false), X.call(this, u3, "click", () => {
+                }), false), X.call(this, u3, "click", (() => {
                   o2.call(this, "home", false);
-                }), c3.appendChild(u3), c3.appendChild($("div", { role: "menu" })), a3.appendChild(c3), this.elements.settings.buttons[i3] = s4, this.elements.settings.panels[i3] = c3;
-              }), n3.appendChild(a3), s3.appendChild(n3), c2.appendChild(s3), this.elements.settings.popup = n3, this.elements.settings.menu = s3;
+                })), c3.appendChild(u3), c3.appendChild($("div", { role: "menu" })), a3.appendChild(c3), this.elements.settings.buttons[i3] = s4, this.elements.settings.panels[i3] = c3;
+              })), n3.appendChild(a3), s3.appendChild(n3), c2.appendChild(s3), this.elements.settings.popup = n3, this.elements.settings.menu = s3;
             }
             if ("pip" === l3 && K.pip && c2.appendChild(i2.call(this, "pip", u2)), "airplay" === l3 && K.airplay && c2.appendChild(i2.call(this, "airplay", u2)), "download" === l3) {
               const e3 = x({}, u2, { element: "a", href: this.download, target: "_blank" });
@@ -1178,7 +1178,7 @@
               !S.url(t3) && this.isEmbed && x(e3, { icon: "logo-".concat(this.provider), label: this.provider }), c2.appendChild(i2.call(this, "download", e3));
             }
             "fullscreen" === l3 && c2.appendChild(i2.call(this, "fullscreen", u2));
-          }), this.isHTML5 && l2.call(this, de.getQualityOptions.call(this)), r2.call(this), c2;
+          })), this.isHTML5 && l2.call(this, de.getQualityOptions.call(this)), r2.call(this), c2;
         }, inject() {
           if (this.config.loadSprite) {
             const e3 = Pe.getIconUrl.call(this);
@@ -1193,9 +1193,9 @@
           let s2;
           i2 && S.string(this.config.controls) && (e2 = ((e3) => {
             let i3 = e3;
-            return Object.entries(t2).forEach(([e4, t3]) => {
+            return Object.entries(t2).forEach((([e4, t3]) => {
               i3 = pe(i3, "{".concat(e4, "}"), t3);
-            }), i3;
+            })), i3;
           })(e2)), S.string(this.config.selectors.controls.container) && (s2 = document.querySelector(this.config.selectors.controls.container)), S.element(s2) || (s2 = this.elements.container);
           if (s2[S.element(e2) ? "insertAdjacentElement" : "insertAdjacentHTML"]("afterbegin", e2), S.element(this.elements.controls) || Pe.findElements.call(this), !S.empty(this.elements.buttons)) {
             const e3 = (e4) => {
@@ -1204,15 +1204,15 @@
                 R(e4, t3, i3), e4.setAttribute("aria-pressed", i3 ? "true" : "false");
               } });
             };
-            Object.values(this.elements.buttons).filter(Boolean).forEach((t3) => {
+            Object.values(this.elements.buttons).filter(Boolean).forEach(((t3) => {
               S.array(t3) || S.nodeList(t3) ? Array.from(t3).filter(Boolean).forEach(e3) : e3(t3);
-            });
+            }));
           }
           if (M.isEdge && P(s2), this.config.tooltips.controls) {
             const { classNames: e3, selectors: t3 } = this.config, i3 = "".concat(t3.controls.wrapper, " ").concat(t3.labels, " .").concat(e3.hidden), s3 = U.call(this, i3);
-            Array.from(s3).forEach((e4) => {
+            Array.from(s3).forEach(((e4) => {
               R(e4, this.config.classNames.hidden, false), R(e4, this.config.classNames.tooltip, true);
-            });
+            }));
           }
         }, setMediaMetadata() {
           try {
@@ -1222,21 +1222,21 @@
         }, setMarkers() {
           var e2, t2;
           if (!this.duration || this.elements.markers) return;
-          const i2 = null === (e2 = this.config.markers) || void 0 === e2 || null === (t2 = e2.points) || void 0 === t2 ? void 0 : t2.filter(({ time: e3 }) => e3 > 0 && e3 < this.duration);
+          const i2 = null === (e2 = this.config.markers) || void 0 === e2 || null === (t2 = e2.points) || void 0 === t2 ? void 0 : t2.filter((({ time: e3 }) => e3 > 0 && e3 < this.duration));
           if (null == i2 || !i2.length) return;
           const s2 = document.createDocumentFragment(), n2 = document.createDocumentFragment();
           let a2 = null;
           const l2 = "".concat(this.config.classNames.tooltip, "--visible"), r2 = (e3) => R(a2, l2, e3);
-          i2.forEach((e3) => {
+          i2.forEach(((e3) => {
             const t3 = $("span", { class: this.config.classNames.marker }, ""), i3 = e3.time / this.duration * 100 + "%";
-            a2 && (t3.addEventListener("mouseenter", () => {
+            a2 && (t3.addEventListener("mouseenter", (() => {
               e3.label || (a2.style.left = i3, a2.innerHTML = e3.label, r2(true));
-            }), t3.addEventListener("mouseleave", () => {
+            })), t3.addEventListener("mouseleave", (() => {
               r2(false);
-            })), t3.addEventListener("click", () => {
+            }))), t3.addEventListener("click", (() => {
               this.currentTime = e3.time;
-            }), t3.style.left = i3, n2.appendChild(t3);
-          }), s2.appendChild(n2), this.config.tooltips.seek || (a2 = $("span", { class: this.config.classNames.tooltip }, ""), s2.appendChild(a2)), this.elements.markers = { points: n2, tip: a2 }, this.elements.progress.appendChild(s2);
+            })), t3.style.left = i3, n2.appendChild(t3);
+          })), s2.appendChild(n2), this.config.tooltips.seek || (a2 = $("span", { class: this.config.classNames.tooltip }, ""), s2.appendChild(a2)), this.elements.markers = { points: n2, tip: a2 }, this.elements.progress.appendChild(s2);
         } };
         function Me(e2, t2 = true) {
           let i2 = e2;
@@ -1252,9 +1252,9 @@
         }
         function Ne(e2) {
           const t2 = new URLSearchParams();
-          return S.object(e2) && Object.entries(e2).forEach(([e3, i2]) => {
+          return S.object(e2) && Object.entries(e2).forEach((([e3, i2]) => {
             t2.set(e3, i2);
-          }), t2;
+          })), t2;
         }
         const xe = { setup() {
           if (!this.supported.ui) return;
@@ -1262,16 +1262,16 @@
           var e2, t2;
           if (S.element(this.elements.captions) || (this.elements.captions = $("div", D(this.config.selectors.captions)), this.elements.captions.setAttribute("dir", "auto"), e2 = this.elements.captions, t2 = this.elements.wrapper, S.element(e2) && S.element(t2) && t2.parentNode.insertBefore(e2, t2.nextSibling)), M.isIE && window.URL) {
             const e3 = this.media.querySelectorAll("track");
-            Array.from(e3).forEach((e4) => {
+            Array.from(e3).forEach(((e4) => {
               const t3 = e4.getAttribute("src"), i3 = Me(t3);
-              null !== i3 && i3.hostname !== window.location.href.hostname && ["http:", "https:"].includes(i3.protocol) && Te(t3, "blob").then((t4) => {
+              null !== i3 && i3.hostname !== window.location.href.hostname && ["http:", "https:"].includes(i3.protocol) && Te(t3, "blob").then(((t4) => {
                 e4.setAttribute("src", window.URL.createObjectURL(t4));
-              }).catch(() => {
+              })).catch((() => {
                 O(e4);
-              });
-            });
+              }));
+            }));
           }
-          const i2 = se((navigator.languages || [navigator.language || navigator.userLanguage || "en"]).map((e3) => e3.split("-")[0]));
+          const i2 = se((navigator.languages || [navigator.language || navigator.userLanguage || "en"]).map(((e3) => e3.split("-")[0])));
           let s2 = (this.storage.get("language") || this.config.captions.language || "auto").toLowerCase();
           "auto" === s2 && ([s2] = i2);
           let n2 = this.storage.get("captions");
@@ -1281,10 +1281,10 @@
           }
           setTimeout(xe.update.bind(this), 0);
         }, update() {
-          const e2 = xe.getTracks.call(this, true), { active: t2, language: i2, meta: s2, currentTrackNode: n2 } = this.captions, a2 = Boolean(e2.find((e3) => e3.language === i2));
-          this.isHTML5 && this.isVideo && e2.filter((e3) => !s2.get(e3)).forEach((e3) => {
-            this.debug.log("Track added", e3), s2.set(e3, { default: "showing" === e3.mode }), "showing" === e3.mode && (e3.mode = "hidden"), X.call(this, e3, "cuechange", () => xe.updateCues.call(this));
-          }), (a2 && this.language !== i2 || !e2.includes(n2)) && (xe.setLanguage.call(this, i2), xe.toggle.call(this, t2 && a2)), this.elements && R(this.elements.container, this.config.classNames.captions.enabled, !S.empty(e2)), S.array(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && Pe.setCaptionsMenu.call(this);
+          const e2 = xe.getTracks.call(this, true), { active: t2, language: i2, meta: s2, currentTrackNode: n2 } = this.captions, a2 = Boolean(e2.find(((e3) => e3.language === i2)));
+          this.isHTML5 && this.isVideo && e2.filter(((e3) => !s2.get(e3))).forEach(((e3) => {
+            this.debug.log("Track added", e3), s2.set(e3, { default: "showing" === e3.mode }), "showing" === e3.mode && (e3.mode = "hidden"), X.call(this, e3, "cuechange", (() => xe.updateCues.call(this)));
+          })), (a2 && this.language !== i2 || !e2.includes(n2)) && (xe.setLanguage.call(this, i2), xe.toggle.call(this, t2 && a2)), this.elements && R(this.elements.container, this.config.classNames.captions.enabled, !S.empty(e2)), S.array(this.config.controls) && this.config.controls.includes("settings") && this.config.settings.includes("captions") && Pe.setCaptionsMenu.call(this);
         }, toggle(e2, t2 = true) {
           if (!this.supported.ui) return;
           const { toggled: i2 } = this.captions, s2 = this.config.classNames.captions.active, n2 = S.nullOrUndefined(e2) ? !i2 : e2;
@@ -1295,9 +1295,9 @@
             }
             this.elements.buttons.captions && (this.elements.buttons.captions.pressed = n2), R(this.elements.container, s2, n2), this.captions.toggled = n2, Pe.updateSetting.call(this, "captions"), Z.call(this, this.media, n2 ? "captionsenabled" : "captionsdisabled");
           }
-          setTimeout(() => {
+          setTimeout((() => {
             n2 && this.captions.toggled && (this.captions.currentTrackNode.mode = "hidden");
-          });
+          }));
         }, set(e2, t2 = true) {
           const i2 = xe.getTracks.call(this);
           if (-1 !== e2) if (S.number(e2)) if (e2 in i2) {
@@ -1317,11 +1317,11 @@
           const s2 = xe.getTracks.call(this), n2 = xe.findTrack.call(this, [i2]);
           xe.set.call(this, s2.indexOf(n2), t2);
         }, getTracks(e2 = false) {
-          return Array.from((this.media || {}).textTracks || []).filter((t2) => !this.isHTML5 || e2 || this.captions.meta.has(t2)).filter((e3) => ["captions", "subtitles"].includes(e3.kind));
+          return Array.from((this.media || {}).textTracks || []).filter(((t2) => !this.isHTML5 || e2 || this.captions.meta.has(t2))).filter(((e3) => ["captions", "subtitles"].includes(e3.kind)));
         }, findTrack(e2, t2 = false) {
-          const i2 = xe.getTracks.call(this), s2 = (e3) => Number((this.captions.meta.get(e3) || {}).default), n2 = Array.from(i2).sort((e3, t3) => s2(t3) - s2(e3));
+          const i2 = xe.getTracks.call(this), s2 = (e3) => Number((this.captions.meta.get(e3) || {}).default), n2 = Array.from(i2).sort(((e3, t3) => s2(t3) - s2(e3)));
           let a2;
-          return e2.every((e3) => (a2 = n2.find((t3) => t3.language === e3), !a2)), a2 || (t2 ? n2[0] : void 0);
+          return e2.every(((e3) => (a2 = n2.find(((t3) => t3.language === e3)), !a2))), a2 || (t2 ? n2[0] : void 0);
         }, getCurrentTrack() {
           return xe.getTracks.call(this)[this.currentTrack];
         }, getLabel(e2) {
@@ -1334,9 +1334,9 @@
           let t2 = e2;
           if (!t2) {
             const e3 = xe.getCurrentTrack.call(this);
-            t2 = Array.from((e3 || {}).activeCues || []).map((e4) => e4.getCueAsHTML()).map(ye);
+            t2 = Array.from((e3 || {}).activeCues || []).map(((e4) => e4.getCueAsHTML())).map(ye);
           }
-          const i2 = t2.map((e3) => e3.trim()).join("\n");
+          const i2 = t2.map(((e3) => e3.trim())).join("\n");
           if (i2 !== this.elements.captions.innerHTML) {
             j(this.elements.captions);
             const e3 = $("span", D(this.config.selectors.caption));
@@ -1361,35 +1361,35 @@
         }
         class He {
           constructor(t2) {
-            e(this, "onChange", () => {
+            e(this, "onChange", (() => {
               if (!this.supported) return;
               const e2 = this.player.elements.buttons.fullscreen;
               S.element(e2) && (e2.pressed = this.active);
               const t3 = this.target === this.player.media ? this.target : this.player.elements.container;
               Z.call(this.player, t3, this.active ? "enterfullscreen" : "exitfullscreen", true);
-            }), e(this, "toggleFallback", (e2 = false) => {
+            })), e(this, "toggleFallback", ((e2 = false) => {
               var _a, _b;
               if (e2 ? this.scrollPosition = { x: (_a = window.scrollX) != null ? _a : 0, y: (_b = window.scrollY) != null ? _b : 0 } : window.scrollTo(this.scrollPosition.x, this.scrollPosition.y), document.body.style.overflow = e2 ? "hidden" : "", R(this.target, this.player.config.classNames.fullscreen.fallback, e2), M.isIos) {
                 let t3 = document.head.querySelector('meta[name="viewport"]');
                 const i2 = "viewport-fit=cover";
                 t3 || (t3 = document.createElement("meta"), t3.setAttribute("name", "viewport"));
                 const s2 = S.string(t3.content) && t3.content.includes(i2);
-                e2 ? (this.cleanupViewport = !s2, s2 || (t3.content += ",".concat(i2))) : this.cleanupViewport && (t3.content = t3.content.split(",").filter((e3) => e3.trim() !== i2).join(","));
+                e2 ? (this.cleanupViewport = !s2, s2 || (t3.content += ",".concat(i2))) : this.cleanupViewport && (t3.content = t3.content.split(",").filter(((e3) => e3.trim() !== i2)).join(","));
               }
               this.onChange();
-            }), e(this, "trapFocus", (e2) => {
+            })), e(this, "trapFocus", ((e2) => {
               if (M.isIos || M.isIPadOS || !this.active || "Tab" !== e2.key) return;
               const t3 = document.activeElement, i2 = U.call(this.player, "a[href], button:not(:disabled), input:not(:disabled), [tabindex]"), [s2] = i2, n2 = i2[i2.length - 1];
               t3 !== n2 || e2.shiftKey ? t3 === s2 && e2.shiftKey && (n2.focus(), e2.preventDefault()) : (s2.focus(), e2.preventDefault());
-            }), e(this, "update", () => {
+            })), e(this, "update", (() => {
               if (this.supported) {
                 let e2;
                 e2 = this.forceFallback ? "Fallback (forced)" : He.nativeSupported ? "Native" : "Fallback", this.player.debug.log("".concat(e2, " fullscreen enabled"));
               } else this.player.debug.log("Fullscreen not supported and fallback disabled");
               R(this.player.elements.container, this.player.config.classNames.fullscreen.enabled, this.supported);
-            }), e(this, "enter", () => {
+            })), e(this, "enter", (() => {
               this.supported && (M.isIos && this.player.config.fullscreen.iosNative ? this.player.isVimeo ? this.player.embed.requestFullscreen() : this.target.webkitEnterFullscreen() : !He.nativeSupported || this.forceFallback ? this.toggleFallback(true) : this.prefix ? S.empty(this.prefix) || this.target["".concat(this.prefix, "Request").concat(this.property)]() : this.target.requestFullscreen({ navigationUI: "hide" }));
-            }), e(this, "exit", () => {
+            })), e(this, "exit", (() => {
               if (this.supported) if (M.isIos && this.player.config.fullscreen.iosNative) this.player.isVimeo ? this.player.embed.exitFullscreen() : this.target.webkitEnterFullscreen(), ie(this.player.play());
               else if (!He.nativeSupported || this.forceFallback) this.toggleFallback(false);
               else if (this.prefix) {
@@ -1398,9 +1398,9 @@
                   document["".concat(this.prefix).concat(e2).concat(this.property)]();
                 }
               } else (document.cancelFullScreen || document.exitFullscreen).call(document);
-            }), e(this, "toggle", () => {
+            })), e(this, "toggle", (() => {
               this.active ? this.exit() : this.enter();
-            }), this.player = t2, this.prefix = He.prefix, this.property = He.property, this.scrollPosition = { x: 0, y: 0 }, this.forceFallback = "force" === t2.config.fullscreen.fallback, this.player.elements.fullscreen = t2.config.fullscreen.container && function(e2, t3) {
+            })), this.player = t2, this.prefix = He.prefix, this.property = He.property, this.scrollPosition = { x: 0, y: 0 }, this.forceFallback = "force" === t2.config.fullscreen.fallback, this.player.elements.fullscreen = t2.config.fullscreen.container && (function(e2, t3) {
               const { prototype: i2 } = Element;
               return (i2.closest || function() {
                 let e3 = this;
@@ -1410,11 +1410,11 @@
                 } while (null !== e3 && 1 === e3.nodeType);
                 return null;
               }).call(e2, t3);
-            }(this.player.elements.container, t2.config.fullscreen.container), X.call(this.player, document, "ms" === this.prefix ? "MSFullscreenChange" : "".concat(this.prefix, "fullscreenchange"), () => {
+            })(this.player.elements.container, t2.config.fullscreen.container), X.call(this.player, document, "ms" === this.prefix ? "MSFullscreenChange" : "".concat(this.prefix, "fullscreenchange"), (() => {
               this.onChange();
-            }), X.call(this.player, this.player.elements.container, "dblclick", (e2) => {
+            })), X.call(this.player, this.player.elements.container, "dblclick", ((e2) => {
               S.element(this.player.elements.controls) && this.player.elements.controls.contains(e2.target) || this.player.listeners.proxy(e2, this.toggle, "fullscreen");
-            }), X.call(this, this.player.elements.container, "keydown", (e2) => this.trapFocus(e2)), this.update();
+            })), X.call(this, this.player.elements.container, "keydown", ((e2) => this.trapFocus(e2))), this.update();
           }
           static get nativeSupported() {
             return !!(document.fullscreenEnabled || document.webkitFullscreenEnabled || document.mozFullScreenEnabled || document.msFullscreenEnabled);
@@ -1425,7 +1425,7 @@
           static get prefix() {
             if (S.function(document.exitFullscreen)) return "";
             let e2 = "";
-            return ["webkit", "moz", "ms"].some((t2) => !(!S.function(document["".concat(t2, "ExitFullscreen")]) && !S.function(document["".concat(t2, "CancelFullScreen")])) && (e2 = t2, true)), e2;
+            return ["webkit", "moz", "ms"].some(((t2) => !(!S.function(document["".concat(t2, "ExitFullscreen")]) && !S.function(document["".concat(t2, "CancelFullScreen")])) && (e2 = t2, true))), e2;
           }
           static get property() {
             return "moz" === this.prefix ? "FullScreen" : "Fullscreen";
@@ -1445,12 +1445,12 @@
           }
         }
         function Re(e2, t2 = 1) {
-          return new Promise((i2, s2) => {
+          return new Promise(((i2, s2) => {
             const n2 = new Image(), a2 = () => {
               delete n2.onload, delete n2.onerror, (n2.naturalWidth >= t2 ? i2 : s2)(n2);
             };
             Object.assign(n2, { onload: a2, onerror: a2, src: e2 });
-          });
+          }));
         }
         const Fe = { addStyleHook() {
           R(this.elements.container, this.config.selectors.container.replace(".", ""), true), R(this.elements.container, this.config.classNames.uiSupported, this.supported.ui);
@@ -1458,15 +1458,15 @@
           e2 && this.isHTML5 ? this.media.setAttribute("controls", "") : this.media.removeAttribute("controls");
         }, build() {
           if (this.listeners.media(), !this.supported.ui) return this.debug.warn("Basic support only for ".concat(this.provider, " ").concat(this.type)), void Fe.toggleNativeControls.call(this, true);
-          S.element(this.elements.controls) || (Pe.inject.call(this), this.listeners.controls()), Fe.toggleNativeControls.call(this), this.isHTML5 && xe.setup.call(this), this.volume = null, this.muted = null, this.loop = null, this.quality = null, this.speed = null, Pe.updateVolume.call(this), Pe.timeUpdate.call(this), Pe.durationUpdate.call(this), Fe.checkPlaying.call(this), R(this.elements.container, this.config.classNames.pip.supported, K.pip && this.isHTML5 && this.isVideo), R(this.elements.container, this.config.classNames.airplay.supported, K.airplay && this.isHTML5), R(this.elements.container, this.config.classNames.isTouch, this.touch), this.ready = true, setTimeout(() => {
+          S.element(this.elements.controls) || (Pe.inject.call(this), this.listeners.controls()), Fe.toggleNativeControls.call(this), this.isHTML5 && xe.setup.call(this), this.volume = null, this.muted = null, this.loop = null, this.quality = null, this.speed = null, Pe.updateVolume.call(this), Pe.timeUpdate.call(this), Pe.durationUpdate.call(this), Fe.checkPlaying.call(this), R(this.elements.container, this.config.classNames.pip.supported, K.pip && this.isHTML5 && this.isVideo), R(this.elements.container, this.config.classNames.airplay.supported, K.airplay && this.isHTML5), R(this.elements.container, this.config.classNames.isTouch, this.touch), this.ready = true, setTimeout((() => {
             Z.call(this, this.media, "ready");
-          }, 0), Fe.setTitle.call(this), this.poster && Fe.setPoster.call(this, this.poster, false).catch(() => {
-          }), this.config.duration && Pe.durationUpdate.call(this), this.config.mediaMetadata && Pe.setMediaMetadata.call(this);
+          }), 0), Fe.setTitle.call(this), this.poster && Fe.setPoster.call(this, this.poster, false).catch((() => {
+          })), this.config.duration && Pe.durationUpdate.call(this), this.config.mediaMetadata && Pe.setMediaMetadata.call(this);
         }, setTitle() {
           let e2 = ve.get("play", this.config);
-          if (S.string(this.config.title) && !S.empty(this.config.title) && (e2 += ", ".concat(this.config.title)), Array.from(this.elements.buttons.play || []).forEach((t2) => {
+          if (S.string(this.config.title) && !S.empty(this.config.title) && (e2 += ", ".concat(this.config.title)), Array.from(this.elements.buttons.play || []).forEach(((t2) => {
             t2.setAttribute("aria-label", e2);
-          }), this.isEmbed) {
+          })), this.isEmbed) {
             const e3 = B.call(this, "iframe");
             if (!S.element(e3)) return;
             const t2 = S.empty(this.config.title) ? "video" : this.config.title, i2 = ve.get("frameTitle", this.config);
@@ -1475,19 +1475,19 @@
         }, togglePoster(e2) {
           R(this.elements.container, this.config.classNames.posterEnabled, e2);
         }, setPoster(e2, t2 = true) {
-          return t2 && this.poster ? Promise.reject(new Error("Poster already set")) : (this.media.setAttribute("data-poster", e2), this.elements.poster.removeAttribute("hidden"), te.call(this).then(() => Re(e2)).catch((t3) => {
+          return t2 && this.poster ? Promise.reject(new Error("Poster already set")) : (this.media.setAttribute("data-poster", e2), this.elements.poster.removeAttribute("hidden"), te.call(this).then((() => Re(e2))).catch(((t3) => {
             throw e2 === this.poster && Fe.togglePoster.call(this, false), t3;
-          }).then(() => {
+          })).then((() => {
             if (e2 !== this.poster) throw new Error("setPoster cancelled by later call to setPoster");
-          }).then(() => (Object.assign(this.elements.poster.style, { backgroundImage: "url('".concat(e2, "')"), backgroundSize: "" }), Fe.togglePoster.call(this, true), e2)));
+          })).then((() => (Object.assign(this.elements.poster.style, { backgroundImage: "url('".concat(e2, "')"), backgroundSize: "" }), Fe.togglePoster.call(this, true), e2))));
         }, checkPlaying(e2) {
-          R(this.elements.container, this.config.classNames.playing, this.playing), R(this.elements.container, this.config.classNames.paused, this.paused), R(this.elements.container, this.config.classNames.stopped, this.stopped), Array.from(this.elements.buttons.play || []).forEach((e3) => {
+          R(this.elements.container, this.config.classNames.playing, this.playing), R(this.elements.container, this.config.classNames.paused, this.paused), R(this.elements.container, this.config.classNames.stopped, this.stopped), Array.from(this.elements.buttons.play || []).forEach(((e3) => {
             Object.assign(e3, { pressed: this.playing }), e3.setAttribute("aria-label", ve.get(this.playing ? "pause" : "play", this.config));
-          }), S.event(e2) && "timeupdate" === e2.type || Fe.toggleControls.call(this);
+          })), S.event(e2) && "timeupdate" === e2.type || Fe.toggleControls.call(this);
         }, checkLoading(e2) {
-          this.loading = ["stalled", "waiting"].includes(e2.type), clearTimeout(this.timers.loading), this.timers.loading = setTimeout(() => {
+          this.loading = ["stalled", "waiting"].includes(e2.type), clearTimeout(this.timers.loading), this.timers.loading = setTimeout((() => {
             R(this.elements.container, this.config.classNames.loading, this.loading), Fe.toggleControls.call(this);
-          }, this.loading ? 250 : 0);
+          }), this.loading ? 250 : 0);
         }, toggleControls(e2) {
           const { controls: t2 } = this.elements;
           if (t2 && this.config.hideControls) {
@@ -1495,26 +1495,26 @@
             this.toggleControls(Boolean(e2 || this.loading || this.paused || t2.pressed || t2.hover || i2));
           }
         }, migrateStyles() {
-          Object.values(__spreadValues({}, this.media.style)).filter((e2) => !S.empty(e2) && S.string(e2) && e2.startsWith("--plyr")).forEach((e2) => {
+          Object.values(__spreadValues({}, this.media.style)).filter(((e2) => !S.empty(e2) && S.string(e2) && e2.startsWith("--plyr"))).forEach(((e2) => {
             this.elements.container.style.setProperty(e2, this.media.style.getPropertyValue(e2)), this.media.style.removeProperty(e2);
-          }), S.empty(this.media.style) && this.media.removeAttribute("style");
+          })), S.empty(this.media.style) && this.media.removeAttribute("style");
         } };
         class Ve {
           constructor(t2) {
-            e(this, "firstTouch", () => {
+            e(this, "firstTouch", (() => {
               const { player: e2 } = this, { elements: t3 } = e2;
               e2.touch = true, R(t3.container, e2.config.classNames.isTouch, true);
-            }), e(this, "global", (e2 = true) => {
+            })), e(this, "global", ((e2 = true) => {
               const { player: t3 } = this;
               t3.config.keyboard.global && Q.call(t3, window, "keydown keyup", this.handleKey, e2, false), Q.call(t3, document.body, "click", this.toggleMenu, e2), G.call(t3, document.body, "touchstart", this.firstTouch);
-            }), e(this, "container", () => {
+            })), e(this, "container", (() => {
               const { player: e2 } = this, { config: t3, elements: i2, timers: s2 } = e2;
-              !t3.keyboard.global && t3.keyboard.focused && X.call(e2, i2.container, "keydown keyup", this.handleKey, false), X.call(e2, i2.container, "mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen", (t4) => {
+              !t3.keyboard.global && t3.keyboard.focused && X.call(e2, i2.container, "keydown keyup", this.handleKey, false), X.call(e2, i2.container, "mousemove mouseleave touchstart touchmove enterfullscreen exitfullscreen", ((t4) => {
                 const { controls: n3 } = i2;
                 n3 && "enterfullscreen" === t4.type && (n3.pressed = false, n3.hover = false);
                 let a3 = 0;
-                ["touchstart", "touchmove", "mousemove"].includes(t4.type) && (Fe.toggleControls.call(e2, true), a3 = e2.touch ? 3e3 : 2e3), clearTimeout(s2.controls), s2.controls = setTimeout(() => Fe.toggleControls.call(e2, false), a3);
-              });
+                ["touchstart", "touchmove", "mousemove"].includes(t4.type) && (Fe.toggleControls.call(e2, true), a3 = e2.touch ? 3e3 : 2e3), clearTimeout(s2.controls), s2.controls = setTimeout((() => Fe.toggleControls.call(e2, false)), a3);
+              }));
               const n2 = () => {
                 if (!e2.isVimeo || e2.config.vimeo.premium) return;
                 const t4 = i2.wrapper, { active: s3 } = e2.fullscreen, [n3, a3] = ce.call(e2), l2 = ae("aspect-ratio: ".concat(n3, " / ").concat(a3));
@@ -1524,132 +1524,132 @@
               }, a2 = () => {
                 clearTimeout(s2.resized), s2.resized = setTimeout(n2, 50);
               };
-              X.call(e2, i2.container, "enterfullscreen exitfullscreen", (t4) => {
+              X.call(e2, i2.container, "enterfullscreen exitfullscreen", ((t4) => {
                 const { target: s3 } = e2.fullscreen;
                 if (s3 !== i2.container) return;
                 if (!e2.isEmbed && S.empty(e2.config.ratio)) return;
                 n2();
                 ("enterfullscreen" === t4.type ? X : J).call(e2, window, "resize", a2);
-              });
-            }), e(this, "media", () => {
+              }));
+            })), e(this, "media", (() => {
               const { player: e2 } = this, { elements: t3 } = e2;
-              if (X.call(e2, e2.media, "timeupdate seeking seeked", (t4) => Pe.timeUpdate.call(e2, t4)), X.call(e2, e2.media, "durationchange loadeddata loadedmetadata", (t4) => Pe.durationUpdate.call(e2, t4)), X.call(e2, e2.media, "ended", () => {
+              if (X.call(e2, e2.media, "timeupdate seeking seeked", ((t4) => Pe.timeUpdate.call(e2, t4))), X.call(e2, e2.media, "durationchange loadeddata loadedmetadata", ((t4) => Pe.durationUpdate.call(e2, t4))), X.call(e2, e2.media, "ended", (() => {
                 e2.isHTML5 && e2.isVideo && e2.config.resetOnEnd && (e2.restart(), e2.pause());
-              }), X.call(e2, e2.media, "progress playing seeking seeked", (t4) => Pe.updateProgress.call(e2, t4)), X.call(e2, e2.media, "volumechange", (t4) => Pe.updateVolume.call(e2, t4)), X.call(e2, e2.media, "playing play pause ended emptied timeupdate", (t4) => Fe.checkPlaying.call(e2, t4)), X.call(e2, e2.media, "waiting canplay seeked playing", (t4) => Fe.checkLoading.call(e2, t4)), e2.supported.ui && e2.config.clickToPlay && !e2.isAudio) {
+              })), X.call(e2, e2.media, "progress playing seeking seeked", ((t4) => Pe.updateProgress.call(e2, t4))), X.call(e2, e2.media, "volumechange", ((t4) => Pe.updateVolume.call(e2, t4))), X.call(e2, e2.media, "playing play pause ended emptied timeupdate", ((t4) => Fe.checkPlaying.call(e2, t4))), X.call(e2, e2.media, "waiting canplay seeked playing", ((t4) => Fe.checkLoading.call(e2, t4))), e2.supported.ui && e2.config.clickToPlay && !e2.isAudio) {
                 const i3 = B.call(e2, ".".concat(e2.config.classNames.video));
                 if (!S.element(i3)) return;
-                X.call(e2, t3.container, "click", (s2) => {
-                  ([t3.container, i3].includes(s2.target) || i3.contains(s2.target)) && (e2.touch && e2.config.hideControls || (e2.ended ? (this.proxy(s2, e2.restart, "restart"), this.proxy(s2, () => {
+                X.call(e2, t3.container, "click", ((s2) => {
+                  ([t3.container, i3].includes(s2.target) || i3.contains(s2.target)) && (e2.touch && e2.config.hideControls || (e2.ended ? (this.proxy(s2, e2.restart, "restart"), this.proxy(s2, (() => {
                     ie(e2.play());
-                  }, "play")) : this.proxy(s2, () => {
+                  }), "play")) : this.proxy(s2, (() => {
                     ie(e2.togglePlay());
-                  }, "play")));
-                });
+                  }), "play")));
+                }));
               }
-              e2.supported.ui && e2.config.disableContextMenu && X.call(e2, t3.wrapper, "contextmenu", (e3) => {
+              e2.supported.ui && e2.config.disableContextMenu && X.call(e2, t3.wrapper, "contextmenu", ((e3) => {
                 e3.preventDefault();
-              }, false), X.call(e2, e2.media, "volumechange", () => {
+              }), false), X.call(e2, e2.media, "volumechange", (() => {
                 e2.storage.set({ volume: e2.volume, muted: e2.muted });
-              }), X.call(e2, e2.media, "ratechange", () => {
+              })), X.call(e2, e2.media, "ratechange", (() => {
                 Pe.updateSetting.call(e2, "speed"), e2.storage.set({ speed: e2.speed });
-              }), X.call(e2, e2.media, "qualitychange", (t4) => {
+              })), X.call(e2, e2.media, "qualitychange", ((t4) => {
                 Pe.updateSetting.call(e2, "quality", null, t4.detail.quality);
-              }), X.call(e2, e2.media, "ready qualitychange", () => {
+              })), X.call(e2, e2.media, "ready qualitychange", (() => {
                 Pe.setDownloadUrl.call(e2);
-              });
+              }));
               const i2 = e2.config.events.concat(["keyup", "keydown"]).join(" ");
-              X.call(e2, e2.media, i2, (i3) => {
+              X.call(e2, e2.media, i2, ((i3) => {
                 let { detail: s2 = {} } = i3;
                 "error" === i3.type && (s2 = e2.media.error), Z.call(e2, t3.container, i3.type, true, s2);
-              });
-            }), e(this, "proxy", (e2, t3, i2) => {
+              }));
+            })), e(this, "proxy", ((e2, t3, i2) => {
               const { player: s2 } = this, n2 = s2.config.listeners[i2];
               let a2 = true;
               S.function(n2) && (a2 = n2.call(s2, e2)), false !== a2 && S.function(t3) && t3.call(s2, e2);
-            }), e(this, "bind", (e2, t3, i2, s2, n2 = true) => {
+            })), e(this, "bind", ((e2, t3, i2, s2, n2 = true) => {
               const { player: a2 } = this, l2 = a2.config.listeners[s2], r2 = S.function(l2);
-              X.call(a2, e2, t3, (e3) => this.proxy(e3, i2, s2), n2 && !r2);
-            }), e(this, "controls", () => {
+              X.call(a2, e2, t3, ((e3) => this.proxy(e3, i2, s2)), n2 && !r2);
+            })), e(this, "controls", (() => {
               const { player: e2 } = this, { elements: t3 } = e2, i2 = M.isIE ? "change" : "input";
-              if (t3.buttons.play && Array.from(t3.buttons.play).forEach((t4) => {
-                this.bind(t4, "click", () => {
+              if (t3.buttons.play && Array.from(t3.buttons.play).forEach(((t4) => {
+                this.bind(t4, "click", (() => {
                   ie(e2.togglePlay());
-                }, "play");
-              }), this.bind(t3.buttons.restart, "click", e2.restart, "restart"), this.bind(t3.buttons.rewind, "click", () => {
+                }), "play");
+              })), this.bind(t3.buttons.restart, "click", e2.restart, "restart"), this.bind(t3.buttons.rewind, "click", (() => {
                 e2.lastSeekTime = Date.now(), e2.rewind();
-              }, "rewind"), this.bind(t3.buttons.fastForward, "click", () => {
+              }), "rewind"), this.bind(t3.buttons.fastForward, "click", (() => {
                 e2.lastSeekTime = Date.now(), e2.forward();
-              }, "fastForward"), this.bind(t3.buttons.mute, "click", () => {
+              }), "fastForward"), this.bind(t3.buttons.mute, "click", (() => {
                 e2.muted = !e2.muted;
-              }, "mute"), this.bind(t3.buttons.captions, "click", () => e2.toggleCaptions()), this.bind(t3.buttons.download, "click", () => {
+              }), "mute"), this.bind(t3.buttons.captions, "click", (() => e2.toggleCaptions())), this.bind(t3.buttons.download, "click", (() => {
                 Z.call(e2, e2.media, "download");
-              }, "download"), this.bind(t3.buttons.fullscreen, "click", () => {
+              }), "download"), this.bind(t3.buttons.fullscreen, "click", (() => {
                 e2.fullscreen.toggle();
-              }, "fullscreen"), this.bind(t3.buttons.pip, "click", () => {
+              }), "fullscreen"), this.bind(t3.buttons.pip, "click", (() => {
                 e2.pip = "toggle";
-              }, "pip"), this.bind(t3.buttons.airplay, "click", e2.airplay, "airplay"), this.bind(t3.buttons.settings, "click", (t4) => {
+              }), "pip"), this.bind(t3.buttons.airplay, "click", e2.airplay, "airplay"), this.bind(t3.buttons.settings, "click", ((t4) => {
                 t4.stopPropagation(), t4.preventDefault(), Pe.toggleMenu.call(e2, t4);
-              }, null, false), this.bind(t3.buttons.settings, "keyup", (t4) => {
+              }), null, false), this.bind(t3.buttons.settings, "keyup", ((t4) => {
                 [" ", "Enter"].includes(t4.key) && ("Enter" !== t4.key ? (t4.preventDefault(), t4.stopPropagation(), Pe.toggleMenu.call(e2, t4)) : Pe.focusFirstMenuItem.call(e2, null, true));
-              }, null, false), this.bind(t3.settings.menu, "keydown", (t4) => {
+              }), null, false), this.bind(t3.settings.menu, "keydown", ((t4) => {
                 "Escape" === t4.key && Pe.toggleMenu.call(e2, t4);
-              }), this.bind(t3.inputs.seek, "mousedown mousemove", (e3) => {
+              })), this.bind(t3.inputs.seek, "mousedown mousemove", ((e3) => {
                 const i3 = t3.progress.getBoundingClientRect(), s2 = 100 / i3.width * (e3.pageX - i3.left);
                 e3.currentTarget.setAttribute("seek-value", s2);
-              }), this.bind(t3.inputs.seek, "mousedown mouseup keydown keyup touchstart touchend", (t4) => {
+              })), this.bind(t3.inputs.seek, "mousedown mouseup keydown keyup touchstart touchend", ((t4) => {
                 const i3 = t4.currentTarget, s2 = "play-on-seeked";
                 if (S.keyboardEvent(t4) && !["ArrowLeft", "ArrowRight"].includes(t4.key)) return;
                 e2.lastSeekTime = Date.now();
                 const n2 = i3.hasAttribute(s2), a2 = ["mouseup", "touchend", "keyup"].includes(t4.type);
                 n2 && a2 ? (i3.removeAttribute(s2), ie(e2.play())) : !a2 && e2.playing && (i3.setAttribute(s2, ""), e2.pause());
-              }), M.isIos) {
+              })), M.isIos) {
                 const t4 = U.call(e2, 'input[type="range"]');
-                Array.from(t4).forEach((e3) => this.bind(e3, i2, (e4) => P(e4.target)));
+                Array.from(t4).forEach(((e3) => this.bind(e3, i2, ((e4) => P(e4.target)))));
               }
-              this.bind(t3.inputs.seek, i2, (t4) => {
+              this.bind(t3.inputs.seek, i2, ((t4) => {
                 const i3 = t4.currentTarget;
                 let s2 = i3.getAttribute("seek-value");
                 S.empty(s2) && (s2 = i3.value), i3.removeAttribute("seek-value"), e2.currentTime = s2 / i3.max * e2.duration;
-              }, "seek"), this.bind(t3.progress, "mouseenter mouseleave mousemove", (t4) => Pe.updateSeekTooltip.call(e2, t4)), this.bind(t3.progress, "mousemove touchmove", (t4) => {
+              }), "seek"), this.bind(t3.progress, "mouseenter mouseleave mousemove", ((t4) => Pe.updateSeekTooltip.call(e2, t4))), this.bind(t3.progress, "mousemove touchmove", ((t4) => {
                 const { previewThumbnails: i3 } = e2;
                 i3 && i3.loaded && i3.startMove(t4);
-              }), this.bind(t3.progress, "mouseleave touchend click", () => {
+              })), this.bind(t3.progress, "mouseleave touchend click", (() => {
                 const { previewThumbnails: t4 } = e2;
                 t4 && t4.loaded && t4.endMove(false, true);
-              }), this.bind(t3.progress, "mousedown touchstart", (t4) => {
+              })), this.bind(t3.progress, "mousedown touchstart", ((t4) => {
                 const { previewThumbnails: i3 } = e2;
                 i3 && i3.loaded && i3.startScrubbing(t4);
-              }), this.bind(t3.progress, "mouseup touchend", (t4) => {
+              })), this.bind(t3.progress, "mouseup touchend", ((t4) => {
                 const { previewThumbnails: i3 } = e2;
                 i3 && i3.loaded && i3.endScrubbing(t4);
-              }), M.isWebKit && Array.from(U.call(e2, 'input[type="range"]')).forEach((t4) => {
-                this.bind(t4, "input", (t5) => Pe.updateRangeFill.call(e2, t5.target));
-              }), e2.config.toggleInvert && !S.element(t3.display.duration) && this.bind(t3.display.currentTime, "click", () => {
+              })), M.isWebKit && Array.from(U.call(e2, 'input[type="range"]')).forEach(((t4) => {
+                this.bind(t4, "input", ((t5) => Pe.updateRangeFill.call(e2, t5.target)));
+              })), e2.config.toggleInvert && !S.element(t3.display.duration) && this.bind(t3.display.currentTime, "click", (() => {
                 0 !== e2.currentTime && (e2.config.invertTime = !e2.config.invertTime, Pe.timeUpdate.call(e2));
-              }), this.bind(t3.inputs.volume, i2, (t4) => {
+              })), this.bind(t3.inputs.volume, i2, ((t4) => {
                 e2.volume = t4.target.value;
-              }, "volume"), this.bind(t3.controls, "mouseenter mouseleave", (i3) => {
+              }), "volume"), this.bind(t3.controls, "mouseenter mouseleave", ((i3) => {
                 t3.controls.hover = !e2.touch && "mouseenter" === i3.type;
-              }), t3.fullscreen && Array.from(t3.fullscreen.children).filter((e3) => !e3.contains(t3.container)).forEach((i3) => {
-                this.bind(i3, "mouseenter mouseleave", (i4) => {
+              })), t3.fullscreen && Array.from(t3.fullscreen.children).filter(((e3) => !e3.contains(t3.container))).forEach(((i3) => {
+                this.bind(i3, "mouseenter mouseleave", ((i4) => {
                   t3.controls && (t3.controls.hover = !e2.touch && "mouseenter" === i4.type);
-                });
-              }), this.bind(t3.controls, "mousedown mouseup touchstart touchend touchcancel", (e3) => {
+                }));
+              })), this.bind(t3.controls, "mousedown mouseup touchstart touchend touchcancel", ((e3) => {
                 t3.controls.pressed = ["mousedown", "touchstart"].includes(e3.type);
-              }), this.bind(t3.controls, "focusin", () => {
+              })), this.bind(t3.controls, "focusin", (() => {
                 const { config: i3, timers: s2 } = e2;
-                R(t3.controls, i3.classNames.noTransition, true), Fe.toggleControls.call(e2, true), setTimeout(() => {
+                R(t3.controls, i3.classNames.noTransition, true), Fe.toggleControls.call(e2, true), setTimeout((() => {
                   R(t3.controls, i3.classNames.noTransition, false);
-                }, 0);
+                }), 0);
                 const n2 = this.touch ? 3e3 : 4e3;
-                clearTimeout(s2.controls), s2.controls = setTimeout(() => Fe.toggleControls.call(e2, false), n2);
-              }), this.bind(t3.inputs.volume, "wheel", (t4) => {
-                const i3 = t4.webkitDirectionInvertedFromDevice, [s2, n2] = [t4.deltaX, -t4.deltaY].map((e3) => i3 ? -e3 : e3), a2 = Math.sign(Math.abs(s2) > Math.abs(n2) ? s2 : n2);
+                clearTimeout(s2.controls), s2.controls = setTimeout((() => Fe.toggleControls.call(e2, false)), n2);
+              })), this.bind(t3.inputs.volume, "wheel", ((t4) => {
+                const i3 = t4.webkitDirectionInvertedFromDevice, [s2, n2] = [t4.deltaX, -t4.deltaY].map(((e3) => i3 ? -e3 : e3)), a2 = Math.sign(Math.abs(s2) > Math.abs(n2) ? s2 : n2);
                 e2.increaseVolume(a2 / 50);
                 const { volume: l2 } = e2.media;
                 (1 === a2 && l2 < 1 || -1 === a2 && l2 > 0) && t4.preventDefault();
-              }, "volume", false);
-            }), this.player = t2, this.lastKey = null, this.focusTimer = null, this.lastKeyDown = null, this.handleKey = this.handleKey.bind(this), this.toggleMenu = this.toggleMenu.bind(this), this.firstTouch = this.firstTouch.bind(this);
+              }), "volume", false);
+            })), this.player = t2, this.lastKey = null, this.focusTimer = null, this.lastKeyDown = null, this.handleKey = this.handleKey.bind(this), this.toggleMenu = this.toggleMenu.bind(this), this.firstTouch = this.firstTouch.bind(this);
           }
           handleKey(e2) {
             const { player: t2 } = this, { elements: i2 } = t2, { key: s2, type: n2, altKey: a2, ctrlKey: l2, metaKey: r2, shiftKey: o2 } = e2, c2 = "keydown" === n2, u2 = c2 && s2 === this.lastKey;
@@ -1712,10 +1712,10 @@
           }
         }
         "undefined" != typeof globalThis ? globalThis : "undefined" != typeof window ? window : "undefined" != typeof global ? global : "undefined" != typeof self && self;
-        var Ue = function(e2, t2) {
+        var Ue = (function(e2, t2) {
           return e2(t2 = { exports: {} }, t2.exports), t2.exports;
-        }(function(e2, t2) {
-          e2.exports = function() {
+        })((function(e2, t2) {
+          e2.exports = (function() {
             var e3 = function() {
             }, t3 = {}, i2 = {}, s2 = {};
             function n2(e4, t4) {
@@ -1766,17 +1766,17 @@
                 t3[n3] = true;
               }
               function c3(t4, i4) {
-                o2(e4, function(e5) {
+                o2(e4, (function(e5) {
                   l2(r3, e5), t4 && l2({ success: t4, error: i4 }, e5), a2(n3, e5);
-                }, r3);
+                }), r3);
               }
               if (r3.returnPromise) return new Promise(c3);
               c3();
             }
             return c2.ready = function(e4, t4) {
-              return n2(e4, function(e5) {
+              return n2(e4, (function(e5) {
                 l2(t4, e5);
-              }), c2;
+              })), c2;
             }, c2.done = function(e4) {
               a2(e4, []);
             }, c2.reset = function() {
@@ -1784,30 +1784,30 @@
             }, c2.isDefined = function(e4) {
               return e4 in t3;
             }, c2;
-          }();
-        });
+          })();
+        }));
         function Be(e2) {
-          return new Promise((t2, i2) => {
+          return new Promise(((t2, i2) => {
             Ue(e2, { success: t2, error: i2 });
-          });
+          }));
         }
         function We(e2) {
           e2 && !this.embed.hasPlayed && (this.embed.hasPlayed = true), this.media.paused === e2 && (this.media.paused = !e2, Z.call(this, this.media, e2 ? "play" : "pause"));
         }
         const ze = { setup() {
           const e2 = this;
-          R(e2.elements.wrapper, e2.config.classNames.embed, true), e2.options.speed = e2.config.speed.options, ue.call(e2), S.object(window.Vimeo) ? ze.ready.call(e2) : Be(e2.config.urls.vimeo.sdk).then(() => {
+          R(e2.elements.wrapper, e2.config.classNames.embed, true), e2.options.speed = e2.config.speed.options, ue.call(e2), S.object(window.Vimeo) ? ze.ready.call(e2) : Be(e2.config.urls.vimeo.sdk).then((() => {
             ze.ready.call(e2);
-          }).catch((t2) => {
+          })).catch(((t2) => {
             e2.debug.warn("Vimeo SDK (player.js) failed to load", t2);
-          });
+          }));
         }, ready() {
           const e2 = this, t2 = e2.config.vimeo, _a = t2, { premium: i2, referrerPolicy: s2 } = _a, n2 = __objRest(_a, ["premium", "referrerPolicy"]);
           let a2 = e2.media.getAttribute("src"), l2 = "";
-          S.empty(a2) ? (a2 = e2.media.getAttribute(e2.config.attributes.embed.id), l2 = e2.media.getAttribute(e2.config.attributes.embed.hash)) : l2 = function(e3) {
+          S.empty(a2) ? (a2 = e2.media.getAttribute(e2.config.attributes.embed.id), l2 = e2.media.getAttribute(e2.config.attributes.embed.hash)) : l2 = (function(e3) {
             const t3 = e3.match(/^.*(vimeo.com\/|video\/)(\d+)(\?.*&*h=|\/)+([\d,a-f]+)/);
             return t3 && 5 === t3.length ? t3[4] : null;
-          }(a2);
+          })(a2);
           const r2 = l2 ? { h: l2 } : {};
           i2 && Object.assign(n2, { controls: false, sidedock: false });
           const o2 = Ne(__spreadValues(__spreadValues({ loop: e2.config.loop.active, autoplay: e2.autoplay, muted: e2.muted, gesture: "media", playsinline: e2.config.playsinline }, r2), n2)), c2 = (u2 = a2, S.empty(u2) ? null : S.number(Number(u2)) ? u2 : u2.match(/^.*(vimeo.com\/|video\/)(\d+).*/) ? RegExp.$2 : u2);
@@ -1818,95 +1818,95 @@
             const t3 = $("div", { class: e2.config.classNames.embedContainer, "data-poster": e2.poster });
             t3.appendChild(h2), e2.media = q(t3, e2.media);
           }
-          t2.customControls || Te(me(e2.config.urls.vimeo.api, d2)).then((t3) => {
-            !S.empty(t3) && t3.thumbnail_url && Fe.setPoster.call(e2, t3.thumbnail_url).catch(() => {
-            });
-          }), e2.embed = new window.Vimeo.Player(h2, { autopause: e2.config.autopause, muted: e2.muted }), e2.media.paused = true, e2.media.currentTime = 0, e2.supported.ui && e2.embed.disableTextTrack(), e2.media.play = () => (We.call(e2, true), e2.embed.play()), e2.media.pause = () => (We.call(e2, false), e2.embed.pause()), e2.media.stop = () => {
+          t2.customControls || Te(me(e2.config.urls.vimeo.api, d2)).then(((t3) => {
+            !S.empty(t3) && t3.thumbnail_url && Fe.setPoster.call(e2, t3.thumbnail_url).catch((() => {
+            }));
+          })), e2.embed = new window.Vimeo.Player(h2, { autopause: e2.config.autopause, muted: e2.muted }), e2.media.paused = true, e2.media.currentTime = 0, e2.supported.ui && e2.embed.disableTextTrack(), e2.media.play = () => (We.call(e2, true), e2.embed.play()), e2.media.pause = () => (We.call(e2, false), e2.embed.pause()), e2.media.stop = () => {
             e2.pause(), e2.currentTime = 0;
           };
           let { currentTime: m2 } = e2.media;
           Object.defineProperty(e2.media, "currentTime", { get: () => m2, set(t3) {
             const { embed: i3, media: s3, paused: n3, volume: a3 } = e2, l3 = n3 && !i3.hasPlayed;
-            s3.seeking = true, Z.call(e2, s3, "seeking"), Promise.resolve(l3 && i3.setVolume(0)).then(() => i3.setCurrentTime(t3)).then(() => l3 && i3.pause()).then(() => l3 && i3.setVolume(a3)).catch(() => {
-            });
+            s3.seeking = true, Z.call(e2, s3, "seeking"), Promise.resolve(l3 && i3.setVolume(0)).then((() => i3.setCurrentTime(t3))).then((() => l3 && i3.pause())).then((() => l3 && i3.setVolume(a3))).catch((() => {
+            }));
           } });
           let p2 = e2.config.speed.selected;
           Object.defineProperty(e2.media, "playbackRate", { get: () => p2, set(t3) {
-            e2.embed.setPlaybackRate(t3).then(() => {
+            e2.embed.setPlaybackRate(t3).then((() => {
               p2 = t3, Z.call(e2, e2.media, "ratechange");
-            }).catch(() => {
+            })).catch((() => {
               e2.options.speed = [1];
-            });
+            }));
           } });
           let { volume: g2 } = e2.config;
           Object.defineProperty(e2.media, "volume", { get: () => g2, set(t3) {
-            e2.embed.setVolume(t3).then(() => {
+            e2.embed.setVolume(t3).then((() => {
               g2 = t3, Z.call(e2, e2.media, "volumechange");
-            });
+            }));
           } });
           let { muted: f2 } = e2.config;
           Object.defineProperty(e2.media, "muted", { get: () => f2, set(t3) {
             const i3 = !!S.boolean(t3) && t3;
-            e2.embed.setMuted(!!i3 || e2.config.muted).then(() => {
+            e2.embed.setMuted(!!i3 || e2.config.muted).then((() => {
               f2 = i3, Z.call(e2, e2.media, "volumechange");
-            });
+            }));
           } });
           let y2, { loop: b2 } = e2.config;
           Object.defineProperty(e2.media, "loop", { get: () => b2, set(t3) {
             const i3 = S.boolean(t3) ? t3 : e2.config.loop.active;
-            e2.embed.setLoop(i3).then(() => {
+            e2.embed.setLoop(i3).then((() => {
               b2 = i3;
-            });
-          } }), e2.embed.getVideoUrl().then((t3) => {
+            }));
+          } }), e2.embed.getVideoUrl().then(((t3) => {
             y2 = t3, Pe.setDownloadUrl.call(e2);
-          }).catch((e3) => {
+          })).catch(((e3) => {
             this.debug.warn(e3);
-          }), Object.defineProperty(e2.media, "currentSrc", { get: () => y2 }), Object.defineProperty(e2.media, "ended", { get: () => e2.currentTime === e2.duration }), Promise.all([e2.embed.getVideoWidth(), e2.embed.getVideoHeight()]).then((t3) => {
+          })), Object.defineProperty(e2.media, "currentSrc", { get: () => y2 }), Object.defineProperty(e2.media, "ended", { get: () => e2.currentTime === e2.duration }), Promise.all([e2.embed.getVideoWidth(), e2.embed.getVideoHeight()]).then(((t3) => {
             const [i3, s3] = t3;
             e2.embed.ratio = he(i3, s3), ue.call(this);
-          }), e2.embed.setAutopause(e2.config.autopause).then((t3) => {
+          })), e2.embed.setAutopause(e2.config.autopause).then(((t3) => {
             e2.config.autopause = t3;
-          }), e2.embed.getVideoTitle().then((t3) => {
+          })), e2.embed.getVideoTitle().then(((t3) => {
             e2.config.title = t3, Fe.setTitle.call(this);
-          }), e2.embed.getCurrentTime().then((t3) => {
+          })), e2.embed.getCurrentTime().then(((t3) => {
             m2 = t3, Z.call(e2, e2.media, "timeupdate");
-          }), e2.embed.getDuration().then((t3) => {
+          })), e2.embed.getDuration().then(((t3) => {
             e2.media.duration = t3, Z.call(e2, e2.media, "durationchange");
-          }), e2.embed.getTextTracks().then((t3) => {
+          })), e2.embed.getTextTracks().then(((t3) => {
             e2.media.textTracks = t3, xe.setup.call(e2);
-          }), e2.embed.on("cuechange", ({ cues: t3 = [] }) => {
-            const i3 = t3.map((e3) => function(e4) {
+          })), e2.embed.on("cuechange", (({ cues: t3 = [] }) => {
+            const i3 = t3.map(((e3) => (function(e4) {
               const t4 = document.createDocumentFragment(), i4 = document.createElement("div");
               return t4.appendChild(i4), i4.innerHTML = e4, t4.firstChild.innerText;
-            }(e3.text));
+            })(e3.text)));
             xe.updateCues.call(e2, i3);
-          }), e2.embed.on("loaded", () => {
-            if (e2.embed.getPaused().then((t3) => {
+          })), e2.embed.on("loaded", (() => {
+            if (e2.embed.getPaused().then(((t3) => {
               We.call(e2, !t3), t3 || Z.call(e2, e2.media, "playing");
-            }), S.element(e2.embed.element) && e2.supported.ui) {
+            })), S.element(e2.embed.element) && e2.supported.ui) {
               e2.embed.element.setAttribute("tabindex", -1);
             }
-          }), e2.embed.on("bufferstart", () => {
+          })), e2.embed.on("bufferstart", (() => {
             Z.call(e2, e2.media, "waiting");
-          }), e2.embed.on("bufferend", () => {
+          })), e2.embed.on("bufferend", (() => {
             Z.call(e2, e2.media, "playing");
-          }), e2.embed.on("play", () => {
+          })), e2.embed.on("play", (() => {
             We.call(e2, true), Z.call(e2, e2.media, "playing");
-          }), e2.embed.on("pause", () => {
+          })), e2.embed.on("pause", (() => {
             We.call(e2, false);
-          }), e2.embed.on("timeupdate", (t3) => {
+          })), e2.embed.on("timeupdate", ((t3) => {
             e2.media.seeking = false, m2 = t3.seconds, Z.call(e2, e2.media, "timeupdate");
-          }), e2.embed.on("progress", (t3) => {
-            e2.media.buffered = t3.percent, Z.call(e2, e2.media, "progress"), 1 === parseInt(t3.percent, 10) && Z.call(e2, e2.media, "canplaythrough"), e2.embed.getDuration().then((t4) => {
+          })), e2.embed.on("progress", ((t3) => {
+            e2.media.buffered = t3.percent, Z.call(e2, e2.media, "progress"), 1 === parseInt(t3.percent, 10) && Z.call(e2, e2.media, "canplaythrough"), e2.embed.getDuration().then(((t4) => {
               t4 !== e2.media.duration && (e2.media.duration = t4, Z.call(e2, e2.media, "durationchange"));
-            });
-          }), e2.embed.on("seeked", () => {
+            }));
+          })), e2.embed.on("seeked", (() => {
             e2.media.seeking = false, Z.call(e2, e2.media, "seeked");
-          }), e2.embed.on("ended", () => {
+          })), e2.embed.on("ended", (() => {
             e2.media.paused = true, Z.call(e2, e2.media, "ended");
-          }), e2.embed.on("error", (t3) => {
+          })), e2.embed.on("error", ((t3) => {
             e2.media.error = t3, Z.call(e2, e2.media, "error");
-          }), t2.customControls && setTimeout(() => Fe.build.call(e2), 0);
+          })), t2.customControls && setTimeout((() => Fe.build.call(e2)), 0);
         } };
         function Ke(e2) {
           e2 && !this.embed.hasPlayed && (this.embed.hasPlayed = true), this.media.paused === e2 && (this.media.paused = !e2, Z.call(this, this.media, e2 ? "play" : "pause"));
@@ -1920,20 +1920,20 @@
             const e2 = window.onYouTubeIframeAPIReady;
             window.onYouTubeIframeAPIReady = () => {
               S.function(e2) && e2(), Qe.ready.call(this);
-            }, Be(this.config.urls.youtube.sdk).catch((e3) => {
+            }, Be(this.config.urls.youtube.sdk).catch(((e3) => {
               this.debug.warn("YouTube API failed to load", e3);
-            });
+            }));
           }
         }, getTitle(e2) {
-          Te(me(this.config.urls.youtube.api, e2)).then((e3) => {
+          Te(me(this.config.urls.youtube.api, e2)).then(((e3) => {
             if (S.object(e3)) {
               const { title: t2, height: i2, width: s2 } = e3;
               this.config.title = t2, Fe.setTitle.call(this), this.embed.ratio = he(s2, i2);
             }
             ue.call(this);
-          }).catch(() => {
+          })).catch((() => {
             ue.call(this);
-          });
+          }));
         }, ready() {
           const e2 = this, t2 = e2.config.youtube, i2 = e2.media && e2.media.getAttribute("id");
           if (!S.empty(i2) && i2.startsWith("youtube-")) return;
@@ -1944,10 +1944,10 @@
           const l2 = $("div", { id: "".concat(e2.provider, "-").concat(Math.floor(1e4 * Math.random())), "data-poster": t2.customControls ? e2.poster : void 0 });
           if (e2.media = q(l2, e2.media), t2.customControls) {
             const t3 = (e3) => "https://i.ytimg.com/vi/".concat(n2, "/").concat(e3, "default.jpg");
-            Re(t3("maxres"), 121).catch(() => Re(t3("sd"), 121)).catch(() => Re(t3("hq"))).then((t4) => Fe.setPoster.call(e2, t4.src)).then((t4) => {
+            Re(t3("maxres"), 121).catch((() => Re(t3("sd"), 121))).catch((() => Re(t3("hq")))).then(((t4) => Fe.setPoster.call(e2, t4.src))).then(((t4) => {
               t4.includes("maxres") || (e2.elements.poster.style.backgroundSize = "cover");
-            }).catch(() => {
-            });
+            })).catch((() => {
+            }));
           }
           e2.embed = new window.YT.Player(e2.media, { videoId: n2, host: Ye(t2), playerVars: x({}, { autoplay: e2.config.autoplay ? 1 : 0, hl: e2.config.hl, controls: e2.supported.ui && t2.customControls ? 0 : 1, disablekb: 1, playsinline: e2.config.playsinline && !e2.config.fullscreen.iosNative ? 1 : 0, cc_load_policy: e2.captions.active ? 1 : 0, cc_lang_pref: e2.config.captions.language, widget_referrer: window ? window.location.href : null }, t2), events: { onError(t3) {
             if (!e2.media.error) {
@@ -1981,9 +1981,9 @@
               l3 = i4, s3[i4 ? "mute" : "unMute"](), s3.setVolume(100 * a3), Z.call(e2, e2.media, "volumechange");
             } }), Object.defineProperty(e2.media, "currentSrc", { get: () => s3.getVideoUrl() }), Object.defineProperty(e2.media, "ended", { get: () => e2.currentTime === e2.duration });
             const r2 = s3.getAvailablePlaybackRates();
-            e2.options.speed = r2.filter((t3) => e2.config.speed.options.includes(t3)), e2.supported.ui && t2.customControls && e2.media.setAttribute("tabindex", -1), Z.call(e2, e2.media, "timeupdate"), Z.call(e2, e2.media, "durationchange"), clearInterval(e2.timers.buffering), e2.timers.buffering = setInterval(() => {
+            e2.options.speed = r2.filter(((t3) => e2.config.speed.options.includes(t3))), e2.supported.ui && t2.customControls && e2.media.setAttribute("tabindex", -1), Z.call(e2, e2.media, "timeupdate"), Z.call(e2, e2.media, "durationchange"), clearInterval(e2.timers.buffering), e2.timers.buffering = setInterval((() => {
               e2.media.buffered = s3.getVideoLoadedFraction(), (null === e2.media.lastBuffered || e2.media.lastBuffered < e2.media.buffered) && Z.call(e2, e2.media, "progress"), e2.media.lastBuffered = e2.media.buffered, 1 === e2.media.buffered && (clearInterval(e2.timers.buffering), Z.call(e2, e2.media, "canplaythrough"));
-            }, 200), t2.customControls && setTimeout(() => Fe.build.call(e2), 50);
+            }), 200), t2.customControls && setTimeout((() => Fe.build.call(e2)), 50);
           }, onStateChange(i3) {
             const s3 = i3.target;
             clearInterval(e2.timers.playing);
@@ -1995,9 +1995,9 @@
                 Ke.call(e2, false), e2.media.loop ? (s3.stopVideo(), s3.playVideo()) : Z.call(e2, e2.media, "ended");
                 break;
               case 1:
-                t2.customControls && !e2.config.autoplay && e2.media.paused && !e2.embed.hasPlayed ? e2.media.pause() : (Ke.call(e2, true), Z.call(e2, e2.media, "playing"), e2.timers.playing = setInterval(() => {
+                t2.customControls && !e2.config.autoplay && e2.media.paused && !e2.embed.hasPlayed ? e2.media.pause() : (Ke.call(e2, true), Z.call(e2, e2.media, "playing"), e2.timers.playing = setInterval((() => {
                   Z.call(e2, e2.media, "timeupdate");
-                }, 50), e2.media.duration !== s3.getDuration() && (e2.media.duration = s3.getDuration(), Z.call(e2, e2.media, "durationchange")));
+                }), 50), e2.media.duration !== s3.getDuration() && (e2.media.duration = s3.getDuration(), Z.call(e2, e2.media, "durationchange")));
                 break;
               case 2:
                 e2.muted || e2.embed.unMute(), Ke.call(e2, false);
@@ -2012,20 +2012,20 @@
         } };
         class Je {
           constructor(t2) {
-            e(this, "load", () => {
-              this.enabled && (S.object(window.google) && S.object(window.google.ima) ? this.ready() : Be(this.player.config.urls.googleIMA.sdk).then(() => {
+            e(this, "load", (() => {
+              this.enabled && (S.object(window.google) && S.object(window.google.ima) ? this.ready() : Be(this.player.config.urls.googleIMA.sdk).then((() => {
                 this.ready();
-              }).catch(() => {
+              })).catch((() => {
                 this.trigger("error", new Error("Google IMA SDK failed to load"));
-              }));
-            }), e(this, "ready", () => {
+              })));
+            })), e(this, "ready", (() => {
               var e2;
-              this.enabled || ((e2 = this).manager && e2.manager.destroy(), e2.elements.displayContainer && e2.elements.displayContainer.destroy(), e2.elements.container.remove()), this.startSafetyTimer(12e3, "ready()"), this.managerPromise.then(() => {
+              this.enabled || ((e2 = this).manager && e2.manager.destroy(), e2.elements.displayContainer && e2.elements.displayContainer.destroy(), e2.elements.container.remove()), this.startSafetyTimer(12e3, "ready()"), this.managerPromise.then((() => {
                 this.clearSafetyTimer("onAdsManagerLoaded()");
-              }), this.listeners(), this.setupIMA();
-            }), e(this, "setupIMA", () => {
-              this.elements.container = $("div", { class: this.player.config.classNames.ads }), this.player.elements.container.appendChild(this.elements.container), google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.ENABLED), google.ima.settings.setLocale(this.player.config.ads.language), google.ima.settings.setDisableCustomPlaybackForIOS10Plus(this.player.config.playsinline), this.elements.displayContainer = new google.ima.AdDisplayContainer(this.elements.container, this.player.media), this.loader = new google.ima.AdsLoader(this.elements.displayContainer), this.loader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, (e2) => this.onAdsManagerLoaded(e2), false), this.loader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, (e2) => this.onAdError(e2), false), this.requestAds();
-            }), e(this, "requestAds", () => {
+              })), this.listeners(), this.setupIMA();
+            })), e(this, "setupIMA", (() => {
+              this.elements.container = $("div", { class: this.player.config.classNames.ads }), this.player.elements.container.appendChild(this.elements.container), google.ima.settings.setVpaidMode(google.ima.ImaSdkSettings.VpaidMode.ENABLED), google.ima.settings.setLocale(this.player.config.ads.language), google.ima.settings.setDisableCustomPlaybackForIOS10Plus(this.player.config.playsinline), this.elements.displayContainer = new google.ima.AdDisplayContainer(this.elements.container, this.player.media), this.loader = new google.ima.AdsLoader(this.elements.displayContainer), this.loader.addEventListener(google.ima.AdsManagerLoadedEvent.Type.ADS_MANAGER_LOADED, ((e2) => this.onAdsManagerLoaded(e2)), false), this.loader.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, ((e2) => this.onAdError(e2)), false), this.requestAds();
+            })), e(this, "requestAds", (() => {
               const { container: e2 } = this.player.elements;
               try {
                 const t3 = new google.ima.AdsRequest();
@@ -2033,20 +2033,20 @@
               } catch (e3) {
                 this.onAdError(e3);
               }
-            }), e(this, "pollCountdown", (e2 = false) => {
+            })), e(this, "pollCountdown", ((e2 = false) => {
               if (!e2) return clearInterval(this.countdownTimer), void this.elements.container.removeAttribute("data-badge-text");
-              this.countdownTimer = setInterval(() => {
+              this.countdownTimer = setInterval((() => {
                 const e3 = Ee(Math.max(this.manager.getRemainingTime(), 0)), t3 = "".concat(ve.get("advertisement", this.player.config), " - ").concat(e3);
                 this.elements.container.setAttribute("data-badge-text", t3);
-              }, 100);
-            }), e(this, "onAdsManagerLoaded", (e2) => {
+              }), 100);
+            })), e(this, "onAdsManagerLoaded", ((e2) => {
               if (!this.enabled) return;
               const t3 = new google.ima.AdsRenderingSettings();
-              t3.restoreCustomPlaybackStateOnAdBreakComplete = true, t3.enablePreloading = true, this.manager = e2.getAdsManager(this.player, t3), this.cuePoints = this.manager.getCuePoints(), this.manager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, (e3) => this.onAdError(e3)), Object.keys(google.ima.AdEvent.Type).forEach((e3) => {
-                this.manager.addEventListener(google.ima.AdEvent.Type[e3], (e4) => this.onAdEvent(e4));
-              }), this.trigger("loaded");
-            }), e(this, "addCuePoints", () => {
-              S.empty(this.cuePoints) || this.cuePoints.forEach((e2) => {
+              t3.restoreCustomPlaybackStateOnAdBreakComplete = true, t3.enablePreloading = true, this.manager = e2.getAdsManager(this.player, t3), this.cuePoints = this.manager.getCuePoints(), this.manager.addEventListener(google.ima.AdErrorEvent.Type.AD_ERROR, ((e3) => this.onAdError(e3))), Object.keys(google.ima.AdEvent.Type).forEach(((e3) => {
+                this.manager.addEventListener(google.ima.AdEvent.Type[e3], ((e4) => this.onAdEvent(e4)));
+              })), this.trigger("loaded");
+            })), e(this, "addCuePoints", (() => {
+              S.empty(this.cuePoints) || this.cuePoints.forEach(((e2) => {
                 if (0 !== e2 && -1 !== e2 && e2 < this.player.duration) {
                   const t3 = this.player.elements.progress;
                   if (S.element(t3)) {
@@ -2054,8 +2054,8 @@
                     s2.style.left = "".concat(i2.toString(), "%"), t3.appendChild(s2);
                   }
                 }
-              });
-            }), e(this, "onAdEvent", (e2) => {
+              }));
+            })), e(this, "onAdEvent", ((e2) => {
               const { container: t3 } = this.player.elements, i2 = e2.getAd(), s2 = e2.getAdData();
               switch (((e3) => {
                 Z.call(this.player, this.player.media, "ads".concat(e3.replace(/_/g, "").toLowerCase()));
@@ -2078,63 +2078,63 @@
                 case google.ima.AdEvent.Type.LOG:
                   s2.adError && this.player.debug.warn("Non-fatal ad error: ".concat(s2.adError.getMessage()));
               }
-            }), e(this, "onAdError", (e2) => {
+            })), e(this, "onAdError", ((e2) => {
               this.cancel(), this.player.debug.warn("Ads error", e2);
-            }), e(this, "listeners", () => {
+            })), e(this, "listeners", (() => {
               const { container: e2 } = this.player.elements;
               let t3;
-              this.player.on("canplay", () => {
+              this.player.on("canplay", (() => {
                 this.addCuePoints();
-              }), this.player.on("ended", () => {
+              })), this.player.on("ended", (() => {
                 this.loader.contentComplete();
-              }), this.player.on("timeupdate", () => {
+              })), this.player.on("timeupdate", (() => {
                 t3 = this.player.currentTime;
-              }), this.player.on("seeked", () => {
+              })), this.player.on("seeked", (() => {
                 const e3 = this.player.currentTime;
-                S.empty(this.cuePoints) || this.cuePoints.forEach((i2, s2) => {
+                S.empty(this.cuePoints) || this.cuePoints.forEach(((i2, s2) => {
                   t3 < i2 && i2 < e3 && (this.manager.discardAdBreak(), this.cuePoints.splice(s2, 1));
-                });
-              }), window.addEventListener("resize", () => {
+                }));
+              })), window.addEventListener("resize", (() => {
                 this.manager && this.manager.resize(e2.offsetWidth, e2.offsetHeight, google.ima.ViewMode.NORMAL);
-              });
-            }), e(this, "play", () => {
+              }));
+            })), e(this, "play", (() => {
               const { container: e2 } = this.player.elements;
-              this.managerPromise || this.resumeContent(), this.managerPromise.then(() => {
+              this.managerPromise || this.resumeContent(), this.managerPromise.then((() => {
                 this.manager.setVolume(this.player.volume), this.elements.displayContainer.initialize();
                 try {
                   this.initialized || (this.manager.init(e2.offsetWidth, e2.offsetHeight, google.ima.ViewMode.NORMAL), this.manager.start()), this.initialized = true;
                 } catch (e3) {
                   this.onAdError(e3);
                 }
-              }).catch(() => {
-              });
-            }), e(this, "resumeContent", () => {
+              })).catch((() => {
+              }));
+            })), e(this, "resumeContent", (() => {
               this.elements.container.style.zIndex = "", this.playing = false, ie(this.player.media.play());
-            }), e(this, "pauseContent", () => {
+            })), e(this, "pauseContent", (() => {
               this.elements.container.style.zIndex = 3, this.playing = true, this.player.media.pause();
-            }), e(this, "cancel", () => {
+            })), e(this, "cancel", (() => {
               this.initialized && this.resumeContent(), this.trigger("error"), this.loadAds();
-            }), e(this, "loadAds", () => {
-              this.managerPromise.then(() => {
-                this.manager && this.manager.destroy(), this.managerPromise = new Promise((e2) => {
+            })), e(this, "loadAds", (() => {
+              this.managerPromise.then((() => {
+                this.manager && this.manager.destroy(), this.managerPromise = new Promise(((e2) => {
                   this.on("loaded", e2), this.player.debug.log(this.manager);
-                }), this.initialized = false, this.requestAds();
-              }).catch(() => {
-              });
-            }), e(this, "trigger", (e2, ...t3) => {
+                })), this.initialized = false, this.requestAds();
+              })).catch((() => {
+              }));
+            })), e(this, "trigger", ((e2, ...t3) => {
               const i2 = this.events[e2];
-              S.array(i2) && i2.forEach((e3) => {
+              S.array(i2) && i2.forEach(((e3) => {
                 S.function(e3) && e3.apply(this, t3);
-              });
-            }), e(this, "on", (e2, t3) => (S.array(this.events[e2]) || (this.events[e2] = []), this.events[e2].push(t3), this)), e(this, "startSafetyTimer", (e2, t3) => {
-              this.player.debug.log("Safety timer invoked from: ".concat(t3)), this.safetyTimer = setTimeout(() => {
+              }));
+            })), e(this, "on", ((e2, t3) => (S.array(this.events[e2]) || (this.events[e2] = []), this.events[e2].push(t3), this))), e(this, "startSafetyTimer", ((e2, t3) => {
+              this.player.debug.log("Safety timer invoked from: ".concat(t3)), this.safetyTimer = setTimeout((() => {
                 this.cancel(), this.clearSafetyTimer("startSafetyTimer()");
-              }, e2);
-            }), e(this, "clearSafetyTimer", (e2) => {
+              }), e2);
+            })), e(this, "clearSafetyTimer", ((e2) => {
               S.nullOrUndefined(this.safetyTimer) || (this.player.debug.log("Safety timer cleared from: ".concat(e2)), clearTimeout(this.safetyTimer), this.safetyTimer = null);
-            }), this.player = t2, this.config = t2.config.ads, this.playing = false, this.initialized = false, this.elements = { container: null, displayContainer: null }, this.manager = null, this.loader = null, this.cuePoints = null, this.events = {}, this.safetyTimer = null, this.countdownTimer = null, this.managerPromise = new Promise((e2, t3) => {
+            })), this.player = t2, this.config = t2.config.ads, this.playing = false, this.initialized = false, this.elements = { container: null, displayContainer: null }, this.manager = null, this.loader = null, this.cuePoints = null, this.events = {}, this.safetyTimer = null, this.countdownTimer = null, this.managerPromise = new Promise(((e2, t3) => {
               this.on("loaded", e2), this.on("error", t3);
-            }), this.load();
+            })), this.load();
           }
           get enabled() {
             const { config: e2 } = this;
@@ -2151,9 +2151,9 @@
         }
         const Ze = (e2) => {
           const t2 = [];
-          return e2.split(/\r\n\r\n|\n\n|\r\r/).forEach((e3) => {
+          return e2.split(/\r\n\r\n|\n\n|\r\r/).forEach(((e3) => {
             const i2 = {};
-            e3.split(/\r\n|\n|\r/).forEach((e4) => {
+            e3.split(/\r\n|\n|\r/).forEach(((e4) => {
               if (S.number(i2.startTime)) {
                 if (!S.empty(e4.trim()) && S.empty(i2.text)) {
                   const t3 = e4.trim().split("#xywh=");
@@ -2163,82 +2163,82 @@
                 const t3 = e4.match(/([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})( ?--> ?)([0-9]{2})?:?([0-9]{2}):([0-9]{2}).([0-9]{2,3})/);
                 t3 && (i2.startTime = 60 * Number(t3[1] || 0) * 60 + 60 * Number(t3[2]) + Number(t3[3]) + Number("0.".concat(t3[4])), i2.endTime = 60 * Number(t3[6] || 0) * 60 + 60 * Number(t3[7]) + Number(t3[8]) + Number("0.".concat(t3[9])));
               }
-            }), i2.text && t2.push(i2);
-          }), t2;
+            })), i2.text && t2.push(i2);
+          })), t2;
         }, et = (e2, t2) => {
           const i2 = {};
           return e2 > t2.width / t2.height ? (i2.width = t2.width, i2.height = 1 / e2 * t2.width) : (i2.height = t2.height, i2.width = e2 * t2.height), i2;
         };
         class tt {
           constructor(t2) {
-            e(this, "load", () => {
-              this.player.elements.display.seekTooltip && (this.player.elements.display.seekTooltip.hidden = this.enabled), this.enabled && this.getThumbnails().then(() => {
+            e(this, "load", (() => {
+              this.player.elements.display.seekTooltip && (this.player.elements.display.seekTooltip.hidden = this.enabled), this.enabled && this.getThumbnails().then((() => {
                 this.enabled && (this.render(), this.determineContainerAutoSizing(), this.listeners(), this.loaded = true);
-              });
-            }), e(this, "getThumbnails", () => new Promise((e2) => {
+              }));
+            })), e(this, "getThumbnails", (() => new Promise(((e2) => {
               const { src: t3 } = this.player.config.previewThumbnails;
               if (S.empty(t3)) throw new Error("Missing previewThumbnails.src config attribute");
               const i2 = () => {
-                this.thumbnails.sort((e3, t4) => e3.height - t4.height), this.player.debug.log("Preview thumbnails", this.thumbnails), e2();
+                this.thumbnails.sort(((e3, t4) => e3.height - t4.height)), this.player.debug.log("Preview thumbnails", this.thumbnails), e2();
               };
-              if (S.function(t3)) t3((e3) => {
+              if (S.function(t3)) t3(((e3) => {
                 this.thumbnails = e3, i2();
-              });
+              }));
               else {
-                const e3 = (S.string(t3) ? [t3] : t3).map((e4) => this.getThumbnail(e4));
+                const e3 = (S.string(t3) ? [t3] : t3).map(((e4) => this.getThumbnail(e4)));
                 Promise.all(e3).then(i2);
               }
-            })), e(this, "getThumbnail", (e2) => new Promise((t3) => {
-              Te(e2).then((i2) => {
+            })))), e(this, "getThumbnail", ((e2) => new Promise(((t3) => {
+              Te(e2).then(((i2) => {
                 const s2 = { frames: Ze(i2), height: null, urlPrefix: "" };
                 s2.frames[0].text.startsWith("/") || s2.frames[0].text.startsWith("http://") || s2.frames[0].text.startsWith("https://") || (s2.urlPrefix = e2.substring(0, e2.lastIndexOf("/") + 1));
                 const n2 = new Image();
                 n2.onload = () => {
                   s2.height = n2.naturalHeight, s2.width = n2.naturalWidth, this.thumbnails.push(s2), t3();
                 }, n2.src = s2.urlPrefix + s2.frames[0].text;
-              });
-            })), e(this, "startMove", (e2) => {
+              }));
+            })))), e(this, "startMove", ((e2) => {
               if (this.loaded && S.event(e2) && ["touchmove", "mousemove"].includes(e2.type) && this.player.media.duration) {
                 if ("touchmove" === e2.type) this.seekTime = this.player.media.duration * (this.player.elements.inputs.seek.value / 100);
                 else {
                   var t3, i2;
                   const s2 = this.player.elements.progress.getBoundingClientRect(), n2 = 100 / s2.width * (e2.pageX - s2.left);
                   this.seekTime = this.player.media.duration * (n2 / 100), this.seekTime < 0 && (this.seekTime = 0), this.seekTime > this.player.media.duration - 1 && (this.seekTime = this.player.media.duration - 1), this.mousePosX = e2.pageX, this.elements.thumb.time.innerText = Ee(this.seekTime);
-                  const a2 = null === (t3 = this.player.config.markers) || void 0 === t3 || null === (i2 = t3.points) || void 0 === i2 ? void 0 : i2.find(({ time: e3 }) => e3 === Math.round(this.seekTime));
+                  const a2 = null === (t3 = this.player.config.markers) || void 0 === t3 || null === (i2 = t3.points) || void 0 === i2 ? void 0 : i2.find((({ time: e3 }) => e3 === Math.round(this.seekTime)));
                   a2 && this.elements.thumb.time.insertAdjacentHTML("afterbegin", "".concat(a2.label, "<br>"));
                 }
                 this.showImageAtCurrentTime();
               }
-            }), e(this, "endMove", () => {
+            })), e(this, "endMove", (() => {
               this.toggleThumbContainer(false, true);
-            }), e(this, "startScrubbing", (e2) => {
+            })), e(this, "startScrubbing", ((e2) => {
               (S.nullOrUndefined(e2.button) || false === e2.button || 0 === e2.button) && (this.mouseDown = true, this.player.media.duration && (this.toggleScrubbingContainer(true), this.toggleThumbContainer(false, true), this.showImageAtCurrentTime()));
-            }), e(this, "endScrubbing", () => {
-              this.mouseDown = false, Math.ceil(this.lastTime) === Math.ceil(this.player.media.currentTime) ? this.toggleScrubbingContainer(false) : G.call(this.player, this.player.media, "timeupdate", () => {
+            })), e(this, "endScrubbing", (() => {
+              this.mouseDown = false, Math.ceil(this.lastTime) === Math.ceil(this.player.media.currentTime) ? this.toggleScrubbingContainer(false) : G.call(this.player, this.player.media, "timeupdate", (() => {
                 this.mouseDown || this.toggleScrubbingContainer(false);
-              });
-            }), e(this, "listeners", () => {
-              this.player.on("play", () => {
+              }));
+            })), e(this, "listeners", (() => {
+              this.player.on("play", (() => {
                 this.toggleThumbContainer(false, true);
-              }), this.player.on("seeked", () => {
+              })), this.player.on("seeked", (() => {
                 this.toggleThumbContainer(false);
-              }), this.player.on("timeupdate", () => {
+              })), this.player.on("timeupdate", (() => {
                 this.lastTime = this.player.media.currentTime;
-              });
-            }), e(this, "render", () => {
+              }));
+            })), e(this, "render", (() => {
               this.elements.thumb.container = $("div", { class: this.player.config.classNames.previewThumbnails.thumbContainer }), this.elements.thumb.imageContainer = $("div", { class: this.player.config.classNames.previewThumbnails.imageContainer }), this.elements.thumb.container.appendChild(this.elements.thumb.imageContainer);
               const e2 = $("div", { class: this.player.config.classNames.previewThumbnails.timeContainer });
               this.elements.thumb.time = $("span", {}, "00:00"), e2.appendChild(this.elements.thumb.time), this.elements.thumb.imageContainer.appendChild(e2), S.element(this.player.elements.progress) && this.player.elements.progress.appendChild(this.elements.thumb.container), this.elements.scrubbing.container = $("div", { class: this.player.config.classNames.previewThumbnails.scrubbingContainer }), this.player.elements.wrapper.appendChild(this.elements.scrubbing.container);
-            }), e(this, "destroy", () => {
+            })), e(this, "destroy", (() => {
               this.elements.thumb.container && this.elements.thumb.container.remove(), this.elements.scrubbing.container && this.elements.scrubbing.container.remove();
-            }), e(this, "showImageAtCurrentTime", () => {
+            })), e(this, "showImageAtCurrentTime", (() => {
               this.mouseDown ? this.setScrubbingContainerSize() : this.setThumbContainerSizeAndPos();
-              const e2 = this.thumbnails[0].frames.findIndex((e3) => this.seekTime >= e3.startTime && this.seekTime <= e3.endTime), t3 = e2 >= 0;
+              const e2 = this.thumbnails[0].frames.findIndex(((e3) => this.seekTime >= e3.startTime && this.seekTime <= e3.endTime)), t3 = e2 >= 0;
               let i2 = 0;
-              this.mouseDown || this.toggleThumbContainer(t3), t3 && (this.thumbnails.forEach((t4, s2) => {
+              this.mouseDown || this.toggleThumbContainer(t3), t3 && (this.thumbnails.forEach(((t4, s2) => {
                 this.loadedImages.includes(t4.frames[e2].text) && (i2 = s2);
-              }), e2 !== this.showingThumb && (this.showingThumb = e2, this.loadImage(i2)));
-            }), e(this, "loadImage", (e2 = 0) => {
+              })), e2 !== this.showingThumb && (this.showingThumb = e2, this.loadImage(i2)));
+            })), e(this, "loadImage", ((e2 = 0) => {
               const t3 = this.showingThumb, i2 = this.thumbnails[e2], { urlPrefix: s2 } = i2, n2 = i2.frames[t3], a2 = i2.frames[t3].text, l2 = s2 + a2;
               if (this.currentImageElement && this.currentImageElement.dataset.filename === a2) this.showImage(this.currentImageElement, n2, e2, t3, a2, false), this.currentImageElement.dataset.index = t3, this.removeOldImages(this.currentImageElement);
               else {
@@ -2246,28 +2246,28 @@
                 const i3 = new Image();
                 i3.src = l2, i3.dataset.index = t3, i3.dataset.filename = a2, this.showingThumbFilename = a2, this.player.debug.log("Loading image: ".concat(l2)), i3.onload = () => this.showImage(i3, n2, e2, t3, a2, true), this.loadingImage = i3, this.removeOldImages(i3);
               }
-            }), e(this, "showImage", (e2, t3, i2, s2, n2, a2 = true) => {
+            })), e(this, "showImage", ((e2, t3, i2, s2, n2, a2 = true) => {
               this.player.debug.log("Showing thumb: ".concat(n2, ". num: ").concat(s2, ". qual: ").concat(i2, ". newimg: ").concat(a2)), this.setImageSizeAndOffset(e2, t3), a2 && (this.currentImageContainer.appendChild(e2), this.currentImageElement = e2, this.loadedImages.includes(n2) || this.loadedImages.push(n2)), this.preloadNearby(s2, true).then(this.preloadNearby(s2, false)).then(this.getHigherQuality(i2, e2, t3, n2));
-            }), e(this, "removeOldImages", (e2) => {
-              Array.from(this.currentImageContainer.children).forEach((t3) => {
+            })), e(this, "removeOldImages", ((e2) => {
+              Array.from(this.currentImageContainer.children).forEach(((t3) => {
                 if ("img" !== t3.tagName.toLowerCase()) return;
                 const i2 = this.usingSprites ? 500 : 1e3;
                 if (t3.dataset.index !== e2.dataset.index && !t3.dataset.deleting) {
                   t3.dataset.deleting = true;
                   const { currentImageContainer: e3 } = this;
-                  setTimeout(() => {
+                  setTimeout((() => {
                     e3.removeChild(t3), this.player.debug.log("Removing thumb: ".concat(t3.dataset.filename));
-                  }, i2);
+                  }), i2);
                 }
-              });
-            }), e(this, "preloadNearby", (e2, t3 = true) => new Promise((i2) => {
-              setTimeout(() => {
+              }));
+            })), e(this, "preloadNearby", ((e2, t3 = true) => new Promise(((i2) => {
+              setTimeout((() => {
                 const s2 = this.thumbnails[0].frames[e2].text;
                 if (this.showingThumbFilename === s2) {
                   let n2;
                   n2 = t3 ? this.thumbnails[0].frames.slice(e2) : this.thumbnails[0].frames.slice(0, e2).reverse();
                   let a2 = false;
-                  n2.forEach((e3) => {
+                  n2.forEach(((e3) => {
                     const t4 = e3.text;
                     if (t4 !== s2 && !this.loadedImages.includes(t4)) {
                       a2 = true, this.player.debug.log("Preloading thumb filename: ".concat(t4));
@@ -2276,25 +2276,25 @@
                         this.player.debug.log("Preloaded thumb filename: ".concat(t4)), this.loadedImages.includes(t4) || this.loadedImages.push(t4), i2();
                       };
                     }
-                  }), a2 || i2();
+                  })), a2 || i2();
                 }
-              }, 300);
-            })), e(this, "getHigherQuality", (e2, t3, i2, s2) => {
+              }), 300);
+            })))), e(this, "getHigherQuality", ((e2, t3, i2, s2) => {
               if (e2 < this.thumbnails.length - 1) {
                 let n2 = t3.naturalHeight;
-                this.usingSprites && (n2 = i2.h), n2 < this.thumbContainerHeight && setTimeout(() => {
+                this.usingSprites && (n2 = i2.h), n2 < this.thumbContainerHeight && setTimeout((() => {
                   this.showingThumbFilename === s2 && (this.player.debug.log("Showing higher quality thumb for: ".concat(s2)), this.loadImage(e2 + 1));
-                }, 300);
+                }), 300);
               }
-            }), e(this, "toggleThumbContainer", (e2 = false, t3 = false) => {
+            })), e(this, "toggleThumbContainer", ((e2 = false, t3 = false) => {
               const i2 = this.player.config.classNames.previewThumbnails.thumbContainerShown;
               this.elements.thumb.container.classList.toggle(i2, e2), !e2 && t3 && (this.showingThumb = null, this.showingThumbFilename = null);
-            }), e(this, "toggleScrubbingContainer", (e2 = false) => {
+            })), e(this, "toggleScrubbingContainer", ((e2 = false) => {
               const t3 = this.player.config.classNames.previewThumbnails.scrubbingContainerShown;
               this.elements.scrubbing.container.classList.toggle(t3, e2), e2 || (this.showingThumb = null, this.showingThumbFilename = null);
-            }), e(this, "determineContainerAutoSizing", () => {
+            })), e(this, "determineContainerAutoSizing", (() => {
               (this.elements.thumb.imageContainer.clientHeight > 20 || this.elements.thumb.imageContainer.clientWidth > 20) && (this.sizeSpecifiedInCSS = true);
-            }), e(this, "setThumbContainerSizeAndPos", () => {
+            })), e(this, "setThumbContainerSizeAndPos", (() => {
               const { imageContainer: e2 } = this.elements.thumb;
               if (this.sizeSpecifiedInCSS) {
                 if (e2.clientHeight > 20 && e2.clientWidth < 20) {
@@ -2309,17 +2309,17 @@
                 e2.style.height = "".concat(this.thumbContainerHeight, "px"), e2.style.width = "".concat(t3, "px");
               }
               this.setThumbContainerPos();
-            }), e(this, "setThumbContainerPos", () => {
+            })), e(this, "setThumbContainerPos", (() => {
               const e2 = this.player.elements.progress.getBoundingClientRect(), t3 = this.player.elements.container.getBoundingClientRect(), { container: i2 } = this.elements.thumb, s2 = t3.left - e2.left + 10, n2 = t3.right - e2.left - i2.clientWidth - 10, a2 = this.mousePosX - e2.left - i2.clientWidth / 2, l2 = Ge(a2, s2, n2);
               i2.style.left = "".concat(l2, "px"), i2.style.setProperty("--preview-arrow-offset", a2 - l2 + "px");
-            }), e(this, "setScrubbingContainerSize", () => {
+            })), e(this, "setScrubbingContainerSize", (() => {
               const { width: e2, height: t3 } = et(this.thumbAspectRatio, { width: this.player.media.clientWidth, height: this.player.media.clientHeight });
               this.elements.scrubbing.container.style.width = "".concat(e2, "px"), this.elements.scrubbing.container.style.height = "".concat(t3, "px");
-            }), e(this, "setImageSizeAndOffset", (e2, t3) => {
+            })), e(this, "setImageSizeAndOffset", ((e2, t3) => {
               if (!this.usingSprites) return;
               const i2 = this.thumbContainerHeight / t3.h;
               e2.style.height = e2.naturalHeight * i2 + "px", e2.style.width = e2.naturalWidth * i2 + "px", e2.style.left = "-".concat(t3.x * i2, "px"), e2.style.top = "-".concat(t3.y * i2, "px");
-            }), this.player = t2, this.thumbnails = [], this.loaded = false, this.lastMouseMoveTime = Date.now(), this.mouseDown = false, this.loadedImages = [], this.elements = { thumb: {}, scrubbing: {} }, this.load();
+            })), this.player = t2, this.thumbnails = [], this.loaded = false, this.lastMouseMoveTime = Date.now(), this.mouseDown = false, this.loadedImages = [], this.elements = { thumb: {}, scrubbing: {} }, this.load();
           }
           get enabled() {
             return this.player.isHTML5 && this.player.isVideo && this.player.config.previewThumbnails.enabled;
@@ -2348,34 +2348,34 @@
           }
         }
         const it = { insertElements(e2, t2) {
-          S.string(t2) ? _(e2, this.media, { src: t2 }) : S.array(t2) && t2.forEach((t3) => {
+          S.string(t2) ? _(e2, this.media, { src: t2 }) : S.array(t2) && t2.forEach(((t3) => {
             _(e2, this.media, t3);
-          });
+          }));
         }, change(e2) {
-          N(e2, "sources.length") ? (de.cancelRequests.call(this), this.destroy.call(this, () => {
+          N(e2, "sources.length") ? (de.cancelRequests.call(this), this.destroy.call(this, (() => {
             this.options.quality = [], O(this.media), this.media = null, S.element(this.elements.container) && this.elements.container.removeAttribute("class");
             const { sources: t2, type: i2 } = e2, [{ provider: s2 = _e.html5, src: n2 }] = t2, a2 = "html5" === s2 ? i2 : "div", l2 = "html5" === s2 ? {} : { src: n2 };
             Object.assign(this, { provider: s2, type: i2, supported: K.check(i2, s2, this.config.playsinline), media: $(a2, l2) }), this.elements.container.appendChild(this.media), S.boolean(e2.autoplay) && (this.config.autoplay = e2.autoplay), this.isHTML5 && (this.config.crossorigin && this.media.setAttribute("crossorigin", ""), this.config.autoplay && this.media.setAttribute("autoplay", ""), S.empty(e2.poster) || (this.poster = e2.poster), this.config.loop.active && this.media.setAttribute("loop", ""), this.config.muted && this.media.setAttribute("muted", ""), this.config.playsinline && this.media.setAttribute("playsinline", "")), Fe.addStyleHook.call(this), this.isHTML5 && it.insertElements.call(this, "source", t2), this.config.title = e2.title, Xe.setup.call(this), this.isHTML5 && Object.keys(e2).includes("tracks") && it.insertElements.call(this, "track", e2.tracks), (this.isHTML5 || this.isEmbed && !this.supported.ui) && Fe.build.call(this), this.isHTML5 && this.media.load(), S.empty(e2.previewThumbnails) || (Object.assign(this.config.previewThumbnails, e2.previewThumbnails), this.previewThumbnails && this.previewThumbnails.loaded && (this.previewThumbnails.destroy(), this.previewThumbnails = null), this.config.previewThumbnails.enabled && (this.previewThumbnails = new tt(this))), this.fullscreen.update();
-          }, true)) : this.debug.warn("Invalid source format");
+          }), true)) : this.debug.warn("Invalid source format");
         } };
         class st {
           constructor(t2, i2) {
-            if (e(this, "play", () => S.function(this.media.play) ? (this.ads && this.ads.enabled && this.ads.managerPromise.then(() => this.ads.play()).catch(() => ie(this.media.play())), this.media.play()) : null), e(this, "pause", () => this.playing && S.function(this.media.pause) ? this.media.pause() : null), e(this, "togglePlay", (e2) => (S.boolean(e2) ? e2 : !this.playing) ? this.play() : this.pause()), e(this, "stop", () => {
+            if (e(this, "play", (() => S.function(this.media.play) ? (this.ads && this.ads.enabled && this.ads.managerPromise.then((() => this.ads.play())).catch((() => ie(this.media.play()))), this.media.play()) : null)), e(this, "pause", (() => this.playing && S.function(this.media.pause) ? this.media.pause() : null)), e(this, "togglePlay", ((e2) => (S.boolean(e2) ? e2 : !this.playing) ? this.play() : this.pause())), e(this, "stop", (() => {
               this.isHTML5 ? (this.pause(), this.restart()) : S.function(this.media.stop) && this.media.stop();
-            }), e(this, "restart", () => {
+            })), e(this, "restart", (() => {
               this.currentTime = 0;
-            }), e(this, "rewind", (e2) => {
+            })), e(this, "rewind", ((e2) => {
               this.currentTime -= S.number(e2) ? e2 : this.config.seekTime;
-            }), e(this, "forward", (e2) => {
+            })), e(this, "forward", ((e2) => {
               this.currentTime += S.number(e2) ? e2 : this.config.seekTime;
-            }), e(this, "increaseVolume", (e2) => {
+            })), e(this, "increaseVolume", ((e2) => {
               const t3 = this.media.muted ? 0 : this.volume;
               this.volume = t3 + (S.number(e2) ? e2 : 0);
-            }), e(this, "decreaseVolume", (e2) => {
+            })), e(this, "decreaseVolume", ((e2) => {
               this.increaseVolume(-e2);
-            }), e(this, "airplay", () => {
+            })), e(this, "airplay", (() => {
               K.airplay && this.media.webkitShowPlaybackTargetPicker();
-            }), e(this, "toggleControls", (e2) => {
+            })), e(this, "toggleControls", ((e2) => {
               if (this.supported.ui && !this.isAudio) {
                 const t3 = F(this.elements.container, this.config.classNames.hideControls), i3 = void 0 === e2 ? void 0 : !e2, s3 = R(this.elements.container, this.config.classNames.hideControls, i3);
                 if (s3 && S.array(this.config.controls) && this.config.controls.includes("settings") && !S.empty(this.config.settings) && Pe.toggleMenu.call(this, false), s3 !== t3) {
@@ -2385,21 +2385,21 @@
                 return !s3;
               }
               return false;
-            }), e(this, "on", (e2, t3) => {
+            })), e(this, "on", ((e2, t3) => {
               X.call(this, this.elements.container, e2, t3);
-            }), e(this, "once", (e2, t3) => {
+            })), e(this, "once", ((e2, t3) => {
               G.call(this, this.elements.container, e2, t3);
-            }), e(this, "off", (e2, t3) => {
+            })), e(this, "off", ((e2, t3) => {
               J(this.elements.container, e2, t3);
-            }), e(this, "destroy", (e2, t3 = false) => {
+            })), e(this, "destroy", ((e2, t3 = false) => {
               if (!this.ready) return;
               const i3 = () => {
-                document.body.style.overflow = "", this.embed = null, t3 ? (Object.keys(this.elements).length && (O(this.elements.buttons.play), O(this.elements.captions), O(this.elements.controls), O(this.elements.wrapper), this.elements.buttons.play = null, this.elements.captions = null, this.elements.controls = null, this.elements.wrapper = null), S.function(e2) && e2()) : (ee.call(this), de.cancelRequests.call(this), q(this.elements.original, this.elements.container), Z.call(this, this.elements.original, "destroyed", true), S.function(e2) && e2.call(this.elements.original), this.ready = false, setTimeout(() => {
+                document.body.style.overflow = "", this.embed = null, t3 ? (Object.keys(this.elements).length && (O(this.elements.buttons.play), O(this.elements.captions), O(this.elements.controls), O(this.elements.wrapper), this.elements.buttons.play = null, this.elements.captions = null, this.elements.controls = null, this.elements.wrapper = null), S.function(e2) && e2()) : (ee.call(this), de.cancelRequests.call(this), q(this.elements.original, this.elements.container), Z.call(this, this.elements.original, "destroyed", true), S.function(e2) && e2.call(this.elements.original), this.ready = false, setTimeout((() => {
                   this.elements = null, this.media = null;
-                }, 200));
+                }), 200));
               };
               this.stop(), clearTimeout(this.timers.loading), clearTimeout(this.timers.controls), clearTimeout(this.timers.resized), this.isHTML5 ? (Fe.toggleNativeControls.call(this, true), i3()) : this.isYouTube ? (clearInterval(this.timers.buffering), clearInterval(this.timers.playing), null !== this.embed && S.function(this.embed.destroy) && this.embed.destroy(), i3()) : this.isVimeo && (null !== this.embed && this.embed.unload().then(i3), setTimeout(i3, 200));
-            }), e(this, "supports", (e2) => K.mime.call(this, e2)), this.timers = {}, this.ready = false, this.loading = false, this.failed = false, this.touch = K.touch, this.media = t2, S.string(this.media) && (this.media = document.querySelectorAll(this.media)), (window.jQuery && this.media instanceof jQuery || S.nodeList(this.media) || S.array(this.media)) && (this.media = this.media[0]), this.config = x({}, Le, st.defaults, i2 || {}, (() => {
+            })), e(this, "supports", ((e2) => K.mime.call(this, e2))), this.timers = {}, this.ready = false, this.loading = false, this.failed = false, this.touch = K.touch, this.media = t2, S.string(this.media) && (this.media = document.querySelectorAll(this.media)), (window.jQuery && this.media instanceof jQuery || S.nodeList(this.media) || S.array(this.media)) && (this.media = this.media[0]), this.config = x({}, Le, st.defaults, i2 || {}, (() => {
               try {
                 return JSON.parse(this.media.getAttribute("data-plyr-config"));
               } catch (e2) {
@@ -2416,9 +2416,9 @@
             switch (n2) {
               case "div":
                 if (a2 = this.media.querySelector("iframe"), S.element(a2)) {
-                  if (l2 = Me(a2.getAttribute("src")), this.provider = function(e2) {
+                  if (l2 = Me(a2.getAttribute("src")), this.provider = (function(e2) {
                     return /^(https?:\/\/)?(www\.)?(youtube\.com|youtube-nocookie\.com|youtu\.?be)\/.+$/.test(e2) ? _e.youtube : /^https?:\/\/player.vimeo.com\/video\/\d{0,9}(?=\b|\/)/.test(e2) ? _e.vimeo : null;
-                  }(l2.toString()), this.elements.container = this.media, this.media = a2, this.elements.container.className = "", l2.search.length) {
+                  })(l2.toString()), this.elements.container = this.media, this.media = a2, this.elements.container.className = "", l2.search.length) {
                     const e2 = ["1", "true"];
                     e2.includes(l2.searchParams.get("autoplay")) && (this.config.autoplay = true), e2.includes(l2.searchParams.get("loop")) && (this.config.loop.active = true), this.isYouTube ? (this.config.playsinline = e2.includes(l2.searchParams.get("playsinline")), this.config.youtube.hl = l2.searchParams.get("hl")) : this.config.playsinline = true;
                   }
@@ -2433,9 +2433,9 @@
               default:
                 return void this.debug.error("Setup failed: unsupported type");
             }
-            this.supported = K.check(this.type, this.provider), this.supported.api ? (this.eventListeners = [], this.listeners = new Ve(this), this.storage = new we(this), this.media.plyr = this, S.element(this.elements.container) || (this.elements.container = $("div"), L(this.media, this.elements.container)), Fe.migrateStyles.call(this), Fe.addStyleHook.call(this), Xe.setup.call(this), this.config.debug && X.call(this, this.elements.container, this.config.events.join(" "), (e2) => {
+            this.supported = K.check(this.type, this.provider), this.supported.api ? (this.eventListeners = [], this.listeners = new Ve(this), this.storage = new we(this), this.media.plyr = this, S.element(this.elements.container) || (this.elements.container = $("div"), L(this.media, this.elements.container)), Fe.migrateStyles.call(this), Fe.addStyleHook.call(this), Xe.setup.call(this), this.config.debug && X.call(this, this.elements.container, this.config.events.join(" "), ((e2) => {
               this.debug.log("event: ".concat(e2.type));
-            }), this.fullscreen = new He(this), (this.isHTML5 || this.isEmbed && !this.supported.ui) && Fe.build.call(this), this.listeners.container(), this.listeners.global(), this.config.ads.enabled && (this.ads = new Je(this)), this.isHTML5 && this.config.autoplay && this.once("canplay", () => ie(this.play())), this.lastSeekTime = 0, this.config.previewThumbnails.enabled && (this.previewThumbnails = new tt(this))) : this.debug.error("Setup failed: no support");
+            })), this.fullscreen = new He(this), (this.isHTML5 || this.isEmbed && !this.supported.ui) && Fe.build.call(this), this.listeners.container(), this.listeners.global(), this.config.ads.enabled && (this.ads = new Je(this)), this.isHTML5 && this.config.autoplay && this.once("canplay", (() => ie(this.play()))), this.lastSeekTime = 0, this.config.previewThumbnails.enabled && (this.previewThumbnails = new tt(this))) : this.debug.error("Setup failed: no support");
           }
           get isHTML5() {
             return this.provider === _e.html5;
@@ -2507,9 +2507,9 @@
             let t2 = null;
             S.number(e2) && (t2 = e2), S.number(t2) || (t2 = this.storage.get("speed")), S.number(t2) || (t2 = this.config.speed.selected);
             const { minimumSpeed: i2, maximumSpeed: s2 } = this;
-            t2 = Ge(t2, i2, s2), this.config.speed.selected = t2, setTimeout(() => {
+            t2 = Ge(t2, i2, s2), this.config.speed.selected = t2, setTimeout((() => {
               this.media && (this.media.playbackRate = t2);
-            }, 0);
+            }), 0);
           }
           get speed() {
             return Number(this.media.playbackRate);
@@ -2554,8 +2554,8 @@
             S.url(e2) && (this.config.urls.download = e2, Pe.setDownloadUrl.call(this));
           }
           set poster(e2) {
-            this.isVideo ? Fe.setPoster.call(this, e2, false).catch(() => {
-            }) : this.debug.warn("Poster can only be set for video");
+            this.isVideo ? Fe.setPoster.call(this, e2, false).catch((() => {
+            })) : this.debug.warn("Poster can only be set for video");
           }
           get poster() {
             return this.isVideo ? this.media.getAttribute("poster") || this.media.getAttribute("data-poster") : null;
@@ -2609,12 +2609,12 @@
           }
           static setup(e2, t2 = {}) {
             let i2 = null;
-            return S.string(e2) ? i2 = Array.from(document.querySelectorAll(e2)) : S.nodeList(e2) ? i2 = Array.from(e2) : S.array(e2) && (i2 = e2.filter(S.element)), S.empty(i2) ? null : i2.map((e3) => new st(e3, t2));
+            return S.string(e2) ? i2 = Array.from(document.querySelectorAll(e2)) : S.nodeList(e2) ? i2 = Array.from(e2) : S.array(e2) && (i2 = e2.filter(S.element)), S.empty(i2) ? null : i2.map(((e3) => new st(e3, t2)));
           }
         }
         var nt;
         return st.defaults = (nt = Le, JSON.parse(JSON.stringify(nt))), st;
-      });
+      }));
     }
   });
 
@@ -2860,7 +2860,8 @@
     if (src === void 0) {
       src = {};
     }
-    Object.keys(src).forEach((key) => {
+    const noExtend = ["__proto__", "constructor", "prototype"];
+    Object.keys(src).filter((key) => noExtend.indexOf(key) < 0).forEach((key) => {
       if (typeof target[key] === "undefined") target[key] = src[key];
       else if (isObject(src[key]) && isObject(target[key]) && Object.keys(src[key]).length > 0) {
         extend(target[key], src[key]);
@@ -3171,8 +3172,9 @@
     if (selector3 === void 0) {
       selector3 = "";
     }
+    const window2 = getWindow();
     const children = [...element.children];
-    if (element instanceof HTMLSlotElement) {
+    if (window2.HTMLSlotElement && element instanceof HTMLSlotElement) {
       children.push(...element.assignedElements());
     }
     if (!selector3) {
@@ -3180,11 +3182,25 @@
     }
     return children.filter((el) => el.matches(selector3));
   }
+  function elementIsChildOfSlot(el, slot) {
+    const elementsQueue = [slot];
+    while (elementsQueue.length > 0) {
+      const elementToCheck = elementsQueue.shift();
+      if (el === elementToCheck) {
+        return true;
+      }
+      elementsQueue.push(...elementToCheck.children, ...elementToCheck.shadowRoot ? elementToCheck.shadowRoot.children : [], ...elementToCheck.assignedElements ? elementToCheck.assignedElements() : []);
+    }
+  }
   function elementIsChildOf(el, parent) {
-    const isChild = parent.contains(el);
-    if (!isChild && parent instanceof HTMLSlotElement) {
+    const window2 = getWindow();
+    let isChild = parent.contains(el);
+    if (!isChild && window2.HTMLSlotElement && parent instanceof HTMLSlotElement) {
       const children = [...parent.assignedElements()];
-      return children.includes(el);
+      isChild = children.includes(el);
+      if (!isChild) {
+        isChild = elementIsChildOfSlot(el, parent);
+      }
     }
     return isChild;
   }
@@ -3295,6 +3311,18 @@
       }
       return v;
     };
+  }
+  function setInnerHTML(el, html) {
+    if (html === void 0) {
+      html = "";
+    }
+    if (typeof trustedTypes !== "undefined") {
+      el.innerHTML = trustedTypes.createPolicy("html", {
+        createHTML: (s) => s
+      }).createHTML(html);
+    } else {
+      el.innerHTML = html;
+    }
   }
 
   // node_modules/swiper/shared/swiper-core.mjs
@@ -4113,9 +4141,9 @@
       }
     } else {
       if (gridEnabled) {
-        activeSlide = slides.filter((slideEl) => slideEl.column === activeIndex)[0];
-        nextSlide = slides.filter((slideEl) => slideEl.column === activeIndex + 1)[0];
-        prevSlide = slides.filter((slideEl) => slideEl.column === activeIndex - 1)[0];
+        activeSlide = slides.find((slideEl) => slideEl.column === activeIndex);
+        nextSlide = slides.find((slideEl) => slideEl.column === activeIndex + 1);
+        prevSlide = slides.find((slideEl) => slideEl.column === activeIndex - 1);
       } else {
         activeSlide = slides[activeIndex];
       }
@@ -4271,7 +4299,7 @@
     if (swiper.virtual && params.virtual.enabled && params.loop) {
       realIndex = getVirtualRealIndex(activeIndex);
     } else if (gridEnabled) {
-      const firstSlideInColumn = swiper.slides.filter((slideEl) => slideEl.column === activeIndex)[0];
+      const firstSlideInColumn = swiper.slides.find((slideEl) => slideEl.column === activeIndex);
       let activeSlideIndex = parseInt(firstSlideInColumn.getAttribute("data-swiper-slide-index"), 10);
       if (Number.isNaN(activeSlideIndex)) {
         activeSlideIndex = Math.max(swiper.slides.indexOf(firstSlideInColumn), 0);
@@ -4543,11 +4571,9 @@
       else dir = "reset";
     }
     swiper.emit("transition".concat(step));
-    if (runCallbacks && activeIndex !== previousIndex) {
-      if (dir === "reset") {
-        swiper.emit("slideResetTransition".concat(step));
-        return;
-      }
+    if (runCallbacks && dir === "reset") {
+      swiper.emit("slideResetTransition".concat(step));
+    } else if (runCallbacks && activeIndex !== previousIndex) {
       swiper.emit("slideChangeTransition".concat(step));
       if (dir === "next") {
         swiper.emit("slideNextTransition".concat(step));
@@ -4720,6 +4746,11 @@
       }
       return true;
     }
+    const browser2 = getBrowser();
+    const isSafari = browser2.isSafari;
+    if (isVirtual && !initial && isSafari && swiper.isElement) {
+      swiper.virtual.update(false, false, slideIndex);
+    }
     swiper.setTransition(speed);
     swiper.setTranslate(translate2);
     swiper.updateActiveIndex(slideIndex);
@@ -4769,7 +4800,7 @@
         let targetSlideIndex;
         if (gridEnabled) {
           const slideIndex = newIndex * swiper.params.grid.rows;
-          targetSlideIndex = swiper.slides.filter((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex)[0].column;
+          targetSlideIndex = swiper.slides.find((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex).column;
         } else {
           targetSlideIndex = swiper.getSlideIndexByData(newIndex);
         }
@@ -4804,7 +4835,7 @@
         }
         if (gridEnabled) {
           const slideIndex = newIndex * swiper.params.grid.rows;
-          newIndex = swiper.slides.filter((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex)[0].column;
+          newIndex = swiper.slides.find((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === slideIndex).column;
         } else {
           newIndex = swiper.getSlideIndexByData(newIndex);
         }
@@ -4885,8 +4916,9 @@
     }
     const normalizedTranslate = normalize3(translate2);
     const normalizedSnapGrid = snapGrid.map((val) => normalize3(val));
+    const isFreeMode = params.freeMode && params.freeMode.enabled;
     let prevSnap = snapGrid[normalizedSnapGrid.indexOf(normalizedTranslate) - 1];
-    if (typeof prevSnap === "undefined" && params.cssMode) {
+    if (typeof prevSnap === "undefined" && (params.cssMode || isFreeMode)) {
       let prevSnapIndex;
       snapGrid.forEach((snap3, snapIndex) => {
         if (normalizedTranslate >= snap3) {
@@ -4894,7 +4926,7 @@
         }
       });
       if (typeof prevSnapIndex !== "undefined") {
-        prevSnap = snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
+        prevSnap = isFreeMode ? snapGrid[prevSnapIndex] : snapGrid[prevSnapIndex > 0 ? prevSnapIndex - 1 : prevSnapIndex];
       }
     }
     let prevIndex = 0;
@@ -4969,23 +5001,16 @@
       slidesEl
     } = swiper;
     const slidesPerView = params.slidesPerView === "auto" ? swiper.slidesPerViewDynamic() : params.slidesPerView;
-    let slideToIndex = swiper.clickedIndex;
+    let slideToIndex = swiper.getSlideIndexWhenGrid(swiper.clickedIndex);
     let realIndex;
     const slideSelector = swiper.isElement ? "swiper-slide" : ".".concat(params.slideClass);
+    const isGrid = swiper.grid && swiper.params.grid && swiper.params.grid.rows > 1;
     if (params.loop) {
       if (swiper.animating) return;
       realIndex = parseInt(swiper.clickedSlide.getAttribute("data-swiper-slide-index"), 10);
       if (params.centeredSlides) {
-        if (slideToIndex < swiper.loopedSlides - slidesPerView / 2 || slideToIndex > swiper.slides.length - swiper.loopedSlides + slidesPerView / 2) {
-          swiper.loopFix();
-          slideToIndex = swiper.getSlideIndex(elementChildren(slidesEl, "".concat(slideSelector, '[data-swiper-slide-index="').concat(realIndex, '"]'))[0]);
-          nextTick(() => {
-            swiper.slideTo(slideToIndex);
-          });
-        } else {
-          swiper.slideTo(slideToIndex);
-        }
-      } else if (slideToIndex > swiper.slides.length - slidesPerView) {
+        swiper.slideToLoop(realIndex);
+      } else if (slideToIndex > (isGrid ? (swiper.slides.length - slidesPerView) / 2 - (swiper.params.grid.rows - 1) : swiper.slides.length - slidesPerView)) {
         swiper.loopFix();
         slideToIndex = swiper.getSlideIndex(elementChildren(slidesEl, "".concat(slideSelector, '[data-swiper-slide-index="').concat(realIndex, '"]'))[0]);
         nextTick(() => {
@@ -5007,7 +5032,7 @@
     slideToClosest,
     slideToClickedSlide
   };
-  function loopCreate(slideRealIndex) {
+  function loopCreate(slideRealIndex, initial) {
     const swiper = this;
     const {
       params,
@@ -5020,7 +5045,20 @@
         el.setAttribute("data-swiper-slide-index", index);
       });
     };
+    const clearBlankSlides = () => {
+      const slides = elementChildren(slidesEl, ".".concat(params.slideBlankClass));
+      slides.forEach((el) => {
+        el.remove();
+      });
+      if (slides.length > 0) {
+        swiper.recalcSlides();
+        swiper.updateSlides();
+      }
+    };
     const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
+    if (params.loopAddBlankSlides && (params.slidesPerGroup > 1 || gridEnabled)) {
+      clearBlankSlides();
+    }
     const slidesPerGroup = params.slidesPerGroup * (gridEnabled ? params.grid.rows : 1);
     const shouldFillGroup = swiper.slides.length % slidesPerGroup !== 0;
     const shouldFillGrid = gridEnabled && swiper.slides.length % params.grid.rows !== 0;
@@ -5055,7 +5093,8 @@
     }
     swiper.loopFix({
       slideRealIndex,
-      direction: params.centeredSlides ? void 0 : "next"
+      direction: params.centeredSlides ? void 0 : "next",
+      initial
     });
   }
   function loopFix(_temp) {
@@ -5065,6 +5104,7 @@
       direction,
       setTranslate: setTranslate2,
       activeSlideIndex,
+      initial,
       byController,
       byMousewheel
     } = _temp === void 0 ? {} : _temp;
@@ -5079,7 +5119,8 @@
       params
     } = swiper;
     const {
-      centeredSlides
+      centeredSlides,
+      initialSlide
     } = params;
     swiper.allowSlidePrev = true;
     swiper.allowSlideNext = true;
@@ -5108,23 +5149,25 @@
       }
     }
     const slidesPerGroup = params.slidesPerGroupAuto ? slidesPerView : params.slidesPerGroup;
-    let loopedSlides = slidesPerGroup;
+    let loopedSlides = centeredSlides ? Math.max(slidesPerGroup, Math.ceil(slidesPerView / 2)) : slidesPerGroup;
     if (loopedSlides % slidesPerGroup !== 0) {
       loopedSlides += slidesPerGroup - loopedSlides % slidesPerGroup;
     }
     loopedSlides += params.loopAdditionalSlides;
     swiper.loopedSlides = loopedSlides;
     const gridEnabled = swiper.grid && params.grid && params.grid.rows > 1;
-    if (slides.length < slidesPerView + loopedSlides) {
-      showWarning("Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled and not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters");
+    if (slides.length < slidesPerView + loopedSlides || swiper.params.effect === "cards" && slides.length < slidesPerView + loopedSlides * 2) {
+      showWarning("Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters");
     } else if (gridEnabled && params.grid.fill === "row") {
       showWarning("Swiper Loop Warning: Loop mode is not compatible with grid.fill = `row`");
     }
     const prependSlidesIndexes = [];
     const appendSlidesIndexes = [];
-    let activeIndex = swiper.activeIndex;
+    const cols = gridEnabled ? Math.ceil(slides.length / params.grid.rows) : slides.length;
+    const isInitialOverflow = initial && cols - initialSlide < slidesPerView && !centeredSlides;
+    let activeIndex = isInitialOverflow ? initialSlide : swiper.activeIndex;
     if (typeof activeSlideIndex === "undefined") {
-      activeSlideIndex = swiper.getSlideIndex(slides.filter((el) => el.classList.contains(params.slideActiveClass))[0]);
+      activeSlideIndex = swiper.getSlideIndex(slides.find((el) => el.classList.contains(params.slideActiveClass)));
     } else {
       activeIndex = activeSlideIndex;
     }
@@ -5132,7 +5175,6 @@
     const isPrev = direction === "prev" || !direction;
     let slidesPrepended = 0;
     let slidesAppended = 0;
-    const cols = gridEnabled ? Math.ceil(slides.length / params.grid.rows) : slides.length;
     const activeColIndex = gridEnabled ? slides[activeSlideIndex].column : activeSlideIndex;
     const activeColIndexWithShift = activeColIndex + (centeredSlides && typeof setTranslate2 === "undefined" ? -slidesPerView / 2 + 0.5 : 0);
     if (activeColIndexWithShift < loopedSlides) {
@@ -5150,6 +5192,9 @@
       }
     } else if (activeColIndexWithShift + slidesPerView > cols - loopedSlides) {
       slidesAppended = Math.max(activeColIndexWithShift - (cols - loopedSlides * 2), slidesPerGroup);
+      if (isInitialOverflow) {
+        slidesAppended = Math.max(slidesAppended, slidesPerView - cols + initialSlide + 1);
+      }
       for (let i = 0; i < slidesAppended; i += 1) {
         const index = i - Math.floor(i / cols) * cols;
         if (gridEnabled) {
@@ -5165,6 +5210,14 @@
     requestAnimationFrame(() => {
       swiper.__preventObserver__ = false;
     });
+    if (swiper.params.effect === "cards" && slides.length < slidesPerView + loopedSlides * 2) {
+      if (appendSlidesIndexes.includes(activeSlideIndex)) {
+        appendSlidesIndexes.splice(appendSlidesIndexes.indexOf(activeSlideIndex), 1);
+      }
+      if (prependSlidesIndexes.includes(activeSlideIndex)) {
+        prependSlidesIndexes.splice(prependSlidesIndexes.indexOf(activeSlideIndex), 1);
+      }
+    }
     if (isPrev) {
       prependSlidesIndexes.forEach((index) => {
         slides[index].swiperLoopMoveDOM = true;
@@ -5262,7 +5315,7 @@
       params,
       slidesEl
     } = swiper;
-    if (!params.loop || swiper.virtual && swiper.params.virtual.enabled) return;
+    if (!params.loop || !slidesEl || swiper.virtual && swiper.params.virtual.enabled) return;
     swiper.recalcSlides();
     const newSlidesOrder = [];
     swiper.slides.forEach((slideEl) => {
@@ -5461,7 +5514,7 @@
     }
     let targetTouch;
     if (e.type === "touchmove") {
-      targetTouch = [...e.changedTouches].filter((t) => t.identifier === data.touchId)[0];
+      targetTouch = [...e.changedTouches].find((t) => t.identifier === data.touchId);
       if (!targetTouch || targetTouch.identifier !== data.touchId) return;
     } else {
       targetTouch = e;
@@ -5501,7 +5554,9 @@
           data.isMoved = false;
           return;
         }
-      } else if (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate()) {
+      } else if (rtl && (pageX > touches.startX && -swiper.translate <= swiper.maxTranslate() || pageX < touches.startX && -swiper.translate >= swiper.minTranslate())) {
+        return;
+      } else if (!rtl && (pageX < touches.startX && swiper.translate <= swiper.maxTranslate() || pageX > touches.startX && swiper.translate >= swiper.minTranslate())) {
         return;
       }
     }
@@ -5601,7 +5656,7 @@
     }
     let loopFixed;
     (/* @__PURE__ */ new Date()).getTime();
-    if (data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
+    if (params._loopSwapReset !== false && data.isMoved && data.allowThresholdMove && prevTouchesDirection !== swiper.touchesDirection && isLoop && allowLoopFix && Math.abs(diff) >= 1) {
       Object.assign(touches, {
         startX: pageX,
         startY: pageY,
@@ -5700,7 +5755,7 @@
       if (e.pointerId !== data.pointerId) return;
       targetTouch = e;
     } else {
-      targetTouch = [...e.changedTouches].filter((t) => t.identifier === data.touchId)[0];
+      targetTouch = [...e.changedTouches].find((t) => t.identifier === data.touchId);
       if (!targetTouch || targetTouch.identifier !== data.touchId) return;
     }
     if (["pointercancel", "pointerout", "pointerleave", "contextmenu"].includes(e.type)) {
@@ -6041,7 +6096,10 @@
     } = swiper;
     const breakpoints2 = params.breakpoints;
     if (!breakpoints2 || breakpoints2 && Object.keys(breakpoints2).length === 0) return;
-    const breakpoint = swiper.getBreakpoint(breakpoints2, swiper.params.breakpointsBase, swiper.el);
+    const document2 = getDocument();
+    const breakpointsBase = params.breakpointsBase === "window" || !params.breakpointsBase ? params.breakpointsBase : "container";
+    const breakpointContainer = ["window", "container"].includes(params.breakpointsBase) || !params.breakpointsBase ? swiper.el : document2.querySelector(params.breakpointsBase);
+    const breakpoint = swiper.getBreakpoint(breakpoints2, breakpointsBase, breakpointContainer);
     if (!breakpoint || swiper.currentBreakpoint === breakpoint) return;
     const breakpointOnlyParams = breakpoint in breakpoints2 ? breakpoints2[breakpoint] : void 0;
     const breakpointParams = breakpointOnlyParams || swiper.originalParams;
@@ -6584,7 +6642,17 @@
       return elementIndex(slideEl) - firstSlideIndex;
     }
     getSlideIndexByData(index) {
-      return this.getSlideIndex(this.slides.filter((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === index)[0]);
+      return this.getSlideIndex(this.slides.find((slideEl) => slideEl.getAttribute("data-swiper-slide-index") * 1 === index));
+    }
+    getSlideIndexWhenGrid(index) {
+      if (this.grid && this.params.grid && this.params.grid.rows > 1) {
+        if (this.params.grid.fill === "column") {
+          index = Math.floor(index / this.params.grid.rows);
+        } else if (this.params.grid.fill === "row") {
+          index = index % Math.ceil(this.slides.length / this.params.grid.rows);
+        }
+      }
+      return index;
     }
     recalcSlides() {
       const swiper = this;
@@ -6863,7 +6931,7 @@
         swiper.slideTo(swiper.params.initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
       }
       if (swiper.params.loop) {
-        swiper.loopCreate();
+        swiper.loopCreate(void 0, true);
       }
       swiper.attachEvents();
       const lazyElements = [...swiper.el.querySelectorAll('[loading="lazy"]')];
@@ -7010,7 +7078,7 @@
       if (params.renderSlide) {
         slideEl = params.renderSlide.call(swiper, slide2, index);
         if (typeof slideEl === "string") {
-          tempDOM.innerHTML = slideEl;
+          setInnerHTML(tempDOM, slideEl);
           slideEl = tempDOM.children[0];
         }
       } else if (swiper.isElement) {
@@ -7020,14 +7088,14 @@
       }
       slideEl.setAttribute("data-swiper-slide-index", index);
       if (!params.renderSlide) {
-        slideEl.innerHTML = slide2;
+        setInnerHTML(slideEl, slide2);
       }
       if (params.cache) {
         swiper.virtual.cache[index] = slideEl;
       }
       return slideEl;
     }
-    function update2(force, beforeInit) {
+    function update2(force, beforeInit, forceActiveIndex) {
       const {
         slidesPerView,
         slidesPerGroup,
@@ -7052,7 +7120,7 @@
       if (!swiper.params.cssMode) {
         swiper.updateActiveIndex();
       }
-      const activeIndex = swiper.activeIndex || 0;
+      const activeIndex = typeof forceActiveIndex === "undefined" ? swiper.activeIndex || 0 : forceActiveIndex;
       let offsetProp;
       if (swiper.rtlTranslate) offsetProp = "right";
       else offsetProp = swiper.isHorizontal() ? "left" : "top";
@@ -7108,13 +7176,13 @@
           offset,
           from,
           to,
-          slides: function getSlides() {
+          slides: (function getSlides() {
             const slidesToRender = [];
             for (let i = from; i <= to; i += 1) {
               slidesToRender.push(slides[i]);
             }
             return slidesToRender;
-          }()
+          })()
         });
         if (swiper.params.virtual.renderExternalUpdate) {
           onRendered();
@@ -7357,7 +7425,7 @@
       if (e.shiftKey || e.altKey || e.ctrlKey || e.metaKey) {
         return void 0;
       }
-      if (document2.activeElement && document2.activeElement.nodeName && (document2.activeElement.nodeName.toLowerCase() === "input" || document2.activeElement.nodeName.toLowerCase() === "textarea")) {
+      if (document2.activeElement && (document2.activeElement.isContentEditable || document2.activeElement.nodeName && (document2.activeElement.nodeName.toLowerCase() === "input" || document2.activeElement.nodeName.toLowerCase() === "textarea"))) {
         return void 0;
       }
       if (swiper.params.keyboard.onlyInViewport && (isPageUp || isPageDown || isArrowLeft || isArrowRight || isArrowUp || isArrowDown)) {
@@ -7670,7 +7738,7 @@
             }
           }
           if (!ignoreWheelEvents) emit("scroll", e);
-          if (swiper.params.autoplay && swiper.params.autoplayDisableOnInteraction) swiper.autoplay.stop();
+          if (swiper.params.autoplay && swiper.params.autoplay.disableOnInteraction) swiper.autoplay.stop();
           if (params.releaseOnEdges && (position === swiper.minTranslate() || position === swiper.maxTranslate())) {
             return true;
           }
@@ -7945,7 +8013,7 @@
     if (classes2 === void 0) {
       classes2 = "";
     }
-    return ".".concat(classes2.trim().replace(/([\.:!+\/])/g, "\\$1").replace(/ /g, "."));
+    return ".".concat(classes2.trim().replace(/([\.:!+\/()[\]])/g, "\\$1").replace(/ /g, "."));
   }
 
   // node_modules/swiper/modules/pagination.mjs
@@ -8170,7 +8238,7 @@
           });
         }
         if (params.type === "custom" && params.renderCustom) {
-          subEl.innerHTML = params.renderCustom(swiper, current + 1, total);
+          setInnerHTML(subEl, params.renderCustom(swiper, current + 1, total));
           if (subElIndex === 0) emit("paginationRender", subEl);
         } else {
           if (subElIndex === 0) emit("paginationRender", subEl);
@@ -8218,7 +8286,7 @@
       swiper.pagination.bullets = [];
       el.forEach((subEl) => {
         if (params.type !== "custom") {
-          subEl.innerHTML = paginationHTML || "";
+          setInnerHTML(subEl, paginationHTML || "");
         }
         if (params.type === "bullets") {
           swiper.pagination.bullets.push(...subEl.querySelectorAll(classesToSelector(params.bulletClass)));
@@ -8248,10 +8316,10 @@
       if (swiper.params.uniqueNavElements && typeof params.el === "string" && Array.isArray(el) && el.length > 1) {
         el = [...swiper.el.querySelectorAll(params.el)];
         if (el.length > 1) {
-          el = el.filter((subEl) => {
+          el = el.find((subEl) => {
             if (elementParents(subEl, ".swiper")[0] !== swiper.el) return false;
             return true;
-          })[0];
+          });
         }
       }
       if (Array.isArray(el) && el.length === 1) el = el[0];
@@ -8895,6 +8963,7 @@
         limitToOriginalSize: false,
         maxRatio: 3,
         minRatio: 1,
+        panOnMouseMove: false,
         toggle: true,
         containerClass: "swiper-zoom-container",
         zoomedSlideClass: "swiper-slide-zoomed"
@@ -8905,6 +8974,12 @@
     };
     let currentScale = 1;
     let isScaling = false;
+    let isPanningWithMouse = false;
+    let mousePanStart = {
+      x: 0,
+      y: 0
+    };
+    const mousePanSensitivity = -3;
     let fakeGestureTouched;
     let fakeGestureMoved;
     const evCache = [];
@@ -9112,6 +9187,8 @@
       image.touchesStart.y = event2.pageY;
     }
     function onTouchMove2(e) {
+      const isMouseEvent = e.pointerType === "mouse";
+      const isMousePan = isMouseEvent && swiper.params.zoom.panOnMouseMove;
       if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) {
         return;
       }
@@ -9120,6 +9197,11 @@
         return;
       }
       if (!image.isTouched || !gesture.slideEl) {
+        if (isMousePan) onMouseMove(e);
+        return;
+      }
+      if (isMousePan) {
+        onMouseMove(e);
         return;
       }
       if (!image.isMoved) {
@@ -9194,6 +9276,7 @@
     }
     function onTouchEnd2() {
       const zoom = swiper.zoom;
+      evCache.length = 0;
       if (!gesture.imageEl) return;
       if (!image.isTouched || !image.isMoved) {
         image.isTouched = false;
@@ -9242,6 +9325,44 @@
         gesture.originX = 0;
         gesture.originY = 0;
       }
+    }
+    function onMouseMove(e) {
+      if (currentScale <= 1 || !gesture.imageWrapEl) return;
+      if (!eventWithinSlide(e) || !eventWithinZoomContainer(e)) return;
+      const currentTransform = window2.getComputedStyle(gesture.imageWrapEl).transform;
+      const matrix = new window2.DOMMatrix(currentTransform);
+      if (!isPanningWithMouse) {
+        isPanningWithMouse = true;
+        mousePanStart.x = e.clientX;
+        mousePanStart.y = e.clientY;
+        image.startX = matrix.e;
+        image.startY = matrix.f;
+        image.width = gesture.imageEl.offsetWidth || gesture.imageEl.clientWidth;
+        image.height = gesture.imageEl.offsetHeight || gesture.imageEl.clientHeight;
+        gesture.slideWidth = gesture.slideEl.offsetWidth;
+        gesture.slideHeight = gesture.slideEl.offsetHeight;
+        return;
+      }
+      const deltaX = (e.clientX - mousePanStart.x) * mousePanSensitivity;
+      const deltaY = (e.clientY - mousePanStart.y) * mousePanSensitivity;
+      const scaledWidth = image.width * currentScale;
+      const scaledHeight = image.height * currentScale;
+      const slideWidth = gesture.slideWidth;
+      const slideHeight = gesture.slideHeight;
+      const minX = Math.min(slideWidth / 2 - scaledWidth / 2, 0);
+      const maxX = -minX;
+      const minY = Math.min(slideHeight / 2 - scaledHeight / 2, 0);
+      const maxY = -minY;
+      const newX = Math.max(Math.min(image.startX + deltaX, maxX), minX);
+      const newY = Math.max(Math.min(image.startY + deltaY, maxY), minY);
+      gesture.imageWrapEl.style.transitionDuration = "0ms";
+      gesture.imageWrapEl.style.transform = "translate3d(".concat(newX, "px, ").concat(newY, "px, 0)");
+      mousePanStart.x = e.clientX;
+      mousePanStart.y = e.clientY;
+      image.startX = newX;
+      image.startY = newY;
+      image.currentX = newX;
+      image.currentY = newY;
     }
     function zoomIn(e) {
       const zoom = swiper.zoom;
@@ -9299,6 +9420,7 @@
         touchX = image.touchesStart.x;
         touchY = image.touchesStart.y;
       }
+      const prevScale = currentScale;
       const forceZoomRatio = typeof e === "number" ? e : null;
       if (currentScale === 1 && forceZoomRatio) {
         touchX = void 0;
@@ -9324,8 +9446,13 @@
         translateMinY = Math.min(slideHeight / 2 - scaledHeight / 2, 0);
         translateMaxX = -translateMinX;
         translateMaxY = -translateMinY;
-        translateX = diffX * zoom.scale;
-        translateY = diffY * zoom.scale;
+        if (prevScale > 0 && forceZoomRatio && typeof image.currentX === "number" && typeof image.currentY === "number") {
+          translateX = image.currentX * zoom.scale / prevScale;
+          translateY = image.currentY * zoom.scale / prevScale;
+        } else {
+          translateX = diffX * zoom.scale;
+          translateY = diffY * zoom.scale;
+        }
         if (translateX < translateMinX) {
           translateX = translateMinX;
         }
@@ -9346,6 +9473,8 @@
         gesture.originX = 0;
         gesture.originY = 0;
       }
+      image.currentX = translateX;
+      image.currentY = translateY;
       gesture.imageWrapEl.style.transitionDuration = "300ms";
       gesture.imageWrapEl.style.transform = "translate3d(".concat(translateX, "px, ").concat(translateY, "px,0)");
       gesture.imageEl.style.transitionDuration = "300ms";
@@ -9378,6 +9507,8 @@
       }
       zoom.scale = 1;
       currentScale = 1;
+      image.currentX = void 0;
+      image.currentY = void 0;
       image.touchesStart.x = void 0;
       image.touchesStart.y = void 0;
       gesture.imageWrapEl.style.transitionDuration = "300ms";
@@ -9388,6 +9519,17 @@
       gesture.slideEl = void 0;
       gesture.originX = 0;
       gesture.originY = 0;
+      if (swiper.params.zoom.panOnMouseMove) {
+        mousePanStart = {
+          x: 0,
+          y: 0
+        };
+        if (isPanningWithMouse) {
+          isPanningWithMouse = false;
+          image.startX = 0;
+          image.startY = 0;
+        }
+      }
     }
     function zoomToggle(e) {
       const zoom = swiper.zoom;
@@ -9500,7 +9642,7 @@
       control: void 0
     };
     function LinearSpline(x, y) {
-      const binarySearch = /* @__PURE__ */ function search() {
+      const binarySearch = /* @__PURE__ */ (function search() {
         let maxIndex;
         let minIndex;
         let guess;
@@ -9517,7 +9659,7 @@
           }
           return maxIndex;
         };
-      }();
+      })();
       this.x = x;
       this.y = y;
       this.lastIndex = x.length - 1;
@@ -9689,8 +9831,7 @@
     function notify(message) {
       const notification = liveRegion;
       if (notification.length === 0) return;
-      notification.innerHTML = "";
-      notification.innerHTML = message;
+      setInnerHTML(notification, message);
     }
     function getRandomNumber(size) {
       if (size === void 0) {
@@ -9889,9 +10030,9 @@
       requestAnimationFrame(() => {
         if (preventFocusHandler) return;
         if (swiper.params.loop) {
-          swiper.slideToLoop(parseInt(slideEl.getAttribute("data-swiper-slide-index")), 0);
+          swiper.slideToLoop(swiper.getSlideIndexWhenGrid(parseInt(slideEl.getAttribute("data-swiper-slide-index"))), 0);
         } else {
-          swiper.slideTo(swiper.slides.indexOf(slideEl), 0);
+          swiper.slideTo(swiper.getSlideIndexWhenGrid(swiper.slides.indexOf(slideEl)), 0);
         }
         preventFocusHandler = false;
       });
@@ -10170,7 +10311,7 @@
         watchState: false,
         getSlideIndex(_s, hash) {
           if (swiper.virtual && swiper.params.virtual.enabled) {
-            const slideWithHash = swiper.slides.filter((slideEl) => slideEl.getAttribute("data-hash") === hash)[0];
+            const slideWithHash = swiper.slides.find((slideEl) => slideEl.getAttribute("data-hash") === hash);
             if (!slideWithHash) return 0;
             const index = parseInt(slideWithHash.getAttribute("data-swiper-slide-index"), 10);
             return index;
@@ -10307,7 +10448,7 @@
     const getSlideDelay = () => {
       let activeSlideEl;
       if (swiper.virtual && swiper.params.virtual.enabled) {
-        activeSlideEl = swiper.slides.filter((slideEl) => slideEl.classList.contains("swiper-slide-active"))[0];
+        activeSlideEl = swiper.slides.find((slideEl) => slideEl.classList.contains("swiper-slide-active"));
       } else {
         activeSlideEl = swiper.slides[swiper.activeIndex];
       }
@@ -10588,6 +10729,10 @@
       initialized = true;
       const SwiperClass = swiper.constructor;
       if (thumbsParams.swiper instanceof SwiperClass) {
+        if (thumbsParams.swiper.destroyed) {
+          initialized = false;
+          return false;
+        }
         swiper.thumbs.swiper = thumbsParams.swiper;
         Object.assign(swiper.thumbs.swiper.originalParams, {
           watchSlidesProgress: true,
@@ -10645,7 +10790,7 @@
         let newThumbsIndex;
         let direction;
         if (thumbsSwiper.params.loop) {
-          const newThumbsSlide = thumbsSwiper.slides.filter((slideEl) => slideEl.getAttribute("data-swiper-slide-index") === "".concat(swiper.realIndex))[0];
+          const newThumbsSlide = thumbsSwiper.slides.find((slideEl) => slideEl.getAttribute("data-swiper-slide-index") === "".concat(swiper.realIndex));
           newThumbsIndex = thumbsSwiper.slides.indexOf(newThumbsSlide);
           direction = swiper.activeIndex > swiper.previousIndex ? "next" : "prev";
         } else {
@@ -11118,9 +11263,9 @@
     const appendElement = (slideEl) => {
       if (typeof slideEl === "string") {
         const tempDOM = document.createElement("div");
-        tempDOM.innerHTML = slideEl;
+        setInnerHTML(tempDOM, slideEl);
         slidesEl.append(tempDOM.children[0]);
-        tempDOM.innerHTML = "";
+        setInnerHTML(tempDOM, "");
       } else {
         slidesEl.append(slideEl);
       }
@@ -11154,9 +11299,9 @@
     const prependElement = (slideEl) => {
       if (typeof slideEl === "string") {
         const tempDOM = document.createElement("div");
-        tempDOM.innerHTML = slideEl;
+        setInnerHTML(tempDOM, slideEl);
         slidesEl.prepend(tempDOM.children[0]);
-        tempDOM.innerHTML = "";
+        setInnerHTML(tempDOM, "");
       } else {
         slidesEl.prepend(slideEl);
       }
@@ -11314,7 +11459,7 @@
       Object.assign(swiper.params, overwriteParamsResult);
       Object.assign(swiper.originalParams, overwriteParamsResult);
     });
-    on("setTranslate", () => {
+    on("setTranslate _virtualUpdated", () => {
       if (swiper.params.effect !== effect) return;
       setTranslate2();
     });
@@ -11370,7 +11515,7 @@
     } = swiper;
     const getSlide = (el) => {
       if (!el.parentElement) {
-        const slide2 = swiper.slides.filter((slideEl) => slideEl.shadowRoot && slideEl.shadowRoot === el.parentNode)[0];
+        const slide2 = swiper.slides.find((slideEl) => slideEl.shadowRoot && slideEl.shadowRoot === el.parentNode);
         return slide2;
       }
       return el.parentElement;
@@ -12080,7 +12225,10 @@
       setTransition: setTransition2,
       perspective: () => true,
       overwriteParams: () => ({
+        _loopSwapReset: false,
         watchSlidesProgress: true,
+        loopAdditionalSlides: swiper.params.cardsEffect.rotate ? 3 : 2,
+        centeredSlides: true,
         virtualTranslate: !swiper.params.cssMode
       })
     });
@@ -12387,14 +12535,14 @@
         if (!nextEl || typeof nextEl === "string") {
           nextEl = document.createElement("div");
           nextEl.classList.add("swiper-button-next");
-          nextEl.innerHTML = swiper.hostEl.constructor.nextButtonSvg;
+          setInnerHTML(nextEl, swiper.hostEl.constructor.nextButtonSvg);
           nextEl.part.add("button-next");
           swiper.el.appendChild(nextEl);
         }
         if (!prevEl || typeof prevEl === "string") {
           prevEl = document.createElement("div");
           prevEl.classList.add("swiper-button-prev");
-          prevEl.innerHTML = swiper.hostEl.constructor.prevButtonSvg;
+          setInnerHTML(prevEl, swiper.hostEl.constructor.prevButtonSvg);
           prevEl.part.add("button-prev");
           swiper.el.appendChild(prevEl);
         }
@@ -12462,14 +12610,21 @@
       });
     }
     attrsList.forEach((attr) => {
-      const moduleParam = modulesParamsList.filter((mParam) => attr.name.indexOf("".concat(mParam, "-")) === 0)[0];
+      const moduleParam = modulesParamsList.find((mParam) => attr.name.startsWith("".concat(mParam, "-")));
       if (moduleParam) {
         const parentObjName = attrToProp(moduleParam);
         const subObjName = attrToProp(attr.name.split("".concat(moduleParam, "-"))[1]);
-        if (typeof passedParams[parentObjName] === "undefined") passedParams[parentObjName] = {};
+        if (typeof passedParams[parentObjName] === "undefined") {
+          passedParams[parentObjName] = {};
+        }
         if (passedParams[parentObjName] === true) {
           passedParams[parentObjName] = {
             enabled: true
+          };
+        }
+        if (passedParams[parentObjName] === false) {
+          passedParams[parentObjName] = {
+            enabled: false
           };
         }
         passedParams[parentObjName][subObjName] = formatValue(attr.value);
@@ -12604,16 +12759,15 @@
       const el = document.createElement("div");
       el.classList.add("swiper");
       el.part = "container";
-      el.innerHTML = '\n      <slot name="container-start"></slot>\n      <div class="swiper-wrapper" part="wrapper">\n        <slot></slot>\n        '.concat(Array.from({
+      setInnerHTML(el, '\n      <slot name="container-start"></slot>\n      <div class="swiper-wrapper" part="wrapper">\n        <slot></slot>\n        '.concat(Array.from({
         length: this.slideSlots
-      }).map((_, index) => '\n        <swiper-slide part="slide slide-'.concat(index, '">\n          <slot name="slide-').concat(index, '"></slot>\n        </swiper-slide>\n        ')).join(""), '\n      </div>\n      <slot name="container-end"></slot>\n      ').concat(needsNavigation(this.passedParams) ? '\n        <div part="button-prev" class="swiper-button-prev">'.concat(this.constructor.prevButtonSvg, '</div>\n        <div part="button-next" class="swiper-button-next">').concat(this.constructor.nextButtonSvg, "</div>\n      ") : "", "\n      ").concat(needsPagination(this.passedParams) ? '\n        <div part="pagination" class="swiper-pagination"></div>\n      ' : "", "\n      ").concat(needsScrollbar(this.passedParams) ? '\n        <div part="scrollbar" class="swiper-scrollbar"></div>\n      ' : "", "\n    ");
+      }).map((_, index) => '\n        <swiper-slide part="slide slide-'.concat(index, '">\n          <slot name="slide-').concat(index, '"></slot>\n        </swiper-slide>\n        ')).join(""), '\n      </div>\n      <slot name="container-end"></slot>\n      ').concat(needsNavigation(this.passedParams) ? '\n        <div part="button-prev" class="swiper-button-prev">'.concat(this.constructor.prevButtonSvg, '</div>\n        <div part="button-next" class="swiper-button-next">').concat(this.constructor.nextButtonSvg, "</div>\n      ") : "", "\n      ").concat(needsPagination(this.passedParams) ? '\n        <div part="pagination" class="swiper-pagination"></div>\n      ' : "", "\n      ").concat(needsScrollbar(this.passedParams) ? '\n        <div part="scrollbar" class="swiper-scrollbar"></div>\n      ' : "", "\n    "));
       this.shadowRoot.appendChild(el);
       this.rendered = true;
     }
     initialize() {
       var _this = this;
-      if (this.initialized) return;
-      this.initialized = true;
+      if (this.swiper && this.swiper.initialized) return;
       const {
         params: swiperParams,
         passedParams
@@ -12644,7 +12798,7 @@
       }));
     }
     connectedCallback() {
-      if (this.initialized && this.nested && this.closest("swiper-slide") && this.closest("swiper-slide").swiperLoopMoveDOM) {
+      if (this.swiper && this.swiper.initialized && this.nested && this.closest("swiper-slide") && this.closest("swiper-slide").swiperLoopMoveDOM) {
         return;
       }
       if (this.init === false || this.getAttribute("init") === "false") {
@@ -12659,7 +12813,6 @@
       if (this.swiper && this.swiper.destroy) {
         this.swiper.destroy();
       }
-      this.initialized = false;
     }
     updateSwiperOnPropChange(propName, propValue) {
       const {
@@ -12685,7 +12838,7 @@
       } : {}));
     }
     attributeChangedCallback(attr, prevValue, newValue) {
-      if (!this.initialized) return;
+      if (!(this.swiper && this.swiper.initialized)) return;
       if (prevValue === "true" && newValue === null) {
         newValue = false;
       }
@@ -12707,7 +12860,7 @@
       set(value) {
         if (!this.passedParams) this.passedParams = {};
         this.passedParams[paramName] = value;
-        if (!this.initialized) return;
+        if (!(this.swiper && this.swiper.initialized)) return;
         this.updateSwiperOnPropChange(paramName, value);
       }
     });
@@ -12734,6 +12887,9 @@
       this.render();
     }
     connectedCallback() {
+      if (this.swiperLoopMoveDOM) {
+        return;
+      }
       this.initialize();
     }
   };
@@ -13431,9 +13587,12 @@
       tween && tween._lazy && (tween.render(tween._lazy[0], tween._lazy[1], true)._lazy = 0);
     }
   };
+  var _isRevertWorthy = function _isRevertWorthy2(animation) {
+    return !!(animation._initted || animation._startAt || animation.add);
+  };
   var _lazySafeRender = function _lazySafeRender2(animation, time, suppressEvents, force) {
     _lazyTweens.length && !_reverting && _lazyRender();
-    animation.render(time, suppressEvents, force || _reverting && time < 0 && (animation._initted || animation._startAt));
+    animation.render(time, suppressEvents, force || !!(_reverting && time < 0 && _isRevertWorthy(animation)));
     _lazyTweens.length && !_reverting && _lazyRender();
   };
   var _numericIfPossible = function _numericIfPossible2(value) {
@@ -13574,7 +13733,7 @@
     return animation._repeat ? _animationCycle(animation._tTime, animation = animation.duration() + animation._rDelay) * animation : 0;
   };
   var _animationCycle = function _animationCycle2(tTime, cycleDuration) {
-    var whole = Math.floor(tTime /= cycleDuration);
+    var whole = Math.floor(tTime = _roundPrecise(tTime / cycleDuration));
     return tTime && whole === tTime ? whole - 1 : whole;
   };
   var _parentToChildTotalTime = function _parentToChildTotalTime2(parentTime, child) {
@@ -14196,13 +14355,13 @@
     }
     return result + shell[l];
   };
-  var _colorExp = function() {
+  var _colorExp = (function() {
     var s = "(?:\\b(?:(?:rgb|rgba|hsl|hsla)\\(.+?\\))|\\B#(?:[0-9a-f]{3,4}){1,2}\\b", p;
     for (p in _colorLookup) {
       s += "|" + p + "\\b";
     }
     return new RegExp(s + ")", "gi");
-  }();
+  })();
   var _hslExp = /hsl[a]?\(/;
   var _colorStringFilter = function _colorStringFilter2(a) {
     var combined = a.join(" "), toHSL;
@@ -14215,7 +14374,7 @@
     }
   };
   var _tickerActive;
-  var _ticker = function() {
+  var _ticker = (function() {
     var _getTime3 = Date.now, _lagThreshold = 500, _adjustedLag = 33, _startTime = _getTime3(), _lastUpdate = _startTime, _gap = 1e3 / 240, _nextTime = _gap, _listeners3 = [], _id, _req, _raf, _self, _delta, _i2, _tick = function _tick2(v) {
       var elapsed = _getTime3() - _lastUpdate, manual = v === true, overlap, dispatch, time, frame;
       (elapsed > _lagThreshold || elapsed < 0) && (_startTime += elapsed - _adjustedLag);
@@ -14293,7 +14452,7 @@
       _listeners: _listeners3
     };
     return _self;
-  }();
+  })();
   var _wake = function _wake2() {
     return !_tickerActive && _ticker.wake();
   };
@@ -14424,7 +14583,7 @@
     }, easeOut);
   })(7.5625, 2.75);
   _insertEase("Expo", function(p) {
-    return p ? Math.pow(2, 10 * (p - 1)) : 0;
+    return Math.pow(2, 10 * (p - 1)) * p + p * p * p * p * p * p * (1 - p);
   });
   _insertEase("Circ", function(p) {
     return -(_sqrt(1 - p * p) - 1);
@@ -14456,7 +14615,7 @@
     this.get = harness ? harness.get : _getProperty;
     this.set = harness ? harness.getSetter : _getSetter;
   };
-  var Animation = /* @__PURE__ */ function() {
+  var Animation = /* @__PURE__ */ (function() {
     function Animation2(vars) {
       this.vars = vars;
       this._delay = +vars.delay || 0;
@@ -14521,7 +14680,7 @@
       return arguments.length ? this.totalTime(Math.min(this.totalDuration(), value + _elapsedCycleDuration(this)) % (this._dur + this._rDelay) || (value ? this._dur : 0), suppressEvents) : this._time;
     };
     _proto.totalProgress = function totalProgress(value, suppressEvents) {
-      return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() > 0 ? 1 : 0;
+      return arguments.length ? this.totalTime(this.totalDuration() * value, suppressEvents) : this.totalDuration() ? Math.min(1, this._tTime / this._tDur) : this.rawTime() >= 0 && this._initted ? 1 : 0;
     };
     _proto.progress = function progress(value, suppressEvents) {
       return arguments.length ? this.totalTime(this.duration() * (this._yoyo && !(this.iteration() & 1) ? 1 - value : value) + _elapsedCycleDuration(this), suppressEvents) : this.duration() ? Math.min(1, this._time / this._dur) : this.rawTime() > 0 ? 1 : 0;
@@ -14540,7 +14699,7 @@
       var tTime = this.parent && this._ts ? _parentToChildTotalTime(this.parent._time, this) : this._tTime;
       this._rts = +value || 0;
       this._ts = this._ps || value === -_tinyNum ? 0 : this._rts;
-      this.totalTime(_clamp(-Math.abs(this._delay), this._tDur, tTime), suppressEvents !== false);
+      this.totalTime(_clamp(-Math.abs(this._delay), this.totalDuration(), tTime), suppressEvents !== false);
       _setEnd(this);
       return _recacheAncestors(this);
     };
@@ -14583,7 +14742,7 @@
       }
       var prevIsReverting = _reverting;
       _reverting = config3;
-      if (this._initted || this._startAt) {
+      if (_isRevertWorthy(this)) {
         this.timeline && this.timeline.revert(config3);
         this.totalTime(-0.01, config3.suppressEvents);
       }
@@ -14626,7 +14785,9 @@
       return this.totalTime(_parsePosition(this, position), _isNotFalse(suppressEvents));
     };
     _proto.restart = function restart(includeDelay, suppressEvents) {
-      return this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
+      this.play().totalTime(includeDelay ? -this._delay : 0, _isNotFalse(suppressEvents));
+      this._dur || (this._zTime = -_tinyNum);
+      return this;
     };
     _proto.play = function play(from, suppressEvents) {
       from != null && this.seek(from, suppressEvents);
@@ -14694,7 +14855,7 @@
       _interrupt(this);
     };
     return Animation2;
-  }();
+  })();
   _setDefaults(Animation.prototype, {
     _time: 0,
     _start: 0,
@@ -14715,7 +14876,7 @@
     _ps: false,
     _rts: 1
   });
-  var Timeline = /* @__PURE__ */ function(_Animation) {
+  var Timeline = /* @__PURE__ */ (function(_Animation) {
     _inheritsLoose(Timeline2, _Animation);
     function Timeline2(vars, position) {
       var _this;
@@ -14803,8 +14964,9 @@
             iteration = this._repeat;
             time = dur;
           } else {
-            iteration = ~~(tTime / cycleDuration);
-            if (iteration && iteration === tTime / cycleDuration) {
+            prevIteration = _roundPrecise(tTime / cycleDuration);
+            iteration = ~~prevIteration;
+            if (iteration && iteration === prevIteration) {
               time = dur;
               iteration--;
             }
@@ -14858,7 +15020,7 @@
           this._zTime = totalTime;
           prevTime = 0;
         }
-        if (!prevTime && time && !suppressEvents && !iteration) {
+        if (!prevTime && tTime && !suppressEvents && !prevIteration) {
           _callback(this, "onStart");
           if (this._tTime !== tTime) {
             return this;
@@ -14890,7 +15052,7 @@
               if (child.parent !== this) {
                 return this.render(totalTime, suppressEvents, force);
               }
-              child.render(child._ts > 0 ? (adjustedTime - child._start) * child._ts : (child._dirty ? child.totalDuration() : child._tDur) + (adjustedTime - child._start) * child._ts, suppressEvents, force || _reverting && (child._initted || child._startAt));
+              child.render(child._ts > 0 ? (adjustedTime - child._start) * child._ts : (child._dirty ? child.totalDuration() : child._tDur) + (adjustedTime - child._start) * child._ts, suppressEvents, force || _reverting && _isRevertWorthy(child));
               if (time !== this._time || !this._ts && !prevPaused) {
                 pauseTween = 0;
                 next && (tTime += this._zTime = adjustedTime ? -_tinyNum : _tinyNum);
@@ -14987,7 +15149,7 @@
       if (_isFunction(child)) {
         return this.killTweensOf(child);
       }
-      _removeLinkedListItem(this, child);
+      child.parent === this && _removeLinkedListItem(this, child);
       if (child === this._recent) {
         this._recent = this._last;
       }
@@ -15194,7 +15356,7 @@
       }
     };
     return Timeline2;
-  }(Animation);
+  })(Animation);
   _setDefaults(Timeline.prototype, {
     _lock: 0,
     _hasPause: 0,
@@ -15488,7 +15650,7 @@
   _forEachName(_staggerTweenProps + ",id,stagger,delay,duration,paused,scrollTrigger", function(name) {
     return _staggerPropsToSkip[name] = 1;
   });
-  var Tween = /* @__PURE__ */ function(_Animation2) {
+  var Tween = /* @__PURE__ */ (function(_Animation2) {
     _inheritsLoose(Tween2, _Animation2);
     function Tween2(targets, vars, position, skipInherit) {
       var _this3;
@@ -15601,7 +15763,7 @@
       var prevTime = this._time, tDur = this._tDur, dur = this._dur, isNegative = totalTime < 0, tTime = totalTime > tDur - _tinyNum && !isNegative ? tDur : totalTime < _tinyNum ? 0 : totalTime, time, pt, iteration, cycleDuration, prevIteration, isYoyo, ratio, timeline2, yoyoEase;
       if (!dur) {
         _renderZeroDurationTween(this, totalTime, suppressEvents, force);
-      } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative) {
+      } else if (tTime !== this._tTime || !totalTime || force || !this._initted && this._tTime || this._startAt && this._zTime < 0 !== isNegative || this._lazy) {
         time = tTime;
         timeline2 = this.timeline;
         if (this._repeat) {
@@ -15614,12 +15776,14 @@
             iteration = this._repeat;
             time = dur;
           } else {
-            iteration = ~~(tTime / cycleDuration);
-            if (iteration && iteration === _roundPrecise(tTime / cycleDuration)) {
+            prevIteration = _roundPrecise(tTime / cycleDuration);
+            iteration = ~~prevIteration;
+            if (iteration && iteration === prevIteration) {
               time = dur;
               iteration--;
+            } else if (time > dur) {
+              time = dur;
             }
-            time > dur && (time = dur);
           }
           isYoyo = this._yoyo && iteration & 1;
           if (isYoyo) {
@@ -15633,7 +15797,7 @@
           }
           if (iteration !== prevIteration) {
             timeline2 && this._yEase && _propagateYoyoEase(timeline2, isYoyo);
-            if (this.vars.repeatRefresh && !isYoyo && !this._lock && this._time !== cycleDuration && this._initted) {
+            if (this.vars.repeatRefresh && !isYoyo && !this._lock && time !== cycleDuration && this._initted) {
               this._lock = force = 1;
               this.render(_roundPrecise(cycleDuration * iteration), true).invalidate()._lock = 0;
             }
@@ -15661,7 +15825,7 @@
         if (this._from) {
           this.ratio = ratio = 1 - ratio;
         }
-        if (time && !prevTime && !suppressEvents && !iteration) {
+        if (!prevTime && tTime && !suppressEvents && !prevIteration) {
           _callback(this, "onStart");
           if (this._tTime !== tTime) {
             return this;
@@ -15718,7 +15882,8 @@
       }
       if (!targets && (!vars || vars === "all")) {
         this._lazy = this._pt = 0;
-        return this.parent ? _interrupt(this) : this;
+        this.parent ? _interrupt(this) : this.scrollTrigger && this.scrollTrigger.kill(!!_reverting);
+        return this;
       }
       if (this.timeline) {
         var tDur = this.timeline.totalDuration();
@@ -15802,7 +15967,7 @@
       return _globalTimeline.killTweensOf(targets, props, onlyActive);
     };
     return Tween2;
-  }(Animation);
+  })(Animation);
   _setDefaults(Tween.prototype, {
     _targets: [],
     _lazy: 0,
@@ -15906,7 +16071,7 @@
     }
     parent._pt = first;
   };
-  var PropTween = /* @__PURE__ */ function() {
+  var PropTween = /* @__PURE__ */ (function() {
     function PropTween2(next, target, prop, start, change, renderer, data, setter, priority) {
       this.t = target;
       this.s = start;
@@ -15930,7 +16095,7 @@
       this.tween = tween;
     };
     return PropTween2;
-  }();
+  })();
   _forEachName(_callbackNames + "parent,duration,ease,delay,overwrite,runBackwards,startAt,yoyo,immediateRender,repeat,repeatDelay,data,paused,reversed,lazy,callbackScope,stringFilter,id,yoyoEase,stagger,inherit,repeatRefresh,keyframes,autoRevert,scrollTrigger", function(name) {
     return _reservedProps[name] = 1;
   });
@@ -15983,7 +16148,7 @@
       _dispatch("matchMedia");
     }
   };
-  var Context = /* @__PURE__ */ function() {
+  var Context = /* @__PURE__ */ (function() {
     function Context2(func, scope) {
       this.selector = scope && selector(scope);
       this.data = [];
@@ -16090,8 +16255,8 @@
       this.kill(config3 || {});
     };
     return Context2;
-  }();
-  var MatchMedia = /* @__PURE__ */ function() {
+  })();
+  var MatchMedia = /* @__PURE__ */ (function() {
     function MatchMedia2(scope) {
       this.contexts = [];
       this.scope = scope;
@@ -16133,7 +16298,7 @@
       });
     };
     return MatchMedia2;
-  }();
+  })();
   var _gsap = {
     registerPlugin: function registerPlugin() {
       for (var _len2 = arguments.length, args = new Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
@@ -16183,8 +16348,8 @@
       };
     },
     quickTo: function quickTo(target, property, vars) {
-      var _merge22;
-      var tween = gsap.to(target, _merge((_merge22 = {}, _merge22[property] = "+=0.1", _merge22.paused = true, _merge22), vars || {})), func = function func2(value, start, startIsRelative) {
+      var _setDefaults22;
+      var tween = gsap.to(target, _setDefaults((_setDefaults22 = {}, _setDefaults22[property] = "+=0.1", _setDefaults22.paused = true, _setDefaults22.stagger = 0, _setDefaults22), vars || {})), func = function func2(value, start, startIsRelative) {
         return tween.resetTo(property, value, start, startIsRelative);
       };
       func.tween = tween;
@@ -16348,6 +16513,7 @@
   var _buildModifierPlugin = function _buildModifierPlugin2(name, modifier) {
     return {
       name,
+      headless: 1,
       rawVars: 1,
       //don't pre-process function-based values or "random()" strings.
       init: function init4(target, vars, tween) {
@@ -16394,6 +16560,7 @@
     }
   }, {
     name: "endArray",
+    headless: 1,
     init: function init2(target, value) {
       var i = value.length;
       while (i--) {
@@ -16401,7 +16568,7 @@
       }
     }
   }, _buildModifierPlugin("roundProps", _roundModifier), _buildModifierPlugin("modifiers"), _buildModifierPlugin("snap", snap)) || _gsap;
-  Tween.version = Timeline.version = gsap.version = "3.12.5";
+  Tween.version = Timeline.version = gsap.version = "3.13.0";
   _coreReady = 1;
   _windowExists() && _wake();
   var Power0 = _easeMap.Power0;
@@ -16528,7 +16695,13 @@
   var _revertStyle = function _revertStyle2() {
     var props = this.props, target = this.target, style = target.style, cache = target._gsap, i, p;
     for (i = 0; i < props.length; i += 3) {
-      props[i + 1] ? target[props[i]] = props[i + 2] : props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].substr(0, 2) === "--" ? props[i] : props[i].replace(_capsExp, "-$1").toLowerCase());
+      if (!props[i + 1]) {
+        props[i + 2] ? style[props[i]] = props[i + 2] : style.removeProperty(props[i].substr(0, 2) === "--" ? props[i] : props[i].replace(_capsExp, "-$1").toLowerCase());
+      } else if (props[i + 1] === 2) {
+        target[props[i]](props[i + 2]);
+      } else {
+        target[props[i]] = props[i + 2];
+      }
     }
     if (this.tfm) {
       for (p in this.tfm) {
@@ -16558,7 +16731,7 @@
       save: _saveStyle
     };
     target._gsap || gsap.core.getCache(target);
-    properties && properties.split(",").forEach(function(p) {
+    properties && target.style && target.nodeType && properties.split(",").forEach(function(p) {
       return saver.save(p);
     });
     return saver;
@@ -16600,30 +16773,17 @@
       _pluginInitted = 1;
     }
   };
-  var _getBBoxHack = function _getBBoxHack2(swapIfPossible) {
-    var svg = _createElement("svg", this.ownerSVGElement && this.ownerSVGElement.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), oldParent = this.parentNode, oldSibling = this.nextSibling, oldCSS = this.style.cssText, bbox;
+  var _getReparentedCloneBBox = function _getReparentedCloneBBox2(target) {
+    var owner = target.ownerSVGElement, svg = _createElement("svg", owner && owner.getAttribute("xmlns") || "http://www.w3.org/2000/svg"), clone = target.cloneNode(true), bbox;
+    clone.style.display = "block";
+    svg.appendChild(clone);
     _docElement.appendChild(svg);
-    svg.appendChild(this);
-    this.style.display = "block";
-    if (swapIfPossible) {
-      try {
-        bbox = this.getBBox();
-        this._gsapBBox = this.getBBox;
-        this.getBBox = _getBBoxHack2;
-      } catch (e) {
-      }
-    } else if (this._gsapBBox) {
-      bbox = this._gsapBBox();
+    try {
+      bbox = clone.getBBox();
+    } catch (e) {
     }
-    if (oldParent) {
-      if (oldSibling) {
-        oldParent.insertBefore(this, oldSibling);
-      } else {
-        oldParent.appendChild(this);
-      }
-    }
+    svg.removeChild(clone);
     _docElement.removeChild(svg);
-    this.style.cssText = oldCSS;
     return bbox;
   };
   var _getAttributeFallbacks = function _getAttributeFallbacks2(target, attributesArray) {
@@ -16635,13 +16795,14 @@
     }
   };
   var _getBBox = function _getBBox2(target) {
-    var bounds;
+    var bounds, cloned;
     try {
       bounds = target.getBBox();
     } catch (error) {
-      bounds = _getBBoxHack.call(target, true);
+      bounds = _getReparentedCloneBBox(target);
+      cloned = 1;
     }
-    bounds && (bounds.width || bounds.height) || target.getBBox === _getBBoxHack || (bounds = _getBBoxHack.call(target, true));
+    bounds && (bounds.width || bounds.height) || cloned || (bounds = _getReparentedCloneBBox(target));
     return bounds && !bounds.width && !bounds.x && !bounds.y ? {
       x: +_getAttributeFallbacks(target, ["x", "cx", "x1"]) || 0,
       y: +_getAttributeFallbacks(target, ["y", "cy", "y1"]) || 0,
@@ -16698,7 +16859,7 @@
       return _round(toPercent ? curValue / px * amount : curValue / 100 * px);
     }
     style[horizontal ? "width" : "height"] = amount + (toPixels ? curUnit : unit);
-    parent = ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
+    parent = unit !== "rem" && ~property.indexOf("adius") || unit === "em" && target.appendChild && !isRootSVG ? target : target.parentNode;
     if (isSVG) {
       parent = (target.ownerSVGElement || {}).parentNode;
     }
@@ -16765,6 +16926,9 @@
     pt.e = end;
     start += "";
     end += "";
+    if (end.substring(0, 6) === "var(--") {
+      end = _getComputedProperty(target, end.substring(4, end.indexOf(")")));
+    }
     if (end === "auto") {
       startValue = target.style[prop];
       target.style[prop] = end;
@@ -16861,6 +17025,7 @@
         _removeProperty(target, _transformProp);
         if (cache) {
           cache.svg && target.removeAttribute("transform");
+          style.scale = style.rotate = style.translate = "none";
           _parseTransform(target, 1);
           cache.uncache = 1;
           _removeIndependentTransforms(style);
@@ -16962,7 +17127,7 @@
       temp = style.display;
       style.display = "block";
       parent = target.parentNode;
-      if (!parent || !target.offsetParent) {
+      if (!parent || !target.offsetParent && !target.getBoundingClientRect().width) {
         addedToDOM = 1;
         nextSibling = target.nextElementSibling;
         _docElement.appendChild(target);
@@ -17411,6 +17576,10 @@
           isTransformRelated = p in _transformProps;
           if (isTransformRelated) {
             this.styles.save(p);
+            if (type === "string" && endValue.substring(0, 6) === "var(--") {
+              endValue = _getComputedProperty(target, endValue.substring(4, endValue.indexOf(")")));
+              endNum = parseFloat(endValue);
+            }
             if (!transformPropTween) {
               cache = target._gsap;
               cache.renderTransform && !vars.parseTransform || _parseTransform(target, vars.parseTransform);
@@ -17474,7 +17643,7 @@
           } else {
             _tweenComplexCSSString.call(this, target, p, startValue, relative ? relative + endValue : endValue);
           }
-          isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : inlineProps.push(p, 1, startValue || target[p]));
+          isTransformRelated || (p in style ? inlineProps.push(p, 0, style[p]) : typeof target[p] === "function" ? inlineProps.push(p, 2, target[p]()) : inlineProps.push(p, 1, startValue || target[p]));
           props.push(p);
         }
       }
@@ -17646,6 +17815,15 @@
   var _getTarget = function _getTarget2(t, self2) {
     return (self2 && self2._ctx && self2._ctx.selector || gsap2.utils.toArray)(t)[0] || (typeof t === "string" && gsap2.config().nullTargetWarn !== false ? console.warn("Element not found:", t) : null);
   };
+  var _isWithin = function _isWithin2(element, list) {
+    var i = list.length;
+    while (i--) {
+      if (list[i] === element || list[i].contains(element)) {
+        return true;
+      }
+    }
+    return false;
+  };
   var _getScrollFunc = function _getScrollFunc2(element, _ref) {
     var s = _ref.s, sc = _ref.sc;
     _isViewport(element) && (element = _doc3.scrollingElement || _docEl);
@@ -17722,7 +17900,7 @@
   };
   _horizontal.op = _vertical;
   _scrollers.cache = 0;
-  var Observer2 = /* @__PURE__ */ function() {
+  var Observer2 = /* @__PURE__ */ (function() {
     function Observer3(vars) {
       this.init(vars);
     }
@@ -17741,10 +17919,10 @@
       type = type || "wheel,touch,pointer";
       debounce = debounce !== false;
       lineHeight || (lineHeight = parseFloat(_win3.getComputedStyle(_body).lineHeight) || 22);
-      var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self2 = this, prevDeltaX = 0, prevDeltaY = 0, passive = vars.passive || !preventDefault, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
+      var id, onStopDelayedCall, dragged, moved, wheeled, locked, axis, self2 = this, prevDeltaX = 0, prevDeltaY = 0, passive = vars.passive || !preventDefault && vars.passive !== false, scrollFuncX = _getScrollFunc(target, _horizontal), scrollFuncY = _getScrollFunc(target, _vertical), scrollX = scrollFuncX(), scrollY = scrollFuncY(), limitToTouch = ~type.indexOf("touch") && !~type.indexOf("pointer") && _eventTypes[0] === "pointerdown", isViewport = _isViewport(target), ownerDoc = target.ownerDocument || _doc3, deltaX = [0, 0, 0], deltaY = [0, 0, 0], onClickTime = 0, clickCapture = function clickCapture2() {
         return onClickTime = _getTime();
       }, _ignoreCheck = function _ignoreCheck2(e, isPointerOrTouch) {
-        return (self2.event = e) && ignore && ~ignore.indexOf(e.target) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
+        return (self2.event = e) && ignore && _isWithin(e.target, ignore) || isPointerOrTouch && limitToTouch && e.pointerType !== "touch" || ignoreCheck && ignoreCheck(e, isPointerOrTouch);
       }, onStopFunc = function onStopFunc2() {
         self2._vx.reset();
         self2._vy.reset();
@@ -17772,8 +17950,9 @@
         if (moved || dragged) {
           onMove && onMove(self2);
           if (dragged) {
-            onDrag(self2);
-            dragged = false;
+            onDragStart && dragged === 1 && onDragStart(self2);
+            onDrag && onDrag(self2);
+            dragged = 0;
           }
           moved = false;
         }
@@ -17811,11 +17990,10 @@
         var x = e.clientX, y = e.clientY, dx = x - self2.x, dy = y - self2.y, isDragging = self2.isDragging;
         self2.x = x;
         self2.y = y;
-        if (isDragging || Math.abs(self2.startX - x) >= dragMinimum || Math.abs(self2.startY - y) >= dragMinimum) {
-          onDrag && (dragged = true);
+        if (isDragging || (dx || dy) && (Math.abs(self2.startX - x) >= dragMinimum || Math.abs(self2.startY - y) >= dragMinimum)) {
+          dragged = isDragging ? 2 : 1;
           isDragging || (self2.isDragging = true);
           onTouchOrPointerDelta(dx, dy);
-          isDragging || onDragStart && onDragStart(self2);
         }
       }, _onPress = self2.onPress = function(e) {
         if (_ignoreCheck(e, 1) || e && e.button) {
@@ -17858,6 +18036,7 @@
         }
         self2.isDragging = self2.isGesturing = self2.isPressed = false;
         onStop && wasDragging && !isNormalizer && onStopDelayedCall.restart(true);
+        dragged && update2();
         onDragEnd && wasDragging && onDragEnd(self2);
         onRelease && onRelease(self2, isDragNotClick);
       }, _onGestureStart = function _onGestureStart2(e) {
@@ -17927,6 +18106,11 @@
             onMove && _addListener(target, _pointerType + "move", _onMove);
           }
           self2.isEnabled = true;
+          self2.isDragging = self2.isGesturing = self2.isPressed = moved = dragged = false;
+          self2._vx.reset();
+          self2._vy.reset();
+          scrollX = scrollFuncX();
+          scrollY = scrollFuncY();
           e && e.type && _onPress(e);
           onEnable && onEnable(self2);
         }
@@ -17980,8 +18164,8 @@
       }
     }]);
     return Observer3;
-  }();
-  Observer2.version = "3.12.5";
+  })();
+  Observer2.version = "3.13.0";
   Observer2.create = function(vars) {
     return new Observer2(vars);
   };
@@ -18328,9 +18512,9 @@
     _baseScreenWidth = _win4.innerWidth;
     _baseScreenHeight = _win4.innerHeight;
   };
-  var _onResize = function _onResize2() {
+  var _onResize = function _onResize2(force) {
     _scrollers.cache++;
-    !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25) && _resizeDelay.restart(true);
+    (force === true || !_refreshing && !_ignoreResize && !_doc4.fullscreenElement && !_doc4.webkitFullscreenElement && (!_ignoreMobileResize || _baseScreenWidth !== _win4.innerWidth || Math.abs(_win4.innerHeight - _baseScreenHeight) > _win4.innerHeight * 0.25)) && _resizeDelay.restart(true);
   };
   var _listeners2 = {};
   var _emptyArray2 = [];
@@ -18397,6 +18581,9 @@
     });
   };
   var _refreshAll = function _refreshAll2(force, skipRevert) {
+    _docEl2 = _doc4.documentElement;
+    _body2 = _doc4.body;
+    _root2 = [_win4, _doc4, _docEl2, _body2];
     if (_lastScrollTime && !force && !_isReverted) {
       _addListener3(ScrollTrigger2, "scrollEnd", _softRefresh);
       return;
@@ -18651,8 +18838,8 @@
         onInterrupt && onInterrupt();
       }
       last2 = last1;
-      last1 = value;
-      return value;
+      last1 = Math.round(value);
+      return last1;
     };
   };
   var _shiftMarker = function _shiftMarker2(marker, direction, value) {
@@ -18696,7 +18883,7 @@
     ScrollTrigger2.isTouch && _addListener3(scroller, "touchmove", getScroll.wheelHandler);
     return getTween;
   };
-  var ScrollTrigger2 = /* @__PURE__ */ function() {
+  var ScrollTrigger2 = /* @__PURE__ */ (function() {
     function ScrollTrigger3(vars, animation) {
       _coreInitted3 || ScrollTrigger3.register(gsap3) || console.warn("Please gsap.registerPlugin(ScrollTrigger)");
       _context3(this);
@@ -18786,7 +18973,7 @@
             var progress = (scroll - start) / change, totalProgress = animation && !isToggle ? animation.totalProgress() : progress, velocity = refreshedRecently ? 0 : (totalProgress - snap22) / (_getTime2() - _time2) * 1e3 || 0, change1 = gsap3.utils.clamp(-progress, 1 - progress, _abs(velocity / 2) * velocity / 0.185), naturalEnd = progress + (snap3.inertia === false ? 0 : change1), endValue, endScroll, _snap = snap3, onStart = _snap.onStart, _onInterrupt = _snap.onInterrupt, _onComplete = _snap.onComplete;
             endValue = snapFunc(naturalEnd, self2);
             _isNumber3(endValue) || (endValue = naturalEnd);
-            endScroll = Math.round(start + endValue * change);
+            endScroll = Math.max(0, Math.round(start + endValue * change));
             if (scroll <= end && scroll >= start && endScroll !== scroll) {
               if (tween && !tween._initted && tween.data <= _abs(endScroll - scroll)) {
                 return;
@@ -18805,7 +18992,7 @@
                 onComplete: function onComplete() {
                   self2.update();
                   lastSnap = scrollFunc();
-                  if (animation) {
+                  if (animation && !isToggle) {
                     scrubTween ? scrubTween.resetTo("totalProgress", endValue, animation._tTime / animation._tDur) : animation.progress(endValue);
                   }
                   snap1 = snap22 = animation && !isToggle ? animation.totalProgress() : self2.progress;
@@ -18934,17 +19121,22 @@
           tweenTo.tween = 0;
         }
         scrubTween && scrubTween.pause();
-        invalidateOnRefresh && animation && animation.revert({
-          kill: false
-        }).invalidate();
+        if (invalidateOnRefresh && animation) {
+          animation.revert({
+            kill: false
+          }).invalidate();
+          animation.getChildren && animation.getChildren(true, true, false).forEach(function(t) {
+            return t.vars.immediateRender && t.render(0, true, true);
+          });
+        }
         self2.isReverted || self2.revert(true, true);
         self2._subPinOffset = false;
-        var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), isFirstRefresh = change <= 0.01, offset2 = 0, otherPinOffset = pinOffset || 0, parsedEnd = _isObject3(position) ? position.end : vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = _isObject3(position) ? position.start : vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self2.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer, self2), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self2)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow, markerStartOffset, markerEndOffset;
+        var size = getScrollerSize(), scrollerBounds = getScrollerOffsets(), max = containerAnimation ? containerAnimation.duration() : _maxScroll(scroller, direction), isFirstRefresh = change <= 0.01 || !change, offset2 = 0, otherPinOffset = pinOffset || 0, parsedEnd = _isObject3(position) ? position.end : vars.end, parsedEndTrigger = vars.endTrigger || trigger, parsedStart = _isObject3(position) ? position.start : vars.start || (vars.start === 0 || !trigger ? 0 : pin ? "0 0" : "0 100%"), pinnedContainer = self2.pinnedContainer = vars.pinnedContainer && _getTarget(vars.pinnedContainer, self2), triggerIndex = trigger && Math.max(0, _triggers.indexOf(self2)) || 0, i = triggerIndex, cs2, bounds, scroll, isVertical, override, curTrigger, curPin, oppositeScroll, initted, revertedPins, forcedOverflow, markerStartOffset, markerEndOffset;
         if (markers && _isObject3(position)) {
           markerStartOffset = gsap3.getProperty(markerStartTrigger, direction.p);
           markerEndOffset = gsap3.getProperty(markerEndTrigger, direction.p);
         }
-        while (i--) {
+        while (i-- > 0) {
           curTrigger = _triggers[i];
           curTrigger.end || curTrigger.refresh(0, 1) || (_refreshing = self2);
           curPin = curTrigger.pin;
@@ -19105,8 +19297,8 @@
         }
         _refreshing = 0;
         animation && isToggle && (animation._initted || prevAnimProgress) && animation.progress() !== prevAnimProgress && animation.progress(prevAnimProgress || 0, true).render(animation.time(), true, true);
-        if (isFirstRefresh || prevProgress !== self2.progress || containerAnimation || invalidateOnRefresh) {
-          animation && !isToggle && animation.totalProgress(containerAnimation && start < -1e-3 && !prevProgress ? gsap3.utils.normalize(start, end, 0) : prevProgress, true);
+        if (isFirstRefresh || prevProgress !== self2.progress || containerAnimation || invalidateOnRefresh || animation && !animation._initted) {
+          animation && !isToggle && (animation._initted || prevProgress || animation.vars.immediateRender !== false) && animation.totalProgress(containerAnimation && start < -1e-3 && !prevProgress ? gsap3.utils.normalize(start, end, 0) : prevProgress, true);
           self2.progress = isFirstRefresh || (scroll1 - start) / change === prevProgress ? 0 : prevProgress;
         }
         pin && pinSpacing && (spacer._pinOffset = Math.round(self2.progress * pinChange));
@@ -19358,6 +19550,7 @@
         var updateFunc = self2.update;
         self2.update = function() {
           self2.update = updateFunc;
+          _scrollers.cache++;
           start || end || self2.refresh();
         };
         gsap3.delayedCall(0.01, self2.update);
@@ -19414,7 +19607,7 @@
         _context3 = gsap3.core.context || _passThrough3;
         _suppressOverwrites2 = gsap3.core.suppressOverwrites || _passThrough3;
         _scrollRestoration = _win4.history.scrollRestoration || "auto";
-        _lastScroll = _win4.pageYOffset;
+        _lastScroll = _win4.pageYOffset || 0;
         gsap3.core.globals("ScrollTrigger", ScrollTrigger3);
         if (_body2) {
           _enabled = 1;
@@ -19447,7 +19640,7 @@
               _refreshAll(0, 1);
               _dispatch3("matchMedia");
             });
-            gsap3.matchMedia("(orientation: portrait)", function() {
+            gsap3.matchMedia().add("(orientation: portrait)", function() {
               _setBaseDimensions();
               return _setBaseDimensions;
             });
@@ -19456,7 +19649,7 @@
           }
           _setBaseDimensions();
           _addListener3(_doc4, "scroll", _onScroll3);
-          var bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
+          var bodyHasStyle = _body2.hasAttribute("style"), bodyStyle = _body2.style, border = bodyStyle.borderTopStyle, AnimationProto = gsap3.core.Animation.prototype, bounds, i;
           AnimationProto.revert || Object.defineProperty(AnimationProto, "revert", {
             value: function value() {
               return this.time(-0.01, true);
@@ -19467,6 +19660,10 @@
           _vertical.m = Math.round(bounds.top + _vertical.sc()) || 0;
           _horizontal.m = Math.round(bounds.left + _horizontal.sc()) || 0;
           border ? bodyStyle.borderTopStyle = border : bodyStyle.removeProperty("border-top-style");
+          if (!bodyHasStyle) {
+            _body2.setAttribute("style", "");
+            _body2.removeAttribute("style");
+          }
           _syncInterval = setInterval(_sync, 250);
           gsap3.delayedCall(0.5, function() {
             return _startup2 = 0;
@@ -19545,8 +19742,8 @@
       }
     };
     return ScrollTrigger3;
-  }();
-  ScrollTrigger2.version = "3.12.5";
+  })();
+  ScrollTrigger2.version = "3.13.0";
   ScrollTrigger2.saveStyles = function(targets) {
     return targets ? _toArray(targets).forEach(function(target) {
       if (target && target.style) {
@@ -19563,7 +19760,7 @@
     return new ScrollTrigger2(vars, animation);
   };
   ScrollTrigger2.refresh = function(safe) {
-    return safe ? _onResize() : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
+    return safe ? _onResize(true) : (_coreInitted3 || ScrollTrigger2.register()) && _refreshAll(true);
   };
   ScrollTrigger2.update = function(force) {
     return ++_scrollers.cache && _updateAll(force === true ? 2 : 0);
@@ -19831,8 +20028,15 @@
     return self2;
   };
   ScrollTrigger2.sort = function(func) {
+    if (_isFunction3(func)) {
+      return _triggers.sort(func);
+    }
+    var scroll = _win4.pageYOffset || 0;
+    ScrollTrigger2.getAll().forEach(function(t) {
+      return t._sortY = t.trigger ? scroll + t.trigger.getBoundingClientRect().top : t.start + _win4.innerHeight;
+    });
     return _triggers.sort(func || function(a, b) {
-      return (a.vars.refreshPriority || 0) * -1e6 + a.start - (b.start + (b.vars.refreshPriority || 0) * -1e6);
+      return (a.vars.refreshPriority || 0) * -1e6 + (a.vars.containerAnimation ? 1e6 : a._sortY) - ((b.vars.containerAnimation ? 1e6 : b._sortY) + (b.vars.refreshPriority || 0) * -1e6);
     });
   };
   ScrollTrigger2.observe = function(vars) {
@@ -19910,45 +20114,41 @@ toastify-js/src/toastify.js:
 
 gsap/gsap-core.js:
   (*!
-   * GSAP 3.12.5
+   * GSAP 3.13.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/CSSPlugin.js:
   (*!
-   * CSSPlugin 3.12.5
+   * CSSPlugin 3.13.0
    * https://gsap.com
    *
-   * Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/Observer.js:
   (*!
-   * Observer 3.12.5
+   * Observer 3.13.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   *)
 
 gsap/ScrollTrigger.js:
   (*!
-   * ScrollTrigger 3.12.5
+   * ScrollTrigger 3.13.0
    * https://gsap.com
    *
-   * @license Copyright 2008-2024, GreenSock. All rights reserved.
-   * Subject to the terms at https://gsap.com/standard-license or for
-   * Club GSAP members, the agreement issued with that membership.
+   * @license Copyright 2008-2025, GreenSock. All rights reserved.
+   * Subject to the terms at https://gsap.com/standard-license
    * @author: Jack Doyle, jack@greensock.com
   *)
 */

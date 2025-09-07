@@ -131,7 +131,7 @@ class cyn_rest
 		return $response;
 	}
 
-	public function cyn_handle_reserve_popUp_form(WP_REST_Request $request)
+	public function handle_reserve_popUp_form(WP_REST_Request $request)
 	{
 
 		$body_params = $request->get_body_params();

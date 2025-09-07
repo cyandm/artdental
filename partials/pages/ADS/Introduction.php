@@ -1,7 +1,7 @@
 <?php
 
 $start_point = $args['start-point'] ?? 1;
-$end_point = $args['end-point'] ?? 6;
+$end_point = $args['end-point'] ?? 20;
 $is_odd = $args['odd'] ?? true;
 
 ?>
@@ -13,6 +13,10 @@ $is_odd = $args['odd'] ?? true;
     $Image = get_field("IntroductionGroup_image_$i");
     $Title = get_field("IntroductionGroup_title_$i");
     $Text = get_field("IntroductionGroup_text_$i");
+
+if(!$Image && !$Title && !$Text){
+	continue;
+}
 
     ?>
     <div class="container flex gap-5 max-lg:flex-col items-center <?php echo $is_odd ? 'odd:lg:flex-row-reverse' : 'even:lg:flex-row-reverse' ?> ">

@@ -1,4 +1,4 @@
-<div class="max-lg:hidden">
+<div class="max-lg:hidden w-4/6">
     <!-- Comment Count -->
     <div class="flex flex-col gap-1">
 

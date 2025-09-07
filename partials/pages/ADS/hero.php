@@ -18,9 +18,12 @@
 
         <div class="py-8"></div>
         <div class="grid grid-cols-12">
-            <cyn-button class="border reservePopUpOpener rounded-3xl justify-center text-body_s items-center col-span-2 max-lg:col-span-6" type="primary" href="#">
-                <?php _e('دریافت مشاوره', 'cyn-dm') ?>
-            </cyn-button>
+            <button class="reservePopUpOpener rounded-full flex gap-1 transition-all duration-300 cursor-pointer bg-gradient-to-t from-primary-50 to-primary-70 text-primary-100 shadow-md shadow-slate-400/50 hover:from-primary-20 hover:to-primary-20 px-4 py-3 text-h6 justify-center items-center col-span-2 max-sm:col-span-12 max-lg:col-span-6 animate-bounce"> <?php _e('دریافت مشاوره', 'cyn-dm') ?>
+            </button>
+            <!-- <cyn-button class="border reservePopUpOpener rounded-3xl justify-center text-body_s items-center col-span-2 max-lg:col-span-6 animate-bounce" type="primary" href="#">
+                <? //php _e('دریافت مشاوره', 'cyn-dm') 
+                ?>
+            </cyn-button> -->
         </div>
     </div>
 </section>

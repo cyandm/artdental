@@ -144,12 +144,20 @@
 								<?php _e('شبکه های اجتماعی', 'cyn-dm') ?>
 							</span>
 							<div class="flex gap-2">
+								
 								<?php for ($i = 1; $i <= 10; $i++) : ?>
-									<a href="<?php echo get_option("cyn_social_media_url_$i") ?>">
-										<img src="<?php echo get_option("cyn_social_media_img_$i") ?>"
-											alt="" />
-									</a>
+
+									<?php if (!empty(get_option("cyn_social_media_url_$i")) && !empty(get_option("cyn_social_media_img_$i"))): ?>
+
+										<a href="<?php echo get_option("cyn_social_media_url_$i") ?>">
+											<img src="<?php echo get_option("cyn_social_media_img_$i") ?>"
+												alt="" class="size-7" />
+										</a>
+
+									<?php endif; ?>
+
 								<?php endfor; ?>
+
 							</div>
 						</div>
 					</div>

@@ -18,9 +18,9 @@ $table = [
 	[
 		'label' => __('قیمت جراحی هر واحد', 'cyn-dm'),
 		'value' => get_field('price_per_unit_off', $postId) ?
-			get_field('price_per_unit_off', $postId) . ' ' . __('میلیون تومان', 'cyn-dm') . ' ' . '<span class="line-through opacity-60 text-body_s max-md:flex max-md:flex-col">'
-			. get_field('price_per_unit', $postId) . ' ' . __('میلیون تومان', 'cyn-dm') . '</span>'
-			: get_field('price_per_unit', $postId) . ' ' . __('میلیون تومان', 'cyn-dm'),
+			get_field('price_per_unit_off', $postId) . ' ' . __('', 'cyn-dm') . ' ' . '<span class="line-through opacity-60 text-body_s max-md:flex max-md:flex-col">'
+			. get_field('price_per_unit', $postId) . ' ' . __( '','cyn-dm') . '</span>'
+			: get_field('price_per_unit', $postId) . ' ' . __( '','cyn-dm'),
 	],
 ]
 ?>

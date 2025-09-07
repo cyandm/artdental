@@ -311,7 +311,7 @@ function cyn_acf_register_ads()
 	];
 
 
-	for ($i = 1; $i <= 6; $i++) {
+	for ($i = 1; $i <= 20; $i++) {
 		array_push($fields, cyn_acf_add_image("IntroductionGroup_image_$i", "تصویر $i  ", 30));
 		array_push($fields, cyn_acf_add_text("IntroductionGroup_title_$i", "موضوع $i ", 0, 30));
 		array_push($fields, cyn_acf_add_wysiwyg("IntroductionGroup_text_$i", "متن $i ", 0, 30));

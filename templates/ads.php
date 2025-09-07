@@ -31,13 +31,13 @@
 <?php endif; ?>
 
 <!-- Introduction part2  -->
-<div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 6, 'odd' => false]); ?></div>
+<div><?php cyn_get_page_template('ADS/Introduction', ['start-point' => 4, 'end-point' => 20, 'odd' => false]); ?></div>
 <!-- faq  -->
 <div class="py-8"></div>
 <?php cyn_get_page_template('ADS/faqADS') ?>
 <!-- Comments -->
 <div class="py-8"></div>
-<div class="container bg-primary-100 rounded-2xl p-3 flex justify-between gap-3 max-sm:flex-col"><?php cyn_get_component('single-comment') ?></div>
+<div class="container bg-primary-100 rounded-2xl p-3 flex gap-3 max-sm:flex-col max-lg:hidden justify-center"><?php cyn_get_component('single-comment') ?></div>
 <!-- Comments For Mobile -->
 <div class="py-8"></div>
 <div class="container"><?php cyn_get_component('mobile-res-comment') ?></div>
