@@ -112,12 +112,20 @@ class cyn_rest
 		$email = sanitize_email($body_params['email']);
 		$message = sanitize_textarea_field($body_params['message']);
 
+		// Create formatted content with all form data
+		$content = "نام: " . $name . "\n";
+		$content .= "ایمیل: " . $email . "\n";
+		if (!empty($message)) {
+			$content .= "پیام: " . $message . "\n";
+		}
+
 		$post_id = wp_insert_post([
 			'post_type' => 'form',
 			'post_title' => $name,
-			'post_content' => $message,
+			'post_content' => $content,
 			'meta_input' => [
 				'email' => $email,
+				'message' => $message,
 			]
 		]);
 
@@ -144,14 +152,25 @@ class cyn_rest
 		$email = sanitize_email($body_params['email']);
 		$message = sanitize_textarea_field($body_params['message']);
 
+		// Create formatted content with all form data
+		$content = "نام: " . $name . "\n";
+		$content .= "جنسیت: " . $gender . "\n";
+		$content .= "خدمات: " . $services . "\n";
+		$content .= "شماره تلفن: " . $phone_number . "\n";
+		$content .= "ایمیل: " . $email . "\n";
+		if (!empty($message)) {
+			$content .= "پیام: " . $message . "\n";
+		}
+
 		$post_id = wp_insert_post([
 			'post_type' => 'form',
 			'post_title' => $name,
-			'post_content' => $phone_number,
+			'post_content' => $content,
 			'meta_input' => [
 				'email' => $email,
 				'gender' => $gender,
 				'services' => $services,
+				'phone_number' => $phone_number,
 				// 'reservation_time' => $reservation_time,
 				'message' =>  $message,
 			]
